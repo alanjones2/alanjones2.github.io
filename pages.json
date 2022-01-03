@@ -28,17 +28,17 @@
         "demoURL":"None"
     },
     {
-        "articleURL": "https://medium.com/codefile/plotting-with-pandas-an-introduction-to-data-visualization-8bd7c0831650", 
-        "imageURL":"https://miro.medium.com/max/841/1*YguvfLum39leABj-kt0hMw.png",
-        "title":"Plotting with Pandas: An Introduction to Data Visualization", 
-        "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
+        "articleURL": "https://towardsdatascience.com/data-visualization-with-julia-and-vscode-168a69f7ddf8", 
+        "imageURL":"https://miro.medium.com/max/1400/1*6shSHoswMHM4v9IzILOs4g.png",
+        "title":"Data Visualization with Julia and VSCode", 
+        "description":"With Julia and the free VSCode IDE, you can make impressive data visualizations with little programming knowledge.", 
         "demoURL":"None"
     }, 
     {
-        "articleURL": "https://medium.com/codefile/plotting-with-pandas-an-introduction-to-data-visualization-8bd7c0831650", 
-        "imageURL":"https://miro.medium.com/max/841/1*YguvfLum39leABj-kt0hMw.png",
-        "title":"Plotting with Pandas: An Introduction to Data Visualization", 
-        "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
+        "articleURL": "", 
+        "imageURL":"",
+        "title":"", 
+        "description":"", 
         "demoURL":"None"
     } 
 

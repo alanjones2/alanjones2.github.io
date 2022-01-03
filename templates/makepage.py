@@ -1,4 +1,4 @@
-HTML_FILE_NAME ='test.html'
+HTML_FILE_NAME ='index.html'
 TEMPLATE = 'index2template.html'
 TEMPLATE_DIR = 'templates'
 ARTICLES_FILE = 'pages.json'
