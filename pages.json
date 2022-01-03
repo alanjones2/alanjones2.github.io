@@ -1,0 +1,45 @@
+[
+    {
+        "articleURL": "https://towardsdatascience.com/why-im-using-vscode-for-jupyter-notebooks-abd2a6a157b9", 
+        "imageURL":"https://miro.medium.com/max/1400/1*iiqWqXlfATbSvvWss4p3yw.png",
+        "title":"Why I’m Using VSCode for Jupyter Notebooks", 
+        "description":"VSCode is a great Python editor and, as I accidentally discovered, good for Jupyter Notebooks, too", 
+        "demoURL":"None"
+    },
+    {
+        "articleURL": "https://towardsdatascience.com/why-im-using-vscode-for-jupyter-notebooks-abd2a6a157b9", 
+        "imageURL":"https://miro.medium.com/max/2000/1*trCrwCgYq0yLnQaDGCJ4UA.png",
+        "title":"<br/>Topical Plots: Global Warming Heatmaps", 
+        "description":"Which chart will get the message across best", 
+        "demoURL":"None"
+    },
+    {
+        "articleURL": "https://medium.com/codefile/plotting-with-pandas-an-introduction-to-data-visualization-8bd7c0831650", 
+        "imageURL":"https://miro.medium.com/max/841/1*YguvfLum39leABj-kt0hMw.png",
+        "title":"Plotting with Pandas: An Introduction to Data Visualization", 
+        "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
+        "demoURL":"None"
+    }, 
+    {
+        "articleURL": "https://projectcodeed.blogspot.com/2020/07/ggplot-grammar-of-graphics-in-python.html", 
+        "imageURL":"https://1.bp.blogspot.com/-UKSQGbIzOdw/Xy-1TVDBaSI/AAAAAAAABTM/NUooor8px8AsHSY6IsThObdrSqsJ5BD1gCLcBGAsYHQ/s640/Untitled.png",
+        "title":"ggplot: Grammar of Graphics in Python with Plotnine", 
+        "description":"Do you wish that Python could emulate the superb visualizations that ggplot gives you in the R language? Well it can.<br /> Plotnine is a powerful graphics library for great visualizations and based on <i>ggplot</i>", 
+        "demoURL":"None"
+    },
+    {
+        "articleURL": "https://medium.com/codefile/plotting-with-pandas-an-introduction-to-data-visualization-8bd7c0831650", 
+        "imageURL":"https://miro.medium.com/max/841/1*YguvfLum39leABj-kt0hMw.png",
+        "title":"Plotting with Pandas: An Introduction to Data Visualization", 
+        "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
+        "demoURL":"None"
+    }, 
+    {
+        "articleURL": "https://medium.com/codefile/plotting-with-pandas-an-introduction-to-data-visualization-8bd7c0831650", 
+        "imageURL":"https://miro.medium.com/max/841/1*YguvfLum39leABj-kt0hMw.png",
+        "title":"Plotting with Pandas: An Introduction to Data Visualization", 
+        "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
+        "demoURL":"None"
+    } 
+
+]

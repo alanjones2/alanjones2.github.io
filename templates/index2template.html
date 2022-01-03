@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Alan Jones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*YguvfLum39leABj-kt0hMw.png">
+    <meta name="twitter:image:src" content="https://cdn-images-1.medium.com/max/800/1*YguvfLum39leABj-kt0hMw.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="Coding and data science in Python and Julia - Articles and Tutorials" name="description">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="AlanJones: Coding, science and technology" property="og:title">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+            <span class="text-secondary" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                Technology</span>
+        </h1>
+        <hr />
+
+        <p class="lead">
+            Articles, tutorials and apps for Data Visualization and similar topics
+            - mostly in Python
+        </p>
+        <p>
+            See some articles/tutorials, below, and find the code for them on <a
+                href="https://alanjones2.github.io/Alan-Jones-article-code/" target="=_blank">Github</a>.
+
+            You can find me on:
+            <a href="https://alan-jones.medium.com/" target="_blank">Medium</a>,
+            <a href="https://twitter.com/MrAlanJones" target="_blank">Twitter as @MrAlanJones</a>
+            and
+            <a href="https://www.linkedin.com/in/alan-jones-032699100/" target="_blank">LinkedIn</a>.
+        </p>
+
+    </div>
+
+    <div style="margin-top:30px" class="container">
+
+
+        <div class="row" style="width: 100%;">
+            {% for page in pages -%}
+            <div class="col-sm-4 p-4 bg-white" old=" shadow p-8 mr-4 mb-2 bg-white rounded">
+                <img class="img-thumbnail" style="max-width: 100%" src="{{page.imageURL}}" />
+                <h4><a href="{{page.articleURL}}" target="_blank">
+                        <span class="text-dark">
+                            {{page.title}}
+                        </span>
+                    </a>
+                </h4>
+
+                <p class="text-muted">{{page.description}}</p>
+                {%if page.demoURL != 'None' %}
+                <p>
+                    <a <a class="btn btn-secondary btn-sm" href="{{page.demoURL}}">
+                        Click here for a Demo</a>
+                </p>
+                {% endif %}
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div style="margin-bottom:0;">
+        <footer class="text-right text-secondary">
+            <i>&copy; 2021, Alan Jones</i> &nbsp;
+        </footer>
+    </div>
+
+</body>
+
+</html>
