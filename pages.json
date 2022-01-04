@@ -1,5 +1,19 @@
 [
     {
+        "articleURL": "https://towardsdatascience.com/how-to-build-a-gallery-of-streamlit-apps-as-a-single-web-app-466682190629", 
+        "imageURL":"https://miro.medium.com/max/875/1*m8Otx-BXwFE5jF3RbOsyLQ.png",
+        "title":"How to Build a Gallery of Streamlit Apps as a Single Web App", 
+        "description":"Download a free template, pop in multiple Streamlit apps and you’ve got a multiple Streamlit apps on a single web page", 
+        "demoURL":"None"
+    },
+    {
+        "articleURL": "https://towardsdatascience.com/an-interactive-web-dashboard-with-plotly-and-flask-c365cdec5e3f", 
+        "imageURL":"https://miro.medium.com/max/875/1*lrkc5plidfgwhZlAeQ3dmw.png",
+        "title":"An Interactive Web Dashboard with Plotly and Flask", 
+        "description":"To create a truly interactive app with Dash you need to use callbacks. You can achieve the same thing with Plotly and Flask.", 
+        "demoURL":"None"
+    },
+     {
         "articleURL": "https://towardsdatascience.com/why-im-using-vscode-for-jupyter-notebooks-abd2a6a157b9", 
         "imageURL":"https://miro.medium.com/max/1400/1*iiqWqXlfATbSvvWss4p3yw.png",
         "title":"Why I’m Using VSCode for Jupyter Notebooks", 
