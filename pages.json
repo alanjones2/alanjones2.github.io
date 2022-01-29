@@ -1,5 +1,19 @@
 [
     {
+        "articleURL": "https://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680bhttps://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680b", 
+        "imageURL":"https://miro.medium.com/max/875/1*smDDMYVyFFoBCC0AwxeVpQ.png",
+        "title":"How Not to Lie with Charts", 
+        "description":"You can use data visualization to inform, or misinform. We look at the things to avoid if you want to do the former and not the latter.", 
+        "demoURL":"None"
+    },  
+    {
+        "articleURL": "https://towardsdatascience.com/interactive-data-visualization-with-julia-and-pluto-notebooks-6fad6f3eca2", 
+        "imageURL":"https://miro.medium.com/max/750/0*9D8vdNMpXS2qBiyV.png",
+        "title":"Interactive Data Visualization with Julia and Pluto Notebooks", 
+        "description":"Pluto is an important development that allows you to easily interact with your data. We take a quick look at it using the Julia plotting package to easily create impressive graphs.", 
+        "demoURL":"None"
+    },
+    {
         "articleURL": "https://towardsdatascience.com/how-to-build-a-gallery-of-streamlit-apps-as-a-single-web-app-466682190629", 
         "imageURL":"https://miro.medium.com/max/875/1*m8Otx-BXwFE5jF3RbOsyLQ.png",
         "title":"How to Build a Gallery of Streamlit Apps as a Single Web App", 
