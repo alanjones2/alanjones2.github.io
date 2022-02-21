@@ -1,5 +1,33 @@
 [
     {
+        "articleURL": "https://towardsdatascience.com/publish-your-streamlit-apps-in-the-cloud-3ac5a5fe3d51", 
+        "imageURL":"https://miro.medium.com/max/875/1*ALw0MOKd6xDTPjUkgrWoiQ.png",
+        "title":"Publish Your Streamlit Apps in the Cloud", 
+        "description":"Share your Streamlit apps with these free tools: Streamlit Cloud, Github and VSCode", 
+        "demoURL":"None"
+    },    
+    {
+        "articleURL": "https://medium.com/codefile/data-scientists-write-your-medium-articles-in-jupyter-371481ac6089", 
+        "imageURL":"https://miro.medium.com/max/875/1*fWVTihxi5i-vkFJGDO9fAQ.png",
+        "title":"Data Scientists: Write your Medium Articles in Jupyter", 
+        "description":"Don’t waste time cutting and pasting and making screen shots of data tables, write everything as a Jupyter Notebook and upload to Medium", 
+        "demoURL":"None"
+    },    
+    {
+        "articleURL": "https://towardsdatascience.com/create-a-web-app-from-your-jupyter-notebook-with-mercury-21239b7abb37", 
+        "imageURL":"https://miro.medium.com/max/875/1*tmvAaSYidSQ4JfUWMzKWvw.png",
+        "title":"Create a Web App from Your Jupyter Notebook with Mercury", 
+        "description":"You can published you Notebook as an interactive web app with or without the code", 
+        "demoURL":"None"
+    },    
+    {
+        "articleURL": "https://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680bhttps://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680b", 
+        "imageURL":"https://miro.medium.com/max/875/1*smDDMYVyFFoBCC0AwxeVpQ.png",
+        "title":"How Not to Lie with Charts", 
+        "description":"You can use data visualization to inform, or misinform. We look at the things to avoid if you want to do the former and not the latter.", 
+        "demoURL":"None"
+    },  
+    {
         "articleURL": "https://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680bhttps://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680b", 
         "imageURL":"https://miro.medium.com/max/875/1*smDDMYVyFFoBCC0AwxeVpQ.png",
         "title":"How Not to Lie with Charts", 
