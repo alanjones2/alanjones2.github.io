@@ -4,91 +4,104 @@
         "imageURL":"https://miro.medium.com/max/875/1*ALw0MOKd6xDTPjUkgrWoiQ.png",
         "title":"Publish Your Streamlit Apps in the Cloud", 
         "description":"Share your Streamlit apps with these free tools: Streamlit Cloud, Github and VSCode", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"Streamlit Python"
     },    
     {
         "articleURL": "https://medium.com/codefile/data-scientists-write-your-medium-articles-in-jupyter-371481ac6089", 
         "imageURL":"https://miro.medium.com/max/875/1*fWVTihxi5i-vkFJGDO9fAQ.png",
         "title":"Data Scientists: Write your Medium Articles in Jupyter", 
         "description":"Don’t waste time cutting and pasting and making screen shots of data tables, write everything as a Jupyter Notebook and upload to Medium", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"Writing Jupyter"
     },    
     {
         "articleURL": "https://towardsdatascience.com/create-a-web-app-from-your-jupyter-notebook-with-mercury-21239b7abb37", 
         "imageURL":"https://miro.medium.com/max/875/1*tmvAaSYidSQ4JfUWMzKWvw.png",
         "title":"Create a Web App from Your Jupyter Notebook with Mercury", 
         "description":"You can published you Notebook as an interactive web app with or without the code", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"Jupyter Python"
     },    
     {
         "articleURL": "https://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680bhttps://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680b", 
         "imageURL":"https://miro.medium.com/max/875/1*smDDMYVyFFoBCC0AwxeVpQ.png",
         "title":"How Not to Lie with Charts", 
         "description":"You can use data visualization to inform, or misinform. We look at the things to avoid if you want to do the former and not the latter.", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"DataVisualization"
     },    
     {
         "articleURL": "https://towardsdatascience.com/interactive-data-visualization-with-julia-and-pluto-notebooks-6fad6f3eca2", 
         "imageURL":"https://miro.medium.com/max/750/0*9D8vdNMpXS2qBiyV.png",
         "title":"Interactive Data Visualization with Julia and Pluto Notebooks", 
         "description":"Pluto is an important development that allows you to easily interact with your data. We take a quick look at it using the Julia plotting package to easily create impressive graphs.", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"DataVisualization Julia"
     },
     {
         "articleURL": "https://towardsdatascience.com/how-to-build-a-gallery-of-streamlit-apps-as-a-single-web-app-466682190629", 
         "imageURL":"https://miro.medium.com/max/875/1*m8Otx-BXwFE5jF3RbOsyLQ.png",
         "title":"How to Build a Gallery of Streamlit Apps as a Single Web App", 
         "description":"Download a free template, pop in multiple Streamlit apps and you’ve got a multiple Streamlit apps on a single web page", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"Streamlit Python"
     },
     {
         "articleURL": "https://towardsdatascience.com/an-interactive-web-dashboard-with-plotly-and-flask-c365cdec5e3f", 
         "imageURL":"https://miro.medium.com/max/875/1*lrkc5plidfgwhZlAeQ3dmw.png",
         "title":"An Interactive Web Dashboard with Plotly and Flask", 
         "description":"To create a truly interactive app with Dash you need to use callbacks. You can achieve the same thing with Plotly and Flask.", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"Python Plotly Flask"
     },
      {
         "articleURL": "https://towardsdatascience.com/why-im-using-vscode-for-jupyter-notebooks-abd2a6a157b9", 
         "imageURL":"https://miro.medium.com/max/1400/1*iiqWqXlfATbSvvWss4p3yw.png",
         "title":"Why I’m Using VSCode for Jupyter Notebooks", 
         "description":"VSCode is a great Python editor and, as I accidentally discovered, good for Jupyter Notebooks, too", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"VSCode Jupyter Python"
     },
     {
         "articleURL": "https://towardsdatascience.com/why-im-using-vscode-for-jupyter-notebooks-abd2a6a157b9", 
         "imageURL":"https://miro.medium.com/max/2000/1*trCrwCgYq0yLnQaDGCJ4UA.png",
         "title":"<br/>Topical Plots: Global Warming Heatmaps", 
         "description":"Which chart will get the message across best", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"DataVisualization"
     },
     {
         "articleURL": "https://medium.com/codefile/plotting-with-pandas-an-introduction-to-data-visualization-8bd7c0831650", 
         "imageURL":"https://miro.medium.com/max/841/1*YguvfLum39leABj-kt0hMw.png",
         "title":"Plotting with Pandas: An Introduction to Data Visualization", 
         "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"DataVisualization Pandas Python"
     }, 
     {
         "articleURL": "https://projectcodeed.blogspot.com/2020/07/ggplot-grammar-of-graphics-in-python.html", 
         "imageURL":"https://1.bp.blogspot.com/-UKSQGbIzOdw/Xy-1TVDBaSI/AAAAAAAABTM/NUooor8px8AsHSY6IsThObdrSqsJ5BD1gCLcBGAsYHQ/s640/Untitled.png",
         "title":"ggplot: Grammar of Graphics in Python with Plotnine", 
         "description":"Do you wish that Python could emulate the superb visualizations that ggplot gives you in the R language? Well it can.<br /> Plotnine is a powerful graphics library for great visualizations and based on <i>ggplot</i>", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"DataVisualization Python"
     },
     {
         "articleURL": "https://towardsdatascience.com/data-visualization-with-julia-and-vscode-168a69f7ddf8", 
         "imageURL":"https://miro.medium.com/max/1400/1*6shSHoswMHM4v9IzILOs4g.png",
         "title":"Data Visualization with Julia and VSCode", 
         "description":"With Julia and the free VSCode IDE, you can make impressive data visualizations with little programming knowledge.", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":"DataVisualization Julia VSCode"
     }, 
     {
         "articleURL": "", 
         "imageURL":"",
         "title":"", 
         "description":"", 
-        "demoURL":"None"
+        "demoURL":"None",
+        "tags":""
     } 
 
 ]

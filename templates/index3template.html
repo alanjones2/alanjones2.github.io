@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Alan Jones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*YguvfLum39leABj-kt0hMw.png">
+    <meta name="twitter:image:src" content="https://cdn-images-1.medium.com/max/800/1*YguvfLum39leABj-kt0hMw.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="Coding and data science in Python and Julia - Articles and Tutorials" name="description">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="AlanJones: Coding, science and technology" property="og:title">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .dNone {
+            display: none;
+        }
+
+        .dBlock {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+            <span class="text-secondary" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                Technology</span>
+        </h1>
+        <hr />
+
+        <p class="lead">
+            Build Data Visualization apps for the web using Streamlit, Plotly, Python and Flask.
+        </p>
+        <p>
+            Articles, tutorials and apps for Data Visualization and similar topics
+            - mostly in Python
+            <br />
+            See some sample articles/tutorials, below, and find the code for them on <a
+                href="https://alanjones2.github.io/Alan-Jones-article-code/" target="=_blank">Github</a>.
+
+            You can find me on:
+            <a href="https://alan-jones.medium.com/" target="_blank">Medium</a>,
+            <a href="https://twitter.com/MrAlanJones" target="_blank">Twitter as @MrAlanJones</a>
+            and
+            <a href="https://www.linkedin.com/in/alan-jones-032699100/" target="_blank">LinkedIn</a>.
+        </p>
+
+    </div>
+
+
+    <div style="margin-top:30px" class="container">
+        <script>
+            function selectTag(tag) {
+
+                s = document.getElementsByClassName("article");
+
+
+                for (t = 0; t < s.length; t++) {
+                    if (tag == 'All') {
+                        atts = (s[t].getAttribute('class'));
+                        newatts = atts.replace('dNone', 'dBlock')
+                        s[t].setAttribute('class', newatts)
+                    } else {
+                        // set all to none
+                        atts = (s[t].getAttribute('class'));
+                        newatts = atts.replace('dBlock', 'dNone')
+                        s[t].setAttribute('class', newatts)
+
+                        if (s[t].hasAttribute('tags')) {
+
+                            tags = s[t].getAttribute('tags');
+                            if (tags.includes(tag)) {
+                                atts = (s[t].getAttribute('class'));
+                                //alert(s[t].getAttribute('class'));
+                                newatts = atts.replace('dNone', 'dBlock')
+                                s[t].setAttribute('class', newatts);
+                                //alert(s[t].getAttribute('class'));
+                            }
+                        }
+                    }
+                }
+
+            }
+        </script>
+
+        <div class="row" style="width: 100%; padding: 5px;">
+            <button type="button" class="btn btn-info" style="margin: 2px;">Select the topic that you are interested in: </button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('All')" style="margin: 2px;">All</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Python')" style="margin: 2px;">Python</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Jupyter')" style="margin: 2px;">Jupyter</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Pandas')" style="margin: 2px;">Pandas</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Plotly')" style="margin: 2px;">Plotly</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Streamlit')" style="margin: 2px;">Streamlit</button>     
+            <button type="button" class="btn btn-secondary" onclick="selectTag('VSCode')" style="margin: 2px;">VSCode</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Julia')" style="margin: 2px;">Julia</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('DataVisualization')" style="margin: 2px;">Data Visualization</button>
+        </div>
+
+        <div class="row" style="width: 100%;">
+            {% for page in pages -%}
+            <div class="col-sm-3 p-4 bg-white article dBlock" tags="{{page.tags}}"
+                old=" shadow p-8 mr-4 mb-2 bg-white rounded">
+                <div>
+                    <img class="img-thumfDiv" bnail" style="max-width: 100%" src="{{page.imageURL}}" />
+                    <h5><a href="{{page.articleURL}}" target="_blank">
+                            <span class="text-dark">
+                                {{page.title}}
+                            </span>
+                        </a>
+                    </h5>
+
+                    <p class="text-muted">{{page.description}}</p>
+                    {%if page.demoURL != 'None' %}
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="{{page.demoURL}}">
+                            Click here for a Demo</a>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div style="margin-bottom:0;">
+        <footer class="text-right text-secondary">
+            <i>&copy; 2021, Alan Jones</i> &nbsp;
+        </footer>
+    </div>
+
+</body>
+
+</html>
