@@ -134,6 +134,12 @@
                             Click here for a Demo</a>
                     </p>
                     {% endif %}
+                    {%if page.code != 'None' %}
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="{{page.code}}">
+                            Find the code here</a>
+                    </p>
+                    {% endif %}
                 </div>
             </div>
 

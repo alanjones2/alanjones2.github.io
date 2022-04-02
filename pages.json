@@ -1,5 +1,14 @@
 [
     {
+        "articleURL": "https://towardsdatascience.com/mean-median-and-mode-what-are-they-and-when-should-you-use-them-edc3949aa142", 
+        "imageURL":"https://miro.medium.com/max/875/1*QOvbHdL8nBbVrseBauYrtA.png",
+        "title":"Mean, Median and Mode: What Are They and When Should You Use Them?", 
+        "description":"You probably remember Mean, Median, and Mode from high school stats classes but they are often misused. We look at how you should use them — with Python and Pandas examples.", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/meanmedianmode",
+        "tags":"Statistics DataScience"
+    },    
+    {
         "articleURL": "https://towardsdatascience.com/publish-your-streamlit-apps-in-the-cloud-3ac5a5fe3d51", 
         "imageURL":"https://miro.medium.com/max/875/1*ALw0MOKd6xDTPjUkgrWoiQ.png",
         "title":"Publish Your Streamlit Apps in the Cloud", 
