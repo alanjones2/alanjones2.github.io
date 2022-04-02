@@ -32,7 +32,7 @@
         "title":"Create a Web App from Your Jupyter Notebook with Mercury", 
         "description":"You can published you Notebook as an interactive web app with or without the code", 
         "demoURL":"None",
-        "code":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury",
         "tags":"Jupyter Python"
     },    
     {
