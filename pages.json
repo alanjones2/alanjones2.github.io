@@ -5,7 +5,7 @@
         "title":"Mean, Median and Mode: What Are They and When Should You Use Them?", 
         "description":"You probably remember Mean, Median, and Mode from high school stats classes but they are often misused. We look at how you should use them — with Python and Pandas examples.", 
         "demoURL":"None",
-        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/meanmedianmode",
+        "code":"None",
         "tags":"Statistics DataScience"
     },    
     {
@@ -14,6 +14,7 @@
         "title":"Publish Your Streamlit Apps in the Cloud", 
         "description":"Share your Streamlit apps with these free tools: Streamlit Cloud, Github and VSCode", 
         "demoURL":"None",
+        "code":"None",
         "tags":"Streamlit Python"
     },    
     {
@@ -22,6 +23,7 @@
         "title":"Data Scientists: Write your Medium Articles in Jupyter", 
         "description":"Don’t waste time cutting and pasting and making screen shots of data tables, write everything as a Jupyter Notebook and upload to Medium", 
         "demoURL":"None",
+        "code":"None",
         "tags":"Writing Jupyter"
     },    
     {
@@ -30,6 +32,7 @@
         "title":"Create a Web App from Your Jupyter Notebook with Mercury", 
         "description":"You can published you Notebook as an interactive web app with or without the code", 
         "demoURL":"None",
+        "code":"None",
         "tags":"Jupyter Python"
     },    
     {
@@ -38,6 +41,7 @@
         "title":"How Not to Lie with Charts", 
         "description":"You can use data visualization to inform, or misinform. We look at the things to avoid if you want to do the former and not the latter.", 
         "demoURL":"None",
+        "code":"None",
         "tags":"DataVisualization"
     },    
     {
@@ -46,6 +50,7 @@
         "title":"Interactive Data Visualization with Julia and Pluto Notebooks", 
         "description":"Pluto is an important development that allows you to easily interact with your data. We take a quick look at it using the Julia plotting package to easily create impressive graphs.", 
         "demoURL":"None",
+        "code":"None",
         "tags":"DataVisualization Julia"
     },
     {
@@ -54,6 +59,7 @@
         "title":"How to Build a Gallery of Streamlit Apps as a Single Web App", 
         "description":"Download a free template, pop in multiple Streamlit apps and you’ve got a multiple Streamlit apps on a single web page", 
         "demoURL":"None",
+        "code":"None",
         "tags":"Streamlit Python"
     },
     {
@@ -62,6 +68,7 @@
         "title":"An Interactive Web Dashboard with Plotly and Flask", 
         "description":"To create a truly interactive app with Dash you need to use callbacks. You can achieve the same thing with Plotly and Flask.", 
         "demoURL":"None",
+        "code":"None",
         "tags":"Python Plotly Flask"
     },
      {
@@ -70,6 +77,7 @@
         "title":"Why I’m Using VSCode for Jupyter Notebooks", 
         "description":"VSCode is a great Python editor and, as I accidentally discovered, good for Jupyter Notebooks, too", 
         "demoURL":"None",
+        "code":"None",
         "tags":"VSCode Jupyter Python"
     },
     {
@@ -78,6 +86,7 @@
         "title":"<br/>Topical Plots: Global Warming Heatmaps", 
         "description":"Which chart will get the message across best", 
         "demoURL":"None",
+        "code":"None",
         "tags":"DataVisualization"
     },
     {
@@ -86,6 +95,7 @@
         "title":"Plotting with Pandas: An Introduction to Data Visualization", 
         "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
         "demoURL":"None",
+        "code":"None",
         "tags":"DataVisualization Pandas Python"
     }, 
     {
@@ -94,6 +104,7 @@
         "title":"ggplot: Grammar of Graphics in Python with Plotnine", 
         "description":"Do you wish that Python could emulate the superb visualizations that ggplot gives you in the R language? Well it can.<br /> Plotnine is a powerful graphics library for great visualizations and based on <i>ggplot</i>", 
         "demoURL":"None",
+        "code":"None",
         "tags":"DataVisualization Python"
     },
     {
@@ -102,6 +113,7 @@
         "title":"Data Visualization with Julia and VSCode", 
         "description":"With Julia and the free VSCode IDE, you can make impressive data visualizations with little programming knowledge.", 
         "demoURL":"None",
+        "code":"None",
         "tags":"DataVisualization Julia VSCode"
     }, 
     {
@@ -110,6 +122,7 @@
         "title":"", 
         "description":"", 
         "demoURL":"None",
+        "code":"None",
         "tags":""
     } 
 
