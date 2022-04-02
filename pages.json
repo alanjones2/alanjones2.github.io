@@ -5,7 +5,7 @@
         "title":"Mean, Median and Mode: What Are They and When Should You Use Them?", 
         "description":"You probably remember Mean, Median, and Mode from high school stats classes but they are often misused. We look at how you should use them — with Python and Pandas examples.", 
         "demoURL":"None",
-        "code":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/meanmedianmode",
         "tags":"Statistics DataScience"
     },    
     {
