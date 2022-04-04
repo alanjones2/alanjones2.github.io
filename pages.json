@@ -9,6 +9,15 @@
         "tags":"Statistics DataScience"
     },    
     {
+        "articleURL": "https://towardsdatascience.com/how-to-share-your-jupyter-notebook-with-mercury-or-voil%C3%A0-2177110d2f6e", 
+        "imageURL":"https://miro.medium.com/max/1400/1*SkoorhcspULJ2uOssBhjqw.png",
+        "title":"How to Share your Jupyter Notebook with Mercury or Voilà", 
+        "description":"Putting your Jupyter notebook on the web is reasonably easy with either Mercury or Voilà but which is easier - here's a brief comparison of the two technologies", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury",
+        "tags":"Python Jupyter Mercury Voila"
+    },    
+    {
         "articleURL": "https://towardsdatascience.com/publish-your-streamlit-apps-in-the-cloud-3ac5a5fe3d51", 
         "imageURL":"https://miro.medium.com/max/875/1*ALw0MOKd6xDTPjUkgrWoiQ.png",
         "title":"Publish Your Streamlit Apps in the Cloud", 
@@ -16,6 +25,15 @@
         "demoURL":"None",
         "code":"None",
         "tags":"Streamlit Python"
+    },  
+    {
+        "articleURL": "https://towardsdatascience.com/sql-pandas-or-both-analysing-the-uk-electoral-system-24fa01d33d05", 
+        "imageURL":"https://miro.medium.com/max/875/0*ZQY7byDdODfCReoi.jpg",
+        "title":"SQL, Pandas or Both - Analysing the UK Electoral System", 
+        "description":"Pandas is great for analysing and plotting data but should you store your data in a database and select it with SQL. Let's take a look at some common operations using Pandas and SQL and see how they compare", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/sqlpandas",
+        "tags":""
     },    
     {
         "articleURL": "https://medium.com/codefile/data-scientists-write-your-medium-articles-in-jupyter-371481ac6089", 
@@ -61,6 +79,15 @@
         "demoURL":"None",
         "code":"None",
         "tags":"Streamlit Python"
+    },
+    {
+        "articleURL": "https://towardsdatascience.com/an-interactive-co2-emissions-dashboard-with-plotly-and-streamlit-b0bd4ae80cc8", 
+        "imageURL":"https://miro.medium.com/max/875/1*4Z0ZieIuBVNsyFXl0AGtmA.png",
+        "title":"An Interactive CO2 Emissions Dashboard with Plotly and  Streamlit", 
+        "description":"With Plotly charts and Streamlit's flexible input, layout and theming options, you can build a great interactive data visualization app from live data", 
+        "demoURL":"http://ajco2.herokuapp.com/",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/streamlitdark",
+        "tags":"Streamlit Plotly DataVisualization"
     },
     {
         "articleURL": "https://towardsdatascience.com/an-interactive-web-dashboard-with-plotly-and-flask-c365cdec5e3f", 
@@ -117,10 +144,10 @@
         "tags":"DataVisualization Julia VSCode"
     }, 
     {
-        "articleURL": "", 
-        "imageURL":"",
-        "title":"", 
-        "description":"", 
+        "articleURL": "https://alanjones2.github.io/Alan-Jones-article-code/", 
+        "imageURL":"https://miro.medium.com/max/875/1*QOvbHdL8nBbVrseBauYrtA.png",
+        "title":"Earlier articles that have not made it to this web page yet can be found here", 
+        "description":"This page will be continually updated with both new and older articles", 
         "demoURL":"None",
         "code":"None",
         "tags":""

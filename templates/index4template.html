@@ -68,17 +68,18 @@
     <div style="margin-top:30px" class="container">
         <script>
             function selectTag(tag) {
-
+                // get all the article blocks
                 s = document.getElementsByClassName("article");
 
-
                 for (t = 0; t < s.length; t++) {
+                    // if tag selected is 'all' set all blocks to visible
                     if (tag == 'All') {
                         atts = (s[t].getAttribute('class'));
                         newatts = atts.replace('dNone', 'dBlock')
                         s[t].setAttribute('class', newatts)
                     } else {
-                        // set all to none
+                        // otherwise set all to invisible 'dNone' and 
+                        // then set the selected ones to visible 'dBlock'
                         atts = (s[t].getAttribute('class'));
                         newatts = atts.replace('dBlock', 'dNone')
                         s[t].setAttribute('class', newatts)
@@ -130,7 +131,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="{{page.tags}}"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="{{page.imageURL}}" />
                         </div>
@@ -162,11 +164,13 @@
 
             {% endfor %}
         </div>
-
     </div>
 
-    <div style="margin-bottom:0;">
+    <div style="margin: 20px;">
         <footer class="text-right text-secondary">
+            <i>Please note that all the software in this repo is written for educational purposes and should not be
+                considered suitable for production code</i>
+            <br />
             <i>&copy; 2021, Alan Jones</i> &nbsp;
         </footer>
     </div>

@@ -1,10 +1,3 @@
-# Alan Jones
-## Code from my articles on Medium
-Below is a list of some of the articles/tutorials that I have written (mostly on Medium) and example code to go with them.
-
-You can see the whole list of articles in my [Medium profile](https://jones-alan.medium.com/).
-
-<hr/>
 
 
 ## Web Visualization with Plotly and Flask
@@ -85,30 +78,12 @@ The great thing about Streamlit is, not only is it beautiful, but it’s simple,
 From one point of view Streamlit is a retrograde step in web development because it lets you mix up the logic of your app with the way it is presented. But from another it is very much simplifying web design.
 <hr/>
 
-## An Interactive CO2 Emissions Dashboard with Plotly and  Streamlit
-### With Plotly charts and Streamlit's flexible input, layout and theming options, you can build a great interactive data visualization app from live data
-[[Article](https://towardsdatascience.com/an-interactive-co2-emissions-dashboard-with-plotly-and-streamlit-b0bd4ae80cc8)] [[Code](https://github.com/alanjones2/Alan-Jones-article-code/tree/master/streamlitdark)]
 
-Streamlit doesn't have the most comprehensive set of user interface components but they are easy to use and with a bit of imagination can be combined to good effect.
-We are going to look at the way we can use theming and the various interactive input and layout options in Streamlit, alongside Plotly charts, to produce an attractive and, hopefully informative, web app.
-<hr/>
 
-## SQL, Pandas or Both - Analysing the UK Electoral System
-[[Article](https://towardsdatascience.com/sql-pandas-or-both-analysing-the-uk-electoral-system-24fa01d33d05)] [[Code](https://github.com/alanjones2/Alan-Jones-article-code/tree/master/sqlpandas)]
 
-Pandas is great for analysing and plotting data but should you store your data in a database and select it with SQL. Let's take a look at some common operations using Pandas and SQL and see how they compare
-<hr/>
 
-## How to Share your Jupyter Notebook with Mercury or Voilà
-[[Article](https://towardsdatascience.com/how-to-share-your-jupyter-notebook-with-mercury-or-voil%C3%A0-2177110d2f6e)] [[Code](https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury)]
 
-Putting your Jupyter notebook on the web is reasonably easy with either Mercury or Voilà but which is easier - here's a brief comparison of the two technologies
-<hr/>
 
-## Mean, Median and Mode: What Are They and When Should You Use Them
-[[Article](#)] [[Code](https://github.com/alanjones2/Alan-Jones-article-code/tree/master/meanmedianmode)]
-
-You probably remember Mean, Median and Mode from high school stats classes but they are often misused. We look at how you should use them - with Python and Pandas examples.
 
 <hr/>
 If you have found this content useful, please consider this... <br/><br/>

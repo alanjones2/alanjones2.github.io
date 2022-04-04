@@ -68,17 +68,18 @@
     <div style="margin-top:30px" class="container">
         <script>
             function selectTag(tag) {
-
+                // get all the article blocks
                 s = document.getElementsByClassName("article");
 
-
                 for (t = 0; t < s.length; t++) {
+                    // if tag selected is 'all' set all blocks to visible
                     if (tag == 'All') {
                         atts = (s[t].getAttribute('class'));
                         newatts = atts.replace('dNone', 'dBlock')
                         s[t].setAttribute('class', newatts)
                     } else {
-                        // set all to none
+                        // otherwise set all to invisible 'dNone' and 
+                        // then set the selected ones to visible 'dBlock'
                         atts = (s[t].getAttribute('class'));
                         newatts = atts.replace('dBlock', 'dNone')
                         s[t].setAttribute('class', newatts)
@@ -129,7 +130,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Statistics DataScience"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*QOvbHdL8nBbVrseBauYrtA.png" />
                         </div>
@@ -154,10 +156,40 @@
                 </div>
             </div>
 
+            <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Python Jupyter Mercury Voila"
+                old=" shadow p-8 mr-4 mb-2 bg-white rounded">
+                <div>
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
+                        <div class="col-sm-6 bg-white">
+                            <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/1400/1*SkoorhcspULJ2uOssBhjqw.png" />
+                        </div>
+                        <div class="col-sm-6 bg-white">
+                            <h5 style="font-weight: bold"><a href="https://towardsdatascience.com/how-to-share-your-jupyter-notebook-with-mercury-or-voil%C3%A0-2177110d2f6e" target="_blank">
+                                    <span class="text-dark">
+                                        How to Share your Jupyter Notebook with Mercury or Voilà
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <p class="text-muted">Putting your Jupyter notebook on the web is reasonably easy with either Mercury or Voilà but which is easier - here's a brief comparison of the two technologies</p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury">
+                            Find the code here</a>
+                    </p>
+                    
+                </div>
+            </div>
+
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Streamlit Python"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*ALw0MOKd6xDTPjUkgrWoiQ.png" />
                         </div>
@@ -177,10 +209,40 @@
                 </div>
             </div>
 
+            <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags=""
+                old=" shadow p-8 mr-4 mb-2 bg-white rounded">
+                <div>
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
+                        <div class="col-sm-6 bg-white">
+                            <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/0*ZQY7byDdODfCReoi.jpg" />
+                        </div>
+                        <div class="col-sm-6 bg-white">
+                            <h5 style="font-weight: bold"><a href="https://towardsdatascience.com/sql-pandas-or-both-analysing-the-uk-electoral-system-24fa01d33d05" target="_blank">
+                                    <span class="text-dark">
+                                        SQL, Pandas or Both - Analysing the UK Electoral System
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <p class="text-muted">Pandas is great for analysing and plotting data but should you store your data in a database and select it with SQL. Let's take a look at some common operations using Pandas and SQL and see how they compare</p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/sqlpandas">
+                            Find the code here</a>
+                    </p>
+                    
+                </div>
+            </div>
+
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Writing Jupyter"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*fWVTihxi5i-vkFJGDO9fAQ.png" />
                         </div>
@@ -203,7 +265,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Jupyter Python"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*tmvAaSYidSQ4JfUWMzKWvw.png" />
                         </div>
@@ -231,7 +294,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="DataVisualization"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*smDDMYVyFFoBCC0AwxeVpQ.png" />
                         </div>
@@ -254,7 +318,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="DataVisualization Julia"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/750/0*9D8vdNMpXS2qBiyV.png" />
                         </div>
@@ -277,7 +342,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Streamlit Python"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*m8Otx-BXwFE5jF3RbOsyLQ.png" />
                         </div>
@@ -297,10 +363,45 @@
                 </div>
             </div>
 
+            <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Streamlit Plotly DataVisualization"
+                old=" shadow p-8 mr-4 mb-2 bg-white rounded">
+                <div>
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
+                        <div class="col-sm-6 bg-white">
+                            <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*4Z0ZieIuBVNsyFXl0AGtmA.png" />
+                        </div>
+                        <div class="col-sm-6 bg-white">
+                            <h5 style="font-weight: bold"><a href="https://towardsdatascience.com/an-interactive-co2-emissions-dashboard-with-plotly-and-streamlit-b0bd4ae80cc8" target="_blank">
+                                    <span class="text-dark">
+                                        An Interactive CO2 Emissions Dashboard with Plotly and  Streamlit
+                                    </span>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <p class="text-muted">With Plotly charts and Streamlit's flexible input, layout and theming options, you can build a great interactive data visualization app from live data</p>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="http://ajco2.herokuapp.com/">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/streamlitdark">
+                            Find the code here</a>
+                    </p>
+                    
+                </div>
+            </div>
+
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="Python Plotly Flask"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*lrkc5plidfgwhZlAeQ3dmw.png" />
                         </div>
@@ -323,7 +424,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="VSCode Jupyter Python"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/1400/1*iiqWqXlfATbSvvWss4p3yw.png" />
                         </div>
@@ -346,7 +448,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="DataVisualization"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/2000/1*trCrwCgYq0yLnQaDGCJ4UA.png" />
                         </div>
@@ -369,7 +472,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="DataVisualization Pandas Python"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/841/1*YguvfLum39leABj-kt0hMw.png" />
                         </div>
@@ -392,7 +496,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="DataVisualization Python"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://1.bp.blogspot.com/-UKSQGbIzOdw/Xy-1TVDBaSI/AAAAAAAABTM/NUooor8px8AsHSY6IsThObdrSqsJ5BD1gCLcBGAsYHQ/s640/Untitled.png" />
                         </div>
@@ -415,7 +520,8 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags="DataVisualization Julia VSCode"
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
                             <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/1400/1*6shSHoswMHM4v9IzILOs4g.png" />
                         </div>
@@ -438,21 +544,22 @@
             <div class="col-sm-5 p-2 shadow mr-4 mb-2 bg-white rounded article dBlock" tags=""
                 old=" shadow p-8 mr-4 mb-2 bg-white rounded">
                 <div>
-                    <div class="row" style="width:100%;margin-left: 0px;"  >
+                    <div class="row" style="width:100%;margin-left: 0px;">
+                        <!--margin=0  is weird but neccessary-->
                         <div class="col-sm-6 bg-white">
-                            <img class="img-thumbnail" style="height: 100%;" src="" />
+                            <img class="img-thumbnail" style="height: 100%;" src="https://miro.medium.com/max/875/1*QOvbHdL8nBbVrseBauYrtA.png" />
                         </div>
                         <div class="col-sm-6 bg-white">
-                            <h5 style="font-weight: bold"><a href="" target="_blank">
+                            <h5 style="font-weight: bold"><a href="https://alanjones2.github.io/Alan-Jones-article-code/" target="_blank">
                                     <span class="text-dark">
-                                        
+                                        Earlier articles that have not made it to this web page yet can be found here
                                     </span>
                                 </a>
                             </h5>
                         </div>
                     </div>
 
-                    <p class="text-muted"></p>
+                    <p class="text-muted">This page will be continually updated with both new and older articles</p>
                     
                     
                 </div>
@@ -460,11 +567,13 @@
 
             
         </div>
-
     </div>
 
-    <div style="margin-bottom:0;">
+    <div style="margin: 20px;">
         <footer class="text-right text-secondary">
+            <i>Please note that all the software in this repo is written for educational purposes and should not be
+                considered suitable for production code</i>
+            <br />
             <i>&copy; 2021, Alan Jones</i> &nbsp;
         </footer>
     </div>
