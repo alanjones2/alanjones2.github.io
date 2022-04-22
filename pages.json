@@ -1,5 +1,14 @@
 [
     {
+        "articleURL": "https://towardsdatascience.com/plotly-with-streamlit-dash-or-flask-4d78fa025ea2", 
+        "imageURL":"https://miro.medium.com/max/875/1*XcKexqL2GS69ygA48oQXeg.png",
+        "title":"Plotly with Streamlit, Dash or Flask", 
+        "description":"Which is the best framework for your data science apps", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/streamlitdashflask",
+        "tags":"Python Dash Plotly Streamlit DataVisualization"
+    },
+    {
         "articleURL": "https://towardsdatascience.com/mean-median-and-mode-what-are-they-and-when-should-you-use-them-edc3949aa142", 
         "imageURL":"https://miro.medium.com/max/875/1*QOvbHdL8nBbVrseBauYrtA.png",
         "title":"Mean, Median and Mode: What Are They and When Should You Use Them?", 
@@ -33,7 +42,7 @@
         "description":"Pandas is great for analysing and plotting data but should you store your data in a database and select it with SQL. Let's take a look at some common operations using Pandas and SQL and see how they compare", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/sqlpandas",
-        "tags":""
+        "tags":"Python DataScience"
     },    
     {
         "articleURL": "https://medium.com/codefile/data-scientists-write-your-medium-articles-in-jupyter-371481ac6089", 
