@@ -1,5 +1,14 @@
 [
     {
+        "articleURL": "https://towardsdatascience.com/how-to-use-wikipedia-as-a-data-source-3dfea29e6539", 
+        "imageURL":"https://miro.medium.com/max/875/0*mN2K5jyYDeRPo4ZK",
+        "title":"How to Use Wikipedia as a Data Source", 
+        "description":"How to load information from Wikipedia into Pandas by finding the best team in the English Premier League", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/Wikitable",
+        "tags":"Python Pandas  DataVisualization  DataScience"
+    }, 
+    {
         "articleURL": "https://medium.com/codefile/customizing-streamlit-columns-4bfd58fcb7c9", 
         "imageURL":"https://miro.medium.com/max/788/0*yEPAqmhNAjh6HmsI.png",
         "title":"Customizing Streamlit Columns", 
