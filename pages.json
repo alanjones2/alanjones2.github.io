@@ -1,5 +1,14 @@
 [
     {
+        "articleURL": "https://towardsdatascience.com/visualizing-health-risk-2a082417f3f2", 
+        "imageURL":"https://miro.medium.com/max/875/0*uwsoNWdkO1siXYIJ",
+        "title":"Visualizing Health Risk", 
+        "description":"The press can very easily get it wrong when dealing with health risk data. Data visualizations can help.", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/riskviz",
+        "tags":"Python Pandas  DataVisualization  DataScience Health"
+    }, 
+    {
         "articleURL": "https://towardsdatascience.com/how-to-use-wikipedia-as-a-data-source-3dfea29e6539", 
         "imageURL":"https://miro.medium.com/max/875/0*mN2K5jyYDeRPo4ZK",
         "title":"How to Use Wikipedia as a Data Source", 
@@ -7,6 +16,15 @@
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/Wikitable",
         "tags":"Python Pandas  DataVisualization  DataScience"
+    }, 
+    {
+        "articleURL": "https://medium.com/codefile/customizing-streamlit-columns-4bfd58fcb7c9", 
+        "imageURL":"https://miro.medium.com/max/788/0*yEPAqmhNAjh6HmsI.png",
+        "title":"Code Hint: Customizing Streamlit Columns", 
+        "description":"Streamlit has a limited layout model and this is normally an advantage as it allows the simple construction of sophisticated apps. But sometimes you want to modify the layout.", 
+        "demoURL":"https://share.streamlit.io/alanjones2/alan-jones-article-code/codehintstreamlitcols/stcols.py",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/codehintstreamlitcols",
+        "tags":"Python Streamlit  DataVisualization  DataScience"
     }, 
     {
         "articleURL": "https://medium.com/codefile/customizing-streamlit-columns-4bfd58fcb7c9", 
