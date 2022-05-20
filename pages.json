@@ -117,6 +117,15 @@
         "tags":"Streamlit Python"
     },
     {
+        "articleURL": "https://towardsdatascience.com/a-multi-page-interactive-dashboard-with-streamlit-and-plotly-c3182443871a", 
+        "imageURL":"https://miro.medium.com/max/875/1*dVSDol9pouoO9IX_E_-35Q.png",
+        "title":"A Multi-page Interactive Dashboard with Streamlit and Plotly", 
+        "description":"https://towardsdatascience.com/a-multi-page-interactive-dashboard-with-streamlit-and-plotly-c3182443871a", 
+        "demoURL":"http://ajstreamlit.herokuapp.com/",
+        "code":"https://alanjones2.github.io/Alan-Jones-article-code/",
+        "tags":"Streamlit Python"
+    },
+    {
         "articleURL": "https://towardsdatascience.com/an-interactive-co2-emissions-dashboard-with-plotly-and-streamlit-b0bd4ae80cc8", 
         "imageURL":"https://miro.medium.com/max/875/1*4Z0ZieIuBVNsyFXl0AGtmA.png",
         "title":"An Interactive CO2 Emissions Dashboard with Plotly and  Streamlit", 
