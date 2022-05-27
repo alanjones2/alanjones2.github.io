@@ -1,5 +1,13 @@
 [
     {
+        "articleURL": "#", 
+        "imageURL":"https://raw.githubusercontent.com/alanjones2/Alan-Jones-article-code/master/pyscript/images/Screenshot2.png",
+        "title":"Create an Interactive Web App with PyScript and Pandas", 
+        "description":"PyScript allows us to create a serverless web application with HTML and Python as the scripting language.", 
+        "demoURL":"https://alanjones2.github.io/pyscript/weather2.html",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript",
+        "tags":"Python Pandas  DataVisualization PyScript"
+    },     {
         "articleURL": "https://towardsdatascience.com/visualizing-health-risk-2a082417f3f2", 
         "imageURL":"https://miro.medium.com/max/875/0*uwsoNWdkO1siXYIJ",
         "title":"Visualizing Health Risk", 
