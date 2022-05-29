@@ -1,10 +1,18 @@
 [
     {
+        "articleURL": "https://medium.com/technofile/how-to-use-ploty-with-pyscript-578d3b287293", 
+        "imageURL":"https://raw.githubusercontent.com/alanjones2/Alan-Jones-article-code/master/pyscript/images/Screenshot2.png",
+        "title":"How to use Ploty with PyScript", 
+        "description":"PyScript doesn’t support Plotly directly but there is a simple way around it", 
+        "demoURL":"https://alanjones2.github.io/pyscript/weather2.html",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript",
+        "tags":"Python Pandas  DataVisualization PyScript"
+    },    {
         "articleURL": "https://towardsdatascience.com/create-an-interactive-web-app-with-pyscript-and-pandas-3918ad2dada1", 
         "imageURL":"https://raw.githubusercontent.com/alanjones2/Alan-Jones-article-code/master/pyscript/images/Screenshot2.png",
         "title":"Create an Interactive Web App with PyScript and Pandas", 
         "description":"PyScript allows us to create a serverless web application with HTML and Python as the scripting language.", 
-        "demoURL":"https://alanjones2.github.io/pyscript/weather2.html",
+        "demoURL":"https://alanjones2.github.io/pyscript/weather1.html",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript",
         "tags":"Python Pandas  DataVisualization PyScript"
     },     {
