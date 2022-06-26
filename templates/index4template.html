@@ -155,14 +155,15 @@
                             <img class="img-thumbnail" style="height: 100%;" src="{{page.imageURL}}" />
                         </div>
                         <div class="col-sm-6 bg-white">
+                            <div class="font-weight-light small">
+                                {%if page.type  %}
+                                    {{page.type}}
+                                {%else%}
+                                    ARTICLE
+                                {% endif %}
+                            </div>
                             <h5 style="font-weight: bold"><a href="{{page.articleURL}}" target="_blank">
-                                    <div class="font-weight-light small">
-                                        {%if page.type  %}
-                                            {{page.type}}
-                                        {%else%}
-                                            ARTICLE
-                                        {% endif %}
-                                    </div>
+
                                     <span class="text-dark">
                                         {{page.title}}
                                     </span>
