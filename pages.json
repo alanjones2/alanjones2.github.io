@@ -1,5 +1,15 @@
 [
     {
+        "type":"ARTICLE",
+        "articleURL": "#", 
+        "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/raw/master/pyscript-flask/splash.png",
+        "title":"PyScript v. Flask: How to Create a Python App in the Browser or on a Server", 
+        "description":"PyScript lets you create web apps in Python without the need for a server. Flask is a Python web app framework for making server-based apps. We write the same simple app using both", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript-flask",
+        "tags":"DataVisualization Pandas PyScript Python"
+    },     
+    {
         "type":"BOOK",
         "articleURL": "https://alanjones2.github.io/ajbooks/", 
         "imageURL":"https://alanjones2.github.io/ajbooks/images/plottingwithpandas.png",
