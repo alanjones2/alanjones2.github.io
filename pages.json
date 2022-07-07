@@ -1,7 +1,7 @@
 [
     {
         "type":"ARTICLE",
-        "articleURL": "#", 
+        "articleURL": "https://towardsdatascience.com/pyscript-v-flask-how-to-create-a-python-app-in-the-browser-or-on-a-server-2cfe4dd0df9d", 
         "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/raw/master/pyscript-flask/splash.png",
         "title":"PyScript v. Flask: How to Create a Python App in the Browser or on a Server", 
         "description":"PyScript lets you create web apps in Python without the need for a server. Flask is a Python web app framework for making server-based apps. We write the same simple app using both", 
@@ -10,7 +10,7 @@
         "tags":"DataVisualization Pandas PyScript Python"
     },     
     {
-        "type":"BOOK",
+        "type":"DOWNLOADABLE BOOK",
         "articleURL": "https://alanjones2.github.io/ajbooks/", 
         "imageURL":"https://alanjones2.github.io/ajbooks/images/plottingwithpandas.png",
         "title":"Plotting with Pandas: An Introduction to Data Visualization", 
