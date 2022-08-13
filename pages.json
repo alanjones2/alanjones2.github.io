@@ -30,9 +30,9 @@
         "tags":"DataVisualization Pandas Python"
     }, 
     {
-        "articleURL": "#", 
+        "articleURL": "https://towardsdatascience.com/3-ways-to-create-a-multi-page-streamlit-app-1825b5b07c0f", 
         "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/raw/master/stmultipage/stmultipage2/image/Screenshot%202022-06-02%20130001.png",
-        "title":"3 Ways to Create a Multi-Page Streamlit App", 
+        "title":"4 Ways to Create a Multi-Page Streamlit App", 
         "description":"Streamlit may not have been designed for full blown web sites but it is fairly straightforward to create multiple pages in a single appt", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stmultipage/stmultipage2",
