@@ -72,9 +72,10 @@
         "tags":"Python Pandas  DataVisualization  DataScience"
     }, 
     {
+        "type":"CODE HINT",
         "articleURL": "https://medium.com/codefile/customizing-streamlit-columns-4bfd58fcb7c9", 
         "imageURL":"https://miro.medium.com/max/788/0*yEPAqmhNAjh6HmsI.png",
-        "title":"Code Hint: Customizing Streamlit Columns", 
+        "title":"Customizing Streamlit Columns", 
         "description":"Streamlit has a limited layout model and this is normally an advantage as it allows the simple construction of sophisticated apps. But sometimes you want to modify the layout.", 
         "demoURL":"https://share.streamlit.io/alanjones2/alan-jones-article-code/codehintstreamlitcols/stcols.py",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/codehintstreamlitcols",
