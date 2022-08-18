@@ -7,7 +7,7 @@
         "description":"Which tools do you need and how to use them; and how to create your first interactive web app in Python", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/streamlitfromscratch",
-        "tags":"Python Pandas DataVisualization Streamlit"
+        "tags":"Python Streamlit"
     },    
     {
         "type":"ARTICLE",
@@ -17,7 +17,7 @@
         "description":"Media from the Apollo 11 Moon landing as a Streamlit app", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/streamlitfromscratch",
-        "tags":"Python Pandas DataVisualization Streamlit"
+        "tags":"Python Streamlit"
     },     
     {
         "type":"ARTICLE",
