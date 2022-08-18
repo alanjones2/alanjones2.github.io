@@ -8,6 +8,16 @@
         "demoURL":"None",
         "code":"https://github.com/alanjones2/streamlitfromscratch",
         "tags":"Python Pandas DataVisualization Streamlit"
+    },    
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://medium.com/technofile/streamlit-from-scratch-2-embedding-images-video-and-audio-9a26b0e9768a", 
+        "imageURL":"https://raw.githubusercontent.com/alanjones2/streamlitfromscratch/main/images/cover2.1.png",
+        "title":"Streamlit from Scratch 2: Embedding images, video and audio",
+        "description":"Media from the Apollo 11 Moon landing as a Streamlit app", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/streamlitfromscratch",
+        "tags":"Python Pandas DataVisualization Streamlit"
     },     
     {
         "type":"ARTICLE",
