@@ -1,6 +1,15 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "#", 
+        "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/raw/master/stgrid/images/1_23w13JLGqofbNLlDajur5A.jpeg",
+        "title":"How to Create a Grid Layout in Streamlit", 
+        "description":"We present a method to programmatically create a grid layout in Streamlit with a World population data demonstration app", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stgrid",
+        "tags":"Python Streamlit DataVisualization"
+    },     {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/technofile/streamlit-from-scratch-1-getting-started-43fcb335fc05", 
         "imageURL":"https://raw.githubusercontent.com/alanjones2/streamlitfromscratch/main/images/cover.png",
         "title":"Streamlit from Scratch 1: Getting Started", 
