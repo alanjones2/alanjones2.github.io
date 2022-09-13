@@ -1,7 +1,7 @@
 [
     {
         "type":"ARTICLE",
-        "articleURL": "#", 
+        "articleURL": "https://towardsdatascience.com/how-to-create-a-grid-layout-in-streamlit-7aff16b94508", 
         "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/raw/master/stgrid/images/1_23w13JLGqofbNLlDajur5A.jpeg",
         "title":"How to Create a Grid Layout in Streamlit", 
         "description":"We present a method to programmatically create a grid layout in Streamlit with a World population data demonstration app", 
