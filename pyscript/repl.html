@@ -1,0 +1,68 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <py-env>
+        - matplotlib
+        - pandas
+    </py-env>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1>REPL</h1>
+        <p class="lead">
+            Python code in the browser
+        </p>
+    </div>
+
+    <button  type="button" class="btn btn-secondary" 
+        onclick="document.getElementById('output').innerHTML='';
+        document.getElementById('err-div').innerHTML='';">
+        Clear Output
+    </button>
+  
+    <div class="row">
+        <div class="col-sm-6 p-2 ">
+            <!-- add attribute auto-generate="true" to automatically create a new cell -->
+            <py-repl id="my-repl" std-out="output" std-err="err-div">
+# Import libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+from pyodide.http import open_url
+
+url = 'https://raw.githubusercontent.com/alanjones2/uk-historical-weather/main/data/Heathrow.csv'
+url_content = open_url(url)
+
+df = pd.read_csv(url_content)
+
+# filter the data for the year 2020
+df = df[df['Year']==2020]
+
+
+fig, ax = plt.subplots()
+df.plot(y='Tmax', x='Month', figsize=(8,4),ax=ax)
+        
+
+            </py-repl>
+
+            <py-repl id="my-repl" std-out="output" std-err="err-div">
+print("123")
+fig
+            </py-repl>
+        </div>
+        <div class="col-sm-4 p-2 rounded">
+            <div id="output"></div>
+        </div>
+    </div>
+
+    <footer id="err-div"><!-- class="bg-red-700 text-white text-center border-t-4 border-green-500 fixed inset-x-0 bottom-0 p-4 hidden"-->
+    </footer>
+
+
+</body>
+</html>
