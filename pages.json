@@ -1,6 +1,26 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "#", 
+        "imageURL":"https://github.com/alanjones2/12Visuals/raw/main/images/6viz.png",
+        "title":"12 Essential Visualizations and How to Implement Them - part 1", 
+        "description":"We look at how to create the 12 most useful graphs and charts with Python, Matplotlib and Streamlit.", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/12Visuals",
+        "tags":"Python Streamlit"
+    },    
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://medium.com/technofile/nasa-open-apis-the-astronomy-picture-of-the-day-in-streamlit-73d02ea5607e", 
+        "imageURL":"https://github.com/alanjones2/stAPOD/raw/main/images/HorseheadIr_HubbleNachman_2691.jpg",
+        "title":"NASA Open APIs: The Astronomy Picture of the Day in Streamlit", 
+        "description":"Streamlit is not just for Data Science, you can create excellent general-purpose web sites, too. Here we use the NASA Open API and show how to keep your API key a secret.", 
+        "demoURL":"https://alanjones2-stapod-apod1-10ei33.streamlitapp.com/",
+        "code":"https://github.com/alanjones2/stAPOD",
+        "tags":"Python Streamlit"
+    },
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/technofile/nasa-open-apis-the-astronomy-picture-of-the-day-in-streamlit-73d02ea5607e", 
         "imageURL":"https://github.com/alanjones2/stAPOD/raw/main/images/HorseheadIr_HubbleNachman_2691.jpg",
         "title":"NASA Open APIs: The Astronomy Picture of the Day in Streamlit", 
