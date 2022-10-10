@@ -9,16 +9,7 @@
         "code":"https://github.com/alanjones2/12Visuals",
         "tags":"Python Streamlit"
     },    
-    {
-        "type":"ARTICLE",
-        "articleURL": "https://medium.com/technofile/nasa-open-apis-the-astronomy-picture-of-the-day-in-streamlit-73d02ea5607e", 
-        "imageURL":"https://github.com/alanjones2/stAPOD/raw/main/images/HorseheadIr_HubbleNachman_2691.jpg",
-        "title":"NASA Open APIs: The Astronomy Picture of the Day in Streamlit", 
-        "description":"Streamlit is not just for Data Science, you can create excellent general-purpose web sites, too. Here we use the NASA Open API and show how to keep your API key a secret.", 
-        "demoURL":"https://alanjones2-stapod-apod1-10ei33.streamlitapp.com/",
-        "code":"https://github.com/alanjones2/stAPOD",
-        "tags":"Python Streamlit"
-    },
+
     {
         "type":"ARTICLE",
         "articleURL": "https://medium.com/technofile/nasa-open-apis-the-astronomy-picture-of-the-day-in-streamlit-73d02ea5607e", 
@@ -103,7 +94,8 @@
         "demoURL":"https://alanjones2.github.io/pyscript/weather1.html",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript",
         "tags":"Python Pandas  DataVisualization PyScript"
-    },     {
+    },     
+    {
         "articleURL": "https://towardsdatascience.com/visualizing-health-risk-2a082417f3f2", 
         "imageURL":"https://miro.medium.com/max/875/0*uwsoNWdkO1siXYIJ",
         "title":"Visualizing Health Risk", 
@@ -229,15 +221,6 @@
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stmultipage",
         "tags":"Streamlit Python"
-    },
-    {
-        "articleURL": "https://towardsdatascience.com/an-interactive-co2-emissions-dashboard-with-plotly-and-streamlit-b0bd4ae80cc8", 
-        "imageURL":"https://miro.medium.com/max/875/1*4Z0ZieIuBVNsyFXl0AGtmA.png",
-        "title":"An Interactive CO2 Emissions Dashboard with Plotly and  Streamlit", 
-        "description":"With Plotly charts and Streamlit's flexible input, layout and theming options, you can build a great interactive data visualization app from live data", 
-        "demoURL":"http://ajco2.herokuapp.com/",
-        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/streamlitdark",
-        "tags":"Streamlit Plotly DataVisualization"
     },
     {
         "articleURL": "https://towardsdatascience.com/an-interactive-web-dashboard-with-plotly-and-flask-c365cdec5e3f", 
