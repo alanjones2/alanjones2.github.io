@@ -1,7 +1,7 @@
 [
     {
         "type":"ARTICLE",
-        "articleURL": "#", 
+        "articleURL": "https://towardsdatascience.com/12-essential-visualizations-and-how-to-implement-them-part-1-41e40400a740", 
         "imageURL":"https://github.com/alanjones2/12Visuals/raw/main/images/6viz.png",
         "title":"12 Essential Visualizations and How to Implement Them - part 1", 
         "description":"We look at how to create the 12 most useful graphs and charts with Python, Matplotlib and Streamlit.", 
