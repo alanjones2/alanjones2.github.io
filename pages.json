@@ -7,8 +7,18 @@
         "description":"We look at how to create the 12 most useful graphs and charts with Python, Matplotlib and Streamlit.", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/12Visuals",
-        "tags":"Python Streamlit"
+        "tags":"Python Streamlit DataVisualization"
     },    
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://towardsdatascience.com/12-essential-visualizations-and-how-to-implement-them-part-2-e47c1d4b9784", 
+        "imageURL":"https://github.com/alanjones2/12Visuals/raw/main/images/2nd6.png",
+        "title":"12 Essential Visualizations and How to Implement Them - part 2", 
+        "description":"We look at how to create the 12 most useful graphs and charts with Python, Matplotlib and Streamlit.", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/12Visuals",
+        "tags":"Python Streamlit DataVisualization"
+    }, 
 
     {
         "type":"ARTICLE",
