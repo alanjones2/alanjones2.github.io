@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://towardsdatascience.com/co2-emissions-infographics-in-python-369dd968eb84?sk=b127cb26b5c707efc5c581ec64e0b6ea", 
+        "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/raw/master/infographic/images/ISS_earth.en.jpg",
+        "title":"CO2 Emissions Infographics in Python", 
+        "description":"How To Build a Data Infographics with Python and Matplotlib", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/infographic",
+        "tags":"Python DataVisualization"
+    }, 
+    {
+        "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/12-essential-visualizations-and-how-to-implement-them-part-1-41e40400a740", 
         "imageURL":"https://github.com/alanjones2/12Visuals/raw/main/images/6viz.png",
         "title":"12 Essential Visualizations and How to Implement Them - part 1", 
