@@ -50,26 +50,7 @@
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stgrid",
         "tags":"Python Streamlit DataVisualization"
     },     
-    {
-        "type":"ARTICLE",
-        "articleURL": "https://medium.com/technofile/streamlit-from-scratch-1-getting-started-43fcb335fc05", 
-        "imageURL":"https://raw.githubusercontent.com/alanjones2/streamlitfromscratch/main/images/cover.png",
-        "title":"Streamlit from Scratch 1: Getting Started", 
-        "description":"Which tools do you need and how to use them; and how to create your first interactive web app in Python", 
-        "demoURL":"None",
-        "code":"https://github.com/alanjones2/streamlitfromscratch",
-        "tags":"Python Streamlit"
-    },    
-    {
-        "type":"ARTICLE",
-        "articleURL": "https://medium.com/technofile/streamlit-from-scratch-2-embedding-images-video-and-audio-9a26b0e9768a", 
-        "imageURL":"https://raw.githubusercontent.com/alanjones2/streamlitfromscratch/main/images/cover2.1.png",
-        "title":"Streamlit from Scratch 2: Embedding images, video and audio",
-        "description":"Media from the Apollo 11 Moon landing as a Streamlit app", 
-        "demoURL":"None",
-        "code":"https://github.com/alanjones2/streamlitfromscratch",
-        "tags":"DataVisualization Pandas Python Streamlit"
-    },     
+    
     {
         "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/pyscript-v-flask-how-to-create-a-python-app-in-the-browser-or-on-a-server-2cfe4dd0df9d", 
