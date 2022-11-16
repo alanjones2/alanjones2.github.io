@@ -1,6 +1,26 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://medium.com/towards-data-science/streamlit-from-scratch-getting-started-f4baa7dd6493", 
+        "imageURL":"https://miro.medium.com/max/720/0*kkK1fbUmCHyWc8j_",
+        "title":"Streamlit from Scratch: Getting Started", 
+        "description":"Finding the tools you need and how to use them to create your first interactive web app in Python and Streamlit", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/streamlitfromscratch#readme",
+        "tags":"Python Streamlit DataVisualization"
+    },    
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://towardsdatascience.com/streamlit-from-scratch-embedding-images-video-and-audio-8b2e8b98fad4", 
+        "imageURL":"https://miro.medium.com/max/720/0*-U4ITgMADLymgDez.jpg",
+        "title":"Streamlit from Scratch: Embedding Images, Video and Audio", 
+        "description":"Streamlit was designed to help data scientists but it’s not just about data, adding media to your apps helps to communicate your ideas", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/streamlitfromscratch#readme",
+        "tags":"Python DataVisualization"
+    },    
+    {
+        "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/co2-emissions-infographics-in-python-369dd968eb84?sk=b127cb26b5c707efc5c581ec64e0b6ea", 
         "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/raw/master/infographic/images/ISS_earth.en.jpg",
         "title":"CO2 Emissions Infographics in Python", 
