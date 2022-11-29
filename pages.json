@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://towardsdatascience.com/organize-your-data-science-projects-with-ppdac-a-case-study-26badfb28fbf", 
+        "imageURL":"https://cdn-images-1.medium.com/max/800/0*atx1R4w9hLP9L03_",
+        "title":"Organize Your Data Science Projects with PPDAC - a Case Study", 
+        "description":"Define your problem, develop a plan, find the data, analyze the data and then communicate your conclusions - that's PPDAC", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/PPDAC#readme",
+        "tags":"Python DataScience DataVisualization Statistics"
+    },   
+    {
+        "type":"SERIES",
         "articleURL": "https://medium.com/towards-data-science/streamlit-from-scratch-getting-started-f4baa7dd6493", 
         "imageURL":"https://miro.medium.com/max/720/0*kkK1fbUmCHyWc8j_",
         "title":"Streamlit from Scratch: Getting Started", 
@@ -10,7 +20,7 @@
         "tags":"Python Streamlit DataVisualization"
     },    
     {
-        "type":"ARTICLE",
+        "type":"SERIES",
         "articleURL": "https://towardsdatascience.com/streamlit-from-scratch-embedding-images-video-and-audio-8b2e8b98fad4", 
         "imageURL":"https://miro.medium.com/max/720/0*-U4ITgMADLymgDez.jpg",
         "title":"Streamlit from Scratch: Embedding Images, Video and Audio", 
@@ -20,7 +30,7 @@
         "tags":"Python Streamlit DataVisualization"
     },    
     {
-        "type":"ARTICLE",
+        "type":"SERIES",
         "articleURL": "https://medium.com/towards-data-science/streamlit-from-scratch-presenting-data-d5b0c77f9622", 
         "imageURL":"https://github.com/alanjones2/streamlitfromscratch/raw/main/images/group-of-charts.png",
         "title":"Streamlit from Scratch: Presenting Data", 
