@@ -11,34 +11,14 @@
     },   
     {
         "type":"SERIES",
-        "articleURL": "https://medium.com/towards-data-science/streamlit-from-scratch-getting-started-f4baa7dd6493", 
-        "imageURL":"https://miro.medium.com/max/720/0*kkK1fbUmCHyWc8j_",
-        "title":"Streamlit from Scratch: Getting Started", 
-        "description":"Finding the tools you need and how to use them to create your first interactive web app in Python and Streamlit", 
+        "articleURL": "https://alanjones2.github.io/streamlitfromscratch/", 
+        "imageURL":"https://github.com/alanjones2/streamlitfromscratch/raw/main/images/tools.jfif",
+        "title":"Streamlit from Scratch", 
+        "description":"Find the tools you need and use them to create your first interactive web app in Python and Streamlit. Add media to your apps to help to communicate your ideas, produce text figures, tables and sophisticated charts from Pandas dataframes using Matplotlib, Plotly, Altair and other libraries. Finally, use the UI and layout features of Streamlit to create data dashboard apps.", 
         "demoURL":"None",
-        "code":"https://github.com/alanjones2/streamlitfromscratch#readme",
+        "code":"None",
         "tags":"Python Streamlit DataVisualization"
     },    
-    {
-        "type":"SERIES",
-        "articleURL": "https://towardsdatascience.com/streamlit-from-scratch-embedding-images-video-and-audio-8b2e8b98fad4", 
-        "imageURL":"https://miro.medium.com/max/720/0*-U4ITgMADLymgDez.jpg",
-        "title":"Streamlit from Scratch: Embedding Images, Video and Audio", 
-        "description":"Streamlit was designed to help data scientists but it’s not just about data, adding media to your apps helps to communicate your ideas", 
-        "demoURL":"None",
-        "code":"https://github.com/alanjones2/streamlitfromscratch#readme",
-        "tags":"Python Streamlit DataVisualization"
-    },    
-    {
-        "type":"SERIES",
-        "articleURL": "https://medium.com/towards-data-science/streamlit-from-scratch-presenting-data-d5b0c77f9622", 
-        "imageURL":"https://github.com/alanjones2/streamlitfromscratch/raw/main/images/group-of-charts.png",
-        "title":"Streamlit from Scratch: Presenting Data", 
-        "description":"From text and tables to sophisticated charts. From Pandas dataframes to Matplotlib, Plotly, Altair and other charts. Streamlit provides a comprehensive set of tools for presenting your data", 
-        "demoURL":"None",
-        "code":"https://github.com/alanjones2/streamlitfromscratch#readme",
-        "tags":"Python Streamlit DataVisualization"
-    }, 
     {
         "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/co2-emissions-infographics-in-python-369dd968eb84?sk=b127cb26b5c707efc5c581ec64e0b6ea", 
