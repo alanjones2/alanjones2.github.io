@@ -1,5 +1,27 @@
 [
     {
+        "type":"ONLINE COURSE",
+        "articleURL": "https://alanjones2.github.io/streamlitfromscratch/", 
+        "imageURL":"https://github.com/alanjones2/streamlitfromscratch/raw/main/images/tools.jfif",
+        "title":"Streamlit from Scratch", 
+        "description":"Find the tools you need and use them to create your first interactive web app in Python and Streamlit. Add media to your apps to help to communicate your ideas, produce text figures, tables and sophisticated charts from Pandas dataframes using Matplotlib, Plotly, Altair and other libraries. Finally, use the UI and layout features of Streamlit to create data dashboard apps.", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Python Streamlit DataScience DataVisualization"
+    }, 
+    
+    {
+        "type":"ARTICLE",
+        "articleURL": "    https://alanjones2.github.io/streamlitfromscratch/mdcolour/mdcolour.html", 
+        "imageURL":"https://alanjones2.github.io/streamlitfromscratch/mdcolour/images/katzki.jfif",
+        "title":"Streamlit Text Gets Colourful", 
+        "description":"Your Streamlit text no longer has to be boring. Version 1.16 lets you colour markdown text.", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Python Streamlit DataScience DataVisualization"
+    },   
+   
+    {
         "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/organize-your-data-science-projects-with-ppdac-a-case-study-26badfb28fbf", 
         "imageURL":"https://cdn-images-1.medium.com/max/800/0*atx1R4w9hLP9L03_",
@@ -9,16 +31,7 @@
         "code":"https://github.com/alanjones2/PPDAC#readme",
         "tags":"Python DataScience DataVisualization Statistics"
     },   
-    {
-        "type":"SERIES",
-        "articleURL": "https://alanjones2.github.io/streamlitfromscratch/", 
-        "imageURL":"https://github.com/alanjones2/streamlitfromscratch/raw/main/images/tools.jfif",
-        "title":"Streamlit from Scratch", 
-        "description":"Find the tools you need and use them to create your first interactive web app in Python and Streamlit. Add media to your apps to help to communicate your ideas, produce text figures, tables and sophisticated charts from Pandas dataframes using Matplotlib, Plotly, Altair and other libraries. Finally, use the UI and layout features of Streamlit to create data dashboard apps.", 
-        "demoURL":"None",
-        "code":"None",
-        "tags":"Python Streamlit DataVisualization"
-    },    
+   
     {
         "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/co2-emissions-infographics-in-python-369dd968eb84?sk=b127cb26b5c707efc5c581ec64e0b6ea", 
