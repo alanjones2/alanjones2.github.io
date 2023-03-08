@@ -8,7 +8,19 @@
         "demoURL":"None",
         "code":"None",
         "tags":"Python Pyscript"
-    },     
+    },    
+    
+    {
+        "type":"BOOK",
+        "articleURL": "    https://www.amazon.com/Art-Statistics-How-Learn-Data/dp/1541675703/ref=sr_1_1?_encoding=UTF8&amp;camp=1789&amp;creative=9325&amp;crid=1PPXO3JG9UPDR&amp;keywords=the+art+of+statistics&amp;linkCode=ur2&amp;linkId=b71669deca0a471424d5bc6fccbba1b3&amp;qid=1648295722&amp;sprefix=the+art+of+statistics%25252Caps%25252C177&amp;sr=8-1&_encoding=UTF8&tag=alanjones01-20&linkCode=ur2&linkId=fdf08c9a6a07285fa2432673497c25ec&camp=1789&creative=9325", 
+        "imageURL":"https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg",
+        "title":"The Art of Statistics: How to Learn from Data", 
+        "description":"In this 'important and comprehensive' guide to statistical thinking (New Yorker), discover how data literacy is changing the world and gives you a better understanding of life’s biggest problems. - I have used this book in various articles and found it to be invaluable.", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"book Statistics"
+    },      
+
     {
         "type":"ARTICLE",
         "articleURL": "https://medium.com/codefile/data-analysis-with-chatgpt-and-jupyter-notebooks-fa2b03753396", 
@@ -63,6 +75,17 @@
         "tags":"Python DataVisualization"
     }, 
     {
+        "type":"BOOK",
+        "articleURL": "https://amzn.to/3JmzEFq", 
+        "imageURL":"https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg",
+        "title":"Storytelling with Data: A Data Visualization Guide for Business", 
+        "description":"Don't simply show your data—tell a story with it!  Storytelling with Data teaches you the fundamentals of data visualization and how to communicate effectively with data. I use this excellent book in the series of articles '12 Essential Visualizations and How to Implement them.", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"book DataVisualization"
+    },    
+    
+    {
         "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/12-essential-visualizations-and-how-to-implement-them-part-1-41e40400a740", 
         "imageURL":"https://github.com/alanjones2/12Visuals/raw/main/images/6viz.png",
@@ -72,6 +95,7 @@
         "code":"https://github.com/alanjones2/12Visuals",
         "tags":"Python Streamlit DataVisualization"
     },    
+    
     {
         "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/12-essential-visualizations-and-how-to-implement-them-part-2-e47c1d4b9784", 
