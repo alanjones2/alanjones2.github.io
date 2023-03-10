@@ -273,7 +273,8 @@
         "code":"None",
         "tags":"DataVisualization"
     },    
-    {
+    {   
+        "type":"BOOK",
         "articleURL": "https://amzn.to/3ZuQO9B", 
         "imageURL":"https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg",
         "title":"How Charts Lie: Getting Smarter about Visual Information", 
