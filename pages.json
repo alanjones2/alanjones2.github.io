@@ -1,6 +1,26 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://medium.com/codefile/how-i-used-chatgpt-to-build-a-streamlit-dashboard-app-4486234e7d0a", 
+        "imageURL":"https://miro.medium.com/v2/resize:fit:720/format:webp/1*N-tvhuOpPD_PDNechh5Dpg.png",
+        "title":"How I used ChatGPT to Build a Streamlit Dashboard App", 
+        "description":"Using CO² emission data I created a dashboard app in Streamlit with ChatGPT and no coding", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Python DataScience DataVisualization AI ChatGPT"
+    },  
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://medium.com/technofile/will-chatgpt-kill-open-source-and-is-it-even-legal-7772fe40d3a9", 
+        "imageURL":"https://miro.medium.com/v2/resize:fit:720/0*3Kjr60hCuBAj-TB_",
+        "title":"Will ChatGPT Kill Open Source and Is It Even Legal?", 
+        "description":"Time and a lawsuit will tell but there is a large question mark over generative AI and its use of copyrighted material", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Law Open Source AI ChatGPT"
+    }, 
+        {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/codefile/whats-new-in-pyscript-dfdf25538281?sk=4871333d742784467e64cd3ffd25b19f", 
         "imageURL":"https://miro.medium.com/v2/resize:fit:720/format:webp/1*ujQm47L2k5_rtXD5_kcZ3A.png",
         "title":"What’s new in PyScript in 2023", 
@@ -29,7 +49,7 @@
         "description":"The conversational way of generating code with ChatGPT works well with the cell structure of Jupyter Notebooks. There is a natural workflow when using ChatGPT with Jupyter Notebooks which makes generating a code for a Jupyter Notebook using ChatGPT surprisingly easy and satisfying.", 
         "demoURL":"None",
         "code":"None",
-        "tags":"Python DataScience DataVisualization AI"
+        "tags":"Python DataScience DataVisualization AI ChatGPT"
     },  
     {
         "type":"ONLINE COURSE",
