@@ -122,9 +122,10 @@
 
         <div class="row" style="width: 100%; padding-bottom: 10px; ">
             <button type="button" class="btn btn-info" style="margin: 2px;">Select a topic: </button>
-            <button type="button" class="btn btn-secondary" onclick="selectTag('All')" style="margin: 2px;font-size: small;">All</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('All')"
+                style="margin: 2px;font-size: small;">All</button>
             <button type="button" class="btn btn-secondary" onclick="selectTag('book')"
-            style="margin: 2px;font-size: small;">Books</button>
+                style="margin: 2px;font-size: small;">Books</button>
             <button type="button" class="btn btn-secondary" onclick="selectTag('Python')"
                 style="margin: 2px;font-size: small;">Python</button>
             <button type="button" class="btn btn-secondary" onclick="selectTag('Jupyter')"
@@ -144,7 +145,8 @@
             <!--<button type="button" class="btn btn-secondary" onclick="selectTag('DataScience')" style="margin: 2px;">Data Science</button>-->
             <button type="button" class="btn btn-secondary" onclick="selectTag('Statistics')"
                 style="margin: 2px;font-size: small;">Statistics</button>
-            <button type="button" class="btn btn-secondary" onclick="selectTag('Code-Hints')" style="margin: 2px;font-size: small;">Code
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Code-Hints')"
+                style="margin: 2px;font-size: small;">Code
                 Hints</button>
             <button type="button" class="btn btn-secondary" onclick="selectTag('PyScript')"
                 style="margin: 2px;font-size: small;">PyScript</button>
@@ -153,8 +155,8 @@
 
 
         </div>
- 
-            <div class="row" style="width: 100%;">
+
+        <div class="row" style="width: 100%;">
             <div class="col-sm-9 p-2">
                 {% for page in pages -%}
                 <div class="p-1 mb-2 bg-white article dBlock" tags="{{page.tags}}">
@@ -165,9 +167,9 @@
                             <h5 class="mt-0">
                                 <div class="font-weight-light small">
                                     {%if page.type %}
-                                        {{page.type}}
+                                    {{page.type}}
                                     {%else%}
-                                        ARTICLE
+                                    ARTICLE
                                     {% endif %}
                                 </div>
                                 <a href="{{page.articleURL}}" target="_blank">
@@ -177,13 +179,38 @@
                             {{page.description}}
                         </div>
                     </div>
-                    <hr/>
+                    <hr />
                 </div>
 
                 {% endfor %}
             </div>
             <div class="col-sm-2 p-2">
                 <!ads etc here -->
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                        crossorigin="anonymous"></script>
+                    <!-- sfs vertical -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <iframe
+                        src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=49&l=ur1&category=amazondevices&banner=1M74CAHK9KZ0ZN99GNG2&f=ifr&linkID=d181ac653383a5cb55997ab1ee33be3b&t=alanjones01-20&tracking_id=alanjones01-20"
+                        width="300" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;"
+                        frameborder="0"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe>
+
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                        crossorigin="anonymous"></script>
+                    <!-- sfs vertical -->
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
             </div>
         </div>
 
@@ -194,8 +221,9 @@
             <i>Please note that all the software in these articles is written for educational purposes and should not be
                 considered suitable for production code</i>
             <br />
-            <i>This site contains affliate links. If you purchase an item through such a link I may get a commision but at no cost to you.</i>
-            <br/>
+            <i>This site contains affliate links. If you purchase an item through such a link I may get a commision but
+                at no cost to you.</i>
+            <br />
             <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
 
         </footer>
