@@ -1,6 +1,26 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://medium.com/codefile/chatgpt-prompting-for-coders-a-prototyping-approach-b6bda1b9fd28", 
+        "imageURL":"https://miro.medium.com/v2/resize:fit:786/format:webp/1*0YOew4uEABFAEIp87uyw-Q.png",
+        "title":"ChatGPT Prompting for Coders: a Prototyping Approach", 
+        "description":"A suitable prompting technique can make the development of usable code with ChatGPT quite painless. Here we prototype a Streamlit app for tracking cryptocurrency.", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"AI ChatGPT Python"
+    },  
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://medium.com/technofile/generative-ai-could-replace-the-equivalent-of-300m-workers-ee9f46a385fe", 
+        "imageURL":"https://miro.medium.com/v2/0*YW235_4rjMkp8LLn",
+        "title":"ChatGPT-like AI Could Replace the Equivalent of 300m Workers", 
+        "description":"A new Goldman Sachs report will be scary reading for some.", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"AI ChatGPT Economy"
+    },  
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/codefile/how-i-used-chatgpt-to-build-a-streamlit-dashboard-app-4486234e7d0a", 
         "imageURL":"https://miro.medium.com/v2/resize:fit:720/format:webp/1*N-tvhuOpPD_PDNechh5Dpg.png",
         "title":"How I used ChatGPT to Build a Streamlit Dashboard App", 
