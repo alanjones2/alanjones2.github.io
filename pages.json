@@ -4,7 +4,7 @@
         "articleURL": "https://medium.com/towards-data-science/build-a-web-app-with-jupyter-and-mercury-9d59661441b7", 
         "imageURL":"https://cdn-images-1.medium.com/max/880/0*yj43oK1X0_Ydu2_e",
         "title":"Build a Web App with Jupyter and Mercury", 
-        "description":"Mercury provides a simple way to transform Jupyter Notebooks into interactive web applications.", 
+        "description":"Mercury provides a simple way to transform Jupyter Notebooks into interactive web apps.", 
         "demoURL":"https://alanjones.runmercury.com/app/m3c",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury2",
         "tags":"DataScience Python DataVisualization Jupyter"
