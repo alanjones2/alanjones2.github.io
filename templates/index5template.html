@@ -179,14 +179,30 @@
                             {{page.description}}
                         </div>
                     </div>
-                    <hr />
+                    {%if page.demoURL != 'None' %}
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="{{page.demoURL}}" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    {% endif %}
+                    {%if page.code != 'None' %}
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="{{page.code}}" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    {% endif %}
+                    <hr/>
                 </div>
+                
 
                 {% endfor %}
             </div>
             <div class="col-sm-3 p-2">
                 <!ads etc here -->
                     <div>
+                        <!-- Substack-->
+                        <h4><a href="https://technofile.substack.com" target="_blank" >Subscribe to my occasional, free, newsletter</a></h4>
+                        <hr/>
                         <!-- Streamlit from scratch-->
                         <p>ONLINE COURSE</p>
                         <h3><a href='https://alanjones2.github.io/streamlitfromscratch/' target='_blank'>Streamlit from

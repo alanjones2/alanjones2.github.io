@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "#", 
+        "imageURL":"https://cdn-images-1.medium.com/max/880/0*yj43oK1X0_Ydu2_e",
+        "title":"How to Publish Your Jupyter Notebook Apps with Mercury Cloud", 
+        "description":"Convert your Notebooks to web apps then publish them in the cloud", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury2",
+        "tags":"DataScience Python DataVisualization Jupyter"
+    }, 
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/codefile/chatgpt-prompting-for-coders-a-prototyping-approach-b6bda1b9fd28", 
         "imageURL":"https://miro.medium.com/v2/resize:fit:786/format:webp/1*0YOew4uEABFAEIp87uyw-Q.png",
         "title":"ChatGPT Prompting for Coders: a Prototyping Approach", 
