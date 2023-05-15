@@ -7,19 +7,19 @@
     <meta content="width=device-width, initial-scale=1">
 
     <meta property="og:image"
-        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+        content="https://cdn-images-1.medium.com/max/800/1*7wmbg1pbCnj13ORC39diiw.png">
     <meta name="twitter:image:src"
-        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+        content="https://cdn-images-1.medium.com/max/800/1*7wmbg1pbCnj13ORC39diiw.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="article:author" content="https://alanjones2.github.io">
     <meta name="twitter:creator" content="@MrAlanJones">
     <meta content="Alan Jones">
 
 
-    <meta content="Coding, data science data visualization in Python and Julia - Articles and Tutorials"
+    <meta content="Data Analysis in Python with ChatGPT and Jupyter Notebooks"
        >
-    <meta content="https://alanjones2.github.io" property="og:url">
-    <meta content="AlanJones: Coding, data science data visualization in Python and Julia - Articles and Tutorials"
+    <meta content="https://alanjones2.github.io/articles/ds-chatgpt.html" property="og:url">
+    <meta content="Data Analysis in Python with ChatGPT and Jupyter Notebooks"
         property="og:title">
 
 
@@ -39,7 +39,7 @@
     <!--<script src="./prism/prism.js"></script>-->
 </head>
 
-<body>
+<body style="font-size: larger;">
 
 
     <div class="container">
@@ -52,7 +52,7 @@
         </div>
 
         <div class="row" style="width: 100%;">
-            <div class="col-sm-9 p-2">
+            <div class="col-sm-12 p-2">
 
                 <div class="section-inner sectionLayout--insetColumn">
                     <figure class="figure float-end imgshadow m-2"><img
@@ -98,7 +98,7 @@
                     <p>All of the chart images are created, by me, from the generated code.</p>
                     <h4 class="graf graf--h4">Beginning the Jupyter&nbsp;notebook</h4>
                     <p>My first instruction to ChatGPT was this:</p>
-                    <p><strong >Me: We are going to
+                    <p class="text-primary"><strong >Me: We are going to
                             write a data analysis program using pandas and Matplotlib in a Jupyter notebook. Write the
                             first
                             cell.</strong></p>
@@ -112,7 +112,7 @@
     # Enable inline plotting in Jupyter notebook
     %matplotlib inline</code></pre>
 
-                    <p>ChatGPT: <i>This first cell imports the
+    <p class="text-primary"><b>ChatGPT:</b> <i>This first cell imports the
                             pandas and matplotlib libraries and sets up inline plotting in the Jupyter notebook. The pd
                             alias is
                             used for pandas and plt is used for matplotlib.</i></p>
@@ -123,16 +123,14 @@
                         from
                         one
                         to the other was very simple.</p>
-                    <figure class="graf graf--figure"><img class="graf-image" data-height="1080"
-                            data-image-id="1*JfsUPakt3xzXZj279ArETA.png" data-width="1920"
-                            src="https://cdn-images-1.medium.com/max/800/1*JfsUPakt3xzXZj279ArETA.png" />
-                        <figcaption class="imageCaption">This is my setup — VSCode running the notebook on the left and
-                            Chrome
-                            running ChatGPT on the right </figcaption>
+                    <figure>
+                        <img src="https://cdn-images-1.medium.com/max/800/1*JfsUPakt3xzXZj279ArETA.png" />
                     </figure>
+                    <p class="blockquote-footer text-center">This is my setup — VSCode running the notebook on the left and
+                        Chrome running ChatGPT on the right </p>
                     <p>Next, I want to load a CSV file and create a dataframe and I realise
                         that my commands can be very concise, so I say:</p>
-                    <p><strong >Me: Open </strong><a
+                    <p class="text-primary"><strong >Me: Open </strong><a
                             class="markup--anchor markup--p-anchor"
                             data-href="https://github.com/alanjones2/dataviz/raw/master/london2018.csv"
                             href="https://github.com/alanjones2/dataviz/raw/master/london2018.csv" rel="noopener"
@@ -143,7 +141,7 @@
                     <pre class="bg-light"><code class="language-Python">    # Import data from csv file
     data = pd.read_csv("https://github.com/alanjones2/dataviz/raw/master/london2018.csv")</code></pre>
 
-                    <p><em>ChatGPT: This cell uses the
+                    <p class="text-primary"><em><b>ChatGPT:</b> This cell uses the
                             pd.read_csv() function to import the csv file from the provided url and load it into a
                             pandas
                             dataframe called “data”. The pd.read_csv() function is used to read and import csv files
@@ -170,13 +168,13 @@
                         need to
                         be careful and monitor just what ChatGPT is doing. We’ll see other examples of errors later.</p>
                     <p>I now want to see the dataframe.</p>
-                    <p><strong >Me: Show the
+                    <p class="text-primary"><strong >Me: Show the
                             data</strong></p>
 
                     <pre class="bg-light"><code class="language-Python">    # Show the data
     data</code></pre>
                             
-                    <p><em>ChatGPT: This cell uses the data
+    <p class="text-primary"><em><b>ChatGPT:</b> This cell uses the data
                             dataframe and shows the dataframe content by just calling it on the last line of the cell.
                             This will print the dataframe on the notebook output and shows the data in tabular format. You can
                             also use the following code snippet to display the first few records of the dataframe.</em></p>
@@ -197,7 +195,7 @@
                     </p>
                     <p>I going to ask it to create a new column with the average temperature.
                         The column should be called <em>Tmean</em>.</p>
-                    <p><strong >Me: Create a new column
+                    <p class="text-primary"><strong >Me: Create a new column
                             in the dataframe called Tmean which is the average of the columns Tmax and Tmin</strong></p>
 
                             <pre class="bg-light"><code class="language-Python">    # Create a new column 'Tmean' as the average of 'Tmax' and 'Tmin'
@@ -216,14 +214,14 @@
                     <p>That looks fine but the comments are getting more verbose now that I am
                         asking it to do slightly more complex work.</p>
                     <h4>Let's draw a chart.</h4>
-                    <p><strong >Me: Draw a line chart of
+                    <p class="text-primary"><strong >Me: Draw a line chart of
                             Tmean over Month</strong></p>
 
                             <pre class="bg-light"><code class="language-Python">    # Draw a line chart of Tmean over Month
     data.plot(x='Month', y='Tmean', kind='line')
     plt.show()</code></pre>
 
-                    <p><em>ChatGPT: This cell uses the data
+    <p class="text-primary"><em><b>ChatGPT:</b> This cell uses the data
                             dataframe to create a line chart of the 'Tmean' column over the 'Month' column. The plot()
                             function
                             is used, with the x parameter set to 'Month' and the y parameter set to 'Tmean'. The kind
@@ -241,7 +239,7 @@
                             data-image-id="0*UQgwJ7CT7Z8cosqH.png" data-width="378"
                             src="https://cdn-images-1.medium.com/max/800/0*UQgwJ7CT7Z8cosqH.png" /></figure>
                     <p>But it has a further suggestion:</p>
-                    <p><em>ChatGPT: You can also use the
+                    <p class="text-primary"><em><b>ChatGPT:</b> You can also use the
                             following code snippet to draw a line chart of Tmean over Month:</em></p>
 
                             <pre class="bg-light"><code class="language-Python">    plt.plot(data['Month'], data['Tmean'])
@@ -259,7 +257,7 @@
                             data-image-id="0*a6EnRsp2nXCV77YZ.png" data-width="392"
                             src="https://cdn-images-1.medium.com/max/800/0*a6EnRsp2nXCV77YZ.png" /></figure>
                     <p>Now I want a chart that plots all of the temperatures together.</p>
-                    <p><strong >Me: draw a line chart
+                    <p class="text-primary"><strong >Me: draw a line chart
                             that includes lines for Tmin, Tmean and Tmax</strong></p>
                     <p>ChatGPT elects to use pandas plotting again - this is the simplest
                         solution.</p>
@@ -268,7 +266,7 @@
     data.plot(x='Month', y=['Tmin','Tmean','Tmax'], kind='line')
     plt.show()</code></pre>
                         
-                    <p><em>ChatGPT: This cell uses the
+    <p class="text-primary"><em><b>ChatGPT:</b> This cell uses the
                         </em><code
                             class="markup--code markup--p-code"><em>data</em></code><em
                            > dataframe to create a line chart of the 'Tmin','Tmean' and
@@ -316,7 +314,7 @@
                     <p>Now I'm going to ask something slightly more complicated. I want the
                         three lines plotted with the area between <em>Tmax</em> and <em
                            >Tmin</em> shaded so it looks more like a range.</p>
-                    <p><strong >Me: draw a similar chart
+                    <p class="text-primary"><strong >Me: draw a similar chart
                             with shading between Tmin and Tmax</strong></p>
 
                             <pre class="bg-light"><code class="language-Python">    # Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax
@@ -329,13 +327,13 @@
     plt.legend()
     plt.show()</code></pre>
 
-                    <p><em>ChatGPT: This code snippet uses the
+    <p class="text-primary"><em><b>ChatGPT:</b> This code snippet uses the
                             plt.fill_between() function to add shading…</em></p>
                     <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*IfW6s1EICh4mf26w.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*IfW6s1EICh4mf26w.png" /></figure>
                     <p>That’s what I asked for but I want to modify my request.</p>
-                    <p><strong >Me: draw the same chart
+                    <p class="text-primary"><strong >Me: draw the same chart
                             with Tmin and Tmax lines the same colour as the shading and Tmean black</strong></p>
                     <p>Notice that I don’t need to specify that chart again, ChatGPT remembers
                         what it has done in this session so it knows which chart I mean.</p>
@@ -350,14 +348,14 @@
     plt.legend()
     plt.show()</code></pre>
 
-                    <p><em>ChatGPT: This code snippet is
+    <p class="text-primary"><em><b>ChatGPT:</b> This code snippet is
                             similar to the previous one but it uses the ‘color’ parameter…</em></p>
                     <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*6WLlS5PiqlbJfzDZ.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*6WLlS5PiqlbJfzDZ.png" /></figure>
                     <p>Pretty good!</p>
                     <p>Let's try a different chart.</p>
-                    <p><strong >Me: draw a scatter
+                    <p class="text-primary"><strong >Me: draw a scatter
                             diagram of Sun against Rain</strong></p>
 
                     <pre class="bg-light"><code class="language-Python"></code>    # Draw a scatter diagram of Sun against Rain
@@ -366,14 +364,14 @@
     plt.ylabel('Rain')
     plt.show()</code></pre>
 
-                    <p><em>ChatGPT: This code snippet uses the
+    <p class="text-primary"><em><b>ChatGPT:</b> This code snippet uses the
                             plt.scatter() function…</em></p>
                     <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*RXPMP90gEF58Vipg.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*RXPMP90gEF58Vipg.png" /></figure>
                     <p>That is not much different to the previous charts but now we do
                         something different. We ask it to add a linear regression line to the chart.</p>
-                    <p><strong >Me: add a trend line to
+                    <p class="text-primary"><strong >Me: add a trend line to
                             the chart</strong></p>
 
                     <pre class="bg-light"><code class="language-Python">    # Draw a scatter diagram of Sun against Rain with a trend line
@@ -387,11 +385,11 @@
     plt.plot(data['Sun'],p(data['Sun']),"r--")
     plt.show()</code></pre>
 
-                    <p><em>ChatGPT: This code snippet uses the
+    <p class="text-primary"><em><b>ChatGPT:</b> This code snippet uses the
                             plt.scatter() function…</em></p>
-                    <p><em>ChatGPT: To add a trend line, a
+                            <p class="text-primary"><em><b>ChatGPT:</b> To add a trend line, a
                             linear regression is performed…</em></p>
-                    <p><em>ChatGPT:&nbsp;…import numpy library
+                            <p class="text-primary"><em><b>ChatGPT:</b>&nbsp;…import numpy library
                             before using the above code snippet import numpy as np</em></p>
                     <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*tdicuj11yaignTsd.png" data-width="382"
@@ -412,7 +410,7 @@
     fig = px.scatter(data, x='Sun', y='Rain', trendline='ols')
     fig.show()</code></pre>
 
-                    <p><em>ChatGPT&nbsp;:This code snippet uses
+    <p class="text-primary"><em><b>ChatGPT:</b>This code snippet uses
                             the px.scatter() function from the plotly.express…</em></p>
                     <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*Wg8zW1LQHS8_XTCi.png" data-width="1540"
@@ -420,7 +418,7 @@
                     <p>Again, I don’t need to specify the chart, it remembers.</p>
                     <p>And now a greater memory feat. I going to ask it to remember the last
                         line chart that it generated and make a Plotly version.</p>
-                    <p><strong >Me: draw the last line
+                    <p class="text-primary"><strong >Me: draw the last line
                             chart in plotly</strong></p>
 
                     <pre class="bg-light"><code class="language-Python">    # Import the plotly library
@@ -439,7 +437,7 @@
                                     layer='below', line_width=0)])
     fig.show()</code></pre>
 
-                    <p><em>ChatGPT: This code snippet uses the
+    <p class="text-primary"><em><b>ChatGPT:</b> This code snippet uses the
                             go.Scatter() function…</em></p>
                     <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*T99gCCERjz7CqWXh.png" data-width="1540"
@@ -461,7 +459,7 @@
     fig.add_trace(go.Scatter(x=data['Month'], y=data['Tmax'], mode='lines', name='Tmax', line=dict(color='gray')))
     fig.update_layout(shapes=[dict(type='rect', xref='x', yref='paper', x0=data['Month'].min(), y0=0, x1=data['Month'].max(), y1=1, fillcolor='gray', opacity=0.5, layer='below', line_width=0)])
     fig.show()</code></pre>
-                    <p><em>ChatGPT: This code snippet uses the
+    <p class="text-primary"><em><b>ChatGPT:</b> This code snippet uses the
                             go.Figure(), fig.add_trace(), fig.update_layout()&nbsp;…</em></p>
                     <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*xmEnILl4WLjz_s5B.png" data-width="1540"
@@ -532,7 +530,7 @@
                         a
                         main program.</p>
                     <p>Talking of Streamlit, let me leave you with this:</p>
-                    <p><strong >Me: write a hello world
+                    <p class="text-primary"><strong >Me: write a hello world
                             streamlit program</strong></p>
 
                             <pre class="bg-light"><code>    # Import the streamlit library
@@ -542,7 +540,7 @@
     st.title("Hello, World!")
     st.write("This is a simple Streamlit program.")</code></pre>
 
-                    <p><em>ChatGPT: This code snippet uses the
+    <p class="text-primary"><em><b>ChatGPT:</b> This code snippet uses the
                         </em><code><em>streamlit</em></code><em> library to create a simple "Hello, World!" program.
                         </em><code><em>st.title("Hello, World!")</em></code><em
                            > is used to create a title for the program, and </em><code
