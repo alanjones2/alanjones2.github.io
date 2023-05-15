@@ -4,7 +4,7 @@
 <head>
     <title>Alan Jones</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1">
 
     <meta property="og:image"
         content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
@@ -13,11 +13,11 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta property="article:author" content="https://alanjones2.github.io">
     <meta name="twitter:creator" content="@MrAlanJones">
-    <meta name="author" content="Alan Jones">
+    <meta content="Alan Jones">
 
 
     <meta content="Coding, data science data visualization in Python and Julia - Articles and Tutorials"
-        name="description">
+       >
     <meta content="https://alanjones2.github.io" property="og:url">
     <meta content="AlanJones: Coding, data science data visualization in Python and Julia - Articles and Tutorials"
         property="og:title">
@@ -35,8 +35,8 @@
         crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="./prism/prism.css">
-    <script src="./prism/prism.js"></script>
+    <!--<link rel="stylesheet" href="./prism/prism.css">-->
+    <!--<script src="./prism/prism.js"></script>-->
 </head>
 
 <body>
@@ -76,36 +76,36 @@
                         which makes generating a code for a Jupyter Notebook using ChatGPT surprisingly easy and
                         satisfying.
                     </p>
-                    <p name="fada">A notebook consists of cells each of which tends to perform a single
+                    <p>A notebook consists of cells each of which tends to perform a single
                         task. And this maps very nicely onto the way you talk to ChatGPT. You might say “write a
                         function to
                         sort an array of strings”, or “find the maximum value of each column of a dataframe” and the
                         results
                         would fit nicely into a single Jupyter cell. You can just cut and paste from one to the other.
                     </p>
-                    <p name="eec4">I’m going to walk you through a ChatGPT session where I asked it to
+                    <p>I'm going to walk you through a ChatGPT session where I asked it to
                         generate various bits of code to perform a simple data analysis task: load a CSV file, do a
                         little
                         bit
                         of data manipulation and then generate some charts with Matplotlib and Plotly.</p>
-                    <p name="31ea">In the text below, the text in bold is requests that I gave to ChatGPT,
+                    <p>In the text below, the text in bold is requests that I gave to ChatGPT,
                         the code (unless otherwise indicated) is created by ChatGPT, and the text in italics is an
                         additional
                         ChatGPT response which generally explains the code or makes suggestions (some of these are
                         edited
                         for
                         brevity).</p>
-                    <p name="ee50">All of the chart images are created, by me, from the generated code.</p>
-                    <h4 class="graf graf--h4" name="31f5">Beginning the Jupyter&nbsp;notebook</h4>
-                    <p name="2594">My first instruction to ChatGPT was this:</p>
-                    <p name="a534"><strong class="markup--strong markup--p-strong">Me: We are going to
+                    <p>All of the chart images are created, by me, from the generated code.</p>
+                    <h4 class="graf graf--h4">Beginning the Jupyter&nbsp;notebook</h4>
+                    <p>My first instruction to ChatGPT was this:</p>
+                    <p><strong >Me: We are going to
                             write a data analysis program using pandas and Matplotlib in a Jupyter notebook. Write the
                             first
                             cell.</strong></p>
-                    <p name="c85e">It responded with the code below and the comment in italics that
+                    <p>It responded with the code below and the comment in italics that
                         follows.</p>
 
-                    <pre><code class="language-Python"> # Import necessary libraries
+                    <pre class="bg-light"><code class="language-Python">    # Import necessary libraries
     import pandas as pd
     import matplotlib.pyplot as plt
 
@@ -116,362 +116,446 @@
                             pandas and matplotlib libraries and sets up inline plotting in the Jupyter notebook. The pd
                             alias is
                             used for pandas and plt is used for matplotlib.</i></p>
-                    <p name="57be">There is a button for copying the code in the code frame, so it is a
+                    <p>There is a button for copying the code in the code frame, so it is a
                         simple matter to copy it, and paste it into a Jupyter notebook cell. I worked with the browser
                         running a
                         ChatGPT session in a window side-by-side with a VSCode window running the notebook, so moving
                         from
                         one
                         to the other was very simple.</p>
-                    <figure class="graf graf--figure" name="0aeb"><img class="graf-image" data-height="1080"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="1080"
                             data-image-id="1*JfsUPakt3xzXZj279ArETA.png" data-width="1920"
                             src="https://cdn-images-1.medium.com/max/800/1*JfsUPakt3xzXZj279ArETA.png" />
                         <figcaption class="imageCaption">This is my setup — VSCode running the notebook on the left and
                             Chrome
                             running ChatGPT on the right </figcaption>
                     </figure>
-                    <p name="64d8">Next, I want to load a CSV file and create a dataframe and I realise
+                    <p>Next, I want to load a CSV file and create a dataframe and I realise
                         that my commands can be very concise, so I say:</p>
-                    <p name="a9a3"><strong class="markup--strong markup--p-strong">Me: Open </strong><a
+                    <p><strong >Me: Open </strong><a
                             class="markup--anchor markup--p-anchor"
                             data-href="https://github.com/alanjones2/dataviz/raw/master/london2018.csv"
                             href="https://github.com/alanjones2/dataviz/raw/master/london2018.csv" rel="noopener"
                             target="_blank"><strong
-                                class="markup--strong markup--p-strong">https://github.com/alanjones2/dataviz/raw/master/london2018.csv</strong></a><strong
-                            class="markup--strong markup--p-strong"> as a dataframe</strong></p>
+                                >https://github.com/alanjones2/dataviz/raw/master/london2018.csv</strong></a><strong
+                            > as a dataframe</strong></p>
 
-                    <pre><code class="language-Python"> # Import data from csv file
+                    <pre class="bg-light"><code class="language-Python">    # Import data from csv file
     data = pd.read_csv("https://github.com/alanjones2/dataviz/raw/master/london2018.csv")</code></pre>
 
-                    <p name="7080"><em class="markup--em markup--p-em">ChatGPT: This cell uses the
+                    <p><em>ChatGPT: This cell uses the
                             pd.read_csv() function to import the csv file from the provided url and load it into a
                             pandas
                             dataframe called “data”. The pd.read_csv() function is used to read and import csv files
                             into
                             pandas
                             dataframe. You can also use the following code snippet to load the csv file.</em></p>
-                            
-                    <pre><code class="language-Python">    import requests
+
+                    <pre class="bg-light"><code class="language-Python">    import requests
     url = "https://github.com/alanjones2/dataviz/raw/master/london2018.csv"
     data = pd.read_csv(url) </code></pre>
 
 
-                    <p name="4555"><em class="markup--em markup--p-em">This code snippet uses the requests
+                    <p><em>This code snippet uses the requests
                             library to get the content of the file and the pd.read_csv() function to import the content
                             of
                             the
                             file into a pandas dataframe.</em></p>
-                    <p name="b173">Actually, that is not true: <strong class="markup--strong markup--p-strong">ChatGPT
+                    <p>Actually, that is not true: <strong class="text-danger" >ChatGPT
                             is
                             not infallible.</strong></p>
-                    <p name="687a">That code snippet does not use the <em class="markup--em markup--p-em">requests
+                    <p>That code snippet does not use the <em>requests
                         </em>library, it just uses a variable as an argument to the
                         read function. This is a trivial error and the code still works, of course. But it shows that we
                         need to
                         be careful and monitor just what ChatGPT is doing. We’ll see other examples of errors later.</p>
-                    <p name="b696">I now want to see the dataframe.</p>
-                    <p name="c12b"><strong class="markup--strong markup--p-strong">Me: Show the
+                    <p>I now want to see the dataframe.</p>
+                    <p><strong >Me: Show the
                             data</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2"
-                        name="5b7b"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Show the data</span><br />data</span></pre>
-                    <p name="d89d"><em class="markup--em markup--p-em">ChatGPT: This cell uses the data
+
+                    <pre class="bg-light"><code class="language-Python">    # Show the data
+    data</code></pre>
+                            
+                    <p><em>ChatGPT: This cell uses the data
                             dataframe and shows the dataframe content by just calling it on the last line of the cell.
-                            This
-                            will
-                            print the dataframe on the notebook output and shows the data in tabular format. You can
-                            also
-                            use
-                            the following code snippet to display the first few records of the dataframe.</em></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2"
-                        name="a6cf" spellcheck="false"><span class="pre--content">data.head()</span></pre>
-                    <p name="febf"><em class="markup--em markup--p-em">This will display the first 5
+                            This will print the dataframe on the notebook output and shows the data in tabular format. You can
+                            also use the following code snippet to display the first few records of the dataframe.</em></p>
+
+                            <pre class="bg-light"><code class="language-Python">    data.head()</code></pre>
+                             
+                    <p><em>This will display the first 5
                             records of the dataframe by default, but you can also pass a number as an argument to
-                            display
-                            that
-                            many records, e.g. data.head(10) will display the first 10 records of the dataframe.</em>
+                            display that many records, e.g. data.head(10) will display the first 10 records of the dataframe.</em>
                     </p>
-                    <p name="d0a8">If I run the first code block, I get this.</p>
-                    <figure class="graf graf--figure" name="2fc8"><img class="graf-image" data-height="358"
+                    <p>If I run the first code block, I get this.</p>
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="358"
                             data-image-id="0*U-mDzNRKWtEf3VvR.png" data-width="352"
                             src="https://cdn-images-1.medium.com/max/800/0*U-mDzNRKWtEf3VvR.png" /></figure>
-                    <p name="1d4b">It’s a table of monthly weather readings from 2018: the maximum
+                    <p>It's a table of monthly weather readings from 2018: the maximum
                         temperature. the minimum temperature, the rainfall in millimetres and the number of hours of
                         sunshine.
                     </p>
-                    <p name="8251">I going to ask it to create a new column with the average temperature.
-                        The column should be called <em class="markup--em markup--p-em">Tmean</em>.</p>
-                    <p name="78cc"><strong class="markup--strong markup--p-strong">Me: Create a new column
+                    <p>I going to ask it to create a new column with the average temperature.
+                        The column should be called <em>Tmean</em>.</p>
+                    <p><strong >Me: Create a new column
                             in the dataframe called Tmean which is the average of the columns Tmax and Tmin</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2"
-                        name="cd35"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Create a new column 'Tmean' as the average of 'Tmax' and 'Tmin'</span><br />data[<span class="hljs-string">'Tmean'</span>] = (data[<span class="hljs-string">'Tmax'</span>] + data[<span class="hljs-string">'Tmin'</span>]) / <span class="hljs-number">2</span></span></pre>
-                    <p name="d43c"><em class="markup--em markup--p-em">This cell creates a new column
-                            called ‘Tmean’ in the data dataframe by taking the average of the ‘Tmax’ and ‘Tmin’ columns.
-                            It
-                            uses
-                            the syntax data[‘Tmean’] to create a new column in the dataframe, and uses data[‘Tmax’] +
-                            data[‘Tmin’] to calculate the mean of the Tmax and Tmin columns. The mean is then assigned
-                            to
-                            the
-                            new column ‘Tmean’.</em></p>
-                    <p name="1bdf"><em class="markup--em markup--p-em">Note that for this to work, the Tmax
+
+                            <pre class="bg-light"><code class="language-Python">    # Create a new column 'Tmean' as the average of 'Tmax' and 'Tmin'
+    data['Tmean'] = (data['Tmax'] + data['Tmin']) / 2</code></pre>
+
+                    <p><em>This cell creates a new column
+                            called 'Tmean' in the data dataframe by taking the average of the 'Tmax' and 'Tmin' columns.
+                            It uses the syntax data['Tmean'] to create a new column in the dataframe, and uses data['Tmax'] +
+                            data['Tmin'] to calculate the mean of the Tmax and Tmin columns. The mean is then assigned
+                            to the new column 'Tmean'.</em></p>
+                    <p><em>Note that for this to work, the Tmax
                             and Tmin columns should be numerical and not contain any missing values. If there are any
                             missing
                             values in the Tmax and Tmin columns, you should handle them before calculating Tmean.</em>
                     </p>
-                    <p name="7900">That looks fine but the comments are getting more verbose now that I am
+                    <p>That looks fine but the comments are getting more verbose now that I am
                         asking it to do slightly more complex work.</p>
-                    <h4 class="graf graf--h4" name="e280">Let’s draw a&nbsp;chart.</h4>
-                    <p name="5c8b"><strong class="markup--strong markup--p-strong">Me: Draw a line chart of
+                    <h4>Let's draw a chart.</h4>
+                    <p><strong >Me: Draw a line chart of
                             Tmean over Month</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2"
-                        name="156b"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Draw a line chart of Tmean over Month</span><br />data.plot(x=<span class="hljs-string">'Month'</span>, y=<span class="hljs-string">'Tmean'</span>, kind=<span class="hljs-string">'line'</span>)<br />plt.show()</span></pre>
-                    <p name="1958"><em class="markup--em markup--p-em">ChatGPT: This cell uses the data
-                            dataframe to create a line chart of the ‘Tmean’ column over the ‘Month’ column. The plot()
+
+                            <pre class="bg-light"><code class="language-Python">    # Draw a line chart of Tmean over Month
+    data.plot(x='Month', y='Tmean', kind='line')
+    plt.show()</code></pre>
+
+                    <p><em>ChatGPT: This cell uses the data
+                            dataframe to create a line chart of the 'Tmean' column over the 'Month' column. The plot()
                             function
-                            is used, with the x parameter set to ‘Month’ and the y parameter set to ‘Tmean’. The kind
+                            is used, with the x parameter set to 'Month' and the y parameter set to 'Tmean'. The kind
                             parameter
-                            is set to ‘line’ to create a line chart. The plt.show() function is used to display the
+                            is set to 'line' to create a line chart. The plt.show() function is used to display the
                             chart.</em>
                     </p>
-                    <p name="a958"><em class="markup--em markup--p-em">Note that the ‘Month’ column should
-                            be in datetime format to properly show the line chart. If the ‘Month’ column is not in
+                    <p><em>Note that the 'Month' column should
+                            be in datetime format to properly show the line chart. If the 'Month' column is not in
                             datetime
                             format, you should convert it to datetime before creating the line chart.</em></p>
-                    <p name="2fcf">I have told it what charting method to use and it has chosen the
+                    <p>I have told it what charting method to use and it has chosen the
                         plotting function from Pandas. Here is the result:</p>
-                    <figure class="graf graf--figure" name="a0c3"><img class="graf-image" data-height="262"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*UQgwJ7CT7Z8cosqH.png" data-width="378"
                             src="https://cdn-images-1.medium.com/max/800/0*UQgwJ7CT7Z8cosqH.png" /></figure>
-                    <p name="5cfd">But it has a further suggestion:</p>
-                    <p name="36c9"><em class="markup--em markup--p-em">ChatGPT: You can also use the
+                    <p>But it has a further suggestion:</p>
+                    <p><em>ChatGPT: You can also use the
                             following code snippet to draw a line chart of Tmean over Month:</em></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2"
-                        name="95d0"
-                        spellcheck="false"><span class="pre--content">plt.plot(data[<span class="hljs-string">'Month'</span>], data[<span class="hljs-string">'Tmean'</span>])<br />plt.xlabel(<span class="hljs-string">'Month'</span>)<br />plt.ylabel(<span class="hljs-string">'Tmean'</span>)<br />plt.show()</span></pre>
-                    <p name="f5ad"><em class="markup--em markup--p-em">This code snippet uses the
+
+                            <pre class="bg-light"><code class="language-Python">    plt.plot(data['Month'], data['Tmean'])
+    plt.xlabel('Month')
+    plt.ylabel('Tmean')
+    plt.show()</code></pre>
+
+                    <p><em>This code snippet uses the
                             plt.plot() function to draw the line chart, and it uses the plt.xlabel() and plt.ylabel()
-                            functions
-                            to add labels to the x-axis and y-axis of the chart, respectively. The plt.show() function
-                            is
-                            used
-                            to display the chart.</em></p>
-                    <p name="c549">This time it used Matplotlib to draw the chart and the result is almost
+                            functions to add labels to the x-axis and y-axis of the chart, respectively. The plt.show() function
+                            is used to display the chart.</em></p>
+                    <p>This time it used Matplotlib to draw the chart and the result is almost
                         identical:</p>
-                    <figure class="graf graf--figure" name="b4fa"><img class="graf-image" data-height="262"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*a6EnRsp2nXCV77YZ.png" data-width="392"
                             src="https://cdn-images-1.medium.com/max/800/0*a6EnRsp2nXCV77YZ.png" /></figure>
-                    <p name="8a3d">Now I want a chart that plots all of the temperatures together.</p>
-                    <p name="cbec"><strong class="markup--strong markup--p-strong">Me: draw a line chart
+                    <p>Now I want a chart that plots all of the temperatures together.</p>
+                    <p><strong >Me: draw a line chart
                             that includes lines for Tmin, Tmean and Tmax</strong></p>
-                    <p name="eccc">ChatGPT elects to use pandas plotting again — this is the simplest
+                    <p>ChatGPT elects to use pandas plotting again - this is the simplest
                         solution.</p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2"
-                        name="5342"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Draw a line chart of Tmin, Tmean, and Tmax over Month</span><br />data.plot(x=<span class="hljs-string">'Month'</span>, y=[<span class="hljs-string">'Tmin'</span>,<span class="hljs-string">'Tmean'</span>,<span class="hljs-string">'Tmax'</span>], kind=<span class="hljs-string">'line'</span>)<br />plt.show()</span></pre>
-                    <p name="8abb"><em class="markup--em markup--p-em">ChatGPT: This cell uses the
+
+                    <pre class="bg-light"><code class="language-Python">    # Draw a line chart of Tmin, Tmean, and Tmax over Month
+    data.plot(x='Month', y=['Tmin','Tmean','Tmax'], kind='line')
+    plt.show()</code></pre>
+                        
+                    <p><em>ChatGPT: This cell uses the
                         </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">data</em></code><em
-                            class="markup--em markup--p-em"> dataframe to create a line chart of the 'Tmin','Tmean' and
+                            class="markup--code markup--p-code"><em>data</em></code><em
+                           > dataframe to create a line chart of the 'Tmin','Tmean' and
                             'Tmax'
                             columns over the 'Month' column. The </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">plot()</em></code><em
-                            class="markup--em markup--p-em"> function is used, with the </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">x</em></code><em
-                            class="markup--em markup--p-em"> parameter set to 'Month' and the </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">y</em></code><em
-                            class="markup--em markup--p-em"> parameter set to ['Tmin','Tmean','Tmax']. The </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">kind</em></code><em
-                            class="markup--em markup--p-em"> parameter is set to 'line' to create a line chart. The
+                            class="markup--code markup--p-code"><em>plot()</em></code><em
+                           > function is used, with the </em><code
+                            class="markup--code markup--p-code"><em>x</em></code><em
+                           > parameter set to 'Month' and the </em><code
+                            class="markup--code markup--p-code"><em>y</em></code><em
+                           > parameter set to ['Tmin','Tmean','Tmax']. The </em><code
+                            class="markup--code markup--p-code"><em>kind</em></code><em
+                           > parameter is set to 'line' to create a line chart. The
                         </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">plt.show()</em></code><em
-                            class="markup--em markup--p-em"> function is used to display the chart.</em></p>
-                    <p name="9d7a"><em class="markup--em markup--p-em">Note that the ‘Month’ column should
-                            be in datetime format to properly show the line chart. If the ‘Month’ column is not in
+                            class="markup--code markup--p-code"><em>plt.show()</em></code><em
+                           > function is used to display the chart.</em></p>
+                    <p><em>Note that the 'Month' column should
+                            be in datetime format to properly show the line chart. If the 'Month' column is not in
                             datetime
                             format, you should convert it to datetime before creating the line chart.</em></p>
-                    <p name="c187"><em class="markup--em markup--p-em">You can also use the following code
+                    <p><em>You can also use the following code
                             snippet to draw a line chart that includes lines for Tmin, Tmean, and Tmax over Month:</em>
                     </p>
-                    <p name="0ef5">OK, ok, we get the picture. I’m going to cut the commentary short from
+                    <p>OK, ok, we get the picture. I'm going to cut the commentary short from
                         now on as it’s beginning to get tedious.</p>
-                    <p name="0b28">Here’s the chart:</p>
-                    <figure class="graf graf--figure" name="3d48"><img class="graf-image" data-height="262"
+                    <p>Here’s the chart:</p>
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*LnE74Fo_PznYl30Y.png" data-width="368"
                             src="https://cdn-images-1.medium.com/max/800/0*LnE74Fo_PznYl30Y.png" /></figure>
-                    <p name="3518">We are also treated to a Matplotlib version.</p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="kotlin" data-code-block-mode="1"
-                        name="9970"
-                        spellcheck="false"><span class="pre--content">plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmin'</span>],label=<span class="hljs-string">'Tmin'</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmean'</span>],label=<span class="hljs-string">'Tmean'</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmax'</span>],label=<span class="hljs-string">'Tmax'</span>)<br />plt.xlabel(<span class="hljs-string">'Month'</span>)<br />plt.ylabel(<span class="hljs-string">'Temperature'</span>)<br />plt.legend()<br />plt.show()</span></pre>
-                    <p name="1f60"><em class="markup--em markup--p-em">This code snippet uses the
+                    <p>We are also treated to a Matplotlib version.</p>
+
+                    <pre class="bg-light"><code class="language-Python">    plt.plot(data['Month'], data['Tmin'],label='Tmin')
+    plt.plot(data['Month'], data['Tmean'],label='Tmean')
+    plt.plot(data['Month'], data['Tmax'],label='Tmax')
+    plt.xlabel('Month')
+    plt.ylabel('Temperature')
+    plt.legend()
+    plt.show()</code></pre>
+
+                    <p><em>This code snippet uses the
                             plt.plot() function multiple times….</em></p>
-                    <figure class="graf graf--figure" name="2389"><img class="graf-image" data-height="262"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*TPx6anRk53iCRSCj.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*TPx6anRk53iCRSCj.png" /></figure>
-                    <p name="aa9e">Now I’m going to ask something slightly more complicated. I want the
-                        three lines plotted with the area between <em class="markup--em markup--p-em">Tmax</em> and <em
-                            class="markup--em markup--p-em">Tmin</em> shaded so it looks more like a range.</p>
-                    <p name="9989"><strong class="markup--strong markup--p-strong">Me: draw a similar chart
+                    <p>Now I'm going to ask something slightly more complicated. I want the
+                        three lines plotted with the area between <em>Tmax</em> and <em
+                           >Tmin</em> shaded so it looks more like a range.</p>
+                    <p><strong >Me: draw a similar chart
                             with shading between Tmin and Tmax</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="kotlin" data-code-block-mode="1"
-                        name="2ef8"
-                        spellcheck="false"><span class="pre--content"># Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax<br />plt.fill_between(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmin'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmax'</span>], color=<span class="hljs-string">'gray'</span>, alpha=<span class="hljs-number">0.5</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmin'</span>],label=<span class="hljs-string">'Tmin'</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmean'</span>],label=<span class="hljs-string">'Tmean'</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmax'</span>],label=<span class="hljs-string">'Tmax'</span>)<br />plt.xlabel(<span class="hljs-string">'Month'</span>)<br />plt.ylabel(<span class="hljs-string">'Temperature'</span>)<br />plt.legend()<br />plt.show()</span></pre>
-                    <p name="4fa0"><em class="markup--em markup--p-em">ChatGPT: This code snippet uses the
+
+                            <pre class="bg-light"><code class="language-Python">    # Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax
+    plt.fill_between(data['Month'], data['Tmin'], data['Tmax'], color='gray', alpha=0.5)
+    plt.plot(data['Month'], data['Tmin'],label='Tmin')
+    plt.plot(data['Month'], data['Tmean'],label='Tmean')
+    plt.plot(data['Month'], data['Tmax'],label='Tmax')
+    plt.xlabel('Month')
+    plt.ylabel('Temperature')
+    plt.legend()
+    plt.show()</code></pre>
+
+                    <p><em>ChatGPT: This code snippet uses the
                             plt.fill_between() function to add shading…</em></p>
-                    <figure class="graf graf--figure" name="f828"><img class="graf-image" data-height="262"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*IfW6s1EICh4mf26w.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*IfW6s1EICh4mf26w.png" /></figure>
-                    <p name="2805">That’s what I asked for but I want to modify my request.</p>
-                    <p name="fb3b"><strong class="markup--strong markup--p-strong">Me: draw the same chart
+                    <p>That’s what I asked for but I want to modify my request.</p>
+                    <p><strong >Me: draw the same chart
                             with Tmin and Tmax lines the same colour as the shading and Tmean black</strong></p>
-                    <p name="0582">Notice that I don’t need to specify that chart again, ChatGPT remembers
+                    <p>Notice that I don’t need to specify that chart again, ChatGPT remembers
                         what it has done in this session so it knows which chart I mean.</p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="kotlin" data-code-block-mode="1"
-                        name="34d5"
-                        spellcheck="false"><span class="pre--content"># Draw a line chart of Tmin, Tmean, and Tmax over Month with Tmin and Tmax lines the same color <span class="hljs-keyword">as</span> the shading and Tmean black<br />plt.fill_between(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmin'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmax'</span>], color=<span class="hljs-string">'gray'</span>, alpha=<span class="hljs-number">0.5</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmin'</span>],label=<span class="hljs-string">'Tmin'</span>, color=<span class="hljs-string">'gray'</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmean'</span>],label=<span class="hljs-string">'Tmean'</span>, color=<span class="hljs-string">'black'</span>)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Month'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Tmax'</span>],label=<span class="hljs-string">'Tmax'</span>, color=<span class="hljs-string">'gray'</span>)<br />plt.xlabel(<span class="hljs-string">'Month'</span>)<br />plt.ylabel(<span class="hljs-string">'Temperature'</span>)<br />plt.legend()<br />plt.show()</span></pre>
-                    <p name="2511"><em class="markup--em markup--p-em">ChatGPT: This code snippet is
+
+                    <pre class="bg-light"><code class="language-Python"></code>    # Draw a line chart of Tmin, Tmean, and Tmax over Month with Tmin and Tmax lines the same color as the shading and Tmean black
+    plt.fill_between(data['Month'], data['Tmin'], data['Tmax'], color='gray', alpha=0.5)
+    plt.plot(data['Month'], data['Tmin'],label='Tmin', color='gray')
+    plt.plot(data['Month'], data['Tmean'],label='Tmean', color='black')
+    plt.plot(data['Month'], data['Tmax'],label='Tmax', color='gray')
+    plt.xlabel('Month')
+    plt.ylabel('Temperature')
+    plt.legend()
+    plt.show()</code></pre>
+
+                    <p><em>ChatGPT: This code snippet is
                             similar to the previous one but it uses the ‘color’ parameter…</em></p>
-                    <figure class="graf graf--figure" name="7b69"><img class="graf-image" data-height="262"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*6WLlS5PiqlbJfzDZ.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*6WLlS5PiqlbJfzDZ.png" /></figure>
-                    <p name="4fdb">Pretty good!</p>
-                    <p name="9acd">Let’s try a different chart.</p>
-                    <p name="57c6"><strong class="markup--strong markup--p-strong">Me: draw a scatter
+                    <p>Pretty good!</p>
+                    <p>Let's try a different chart.</p>
+                    <p><strong >Me: draw a scatter
                             diagram of Sun against Rain</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="bash" data-code-block-mode="1"
-                        name="bad8"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Draw a scatter diagram of Sun against Rain</span><br />plt.scatter(data[<span class="hljs-string">'Sun'</span>], data[<span class="hljs-string">'Rain'</span>])<br />plt.xlabel(<span class="hljs-string">'Sun'</span>)<br />plt.ylabel(<span class="hljs-string">'Rain'</span>)<br />plt.show()</span></pre>
-                    <p name="924b"><em class="markup--em markup--p-em">ChatGPT: This code snippet uses the
+
+                    <pre class="bg-light"><code class="language-Python"></code>    # Draw a scatter diagram of Sun against Rain
+    plt.scatter(data['Sun'], data['Rain'])
+    plt.xlabel('Sun')
+    plt.ylabel('Rain')
+    plt.show()</code></pre>
+
+                    <p><em>ChatGPT: This code snippet uses the
                             plt.scatter() function…</em></p>
-                    <figure class="graf graf--figure" name="c579"><img class="graf-image" data-height="262"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*RXPMP90gEF58Vipg.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*RXPMP90gEF58Vipg.png" /></figure>
-                    <p name="d2a5">That is not much different to the previous charts but now we do
+                    <p>That is not much different to the previous charts but now we do
                         something different. We ask it to add a linear regression line to the chart.</p>
-                    <p name="a381"><strong class="markup--strong markup--p-strong">Me: add a trend line to
+                    <p><strong >Me: add a trend line to
                             the chart</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="kotlin" data-code-block-mode="1"
-                        name="244e"
-                        spellcheck="false"><span class="pre--content"># Draw a scatter diagram of Sun against Rain with a trend line<br />plt.scatter(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Sun'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Rain'</span>])<br />plt.xlabel(<span class="hljs-string">'Sun'</span>)<br />plt.ylabel(<span class="hljs-string">'Rain'</span>)<br /><br /># Add a trend line<br />z = np.polyfit(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Sun'</span>], <span class="hljs-keyword">data</span>[<span class="hljs-string">'Rain'</span>], <span class="hljs-number">1</span>)<br />p = np.poly1d(z)<br />plt.plot(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Sun'</span>],p(<span class="hljs-keyword">data</span>[<span class="hljs-string">'Sun'</span>]),<span class="hljs-string">"r--"</span>)<br />plt.show()</span></pre>
-                    <p name="007b"><em class="markup--em markup--p-em">ChatGPT: This code snippet uses the
+
+                    <pre class="bg-light"><code class="language-Python">    # Draw a scatter diagram of Sun against Rain with a trend line
+    plt.scatter(data['Sun'], data['Rain'])
+    plt.xlabel('Sun')
+    plt.ylabel('Rain')
+    
+    # Add a trend line
+    z = np.polyfit(data['Sun'], data['Rain'], 1)
+    p = np.poly1d(z)
+    plt.plot(data['Sun'],p(data['Sun']),"r--")
+    plt.show()</code></pre>
+
+                    <p><em>ChatGPT: This code snippet uses the
                             plt.scatter() function…</em></p>
-                    <p name="63e3"><em class="markup--em markup--p-em">ChatGPT: To add a trend line, a
+                    <p><em>ChatGPT: To add a trend line, a
                             linear regression is performed…</em></p>
-                    <p name="840d"><em class="markup--em markup--p-em">ChatGPT:&nbsp;…import numpy library
+                    <p><em>ChatGPT:&nbsp;…import numpy library
                             before using the above code snippet import numpy as np</em></p>
-                    <figure class="graf graf--figure" name="594e"><img class="graf-image" data-height="262"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="262"
                             data-image-id="0*tdicuj11yaignTsd.png" data-width="382"
                             src="https://cdn-images-1.medium.com/max/800/0*tdicuj11yaignTsd.png" /></figure>
-                    <p name="f19d">Oddly, it doesn’t import the required <em class="markup--em markup--p-em">numpy</em>
+                    <p>Oddly, it doesn’t import the required <em>numpy</em>
                         library in the code but it does remind us to do it in the
                         comments.</p>
-                    <h4 class="graf graf--h4" name="3dab">Memory and regenration</h4>
-                    <p name="45e2">As we have seen ChatGPT remembers what we have already done but, if it
+                    <h4 class="graf graf--h4">Memory and regeneration</h4>
+                    <p>As we have seen ChatGPT remembers what we have already done but, if it
                         gets something wrong, we can ask it to have another go.</p>
-                    <p name="3431"><strong class="markup--strong markup--p-strong">Me: draw the same chart
+                    <p><strong >Me: draw the same chart
                             with plotly</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1"
-                        name="10ae"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Import the plotly library</span><br /><span class="hljs-keyword">import</span> plotly.express <span class="hljs-keyword">as</span> px<br /><br /><span class="hljs-comment"># Draw a scatter diagram of Sun against Rain with a trend line using plotly</span><br />fig = px.scatter(data, x=<span class="hljs-string">'Sun'</span>, y=<span class="hljs-string">'Rain'</span>, trendline=<span class="hljs-string">'ols'</span>)<br />fig.show()</span></pre>
-                    <p name="04cd"><em class="markup--em markup--p-em">ChatGPT&nbsp;:This code snippet uses
+
+                            <pre class="bg-light"><code class="language-Python">    # Import the plotly library
+    import plotly.express as px
+
+    # Draw a scatter diagram of Sun against Rain with a trend line using plotly
+    fig = px.scatter(data, x='Sun', y='Rain', trendline='ols')
+    fig.show()</code></pre>
+
+                    <p><em>ChatGPT&nbsp;:This code snippet uses
                             the px.scatter() function from the plotly.express…</em></p>
-                    <figure class="graf graf--figure" name="6069"><img class="graf-image" data-height="450"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*Wg8zW1LQHS8_XTCi.png" data-width="1540"
                             src="https://cdn-images-1.medium.com/max/800/0*Wg8zW1LQHS8_XTCi.png" /></figure>
-                    <p name="06a8">Again, I don’t need to specify the chart, it remembers.</p>
-                    <p name="982c">And now a greater memory feat. I going to ask it to remember the last
+                    <p>Again, I don’t need to specify the chart, it remembers.</p>
+                    <p>And now a greater memory feat. I going to ask it to remember the last
                         line chart that it generated and make a Plotly version.</p>
-                    <p name="d091"><strong class="markup--strong markup--p-strong">Me: draw the last line
+                    <p><strong >Me: draw the last line
                             chart in plotly</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1"
-                        name="dc03"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Import the plotly library</span><br /><span class="hljs-keyword">import</span> plotly.graph_objs <span class="hljs-keyword">as</span> go<br /><br /><span class="hljs-comment"># Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax in plotly</span><br />trace1 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmin'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmin'</span>)<br />trace2 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmean'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmean'</span>)<br />trace3 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmax'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmax'</span>)<br />fig = go.Figure(data=[trace1, trace2, trace3])<br />fig.update_layout(shapes=[<span class="hljs-built_in">dict</span>(<span class="hljs-built_in">type</span>=<span class="hljs-string">'rect'</span>,<br />                              xref=<span class="hljs-string">'x'</span>, yref=<span class="hljs-string">'paper'</span>,<br />                              x0=data[<span class="hljs-string">'Month'</span>].<span class="hljs-built_in">min</span>(), y0=<span class="hljs-number">0</span>,<br />                              x1=data[<span class="hljs-string">'Month'</span>].<span class="hljs-built_in">max</span>(), y1=<span class="hljs-number">1</span>,<br />                              fillcolor=<span class="hljs-string">'gray'</span>, opacity=<span class="hljs-number">0.5</span>,<br />                              layer=<span class="hljs-string">'below'</span>, line_width=<span class="hljs-number">0</span>)])<br />fig.show()</span></pre>
-                    <p name="fdd3"><em class="markup--em markup--p-em">ChatGPT: This code snippet uses the
+
+                    <pre class="bg-light"><code class="language-Python">    # Import the plotly library
+    import plotly.graph_objs as go
+    
+    # Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax in plotly
+    trace1 = go.Scatter(x=data['Month'], y=data['Tmin'],mode='lines', name='Tmin')
+    trace2 = go.Scatter(x=data['Month'], y=data['Tmean'],mode='lines', name='Tmean')
+    trace3 = go.Scatter(x=data['Month'], y=data['Tmax'],mode='lines', name='Tmax')
+    fig = go.Figure(data=[trace1, trace2, trace3])
+    fig.update_layout(shapes=[dict(type='rect',
+                                    xref='x', yref='paper',
+                                    x0=data['Month'].min(), y0=0,
+                                    x1=data['Month'].max(), y1=1,
+                                    fillcolor='gray', opacity=0.5,
+                                    layer='below', line_width=0)])
+    fig.show()</code></pre>
+
+                    <p><em>ChatGPT: This code snippet uses the
                             go.Scatter() function…</em></p>
-                    <figure class="graf graf--figure" name="18c8"><img class="graf-image" data-height="450"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*T99gCCERjz7CqWXh.png" data-width="1540"
                             src="https://cdn-images-1.medium.com/max/800/0*T99gCCERjz7CqWXh.png" /></figure>
-                    <p name="9943">Well, it tried but the result is not the same as the last line chart.
+                    <p>Well, it tried but the result is not the same as the last line chart.
                         ChatGPT has not properly implemented the shading between the lines. So, we ask it to have
                         another go
                         by
-                        hitting the <em class="markup--em markup--p-em">regenerate response </em>button.</p>
-                    <p name="805e"><strong class="markup--strong markup--p-strong">This time it’s ChatGPT
+                        hitting the <em>regenerate response </em>button.</p>
+                    <p><strong >This time it’s ChatGPT
                             that issues the command: draw the last line chart in plotly</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1"
-                        name="9a7d"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Import the plotly library</span><br /><span class="hljs-keyword">import</span> plotly.graph_objects <span class="hljs-keyword">as</span> go<br /><br /><span class="hljs-comment"># Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax using plotly</span><br />fig = go.Figure()<br />fig.add_trace(go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmin'</span>], mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmin'</span>, line=<span class="hljs-built_in">dict</span>(color=<span class="hljs-string">'gray'</span>)))<br />fig.add_trace(go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmean'</span>], mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmean'</span>, line=<span class="hljs-built_in">dict</span>(color=<span class="hljs-string">'black'</span>)))<br />fig.add_trace(go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmax'</span>], mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmax'</span>, line=<span class="hljs-built_in">dict</span>(color=<span class="hljs-string">'gray'</span>)))<br />fig.update_layout(shapes=[<span class="hljs-built_in">dict</span>(<span class="hljs-built_in">type</span>=<span class="hljs-string">'rect'</span>, xref=<span class="hljs-string">'x'</span>, yref=<span class="hljs-string">'paper'</span>, x0=data[<span class="hljs-string">'Month'</span>].<span class="hljs-built_in">min</span>(), y0=<span class="hljs-number">0</span>, x1=data[<span class="hljs-string">'Month'</span>].<span class="hljs-built_in">max</span>(), y1=<span class="hljs-number">1</span>, fillcolor=<span class="hljs-string">'gray'</span>, opacity=<span class="hljs-number">0.5</span>, layer=<span class="hljs-string">'below'</span>, line_width=<span class="hljs-number">0</span>)])<br />fig.show()</span></pre>
-                    <p name="8a69"><em class="markup--em markup--p-em">ChatGPT: This code snippet uses the
+                    <pre class="bg-light"><code>    # Import the plotly library
+    import plotly.graph_objects as go
+    
+    # Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax using plotly
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=data['Month'], y=data['Tmin'], mode='lines', name='Tmin', line=dict(color='gray')))
+    fig.add_trace(go.Scatter(x=data['Month'], y=data['Tmean'], mode='lines', name='Tmean', line=dict(color='black')))
+    fig.add_trace(go.Scatter(x=data['Month'], y=data['Tmax'], mode='lines', name='Tmax', line=dict(color='gray')))
+    fig.update_layout(shapes=[dict(type='rect', xref='x', yref='paper', x0=data['Month'].min(), y0=0, x1=data['Month'].max(), y1=1, fillcolor='gray', opacity=0.5, layer='below', line_width=0)])
+    fig.show()</code></pre>
+                    <p><em>ChatGPT: This code snippet uses the
                             go.Figure(), fig.add_trace(), fig.update_layout()&nbsp;…</em></p>
-                    <figure class="graf graf--figure" name="bde2"><img class="graf-image" data-height="450"
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*xmEnILl4WLjz_s5B.png" data-width="1540"
                             src="https://cdn-images-1.medium.com/max/800/0*xmEnILl4WLjz_s5B.png" /></figure>
-                    <p name="c7f5">Nope, that’s not it either. Another regeneration gives us this:</p>
-                    <figure class="graf graf--figure" name="7609"><img class="graf-image" data-height="450"
+                    <p>Nope, that’s not it either. Another regeneration gives us this:</p>
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*EFaRnQ8vrpuEgt3B.png" data-width="1540"
                             src="https://cdn-images-1.medium.com/max/800/0*EFaRnQ8vrpuEgt3B.png" /></figure>
-                    <p name="0b2d">That is probably worse. And so we have another try which produces this
+                    <p>That is probably worse. And so we have another try which produces this
                         code.</p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1"
-                        name="d81f"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Import the plotly library </span><br /><span class="hljs-keyword">import</span> plotly.graph_objs <span class="hljs-keyword">as</span> go<br /><br /><span class="hljs-comment"># Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax using plotly</span><br /><br />trace1 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmin'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmin'</span>, line=<span class="hljs-built_in">dict</span>(color=<span class="hljs-string">'gray'</span>))<br />trace2 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmean'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmean'</span>, line=<span class="hljs-built_in">dict</span>(color=<span class="hljs-string">'black'</span>))<br />trace3 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmax'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmax'</span>, line=<span class="hljs-built_in">dict</span>(color=<span class="hljs-string">'gray'</span>))<br />trace4 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmin'</span>],mode=<span class="hljs-string">'none'</span>, fill=<span class="hljs-string">'tonexty'</span>, fillcolor=<span class="hljs-string">'gray'</span>, showlegend=<span class="hljs-literal">False</span>)<br />data_plotly = [trace1, trace2, trace3,trace4]<br />layout = go.Layout(yaxis=<span class="hljs-built_in">dict</span>(title=<span class="hljs-string">'Temperature'</span>))<br />fig = go.Figure(data=data_plotly, layout=layout)<br />fig.show()</span></pre>
-                    <p name="48ac">And that produces a chart which is close to what we want.</p>
-                    <figure class="graf graf--figure" name="fe67"><img class="graf-image" data-height="450"
+
+                    <pre class="bg-light"><code>    # Import the plotly library 
+    import plotly.graph_objs as go
+    
+    # Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax using plotly
+    
+    trace1 = go.Scatter(x=data['Month'], y=data['Tmin'],mode='lines', name='Tmin', line=dict(color='gray'))
+    trace2 = go.Scatter(x=data['Month'], y=data['Tmean'],mode='lines', name='Tmean', line=dict(color='black'))
+    trace3 = go.Scatter(x=data['Month'], y=data['Tmax'],mode='lines', name='Tmax', line=dict(color='gray'))
+    trace4 = go.Scatter(x=data['Month'], y=data['Tmin'],mode='none', fill='tonexty', fillcolor='gray', showlegend=False)
+    data_plotly = [trace1, trace2, trace3,trace4]
+    layout = go.Layout(yaxis=dict(title='Temperature'))
+    fig = go.Figure(data=data_plotly, layout=layout)
+    fig.show()</code></pre>
+
+                    <p>And that produces a chart which is close to what we want.</p>
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="0*GA9ZobRdX70zGoYY.png" data-width="1540"
                             src="https://cdn-images-1.medium.com/max/800/0*GA9ZobRdX70zGoYY.png" /></figure>
-                    <p name="70f0">The problem is that this version plots one plot over the other and so
+                    <p>The problem is that this version plots one plot over the other and so
                         the shading hides the line plots. So rather than regenerate again, we can just change the
                         shading
                         colour
                         to have a smaller alpha value, making it transparent.</p>
-                    <p name="8289">Here’s the modified ChatGPT code.</p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1"
-                        name="cfc4"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Import the plotly library</span><br /><span class="hljs-keyword">import</span> plotly.graph_objs <span class="hljs-keyword">as</span> go<br /><br /><span class="hljs-comment"># Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax using plotly</span><br />greycolor = fillcolor = <span class="hljs-string">'rgba(180,180,180,0.5)'</span><br />trace1 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmin'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmin'</span>, line=<span class="hljs-built_in">dict</span>(color=greycolor))<br />trace2 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmean'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmean'</span>, line=<span class="hljs-built_in">dict</span>(color=<span class="hljs-string">'black'</span>))<br />trace3 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmax'</span>],mode=<span class="hljs-string">'lines'</span>, name=<span class="hljs-string">'Tmax'</span>, line=<span class="hljs-built_in">dict</span>(color=greycolor))<br />trace4 = go.Scatter(x=data[<span class="hljs-string">'Month'</span>], y=data[<span class="hljs-string">'Tmin'</span>],mode=<span class="hljs-string">'none'</span>, fill=<span class="hljs-string">'tonexty'</span>, fillcolor=greycolor, showlegend=<span class="hljs-literal">False</span>)<br />data_plotly = [trace1, trace2, trace3,trace4]<br />layout = go.Layout(yaxis=<span class="hljs-built_in">dict</span>(title=<span class="hljs-string">'Temperature'</span>))<br />fig = go.Figure(data=data_plotly, layout=layout)<br />fig.show()</span></pre>
-                    <p name="5089">And that produces what we want.</p>
-                    <figure class="graf graf--figure" name="b3ee"><img class="graf-image" data-height="450"
+                    <p>Here’s the modified ChatGPT code.</p>
+
+                    <pre class="bg-light"><code>    # Import the plotly library
+    import plotly.graph_objs as go
+    
+    # Draw a line chart of Tmin, Tmean, and Tmax over Month with shading between Tmin and Tmax using plotly
+    greycolor = fillcolor = 'rgba(180,180,180,0.5)'
+    trace1 = go.Scatter(x=data['Month'], y=data['Tmin'],mode='lines', name='Tmin', line=dict(color=greycolor))
+    trace2 = go.Scatter(x=data['Month'], y=data['Tmean'],mode='lines', name='Tmean', line=dict(color='black'))
+    trace3 = go.Scatter(x=data['Month'], y=data['Tmax'],mode='lines', name='Tmax', line=dict(color=greycolor))
+    trace4 = go.Scatter(x=data['Month'], y=data['Tmin'],mode='none', fill='tonexty', fillcolor=greycolor, showlegend=False)
+    data_plotly = [trace1, trace2, trace3,trace4]
+    layout = go.Layout(yaxis=dict(title='Temperature'))
+    fig = go.Figure(data=data_plotly, layout=layout)
+    fig.show()</code></pre>
+
+                    <p>And that produces what we want.</p>
+                    <figure class="graf graf--figure"><img class="graf-image" data-height="450"
                             data-image-id="1*A_F-IhGltgoEnvgKUPv0Lg.png" data-width="1540"
                             src="https://cdn-images-1.medium.com/max/800/1*A_F-IhGltgoEnvgKUPv0Lg.png" /></figure>
-                    <h3 class="graf graf--h3" name="1f27">What have we&nbsp;learned?</h3>
-                    <p name="c426">ChatGPT can definitely take some (a lot?) of the tedium from
+                    <h3 class="graf graf--h3">What have we&nbsp;learned?</h3>
+                    <p>ChatGPT can definitely take some (a lot?) of the tedium from
                         programming. I could have fairly easily produced all of the code above but it would have taken
                         me
                         longer
                         and I would probably have made some mistakes. ChatGPT makes mistakes, too, but we can ask it to
                         try
                         again and when it gets close enough to a solution we can step in and fix it.</p>
-                    <p name="4294">As I said at the beginning, working with ChatGPT works well when
+                    <p>As I said at the beginning, working with ChatGPT works well when
                         constructing a Jupyter notebook. If I wanted to produce a normal Python program or, say, a
                         Streamlit
-                        program, I’d probably ask ChatGPT to construct functions for me that I would then string
+                        program, I'd probably ask ChatGPT to construct functions for me that I would then string
                         together in
                         a
                         main program.</p>
-                    <p name="b6fb">Talking of Streamlit, let me leave you with this:</p>
-                    <p name="da94"><strong class="markup--strong markup--p-strong">Me: write a hello world
+                    <p>Talking of Streamlit, let me leave you with this:</p>
+                    <p><strong >Me: write a hello world
                             streamlit program</strong></p>
-                    <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1"
-                        name="9515"
-                        spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Import the streamlit library</span><br /><span class="hljs-keyword">import</span> streamlit <span class="hljs-keyword">as</span> st<br /><br /><span class="hljs-comment"># Create a simple "Hello, World!" program using streamlit</span><br />st.title(<span class="hljs-string">"Hello, World!"</span>)<br />st.write(<span class="hljs-string">"This is a simple Streamlit program."</span>)</span></pre>
-                    <p name="e1ec"><em class="markup--em markup--p-em">ChatGPT: This code snippet uses the
-                        </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">streamlit</em></code><em
-                            class="markup--em markup--p-em"> library to create a simple "Hello, World!" program.
-                        </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">st.title("Hello, World!")</em></code><em
-                            class="markup--em markup--p-em"> is used to create a title for the program, and </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">st.write("This is a simple Streamlit program.")</em></code><em
-                            class="markup--em markup--p-em"> is used to add a line of text to the program.</em></p>
-                    <p name="fb73"><em class="markup--em markup--p-em">You can run this code by creating a
+
+                            <pre class="bg-light"><code>    # Import the streamlit library
+    import streamlit as st
+
+    # Create a simple "Hello, World!" program using streamlit
+    st.title("Hello, World!")
+    st.write("This is a simple Streamlit program.")</code></pre>
+
+                    <p><em>ChatGPT: This code snippet uses the
+                        </em><code><em>streamlit</em></code><em> library to create a simple "Hello, World!" program.
+                        </em><code><em>st.title("Hello, World!")</em></code><em
+                           > is used to create a title for the program, and </em><code
+                            class="markup--code markup--p-code"><em>st.write("This is a simple Streamlit program.")</em></code><em
+                           > is used to add a line of text to the program.</em></p>
+                    <p><em>You can run this code by creating a
                             new Python file and pasting the above code snippet, then running the file using </em><code
-                            class="markup--code markup--p-code"><em class="markup--em markup--p-em">streamlit run filename.py</em></code><em
-                            class="markup--em markup--p-em"> command in your terminal. This will open a new browser
+                            class="markup--code markup--p-code"><em>streamlit run filename.py</em></code><em
+                           > command in your terminal. This will open a new browser
                             window
                             with
                             the "Hello, World!" program running.</em></p>
-                    <p name="51cd"><em class="markup--em markup--p-em">You can also use other streamlit
+                    <p><em>You can also use other streamlit
                             functions like st.header(), st.subheader() to make the program more presentable and
                             interactive.
                             Streamlit also has a lot of widgets like checkbox, selectbox, etc. to make the program more
@@ -483,8 +567,8 @@
                 <hr class="section-divider" />
 
 
-                <p name="0afb">If you’d like to see more of my work check out my website below.</p>
-                <div class="graf graf--mixtapeEmbed" name="edfa"><a class="markup--anchor markup--mixtapeEmbed-anchor"
+                <p>If you’d like to see more of my work check out my website below.</p>
+                <div class="graf graf--mixtapeEmbed"><a class="markup--anchor markup--mixtapeEmbed-anchor"
                         data-href="https://alanjones2.github.io" href="https://alanjones2.github.io"
                         title="https://alanjones2.github.io"><strong
                             class="markup--strong markup--mixtapeEmbed-strong">AlanJones:
@@ -495,7 +579,7 @@
                         href="https://alanjones2.github.io"
                         style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*2Vp4kCv--BF5Y0GR);"></a>
 
-                    <p class="graf graf--p graf--empty" name="83dc"><br /></p>
+                    
                 </div>
 
             </div>
