@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://medium.com/technofile/visualizing-brexit-regret-data-ba36dff765a8", 
+        "imageURL":"https://miro.medium.com/v2/resize:fit:1100/0*EvgL0hiY-UDtHS6P",
+        "title":"Visualizing 'Brexit Regret' Data", 
+        "description":"A recent poll shows that more Britons favour rejoining the EU than those who still support Brexit. Let’s draw some graphs.", 
+        "demoURL":"https://alanjones2-alan-jones-article-code-pollapp1-vgotws.streamlit.app/",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/poll",
+        "tags":"Python DataVisualization Streamlit"
+    }, 
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/towards-data-science/build-a-web-app-with-jupyter-and-mercury-9d59661441b7", 
         "imageURL":"https://cdn-images-1.medium.com/max/880/0*yj43oK1X0_Ydu2_e",
         "title":"Build a Web App with Jupyter and Mercury", 

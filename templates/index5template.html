@@ -56,7 +56,7 @@
 
 </head>
 
-<body>
+<body class=" bg-white">
     <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io")
             .then(data => console.log(data));
     </script>
@@ -156,10 +156,10 @@
 
         </div>
 
-        <div class="row" style="width: 100%;">
+        <div class="row bg-white" style="width: 100%;">
             <div class="col-sm-9 p-2">
                 {% for page in pages -%}
-                <div class="p-1 mb-2 bg-white article dBlock" tags="{{page.tags}}">
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="{{page.tags}}">
 
                     <div class="media">
                         <img class="mr-3" src="{{page.imageURL}}" width='120px' height='auto' alt="">
@@ -191,7 +191,7 @@
                             Find the code here</a>
                     </p>
                     {% endif %}
-                    <hr />
+                    
                 </div>
 
 
@@ -201,12 +201,19 @@
                 <!ads etc here -->
                     <div>
                         <!-- Substack-->
-                        <div class="p-4 shadow mb-4 rounded border border-dark bg-light">
+                        <div class="p-4 shadow-sm mb-2 rounded border border-secondary bg-light">
+                            <div class="text-secondary">Want more?</div>
                             <h4><a href="https://technofile.substack.com" target="_blank">Subscribe to my free,
                                     newsletter</a></h4>
+                            <div class="text-secondary">or sign up for</div>
+                            
+                            <h4><a href="https://medium.com/@alan-jones/membership", target="_blank">Medium </a> </h4>
+                            <p> Sign up here and you can read all my articles along with thousands of others for $5 a month (<i>affiliate link</i>).</p> 
+                            <div class="text-secondary">or</div>
+                             <h4>Buy a book...</h4>
                         </div>
                         <!-- Streamlit from scratch-->
-                        <div class="p-4 shadow mb-4 rounded border border-dark bg-light">
+                        <div class="p-4 shadow-sm mb-4 rounded border border-dark bg-light">
                             <p>DOWNLOADABLE BOOK</p>
                             <h3><a href='https://alanjones2.github.io/streamlitfromscratch/' target='_blank'>Streamlit
                                     from
@@ -221,7 +228,7 @@
 
                         </div>
 
-                        <div class="p-4 shadow mb-4 rounded border border-dark bg-light">
+                        <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
                             <div>
                                 <img class="mr-3"
                                     src="https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg"
@@ -240,7 +247,7 @@
 
                     
                         <!-- storytelling in data-->
-                        <div class="p-4 shadow mb-4 rounded border border-dark bg-light">
+                        <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
                             <div>
                                 <img class="mr-3"
                                     src="https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg"
@@ -256,7 +263,7 @@
                         </div>
 
                         <!-- How charts lie -->
-                        <div class="p-4 shadow mb-4 rounded border border-dark bg-light">
+                        <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
                             <div>
                                 <img class="mr-3"
                                     src="https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg"
