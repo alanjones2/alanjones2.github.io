@@ -2,11 +2,13 @@
     {
         "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/simple-surveys-with-streamlit-and-databutton-d027586f1c71",
+        "imageURL":"https://miro.medium.com/v2/resize:fit:720/0*uw3Y8aguIdhj3Efl",
         "title":"Streamlit’s user interface components made constructing simple surveys easy. We create a simple survey with Streamlit, present it and show the results.", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/st_survey",
         "tags":"Python DataVisualization Streamlit"
-    },     {
+    }, 
+    {
         "type":"ARTICLE",
         "articleURL": "https://medium.com/technofile/visualizing-brexit-regret-data-ba36dff765a8", 
         "imageURL":"https://miro.medium.com/v2/resize:fit:1100/0*EvgL0hiY-UDtHS6P",
