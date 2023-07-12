@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://medium.com/codefile/using-streamlits-chat-elements-the-doctor-is-in-3ea983422827",
+        "imageURL":"https://miro.medium.com/v2/resize:fit:786/format:webp/1*8vyoxsUDsQjL-hdGP1E0zQ.png",
+        "title":"Using Streamlit’s Chat Elements: the Doctor is in",
+        "description":"We use Streamlit’s chat elements to reproduce the famous 1960s Rogerian-psychologist-bot ELIZA", 
+        "demoURL":"https://stelizabot-y0wvkkghea8.streamlit.app/",
+        "code":"https://github.com/alanjones2/stelizabot",
+        "tags":"Python DataVisualization Streamlit AI"
+    }, 
+    {
+        "type":"ARTICLE",
         "articleURL": "https://towardsdatascience.com/simple-surveys-with-streamlit-and-databutton-d027586f1c71",
         "imageURL":"https://miro.medium.com/v2/resize:fit:720/0*uw3Y8aguIdhj3Efl",
         "title":"Simple Surveys with Streamlit",
@@ -8,7 +18,7 @@
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/st_survey",
         "tags":"Python DataVisualization Streamlit"
-    }, 
+    },
     {
         "type":"ARTICLE",
         "articleURL": "https://medium.com/technofile/visualizing-brexit-regret-data-ba36dff765a8", 
