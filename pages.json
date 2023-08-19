@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "#",
+        "imageURL":"https://cdn-images-1.medium.com/max/1320/0*Pl1Ogq-zx-aNYnuA",
+        "title":"Streamlit and MongoDB: Storing Your Data in the Cloud",
+        "description":"Deploying your Streamlit app to the Cloud means that any data that you create with that app disappears when the app terminates - unless you use third-party storage like the NoSQL database MongoDB", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/st_surveyM",
+        "tags":"Python Streamlit"
+    }, 
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/codefile/using-streamlits-chat-elements-the-doctor-is-in-3ea983422827",
         "imageURL":"https://miro.medium.com/v2/resize:fit:786/format:webp/1*8vyoxsUDsQjL-hdGP1E0zQ.png",
         "title":"Using Streamlit’s Chat Elements: the Doctor is in",
