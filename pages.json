@@ -1,6 +1,15 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "",
+        "imageURL":"https://cdn-images-1.medium.com/max/1320/1*FMEt0O63nBV6Dyw6soOHfw.png",
+        "title":"How to Build Waterfall Charts with Plotly Graph Objects",
+        "description":"Plotly Express doesn't implement waterfall charts but we can create a helper function that utilises Plotly Graph Objects instead", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/waterfall",
+        "tags":"Python Streamlit Plotly DataVisualization"
+    },     {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/p/c28663313ade",
         "imageURL":"https://cdn-images-1.medium.com/max/1320/0*Pl1Ogq-zx-aNYnuA",
         "title":"Streamlit and MongoDB: Storing Your Data in the Cloud",
