@@ -1,7 +1,7 @@
 [
     {
         "type":"ARTICLE",
-        "articleURL": "",
+        "articleURL": "https://medium.com/p/a8354543c42e",
         "imageURL":"https://cdn-images-1.medium.com/max/1320/1*FMEt0O63nBV6Dyw6soOHfw.png",
         "title":"How to Build Waterfall Charts with Plotly Graph Objects",
         "description":"Plotly Express doesn't implement waterfall charts but we can create a helper function that utilises Plotly Graph Objects instead", 
