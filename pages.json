@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "",
+        "imageURL":"https://cdn-images-1.medium.com/max/1320/0*2_uqMaDswQ0GjwnR",
+        "title":"2023 was the Hottest Summer Ever",
+        "description":"We look at how to visualize the hottest-ever recorded temperatures over the period of June through August 2023", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/GISS",
+        "tags":"Python Plotly DataVisualization"
+    },
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/p/a8354543c42e",
         "imageURL":"https://cdn-images-1.medium.com/max/1320/1*FMEt0O63nBV6Dyw6soOHfw.png",
         "title":"How to Build Waterfall Charts with Plotly Graph Objects",
