@@ -1,6 +1,26 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://medium.com/codefile/data-visualization-on-the-web-with-plotly-and-pyscript-a30392f1257a",
+        "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/1*tiFiCQhfOCR-MUPceF1uQQ.jpeg",
+        "title":"Data Visualization on the Web with Plotly and PyScript",
+        "description":"Put your data visualisations on the web with HTML templates — no server-side code required", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/pyscriptcode/tree/main/pyscript_templates",
+        "tags":"Python PyScript Plotly DataVisualization"
+    },
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://medium.com/codefile/a-new-plotly-component-for-streamlit-0884b7059e4a",
+        "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/1*noZdlwnSkasUBS7GDeJrjw.png",
+        "title":"A New Plotly Component for Streamlit",
+        "description":"Streamlit only supports two Plotly themes: the Streamlit theme, or the default Plotly theme. We present a Streamlit component that will you to display Plotly charts more flexibly.", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stplotlycomponent",
+        "tags":"Streamlit Python Plotly DataVisualization"
+    },
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/p/d92d500a8f01",
         "imageURL":"https://cdn-images-1.medium.com/max/1320/0*2_uqMaDswQ0GjwnR",
         "title":"2023 was the Hottest Summer Ever",
