@@ -150,7 +150,7 @@
     },    
     
     {
-        "type":"BOOK",
+        "type":"BOOK - sponsored content",
         "articleURL": "https://amzn.to/3kVBGmo", 
         "imageURL":"https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg",
         "title":"The Art of Statistics: How to Learn from Data", 
@@ -214,7 +214,7 @@
         "tags":"Python DataVisualization"
     }, 
     {
-        "type":"BOOK",
+        "type":"BOOK - sponsored content",
         "articleURL": "https://amzn.to/3JmzEFq", 
         "imageURL":"https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg",
         "title":"Storytelling with Data: A Data Visualization Guide for Business", 
@@ -279,7 +279,7 @@
     },     
     {
         "type":"DOWNLOADABLE BOOK",
-        "articleURL": "https://alanjones2.github.io/ajbooks/", 
+        "articleURL": "https://alanjones.gumroad.com/l/auiws", 
         "imageURL":"https://alanjones2.github.io/ajbooks/images/plottingwithpandas.png",
         "title":"Plotting with Pandas: An Introduction to Data Visualization", 
         "description":"If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it", 
@@ -413,7 +413,7 @@
         "tags":"DataVisualization"
     },    
     {   
-        "type":"BOOK",
+        "type":"BOOK - sponsored content",
         "articleURL": "https://amzn.to/3ZuQO9B", 
         "imageURL":"https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg",
         "title":"How Charts Lie: Getting Smarter about Visual Information", 
