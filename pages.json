@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://medium.com/towards-data-science/flapjax-data-visualization-on-the-web-with-plotly-and-flask-465090fa3fba",
+        "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/0*lKqU-0mXv9mBV7CS",
+        "title":"Flapjax: Data Visualization on the Web with Plotly and Flask",
+        "description":"Build a data visualisation web page with Plotly and Flask, and make it interactive with some UI components", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/flapjax_public",
+        "tags":"Python Flask Plotly DataVisualization"
+    },
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/codefile/data-visualization-on-the-web-with-plotly-and-pyscript-a30392f1257a",
         "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/1*tiFiCQhfOCR-MUPceF1uQQ.jpeg",
         "title":"Data Visualization on the Web with Plotly and PyScript",
@@ -171,8 +181,8 @@
         "tags":"Python DataScience DataVisualization AI ChatGPT"
     },  
     {
-        "type":"ONLINE BOOK",
-        "articleURL": "https://alanjones2.github.io/streamlitfromscratch/", 
+        "type":"EBOOK",
+        "articleURL": "https://alanjones.gumroad.com/l/streamlitfromscratch", 
         "imageURL":"https://github.com/alanjones2/streamlitfromscratch/raw/main/images/tools.jfif",
         "title":"Streamlit from Scratch", 
         "description":"Find the tools you need and use them to create your first interactive web app in Python and Streamlit. Add media to your apps to help to communicate your ideas, produce text figures, tables and sophisticated charts from Pandas dataframes using Matplotlib, Plotly, Altair and other libraries. Finally, use the UI and layout features of Streamlit to create data dashboard apps.", 
