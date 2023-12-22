@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://towardsdatascience.com/how-to-create-a-simple-gis-map-with-plotly-and-stream",
+        "imageURL":"https://miro.medium.com/v2/resize:fit:2000/format:webp/0*zRQkZNToDskUZPfS",
+        "title":"How to Create a Simple GIS Map with Plotly and Streamlit",
+        "description":"Plotly map functions combined with Streamlit user interface components provide a way of creating GIS-style dashboards", 
+        "demoURL":"https://co2-dashboard.streamlit.app/CO2_Emissions_Dashboard",
+        "code":"https://github.com/alanjones2/st-choropleth",
+        "tags":"Python Streamlit Plotly DataVisualization"
+    },
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/towards-data-science/flapjax-data-visualization-on-the-web-with-plotly-and-flask-465090fa3fba",
         "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/0*lKqU-0mXv9mBV7CS",
         "title":"Flapjax: Data Visualization on the Web with Plotly and Flask",
