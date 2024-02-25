@@ -6,14 +6,24 @@
         "title":"Altair: Using the Powerful Vega-Lite 'Grammar of Graphics",
         "description":"Using the Altair library for Python we can develop compelling data visualizations based on a grammar of graphics and implement them in Streamlit", 
         "demoURL":"None",
-        "code":"None",
+        "code":"https://colab.research.google.com/drive/1NyIyugfcbILP1d2Gwb-gumfJJaGplfdF",
         "tags":"Python DataVisualization DataScience"
-    },    
+    },        {
+        "type":"NEWSLETTER",
+        "articleURL": "https://technofile.substack.com",
+        "imageURL":"",
+        "title":"Data Visualization, Data Science and Python",
+        "description":"Subscribe to my newsletter on Substack", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Python AI ChatGPT DataScience"
+    }, 
+
     {
         "type":"ARTICLE",
         "articleURL": "https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53",
         "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Os4M1zBevrurAaOz",
-        "title":"How to Use the Powerful New Assistants API for Data Analysist",
+        "title":"How to Use the Powerful New Assistants API for Data Analyst",
         "description":"OpenAI’s Assistants API lets us create AI assistants which leverage tools that can operate on user-provided data", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/data-assistant",

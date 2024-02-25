@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Alan Jones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:image:src"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="Coding, data science and data visualization - Articles and Tutorials" name="description">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="Alan Jones" property="og:title">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .dNone {
+            display: none;
+        }
+
+        .dBlock {
+            display: block;
+        }
+    </style>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io")
+            .then(data => console.log(data));
+    </script>
+    <div class="jumbotron">
+        <h1 class="display-4" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+            <span class="text-secondary" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                Data Visualization</span>
+        </h1>
+        <hr />
+
+        <p class="lead">
+            Build Data Visualization apps for the web using Streamlit, Plotly, Python and Flask.
+        </p>
+        <p>
+            See the articles/tutorials, below, and find the code for them on Github by following the links below.
+            <br />
+            You can find me on:
+            <a href="https://alan-jones.medium.com/" target="_blank">Medium</a>,
+            <a href="https://twitter.com/MrAlanJones" target="_blank">Twitter as @MrAlanJones</a>
+            and
+            <a href="https://www.linkedin.com/in/alan-jones-032699100/" target="_blank">LinkedIn</a>.
+        </p>
+
+    </div>
+
+
+    <div style="margin-top:30px" class="container">
+        <script>
+            function selectTag(tag) {
+                // get all the article blocks
+                s = document.getElementsByClassName("article");
+
+                for (t = 0; t < s.length; t++) {
+                    // if tag selected is 'all' set all blocks to visible
+                    if (tag == 'All') {
+                        atts = (s[t].getAttribute('class'));
+                        newatts = atts.replace('dNone', 'dBlock')
+                        s[t].setAttribute('class', newatts)
+                    } else {
+                        // otherwise set all to invisible 'dNone' and 
+                        // then set the selected ones to visible 'dBlock'
+                        atts = (s[t].getAttribute('class'));
+                        newatts = atts.replace('dBlock', 'dNone')
+                        s[t].setAttribute('class', newatts)
+
+                        if (s[t].hasAttribute('tags')) {
+
+                            tags = s[t].getAttribute('tags');
+                            if (tags.includes(tag)) {
+                                atts = (s[t].getAttribute('class'));
+                                //alert(s[t].getAttribute('class'));
+                                newatts = atts.replace('dNone', 'dBlock')
+                                s[t].setAttribute('class', newatts);
+                                //alert(s[t].getAttribute('class'));
+                            }
+                        }
+                    }
+                }
+
+            }
+        </script>
+
+
+        <div class="row" style="width: 100%; padding-bottom: 10px; ">
+            <button type="button" class="btn btn-info" style="margin: 2px;">Select a topic: </button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('All')"
+                style="margin: 2px;font-size: small;">All</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('book')"
+                style="margin: 2px;font-size: small;">Books</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Python')"
+                style="margin: 2px;font-size: small;">Python</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Jupyter')"
+                style="margin: 2px;font-size: small;">Jupyter</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Pandas')"
+                style="margin: 2px;font-size: small;">Pandas</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Plotly')"
+                style="margin: 2px;font-size: small;">Plotly</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Streamlit')"
+                style="margin: 2px;font-size: small;">Streamlit</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('VSCode')"
+                style="margin: 2px;font-size: small;">VSCode</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Julia')"
+                style="margin: 2px;font-size: small;">Julia</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('DataVisualization')"
+                style="margin: 2px;font-size: small;">Data Visualization</button>
+            <!--<button type="button" class="btn btn-secondary" onclick="selectTag('DataScience')" style="margin: 2px;">Data Science</button>-->
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Statistics')"
+                style="margin: 2px;font-size: small;">Statistics</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Code-Hints')"
+                style="margin: 2px;font-size: small;">Code
+                Hints</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('PyScript')"
+                style="margin: 2px;font-size: small;">PyScript</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('ChatGPT')"
+                style="margin: 2px;font-size: small;">ChatGPT</button>
+
+
+        </div>
+
+        <div class="row bg-white" style="width: 100%;">
+            <div class="col-sm-9 p-2">
+                {% for page in pages -%}
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="{{page.tags}}">
+
+                    <div class="media">
+                        <img class="mr-3" src="{{page.imageURL}}" width='120px' height='auto' alt="">
+                        <div class="media-body">
+                            <h5 class="mt-0">
+                                <div class="font-weight-light small">
+                                    {%if page.type %}
+                                    {{page.type}}
+                                    {%else%}
+                                    ARTICLE
+                                    {% endif %}
+                                </div>
+                                <a href="{{page.articleURL}}" target="_blank">
+                                    <span class="text-dark">{{page.title}}</span>
+                                </a>
+                            </h5>
+                            {{page.description}}
+                        </div>
+                    </div>
+                    {%if page.demoURL != 'None' %}
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="{{page.demoURL}}" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    {% endif %}
+                    {%if page.code != 'None' %}
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="{{page.code}}" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm-3 p-2">
+                <!ads etc here -->
+                    <!-- streamlit from scratch-->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Downloadable eBook</i>
+                            <img class="mr-3" src="" width='80%' height='auto' alt="">
+                            <h5>
+                                <a href="https://alanjones2.github.io/streamlitfromscratch/" target="_blank">
+                                    <span class="text-dark">Streamlitfrom Scratch</span>
+                                </a>
+                            </h5>
+                            <p><b>Streamlit</b> is a framework for creating Data Science apps in Python.
+                                <br />
+                                <b>Streamlit from Scratch</b> is an ebook that will teach you how to get started with
+                                Streamlit.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- how charts work-->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3" src="https://m.media-amazon.com/images/I/61y5lxsc9DL._SY466_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/47FKuiz" target="_blank">
+                                    <span class="text-dark">How Charts Work: Understand and explain data with
+                                        confidence</span>
+                                </a>
+                            </h5>
+                            <h6>From the Back Cover</h6>
+                            <p>
+                                How Charts Work brings the secrets of effective data visualisation in a way that will
+                                help you bring data alive.
+                                Charts, graphs and tables are essential devices in business, but all too often they
+                                present information poorly.
+                                This
+                                book will help you:
+
+                                <li>Feel confident understanding different types of charts, graphs and tables – and how
+                                    to read them</li>
+                                <li>Recognise the true story behind the data presented and what the information really
+                                    shows</li>
+                                <li>Know the principles and rules of how best to represent information so you can create
+                                    your own
+                                    information-driven (and
+                                    beautiful) visuals</li>
+                                <li>Design visuals that people engage with, understand and act upon</li>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <!-- the art of statistics-->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3"
+                                src="https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/3kVBGmo" target="_blank">
+                                    <span class="text-dark">The Art of Statistics: How to Learn from Data</span>
+                                </a>
+                            </h5>
+                            Discover how data literacy is changing the world and gives you a better understanding of
+                            life's biggest problems. I have used this book in various articles and found it to be
+                            invaluable.
+
+                        </div>
+                    </div>
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+ 
+                           <i>Downloadable eBook</i>
+                            <h5><a href='https://alanjones.gumroad.com/l/auiws' target='_blank'>Plotting with Pandas</a>
+                            </h5>
+                            <p>
+                                <b>Plotting with Pandas: an Introduction to Data Visualization</b> is an ebook that covers basic and
+                                statistical plots using Python and Pandas, line and bar charts, scatter plots, pie charts,
+                                histograms, box plots, etc.
+                            </p>
+
+            
+            
+                    </div>
+
+                    <!-- storytelling in data-->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3"
+                                src="https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/3JmzEFq" target="_blank">
+                                    <span class="text-dark">Storytelling with Data: A Data Visualization Guide for
+                                        Business</span>
+                                </a>
+                            </h5>
+                            Don't simply show your data - tell a story with it! Storytelling with Data teaches you
+                            the fundamentals of data visualization and how to communicate effectively with data. I
+                            use this book in the series of articles '12 Essential Visualizations and How to
+                            Implement them.
+
+                        </div>
+                    </div>
+
+                    <!-- How charts lie -->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3"
+                                src="https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/3ZuQO9B" target="_blank">
+                                    <span class="text-dark">How Charts Lie: Getting Smarter about Visual
+                                        Information</span>
+                                </a>
+                            </h5>
+                            A leading data visualization expert explores the negative - and positive - influences
+                            that charts have on our perception of truth. I used this book as the inspiration for
+                            'How Not to Lie with Charts'.
+
+                        </div>
+                    </div>
+
+                    <!--
+                        <script async
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                            crossorigin="anonymous"></script>
+                        -->
+                    <!-- sfs vertical -->
+                    <!--
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        -->
+
+                    <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                    <script async
+                        src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div style="margin: 20px;">
+        <footer class="text-right text-secondary">
+            <i>Please note that all the software in these articles is written for educational purposes and should
+                not be
+                considered suitable for production code</i>
+            <br />
+            <i>This site contains affliate links. If you purchase an item through such a link I may get a commision
+                but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+            <br />
+            <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
