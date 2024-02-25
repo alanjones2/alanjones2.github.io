@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://alanjones2.github.io/articles/ggaltair/article.html",
+        "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/blob/master/assets/images/altair-grouped-bar-ordered.png?raw=true",
+        "title":"Altair: Using the Powerful Vega-Lite 'Grammar of Graphics",
+        "description":"Using the Altair library for Python we can develop compelling data visualizations based on a grammar of graphics and implement them in Streamlit", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Python DataVisualization DataScience"
+    },    
+    {
+        "type":"ARTICLE",
         "articleURL": "https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53",
         "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Os4M1zBevrurAaOz",
         "title":"How to Use the Powerful New Assistants API for Data Analysist",
