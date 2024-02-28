@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Grammar of Graphics with Altair and Vega-Lite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:image:src"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="Using the Altair library for Python we can develop compelling data visualizations based on a grammar of graphics"
+        name="description">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="Alan Jones" property="og:title">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io/articles/none")
+            .then(data => console.log(data));
+    </script>
+    <a href="https://alanjones2.github.io" style="text-decoration:none">
+    <div class="p-2 mb-2 bg-secondary text-white" >
+        <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+            <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                Data Visualization</span>
+        </h1>
+    </div>
+    </a>
+
+    <div style="margin-top:30px" class="container">
+
+        <div class="row bg-white" style="width: 100%;">
+            <div class="col-sm-8 p-2">
+                <!-- content-->
+            {content}
+            </div>
+            <div class="col-sm-3 p-2">
+                <!ads etc here -->
+                    <!-- how charts work-->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3" src="https://m.media-amazon.com/images/I/61y5lxsc9DL._SY466_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/47FKuiz" target="_blank">
+                                    <span class="text-dark">How Charts Work: Understand and explain data with
+                                        confidence</span>
+                                </a>
+                            </h5>
+                            <h6>From the Back Cover</h6>
+                            <p>
+                                How Charts Work brings the secrets of effective data visualisation in a way that will
+                                help you bring data alive.
+                                Charts, graphs and tables are essential devices in business, but all too often they
+                                present information poorly.
+                                This
+                                book will help you:
+
+                                <li>Feel confident understanding different types of charts, graphs and tables – and how
+                                    to read them</li>
+                                <li>Recognise the true story behind the data presented and what the information really
+                                    shows</li>
+                                <li>Know the principles and rules of how best to represent information so you can create
+                                    your own
+                                    information-driven (and
+                                    beautiful) visuals</li>
+                                <li>Design visuals that people engage with, understand and act upon</li>
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                    <!-- the art of statistics-->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3"
+                                src="https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/3kVBGmo" target="_blank">
+                                    <span class="text-dark">The Art of Statistics: How to Learn from Data</span>
+                                </a>
+                            </h5>
+                            Discover how data literacy is changing the world and gives you a better understanding of
+                            life's biggest problems. I have used this book in various articles and found it to be
+                            invaluable.
+
+                        </div>
+                    </div>
+
+
+                    <!-- storytelling in data-->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3"
+                                src="https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/3JmzEFq" target="_blank">
+                                    <span class="text-dark">Storytelling with Data: A Data Visualization Guide for
+                                        Business</span>
+                                </a>
+                            </h5>
+                            Don't simply show your data - tell a story with it! Storytelling with Data teaches you
+                            the fundamentals of data visualization and how to communicate effectively with data. I
+                            use this book in the series of articles '12 Essential Visualizations and How to
+                            Implement them.
+
+                        </div>
+                    </div>
+
+                    <!-- How charts lie -->
+                    <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                        <div>
+                            <i>Sponsored content</i>
+                            <img class="mr-3"
+                                src="https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg"
+                                width='80%' height='auto' alt="">
+                            <h5 class="mt-0">
+                                <a href="https://amzn.to/3ZuQO9B" target="_blank">
+                                    <span class="text-dark">How Charts Lie: Getting Smarter about Visual
+                                        Information</span>
+                                </a>
+                            </h5>
+                            A leading data visualization expert explores the negative - and positive - influences
+                            that charts have on our perception of truth. I used this book as the inspiration for
+                            'How Not to Lie with Charts'.
+
+                        </div>
+                    </div>
+
+                    <!--
+                        <script async
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                            crossorigin="anonymous"></script>
+                        -->
+                    <!-- sfs vertical -->
+                    <!--
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        -->
+
+                    <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                    <script async
+                        src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div style="margin: 20px;">
+        <footer class="text-right text-secondary">
+            <i>Please note that all the software in these articles is written for educational purposes and should
+                not be
+                considered suitable for production code</i>
+            <br />
+            <i>This site contains affliate links. If you purchase an item through such a link I may get a commision
+                but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+            <br />
+            <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
