@@ -1,6 +1,16 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://https://alanjones2.github.io/articles/stlite/stlite.html",
+        "imageURL":"https://github.com/alanjones2/stlite-examples/blob/main/0_4aM0SBn1NeWpOCMX.jpg?raw=true",
+        "title":"stlite: Serverless Streamlit— Run Your Apps in the Browser",
+        "description":"stlite is a browser-based implementation of Streamlit that can run apps on a web page without having to deploy to a Streamlit server", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Python DataVisualization DataScience Streamlit"
+    },        
+    {
+        "type":"ARTICLE",
         "articleURL": "https://alanjones2.github.io/articles/ggaltair/article.html",
         "imageURL":"https://github.com/alanjones2/Alan-Jones-article-code/blob/master/assets/images/altair-grouped-bar-ordered.png?raw=true",
         "title":"Altair: Using the Powerful Vega-Lite 'Grammar of Graphics",
@@ -8,7 +18,8 @@
         "demoURL":"None",
         "code":"https://colab.research.google.com/drive/1NyIyugfcbILP1d2Gwb-gumfJJaGplfdF",
         "tags":"Python DataVisualization DataScience"
-    },        {
+    },        
+    {
         "type":"NEWSLETTER",
         "articleURL": "https://technofile.substack.com",
         "imageURL":"",
