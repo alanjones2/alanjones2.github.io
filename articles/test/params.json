@@ -1,0 +1,9 @@
+{
+    "title":"stlite: Serverless Streamlit— Run Your Apps in the Browser",
+    "subtitle":"stlite is a browser-based implementation of Streamlit that can run apps on a web page without having to deploy to a Streamlit server",
+
+    "image":"https://github.com/alanjones2/stlite-examples/blob/main/0_4aM0SBn1NeWpOCMX.jpg?raw=true",
+    "demoURL":"None",
+    "code":"None",
+    "tags":"Python DataVisualization DataScience Streamlit"
+}

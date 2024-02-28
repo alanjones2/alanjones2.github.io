@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>How to Use the Powerful New Assistants API for Data Analysis</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:image:src"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="Using the Altair library for Python we can develop compelling data visualizations based on a grammar of graphics"
+        name="description">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="Alan Jones" property="og:title">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io/articles/How to Use the Powerful New Assistants API for Data Analysis")
+            .then(data => console.log(data));
+    </script>
+    <a href="https://alanjones2.github.io" style="text-decoration:none">
+    <div class="p-2 mb-2 bg-secondary text-white" >
+        <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+            <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                Data Visualization</span>
+        </h1>
+    </div>
+    </a>
+
+    <div style="margin-top:30px" class="container">
+
+        <div class="row bg-white" style="width: 100%;">
+            <div class="col-sm-8 p-2">
+                <!-- content-->
+                <h2 style="text-align: left;">OpenAI’s Assistants API lets us create AI assistants which leverage tools that can operate
+    on user-provided data</h2>
+<section class="section section--body" name="1307">
+    <div class="section-content">
+        <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;">
+            <tbody>
+                <tr>
+                    <td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGPmBh1Zjgn7VOcwD8M-xpxK77nQNy_f7F-ShOLz78B7rETPkoJf4S03Hs4S8_ZfwzB5DZ-tFsbP_duYqAQntjWzMWO4W0AwCCX7LmOikAMhfTwlgKvQNhiHpkNJa9bOHZ5a8u2T0UStZXSLIu1VH2uA98AzetRbUjPAla6l2Zp8Fwhwuos9oN0fkVMBw/s6240/tigran-hambardzumyan-N6vMNJ4PtjU-unsplash.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" data-original-height="4160" data-original-width="6240" height="426" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGPmBh1Zjgn7VOcwD8M-xpxK77nQNy_f7F-ShOLz78B7rETPkoJf4S03Hs4S8_ZfwzB5DZ-tFsbP_duYqAQntjWzMWO4W0AwCCX7LmOikAMhfTwlgKvQNhiHpkNJa9bOHZ5a8u2T0UStZXSLIu1VH2uA98AzetRbUjPAla6l2Zp8Fwhwuos9oN0fkVMBw/w640-h426/tigran-hambardzumyan-N6vMNJ4PtjU-unsplash.jpg" width="640" /></a></td>
+                </tr>
+                <tr>
+                    <td class="tr-caption" style="text-align: center;">
+                        <div style="text-align: right;"><i><span style="font-size: small; text-align: left;">Photo
+                                by&nbsp;</span><a class="markup--anchor markup--figure-anchor" data-href="https://unsplash.com/@tigranh47" href="https://unsplash.com/@tigranh47" rel="photo-creator noopener noopener" style="font-size: small; text-align: left;" target="_blank">Tigran Hambardzumyan</a><span style="font-size: small; text-align: left;">&nbsp;on&nbsp;</span><a class="markup--anchor markup--figure-anchor" data-href="https://unsplash.com" href="https://unsplash.com" rel="photo-source noopener noopener" style="font-size: small; text-align: left;" target="_blank">Unsplash</a></i></div><i><br />
+                    </i></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="section-inner sectionLayout--insetColumn">
+            <blockquote class="graf graf--pullquote graf--startsWithDoubleQuote" name="d2a6">“The Assistants API allows
+                you to build AI assistants within your own applications. An Assistant has instructions and can leverage
+                models, tools, and knowledge to respond to user queries”, OpenAI.</blockquote>
+            <p class="graf graf--p" name="81a5">Sounds great, so we are going to look at how we can use the new API to
+                do data analysis on local data.</p>
+            <p class="graf graf--p" name="76f3">The Assistants API represents an approach that is an alternative to at
+                least some uses of Retrieval Augmented Generation (RAG). So has RAG just been a stopgap measure, a
+                temporary solution to the drawbacks of the current generation of LLMs? After all, LlamaIndex’s Jerry Liu
+                has said that <a class="markup--anchor markup--p-anchor" data-href="https://www.latent.space/p/llamaindex" href="https://www.latent.space/p/llamaindex" rel="noopener" target="_blank">RAG is just a hack</a> (albeit a powerful one).</p>
+            <p class="graf graf--p" name="bc83">Here are three specific problems inherent to LLMs that RAG currently
+                addresses and that the Assistants API will also tackle:</p>
+            <ul class="postList">
+                <li class="graf graf--li" name="4910">LLMs are out of date. It takes a lot of time and money (<a class="markup--anchor markup--li-anchor" data-href="https://medium.com/towards-data-science/what-is-the-environmental-impact-of-ai-b8af55ec169e" href="https://medium.com/towards-data-science/what-is-the-environmental-impact-of-ai-b8af55ec169e" target="_blank">not to mention energy</a>) to train a model, so the information that they were
+                    trained on could be a couple of years old.</li>
+                <li class="graf graf--li" name="5cea">LLMs don’t know about <em class="markup--em markup--li-em">your</em> data. It is quite unlikely that your data were part
+                    of the training set for an LLM.</li>
+                <li class="graf graf--li" name="3ab2">LLMs hallucinate. Sometimes they will give entirely plausible
+                    responses that are totally false.</li>
+            </ul>
+            <p class="graf graf--p" name="a64e">By providing the LLM with data that is relevant to your application you
+                can reduce these problems.</p>
+            <p class="graf graf--p" name="8206">For example, if you want the LLM to produce Streamlit code, you could
+                give it data from the latest documentation to enable it to use new features of the framework. Or, if you
+                want to do some analysis on some specific data, then clearly giving it that data is essential. And,
+                finally, by providing relevant data to the LLM, you increase the chance of it providing a suitable
+                response and thus reduce the possibility of it just making things up.</p>
+            <p class="graf graf--p" name="2d1b">While RAG has been used to mitigate these issues, they are now also
+                addressed by the new Assistants API. The RAG approach makes queries to a locally provided vector
+                database and extracts relevant data from it before passing it to the LLM. In contrast, this new API will
+                allow you to upload your data so that the Assistant can operate with it directly.</p>
+            <p class="graf graf--p" name="4ddf">As an illustration of the potential use of the Assistants API, we are
+                going to use it to perform some analysis on a (very) small data set. This could be done in the OpenAI
+                Playground and you can see the interface for creating one in the screenshot below.</p>
+            <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;"><img class="graf-image" data-height="780" data-image-id="1*y9H2-rQeL3UqcZDbkCu02A.png" data-width="704" src="https://cdn-images-1.medium.com/max/800/1*y9H2-rQeL3UqcZDbkCu02A.png" style="margin-left: auto; margin-right: auto;" /></td>
+                    </tr>
+                    <tr>
+                        <td class="tr-caption" style="text-align: center;">
+                            <figure class="graf graf--figure" name="af90" style="text-align: left;">
+                                <figcaption class="imageCaption" style="text-align: right;"><span style="font-size: x-small;"><i>The OpenAI dashboard ready to define a new
+                                        assistant</i></span></figcaption>
+                            </figure>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+               
+            <p>But we are going to be programming in Python
+                    so that we can see how to incorporate assistants in a standalone project.</p>
+          
+            <p></p>
+            <h4 class="graf graf--h4" name="424a">Get an OpenAI&nbsp;account</h4>
+            <p class="graf graf--p" name="cc61">If you don’t already have one, you’ll need an OpenAI account and an API
+                key. Go to <a class="markup--anchor markup--p-anchor" data-href="http://OpenAI.com" href="http://OpenAI.com" rel="noopener" target="_blank">OpenAI.com</a> and sign up.</p>
+            <p class="graf graf--p" name="a9fa">Does this mean you are going to get charged?</p>
+            <p class="graf graf--p" name="6c59">Yes, I’m afraid so — but it’s not a lot. One of the reasons that we are
+                going to use a small dataset is that it is a low-cost option.</p>
+            <p class="graf graf--p" name="8338">Charges vary depending on the model you are using (GPT3.5, GPT4, etc)
+                and the number of tokens that are generated, there is an additional fee for using the Assistants API,
+                and you will also be charged for storing files (2 cents per gigabyte per day. <em class="markup--em markup--p-em">Hint: don’t forget to delete files that you are not using, you can
+                    do it from your OpenAI dashboard or programmatically via the API</em>).</p>
+            <p class="graf graf--p" name="b2f5">There is generally a free trial that you can take advantage of — at the
+                time of writing, I believe OpenAI is offering $5 worth of free usage which is much more than you will
+                need to try out the code here.</p>
+            <p class="graf graf--p" name="de6a">My OpenAI free trial ran out long ago so I am now getting charged but
+                the fees for running a small experiment like the one we are about to embark upon are not large. I
+                created a Jupyter Notebook to use the API — with some of the code that we’ll see shortly — and even
+                though it went through a few iterations, my bill was only a few 10s of cents.</p>
+            <p class="graf graf--p" name="e350">You can keep an eye on the bill you are racking up in the <em class="markup--em markup--p-em">Usage</em> section of the OpenAI dashboard. There are also sections
+                for <em class="markup--em markup--p-em">Assistants</em> and <em class="markup--em markup--p-em">Files</em> which you should also monitor and where you can delete
+                individual items.</p>
+            <figure class="graf graf--figure" name="0d33"><img class="graf-image" data-height="315" data-image-id="1*DGbYDVaGRwLDHaqepuAk9w.png" data-width="197" src="https://cdn-images-1.medium.com/max/800/1*DGbYDVaGRwLDHaqepuAk9w.png" />
+                <figcaption class="imageCaption">Select the appropriate menu option to monitor your usage,
+                    files,&nbsp;etc.</figcaption>
+            </figure>
+            <h4 class="graf graf--h4" name="a5f3">Get the&nbsp;SDK</h4>
+            <p class="graf graf--p" name="5f7d">If you have played around with the APIs in the past then you will
+                already have the OpenAI SDK. However, you may need to upgrade it to use the Assistants API.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="bash" data-code-block-mode="2" name="b93f" spellcheck="false"><span class="pre--content">pip install --upgrade openai </span></pre>
+            <p class="graf graf--p" name="2381">If you are starting from scratch just miss out the <code class="markup--code markup--p-code">--upgrade</code> option.</p>
+            <h4 class="graf graf--h4" name="5b1a">The Assistant API</h4>
+            <p class="graf graf--p" name="1a82">Essentially the Assistant API gives the programmer tools to manage a
+                specific type of interaction with an LLM. It defines the LLM model and sets its behaviour, stores an
+                ongoing interaction with the LLM, and manages that interaction.</p>
+            <p class="graf graf--p" name="d09d">There are three main parts to the Assistants API:</p>
+            <ul class="postList">
+                <li class="graf graf--li" name="01ea"><code class="markup--code markup--li-code">Assistants:</code>
+                    These are the starting point and they specify several aspects of the assistant: a model (e.g. <code class="markup--code markup--li-code">gpt-4-1106-preview</code>); instructions that inform the
+                    model about the type of behaviour we expect from it; tools such as the <em class="markup--em markup--li-em">code interpreter</em> and <em class="markup--em markup--li-em">file retrieval</em>; and files that we want to the model to
+                    use.</li>
+                <li class="graf graf--li" name="0f7c"><code class="markup--code markup--li-code">Threads:</code> These
+                    represent the state of a conversation and will contain the messages that are generated both by the
+                    user and the assistant. A thread is not associated with an assistant until a <code class="markup--code markup--li-code">run</code> is started, rather it is a separate entity that
+                    will be used alongside an assistant during a <code class="markup--code markup--li-code">run</code>.
+                </li>
+                <li class="graf graf--li" name="33ab"><code class="markup--code markup--li-code">Runs:</code> These
+                    control the execution of an <code class="markup--code markup--li-code">assistant</code> with a <code class="markup--code markup--li-code">thread</code>. The <code class="markup--code markup--li-code">run</code> takes the information in the <code class="markup--code markup--li-code">thread</code> and the <code class="markup--code markup--li-code">assistant</code> and manages the interaction with the LLM.
+                    <code class="markup--code markup--li-code">Runs</code> are asynchronous and go through a number of
+                    steps before completion so we need to poll them to determine when they are complete. When the <code class="markup--code markup--li-code">run</code> is complete, we can then interrogate the <code class="markup--code markup--li-code">thread</code> to see what response the assistant has come
+                    up with.</li>
+            </ul>
+            <p class="graf graf--p" name="00f7">In addition to these objects, we also utilise <code class="markup--code markup--p-code">messages</code>. A <code class="markup--code markup--p-code">message</code> can be a request from the user or a response from
+                the LLM. Initially, it would be normal to create a <code class="markup--code markup--p-code">message</code> with a user request. This is then added to a
+                <code class="markup--code markup--p-code">thread</code> before the <code class="markup--code markup--p-code">run</code> starts. During the run, the LLM will have responded
+                with new <code class="markup--code markup--p-code">messages</code> that will have also been added to the
+                thread and, as mentioned above, the responses can then be read from the <code class="markup--code markup--p-code">thread</code>.</p>
+            <h4 class="graf graf--h4" name="7703">Let’s create an assistant</h4>
+            <p class="graf graf--p" name="3925">An assistant contains a textual name, instructions and a model (e.g.
+                GPT4) and returns an object with an id that we can use to refer to the assistant. Our purpose here is to
+                create an assistant that will help us analyse CSV data, so we give it a suitable name, “Data Assistant”,
+                and provide instructions on how it should behave, “You are a data analyst who can analyse and interpret
+                data files such as CSV and can draw conclusions from the data”, and the LLM model that we want to use.
+                In this case, we need to use the Assistants-compatible model, <em class="markup--em markup--p-em">gpt-4–1106-preview.</em></p>
+            <p class="graf graf--p" name="7d3c">Here is the Python code for creating this assistant.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="7a8d" spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Create an assistant and show what it looks like</span><br /><br />assistant = client.beta.assistants.create(<br />    name=<span class="hljs-string">"Data Assistant"</span>,<br />    instructions=<span class="hljs-string">"You are a data analyst who can analyse and interpret data files such as CSV and can draw conclusions from the data"</span>,<br />    model=<span class="hljs-string">"gpt-4-1106-preview"</span>,<br />)</span></pre>
+            <p class="graf graf--p" name="aaef">The object that is returned has more attributes than we have given it.
+                For example, it will have been assigned an <code class="markup--code markup--p-code">id</code> that we
+                will need to use later.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="8ef7" spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Given that we have created an assistant named 'assistant' </span><br /><span class="hljs-comment"># we access its id thus:</span><br /><span class="hljs-built_in">id</span> = assistant.<span class="hljs-built_in">id</span></span></pre>
+            <p class="graf graf--p" name="8642">Also, we can see all of the other attributes using a utility function
+                from the OpenAI Cookbook¹.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1" name="2295" spellcheck="false"><span class="pre--content"><span class="hljs-keyword">import</span> json<br /><br /><span class="hljs-comment"># This utility function uses the IPython function 'display' to pretty-print </span><br /><span class="hljs-comment"># the JSON of an Assistants API object. </span><br /><span class="hljs-comment"># This code is copied directly from the OpenAI Cookbook (MIT Licence).</span><br /><br /><span class="hljs-keyword">def</span> <span class="hljs-title function_">show_json</span>(<span class="hljs-params">obj</span>):<br />    display(json.loads(obj.model_dump_json()))</span></pre>
+            <p class="graf graf--p" name="baee">We can use this to look at the assistant that we have just created.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="74c8" spellcheck="false"><span class="pre--content">show_json(assistant)</span></pre>
+            <p class="graf graf--p" name="ce9b">The result will look like the listing below.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="json" data-code-block-mode="2" name="3005" spellcheck="false"><span class="pre--content"><span class="hljs-punctuation">{</span>'id'<span class="hljs-punctuation">:</span> 'asst_y9cljnz0u79cbsCJWYF2dDBr'<span class="hljs-punctuation">,</span><br /> 'created_at'<span class="hljs-punctuation">:</span> <span class="hljs-number">1705136202</span><span class="hljs-punctuation">,</span><br /> 'description'<span class="hljs-punctuation">:</span> None<span class="hljs-punctuation">,</span><br /> 'file_ids'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br /> 'instructions'<span class="hljs-punctuation">:</span> 'You are a data analyst who can analyse and interpret data files such as CSV and can draw conclusions from the data'<span class="hljs-punctuation">,</span><br /> 'metadata'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br /> 'model'<span class="hljs-punctuation">:</span> 'gpt<span class="hljs-number">-4</span><span class="hljs-number">-1106</span>-preview'<span class="hljs-punctuation">,</span><br /> 'name'<span class="hljs-punctuation">:</span> 'Data Assistant'<span class="hljs-punctuation">,</span><br /> 'object'<span class="hljs-punctuation">:</span> 'assistant'<span class="hljs-punctuation">,</span><br /> 'tools'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span></span></pre>
+            <p class="graf graf--p" name="00ee">We will be adding files and tools attributes to this later but this is
+                all we need for the moment.</p>
+            <p class="graf graf--p" name="40bf">That is the starting point but to be able to do anything with the
+                assistant we need to construct a thread.</p>
+            <h4 class="graf graf--h4" name="ac8c">Create a&nbsp;thread</h4>
+            <p class="graf graf--p" name="33b2">A thread represents the state of a conversation and contains messages
+                but initially, we just create an empty one. The code below returns an empty thread which which we can
+                also view with the the utility function that we saw earlier.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="19d5" spellcheck="false"><span class="pre--content">thread = client.beta.threads.create()<br />show_json(thread)</span></pre>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="json" data-code-block-mode="2" name="1470" spellcheck="false"><span class="pre--content"><span class="hljs-punctuation">{</span>'id'<span class="hljs-punctuation">:</span> 'thread_WT86WCsNuuVN7d111Mywi42Z'<span class="hljs-punctuation">,</span><br /> 'created_at'<span class="hljs-punctuation">:</span> <span class="hljs-number">1705136202</span><span class="hljs-punctuation">,</span><br /> 'metadata'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br /> 'object'<span class="hljs-punctuation">:</span> 'thread'<span class="hljs-punctuation">}</span></span></pre>
+            <p class="graf graf--p" name="a71c">The next step is to create a user message and add it to the thread.</p>
+            <h4 class="graf graf--h4" name="3d56">Add a message to a&nbsp;thread</h4>
+            <p class="graf graf--p" name="ccec">A message will always be associated with a thread and we do this by
+                using the thread id as one of the message attributes. We also assign a role. This will be the first
+                message from the user so the role is ‘user’ and we also add the content of the message as a string. We
+                haven’t provided any data for the LLM to work with, yet, so we are just going to ask it a simple
+                question about Pandas.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="343a" spellcheck="false"><span class="pre--content">message = client.beta.threads.messages.create(<br />    thread_id=thread.<span class="hljs-built_in">id</span>,<br />    role=<span class="hljs-string">"user"</span>,<br />    content=<span class="hljs-string">"I need to find the mean value of a column in a pandas dataframe, can you help"</span>,<br />)</span></pre>
+            <p class="graf graf--p" name="cda2">Now we have an assistant, a thread and we have added a message to the
+                thread that represents our question to the LLM.</p>
+            <p class="graf graf--p" name="3dc7">The next step is to run it and see how the LLM will respond.</p>
+            <h4 class="graf graf--h4" name="ac37">Create (execute) a run from a thread and an assistant</h4>
+            <p class="graf graf--p" name="042a">To create a run we simply need to specify the assistant and the thread.
+            </p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1" name="4b59" spellcheck="false"><span class="pre--content">run = client.beta.threads.runs.create(<br />    thread_id=thread.<span class="hljs-built_in">id</span>,<br />    assistant_id=assistant.<span class="hljs-built_in">id</span>,<br />)</span></pre>
+            <h4 class="graf graf--h4" name="4e89">Wait until the run is&nbsp;finished</h4>
+            <p class="graf graf--p" name="9e14">A <code class="markup--code markup--p-code">run</code> will go through a
+                number of steps before it provides a result and as we mentioned earlier, it is asynchronous so we have
+                to poll its status to see when it has finished. The code below achieves that by <em class="markup--em markup--p-em">retrieving</em> the run and checking its status in a loop — and
+                pausing for half a second before trying again. When the run is no longer <em class="markup--em markup--p-em">queued</em> or <em class="markup--em markup--p-em">in_progress</em>
+                then we can take a look at how the LLM has responded.</p>
+            <p class="graf graf--p" name="84f9">The function below is from OpenAI Cookbook¹.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1" name="05c4" spellcheck="false"><span class="pre--content"><span class="hljs-keyword">import</span> time<br /><span class="hljs-comment"># Poll a run until it has completed</span><br /><span class="hljs-comment"># This code is copied directly from the OpenAI Cookbook (MIT Licence).</span><br /><span class="hljs-keyword">def</span> <span class="hljs-title function_">wait_on_run</span>(<span class="hljs-params">run, thread</span>):<br />    <span class="hljs-keyword">while</span> run.status == <span class="hljs-string">"queued"</span> <span class="hljs-keyword">or</span> run.status == <span class="hljs-string">"in_progress"</span>:<br />        run = client.beta.threads.runs.retrieve(<br />            thread_id=thread.<span class="hljs-built_in">id</span>,<br />            run_id=run.<span class="hljs-built_in">id</span>,<br />        )<br />        time.sleep(<span class="hljs-number">0.5</span>)<br />    <span class="hljs-keyword">return</span> run</span></pre>
+            <p class="graf graf--p" name="2d4a">Below we use the function to wait for the run to complete.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="4117" spellcheck="false"><span class="pre--content">run = wait_on_run(run, thread)</span></pre>
+            <p class="graf graf--p" name="1c91">So what is the result? We need to take a look a the messages.</p>
+            <h4 class="graf graf--h4" name="2179">Inspect the&nbsp;messages</h4>
+            <p class="graf graf--p" name="d51a">We retrieve the messages from the thread and here we will find the
+                response from the LLM. In the next piece of code, we get the messages and then print out the JSON of the
+                messages object. The JSON is not very readable but we will do something about that.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="8557" spellcheck="false"><span class="pre--content">messages = client.beta.threads.messages.<span class="hljs-built_in">list</span>(thread_id=thread.<span class="hljs-built_in">id</span>)<br />show_json(messages)</span></pre>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="json" data-code-block-mode="2" name="beca" spellcheck="false"><span class="pre--content"><span class="hljs-punctuation">{</span>'data'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>'id'<span class="hljs-punctuation">:</span> 'msg_OE189P7ud3lgNx6XaBym0Twh'<span class="hljs-punctuation">,</span><br />   'assistant_id'<span class="hljs-punctuation">:</span> 'asst_Mqid9aVUOpaK3gLgmuHdFh7H'<span class="hljs-punctuation">,</span><br />   'content'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>'text'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>'annotations'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br />      'value'<span class="hljs-punctuation">:</span> 'Certainly! In order to calculate the mean value of a column in a pandas DataFrame<span class="hljs-punctuation">,</span> you can use the `.mean()` method. Here’s a step-by-step guide to doing just that<span class="hljs-punctuation">:</span>\n\nStep <span class="hljs-number">1</span><span class="hljs-punctuation">:</span> First<span class="hljs-punctuation">,</span> ensure that you have pandas installed. If not<span class="hljs-punctuation">,</span> you can install it using `pip`<span class="hljs-punctuation">:</span>\n```bash\npip install pandas\n```\n\nStep <span class="hljs-number">2</span><span class="hljs-punctuation">:</span> Import pandas in your Python script or notebook<span class="hljs-punctuation">:</span>\n```python\nimport pandas as pd\n```\n\nStep <span class="hljs-number">3</span><span class="hljs-punctuation">:</span> Load your data into a pandas DataFrame. Assuming your data is in a CSV file<span class="hljs-punctuation">,</span> you can use the `read_csv` function<span class="hljs-punctuation">:</span>\n```python\ndf = pd.read_csv(\'path_to_your_csv_file.csv\')\n```\n\nStep <span class="hljs-number">4</span><span class="hljs-punctuation">:</span> Calculate the mean of the desired column. Let’s say the column name is \'your_column_name\'<span class="hljs-punctuation">:</span>\n```python\nmean_value = df<span class="hljs-punctuation">[</span>\'your_column_name\'<span class="hljs-punctuation">]</span>.mean()\n```\n\nAnd that\'s it! The variable `mean_value` now holds the mean of the specified column.\n\nHere\'s an example with a complete snippet of code<span class="hljs-punctuation">:</span>\n\n```python\nimport pandas as pd\n\n# Load data\ndf = pd.read_csv(\'path_to_your_csv_file.csv\')\n\n# Calculate mean\nmean_value = df<span class="hljs-punctuation">[</span>\'your_column_name\'<span class="hljs-punctuation">]</span>.mean()\n\n# Print the result\nprint(f<span class="hljs-string">"The mean value of the column \'your_column_name\' is {mean_value}"</span>)\n```\n\nJust replace `\'path_to_your_csv_file.csv\'` with the actual path to your CSV file<span class="hljs-punctuation">,</span> and `\'your_column_name\'` with the actual column name you\'re interested in.\n\nKeep in mind that if your column contains non-numeric data<span class="hljs-punctuation">,</span> you would first need to clean or convert the data to numeric types<span class="hljs-punctuation">,</span> as the mean function applies to numerical data only. Additionally<span class="hljs-punctuation">,</span> ensure that there are no `NaN` values or consider using `.mean(skipna=True)` to skip `NaN` values when computing the mean if your data includes missing values.'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br />     'type'<span class="hljs-punctuation">:</span> 'text'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br />   'created_at'<span class="hljs-punctuation">:</span> <span class="hljs-number">1705250906</span><span class="hljs-punctuation">,</span><br />   'file_ids'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br />   'metadata'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br />   'object'<span class="hljs-punctuation">:</span> 'thread.message'<span class="hljs-punctuation">,</span><br />   'role'<span class="hljs-punctuation">:</span> 'assistant'<span class="hljs-punctuation">,</span><br />   'run_id'<span class="hljs-punctuation">:</span> 'run_dQknLUHs0DuERN7QnmfO9nZk'<span class="hljs-punctuation">,</span><br />   'thread_id'<span class="hljs-punctuation">:</span> 'thread_TVLDDcv8ZWAaKTbnAhBwjRJI'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br />  <span class="hljs-punctuation">{</span>'id'<span class="hljs-punctuation">:</span> 'msg_KIKyi9JoGPI88LqAAU0OS5ju'<span class="hljs-punctuation">,</span><br />   'assistant_id'<span class="hljs-punctuation">:</span> None<span class="hljs-punctuation">,</span><br />   'content'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>'text'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>'annotations'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br />      'value'<span class="hljs-punctuation">:</span> 'I need to find the mean value of a column in a pandas dataframe<span class="hljs-punctuation">,</span> can you help'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br />     'type'<span class="hljs-punctuation">:</span> 'text'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br />   'created_at'<span class="hljs-punctuation">:</span> <span class="hljs-number">1705249356</span><span class="hljs-punctuation">,</span><br />   'file_ids'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br />   'metadata'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br />   'object'<span class="hljs-punctuation">:</span> 'thread.message'<span class="hljs-punctuation">,</span><br />   'role'<span class="hljs-punctuation">:</span> 'user'<span class="hljs-punctuation">,</span><br />   'run_id'<span class="hljs-punctuation">:</span> None<span class="hljs-punctuation">,</span><br />   'thread_id'<span class="hljs-punctuation">:</span> 'thread_TVLDDcv8ZWAaKTbnAhBwjRJI'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br /> 'object'<span class="hljs-punctuation">:</span> 'list'<span class="hljs-punctuation">,</span><br /> 'first_id'<span class="hljs-punctuation">:</span> 'msg_OE189P7ud3lgNx6XaBym0Twh'<span class="hljs-punctuation">,</span><br /> 'last_id'<span class="hljs-punctuation">:</span> 'msg_KIKyi9JoGPI88LqAAU0OS5ju'<span class="hljs-punctuation">,</span><br /> 'has_more'<span class="hljs-punctuation">:</span> False<span class="hljs-punctuation">}</span></span></pre>
+            <p class="graf graf--p" name="6d02">The messages are recorded in reverse chronological order, i.e. the first
+                message is the last one to be generated. Note that there are two messages in the JSON above (they start
+                with the field <code class="markup--code markup--p-code">id</code>). The first is the response from the
+                LLM and has the role <em class="markup--em markup--p-em">assistant</em>. The second one is the user
+                message that the LLM should respond to: “I need to find…”.</p>
+            <p class="graf graf--p" name="5a9b">It’s not easy to read because the text of the message is all on one
+                line. To solve the readability problem we can use another function from the OpenAI Cookbook¹.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1" name="78f1" spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Pretty printing helper from the OpenAI Cookbook</span><br /><br /><span class="hljs-keyword">def</span> <span class="hljs-title function_">pretty_print</span>(<span class="hljs-params">messages</span>):<br />    <span class="hljs-built_in">print</span>(<span class="hljs-string">"# Messages"</span>)<br />    <span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> messages:<br />        <span class="hljs-built_in">print</span>(<span class="hljs-string">f"<span class="hljs-subst">{m.role}</span>: <span class="hljs-subst">{m.content[<span class="hljs-number">0</span>].text.value}</span>"</span>)<br />    <span class="hljs-built_in">print</span>()</span></pre>
+            <p class="graf graf--p" name="936d">If we use that function on the returned messages…</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="a550" spellcheck="false"><span class="pre--content">pretty_print(messages)</span></pre>
+            <p class="graf graf--p" name="73ff">…we get a much easier-to-read result:</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="plaintext" data-code-block-mode="2" name="adaf" spellcheck="false"><span class="pre--content"># Messages<br />assistant: Certainly! In order to calculate the mean value of a column in a pandas DataFrame, you can use the `.mean()` method. Here’s a step-by-step guide to doing just that:<br /><br />Step 1: First, ensure that you have pandas installed. If not, you can install it using `pip`:<br />```bash<br />pip install pandas<br />```<br /><br />Step 2: Import pandas in your Python script or notebook:<br />```python<br />import pandas as pd<br />```<br /><br />Step 3: Load your data into a pandas DataFrame. Assuming your data is in a CSV file, you can use the `read_csv` function:<br />```python<br />df = pd.read_csv('path_to_your_csv_file.csv')<br />```<br /><br />Step 4: Calculate the mean of the desired column. Let’s say the column name is 'your_column_name':<br />```python<br />mean_value = df['your_column_name'].mean()<br />```<br /><br />And that's it! The variable `mean_value` now holds the mean of the specified column.<br /><br />Here's an example with a complete snippet of code:<br /><br />```python<br />import pandas as pd<br /><br /># Load data<br />df = pd.read_csv('path_to_your_csv_file.csv')<br /><br /># Calculate mean<br />mean_value = df['your_column_name'].mean()<br /><br /># Print the result<br />print(f"The mean value of the column 'your_column_name' is {mean_value}")<br />```<br /><br />Just replace `'path_to_your_csv_file.csv'` with the actual path to your CSV file, and `'your_column_name'` with the actual column name you're interested in.<br /><br />Keep in mind that if your column contains non-numeric data, you would first need to clean or convert the data to numeric types, as the mean function applies to numerical data only. Additionally, ensure that there are no `NaN` values or consider using `.mean(skipna=True)` to skip `NaN` values when computing the mean if your data includes missing values.<br />user: I need to find the mean value of a column in a pandas dataframe, can you help</span></pre>
+            <p class="graf graf--p" name="3f16">You still need to do a fair amount of sideways scrolling but we can see
+                much more easily that the LLM has responded with the sort of message that you might get from the web
+                version of ChatGPT.</p>
+            <p class="graf graf--p" name="2947">As a matter of interest, running the code that we have seen so far just
+                once landed me with a bill from OpenAI of a massive 1 cent!</p>
+            <p class="graf graf--p" name="25d2">We could add more messages, run them and simulate a ChatGPT web session
+                but the focus of this article is to look at how we can get the assistant to analyse data. So let’s move
+                on to that.</p>
+            <h4 class="graf graf--h4" name="1510">Add the code interpreter tool</h4>
+            <p class="graf graf--p" name="792e">We aim to upload a CSV file and enable the assistant to read and analyse
+                it and to do this we need to provide the assistant with the appropriate tool.</p>
+            <p class="graf graf--p" name="b385">Currently, there are three types of OpenAI-hosted tools available: <em class="markup--em markup--p-em">Code Interpreter</em>, <em class="markup--em markup--p-em">Knowledge
+                    Retrieval </em>and <em class="markup--em markup--p-em">Function calling</em>. Knowledge Retrieval is
+                aimed at reading text files (although these could be program code) while the Code Interpreter can read
+                images, zip files, certain programming languages that Knowledge Retrieval cannot cope with and CSV
+                files. Function calling is not something that concerns us here but we may return to it another day.</p>
+            <p class="graf graf--p" name="e982">So, we need the Code Interpreter.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="5360" spellcheck="false"><span class="pre--content">assistant = client.beta.assistants.update(<br />    assistant.<span class="hljs-built_in">id</span>,<br />    tools=[{<span class="hljs-string">"type"</span>: <span class="hljs-string">"code_interpreter"</span>}],<br />)<br />show_json(assistant)</span></pre>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="json" data-code-block-mode="2" name="f6b4" spellcheck="false"><span class="pre--content"><span class="hljs-punctuation">{</span>'id'<span class="hljs-punctuation">:</span> 'asst_y9cljnz0u79cbsCJWYF2dDBr'<span class="hljs-punctuation">,</span><br /> 'created_at'<span class="hljs-punctuation">:</span> <span class="hljs-number">1705136202</span><span class="hljs-punctuation">,</span><br /> 'description'<span class="hljs-punctuation">:</span> None<span class="hljs-punctuation">,</span><br /> 'file_ids'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br /> 'instructions'<span class="hljs-punctuation">:</span> 'You are a data analyst who can analyse and interpret data files such as CSV and can draw conclusions from the data'<span class="hljs-punctuation">,</span><br /> 'metadata'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br /> 'model'<span class="hljs-punctuation">:</span> 'gpt<span class="hljs-number">-4</span><span class="hljs-number">-1106</span>-preview'<span class="hljs-punctuation">,</span><br /> 'name'<span class="hljs-punctuation">:</span> 'Data Assistant'<span class="hljs-punctuation">,</span><br /> 'object'<span class="hljs-punctuation">:</span> 'assistant'<span class="hljs-punctuation">,</span><br /> 'tools'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>'type'<span class="hljs-punctuation">:</span> 'code_interpreter'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span></span></pre>
+            <p class="graf graf--p" name="cd72">The code above adds the tool and you can see that the assistant has been
+                updated to include it.</p>
+            <p class="graf graf--p" name="383d">This gives us the capability to read and interpret CSV files so now we
+                need to provide the file.</p>
+            <h4 class="graf graf--h4" name="b3b7">Add a&nbsp;file</h4>
+            <p class="graf graf--p" name="0887">The file that we are going to use is a very simple CSV table of EU
+                countries and their populations. It is assumed to be in the same folder as the notebook and it looks
+                like this:</p>
+            <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><img class="graf-image" data-height="744" data-image-id="1*yHzx_dl-a9iELPJKPXkgvw.png" data-width="314" src="https://cdn-images-1.medium.com/max/800/1*yHzx_dl-a9iELPJKPXkgvw.png" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: right;"><i><span style="font-size: x-small;"><span style="text-align: left;">EU country populations — source&nbsp;</span><a class="markup--anchor markup--figure-anchor" data-href="https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance" href="https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance" rel="noopener" style="text-align: left;" target="_blank">Eurostat</a></span></i></td></tr></tbody></table>
+            <p class="graf graf--p" name="db45">(As I mentioned earlier, this file is deliberately small because we
+                don’t want to land ourselves with a large usage bill for this simple experiment.)</p>
+            <p class="graf graf--p" name="283c">We do a conventional file read and then add the file to the assistant
+                (note that the assistant requires the file to be open in binary mode).</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1" name="e8cd" spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Upload the file</span><br />file = client.files.create(<br />    file=<span class="hljs-built_in">open</span>(<br />        <span class="hljs-string">"europop.csv"</span>,<br />        <span class="hljs-string">"rb"</span>,<br />    ),<br />    purpose=<span class="hljs-string">"assistants"</span>,<br />)<br /><span class="hljs-comment"># Update Assistant</span><br />assistant = client.beta.assistants.update(<br />    assistant.<span class="hljs-built_in">id</span>,<br />    tools=[{<span class="hljs-string">"type"</span>: <span class="hljs-string">"code_interpreter"</span>}],<br />    file_ids=[file.<span class="hljs-built_in">id</span>],<br />)<br />show_json(assistant)</span></pre>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="json" data-code-block-mode="2" name="b205" spellcheck="false"><span class="pre--content"><span class="hljs-punctuation">{</span>'id'<span class="hljs-punctuation">:</span> 'asst_Mqid9aVUOpaK3gLgmuHdFh7H'<span class="hljs-punctuation">,</span><br /> 'created_at'<span class="hljs-punctuation">:</span> <span class="hljs-number">1705249345</span><span class="hljs-punctuation">,</span><br /> 'description'<span class="hljs-punctuation">:</span> None<span class="hljs-punctuation">,</span><br /> 'file_ids'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>'file<span class="hljs-number">-2</span>dDVMRoUs7Kj0s2rnhcthlun'<span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><br /> 'instructions'<span class="hljs-punctuation">:</span> 'You are a data analyst who can analyse and interpret data files such as CSV and can draw conclusions from the data'<span class="hljs-punctuation">,</span><br /> 'metadata'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span><br /> 'model'<span class="hljs-punctuation">:</span> 'gpt<span class="hljs-number">-4</span><span class="hljs-number">-1106</span>-preview'<span class="hljs-punctuation">,</span><br /> 'name'<span class="hljs-punctuation">:</span> 'Data Assistant'<span class="hljs-punctuation">,</span><br /> 'object'<span class="hljs-punctuation">:</span> 'assistant'<span class="hljs-punctuation">,</span><br /> 'tools'<span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-punctuation">{</span>'type'<span class="hljs-punctuation">:</span> 'code_interpreter'<span class="hljs-punctuation">}</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">}</span></span></pre>
+            <p class="graf graf--p" name="057f">We can see now that the assistant has been updated with a file id, so
+                let’s give it a task.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1" name="4c82" spellcheck="false"><span class="pre--content"><span class="hljs-comment"># Create a message to append to our thread</span><br />message = client.beta.threads.messages.create(<br />    thread_id=thread.<span class="hljs-built_in">id</span>, <br />    role=<span class="hljs-string">"user"</span>, <br />    content=<span class="hljs-string">"""Please list the names, populations and percentage of the total, of the countries<br />               in order of descending population size?"""</span><br />)<br /><br /><span class="hljs-comment"># Execute our run</span><br />run = client.beta.threads.runs.create(<br />    thread_id=thread.<span class="hljs-built_in">id</span>,<br />    assistant_id=assistant.<span class="hljs-built_in">id</span>,<br />)<br /><br /><span class="hljs-comment"># Wait for completion</span><br />wait_on_run(run, thread)<br /><br /><span class="hljs-comment"># Retrieve all the messages added after our last user message</span><br />messages = client.beta.threads.messages.<span class="hljs-built_in">list</span>(<br />    thread_id=thread.<span class="hljs-built_in">id</span>, <br />    order=<span class="hljs-string">"asc"</span>, <br />    after=message.<span class="hljs-built_in">id</span><br />)<br />show_json(messages)</span></pre>
+            <p class="graf graf--p" name="2882">The code above should look familiar: we create a new message that asks
+                the LLM to list the countries in order of population and to display that population and its percentage
+                of the total of the countries. It’s not a difficult task for a data scientist or programmer but would
+                require a little effort.</p>
+            <p class="graf graf--p" name="f0bb">Next, we run the query and retrieve the messages.</p>
+            <p class="graf graf--p" name="4b32">Below is the pretty-printed version of the output.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="plaintext" data-code-block-mode="2" name="5aea" spellcheck="false"><span class="pre--content"># Messages<br />assistant: To achieve this, we will need to take the following steps:<br /><br />1. Load the data from the uploaded file into a pandas DataFrame.<br />2. Identify the relevant columns for countries, populations, and calculate the percentages.<br />3. Sort the DataFrame in descending order based on the population size.<br />4. Calculate the percentage of the total for each country.<br />5. Display the resulting DataFrame or list.<br /><br />Let's start by loading the data and looking at the first few rows to identify the columns we need. I'll proceed with loading the CSV file and displaying its head.<br />assistant: The file has been successfully loaded, and it appears to contain columns for the country names ('Country') and their respective populations ('Population (2021)'). <br /><br />Now, let's proceed with the following steps:<br />1. Sort the DataFrame based on 'Population (2021)' in descending order.<br />2. Calculate the percentage of the total population for each country.<br />3. List the names, populations, and percentages of the total in the sorted order.<br />assistant: Here is the list of countries with their populations and the percentage of the total population, in descending order of population size:<br /><br />|   Rank | Country      | Population (2021) | Percentage of Total |<br />|-------:|--------------|-------------------:|--------------------:|<br />|      1 | Germany      |          83,408,560 |               18.74% |<br />|      2 | France       |          64,531,448 |               14.50% |<br />|      3 | Italy        |          59,240,336 |               13.31% |<br />|      4 | Spain        |          47,486,932 |               10.67% |<br />|      5 | Poland       |          38,307,724 |                8.61% |<br />|      6 | Romania      |          19,328,558 |                4.34% |<br />|      7 | Netherlands  |          17,501,696 |                3.93% |<br />|      8 | Belgium      |          11,611,416 |                2.61% |<br />|      9 | Czechia      |          10,510,748 |                2.36% |<br />|     10 | Sweden       |          10,467,095 |                2.35% |<br />|     11 | Greece       |          10,445,368 |                2.35% |<br />|     12 | Portugal     |          10,290,109 |                2.31% |<br />|     13 | Hungary      |           9,709,784 |                2.18% |<br />|     14 | Austria      |           8,922,086 |                2.00% |<br />|     15 | Bulgaria     |           6,885,864 |                1.55% |<br />|     16 | Denmark      |           5,854,246 |                1.32% |<br />|     17 | Finland      |           5,535,982 |                1.24% |<br />|     18 | Slovakia     |           5,447,621 |                1.22% |<br />|     19 | Ireland      |           4,986,525 |                1.12% |<br />|     20 | Croatia      |           4,060,139 |                0.91% |<br />|     21 | Lithuania    |           2,786,652 |                0.63% |<br />|     22 | Slovenia     |           2,119,408 |                0.48% |<br />|     23 | Latvia       |           1,873,926 |                0.42% |<br />|     24 | Estonia      |           1,328,704 |                0.30% |<br />|     25 | Cyprus       |           1,244,193 |                0.28% |<br />|     26 | Luxembourg   |             639,330 |                0.14% |<br />|     27 | Malta        |             526,751 |                0.12% |<br /><br />This table lists each country, its population in 2021, and the percentage that population represents of the total of all countries listed. Please note that the percentages are rounded to two decimal places for readability.<br /><br /><br /></span></pre>
+            <p class="graf graf--p" name="e37d">Again it is exactly the type of thing that a web-based chat might
+                produce and shows that the LLM certainly does understand the data and how to manipulate it.</p>
+            <p class="graf graf--p" name="e41e">That’s about it for the code but you might want to try different prompts
+                to see how the LLM responds; just change the <code class="markup--code markup--p-code">content</code> to
+                the question that you would like answered.</p>
+            <h4 class="graf graf--h4" name="6877">Temperatures, prompts and variable responses</h4>
+            <p class="graf graf--p" name="0e52">You may well get slightly different responses when running the code
+                multiple times. It will contain the same data but it might be formatted differently. Different runs that
+                I have made have sometimes given explanations and sometimes not, or the list of countries and
+                populations might be just that, a list, or as we have seen above, a simple table.</p>
+            <p class="graf graf--p" name="4d3e">The likely reason is twofold.</p>
+            <p class="graf graf--p" name="61c1">Firstly, I have not put a great deal of thought into the prompts that
+                I’ve created for this experiment, so with a little prompt engineering you might be able to improve the
+                responses from the LLM — you could be specific about the way you want the response formatted, for
+                example.</p>
+            <p class="graf graf--p" name="8b5b">Secondly, we cannot set the <em class="markup--em markup--p-em">temperature</em> parameter for the LLM. This temperature is
+                essentially a measure of the randomness of the LLM’s response — a high temperature gives varied
+                responses and is good for creative work, whereas a low temperature reduces the variation as you might
+                want for code generation, for example.</p>
+            <p class="graf graf--p" name="da27">It’s possible that setting the temperature might be an option in a later
+                release (see this <a class="markup--anchor markup--p-anchor" data-href="https://community.openai.com/t/how-to-set-temperature-and-other-hyperparameters-of-model-in-open-ai-assistant-api/486368/3" href="https://community.openai.com/t/how-to-set-temperature-and-other-hyperparameters-of-model-in-open-ai-assistant-api/486368/3" rel="noopener" target="_blank">discussion</a>) but for the moment we are stuck with what we have
+                been given.</p>
+            <h4 class="graf graf--h4" name="a4dd">Towards an application</h4>
+            <p class="graf graf--p" name="7ad6">This has been a simple, bare-bones demonstration of data analysis with
+                the Assistants API. With such a small dataset, it could easily be duplicated with ChatGPT or pretty much
+                any other LLM-based chat service.</p>
+            <p class="graf graf--p" name="50d4">But this technique could be used to deal with much larger files or,
+                indeed, many files. The file upload limit for any one organisation is 100GB and individual files cannot
+                be more than 2 million tokens — a token is around 4 characters long, or 3/4 of a word.</p>
+            <p class="graf graf--p" name="785e">Of course, the API is aimed at powering applications and one can easily
+                imagine a Streamlit app, say, that incorporates assistants into a chat interface.</p>
+            <p class="graf graf--p" name="9786">Such an app might be a tool to give responses to a dataset that is
+                relevant to a particular client — sales data, for example — allowing the client to ask questions about
+                sales over a particular period. Or an app could contain fixed prompts that are selected via a menu of
+                options, or perhaps allow the client to upload their own data.</p>
+            <p class="graf graf--p" name="6f39">Developing a Streamlit app is not something that would fit here but
+                might well be the subject of another article.</p>
+        </div>
+    </div>
+</section>
+<section class="section section--body" name="c1bd">
+    <div class="section-divider">
+        <hr class="section-divider" />
+    </div>
+    <div class="section-content">
+        <div class="section-inner sectionLayout--insetColumn">
+            <p class="graf graf--p" name="0641">I hope you have found this experiment useful and thanks for reading. The
+                code and data are available in a <a class="markup--anchor markup--p-anchor" data-href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/data-assistant" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/data-assistant" rel="noopener" target="_blank">GitHub repo</a> where you can download them.</p>
+            <p class="graf graf--p" name="1a33">The downloadable notebook contains more code than you see above but
+                still only costs a few 10s of cents to run. However, make sure you monitor your usage on your OpenAI
+                dashboard — it is very easy to lose track of how many times you have hit the ‘run’ button. And make sure
+                that you delete any files that you upload when you have finished with them. You don’t want to use up
+                your free trial quota unnecessarily.</p>
+            <p class="graf graf--p" name="9dd3">If you would like to see more of my work you can visit my <a class="markup--anchor markup--p-anchor" data-href="http://alanjones2.github.io" href="http://alanjones2.github.io" rel="noopener" target="_blank">website</a>, follow me on
+                <a href="https://medium.com/@alan-jones" target="_blank">Medium</a>, and/or subscribe to my occasional <a class="markup--anchor markup--p-anchor" data-href="http://technofile.substack.com" href="http://technofile.substack.com" rel="noopener" target="_blank">free newsletter</a>.</p>
+        </div>
+    </div>
+</section>
+<section class="section section--body" name="2438">
+    <div class="section-divider">
+        <hr class="section-divider" />
+    </div>
+    <div class="section-content">
+        <div class="section-inner sectionLayout--insetColumn">
+            <h4 class="graf graf--h4" name="1438">Notes</h4>
+            <ol class="postList">
+                <li class="graf graf--li" name="0a16">The GitHub repository for the Assistants Overview section of the
+                    OpenAI Cookbook can be found <a class="markup--anchor markup--li-anchor" data-href="https://github.com/openai/openai-cookbook/blob/main/examples/Assistants_API_overview_python.ipynb" href="https://github.com/openai/openai-cookbook/blob/main/examples/Assistants_API_overview_python.ipynb" rel="noopener" target="_blank">here</a>. Parts of the code in this article were derived from the
+                    code in the Cookbook. The code is distributed under the MIT licence and was accessed in January
+                    2024.</li>
+                <li class="graf graf--li" name="8635">All images and screenshots are by the author unless otherwise
+                    indicated.</li>
+            </ol>
+        </div>
+    </div>
+</section>
+                
+some text
+
+```Python
+print("113")
+```
+
+more text
+            
+            <div class="col-sm-3 p-2">
+                <!ads etc here -->
+                        <script async
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                            crossorigin="anonymous"></script>
+                    <!-- sfs vertical -->
+                    
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        
+
+                    <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                    <script async
+                        src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div style="margin: 20px;">
+        <footer class="text-right text-secondary">
+            <i>Please note that all the software in these articles is written for educational purposes and should
+                not be
+                considered suitable for production code</i>
+            <br />
+            <i>This site may contain affliate links. If you purchase an item through such a link I may get a commision
+                but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+            <br />
+            <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
