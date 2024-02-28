@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Create a Unique Specialist Chatbot with a Modern Toolset: Streamlit, GPT-4 and the Assistants API</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:image:src"
+        content="https://github.com/alanjones2/alanjones2.github.io/raw/main/images/plottingwithpandas.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="Using the Altair library for Python we can develop compelling data visualizations based on a grammar of graphics"
+        name="description">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="Alan Jones" property="og:title">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io/articles/Chatbot-with-Streamlit-GPT-4-and-the-Assistants-API")
+            .then(data => console.log(data));
+    </script>
+    <a href="https://alanjones2.github.io" style="text-decoration:none">
+    <div class="p-2 mb-2 bg-secondary text-white" >
+        <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+            <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                Data Visualization</span>
+        </h1>
+    </div>
+    </a>
+
+    <div style="margin-top:30px" class="container">
+
+        <div class="row bg-white" style="width: 100%;">
+            <div class="col-sm-8 p-2">
+                <!-- content-->
+                <h1 class="display-4">
+                    Create a Unique Specialist Chatbot with a Modern Toolset: Streamlit, GPT-4 and the Assistants API</h1>
+                <div class="row bg-white" style="width: 100%;">
+
+<!-- content -->
+
+<h2 style="text-align: left;">With Streamlit’s sophisticated chat interface, a powerful GPT-4 backend and the OpenAI
+    Assistants API, we can build pretty much any specialist chatbot</h2>
+<section class="section section--body" name="408d">
+    <div class="section-content">
+        <div class="section-inner sectionLayout--outsetColumn">
+            <figure class="graf graf--figure graf--layoutOutsetCenter" name="8ff5"><figcaption class="imageCaption"><br /></figcaption><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjTY2uZj5UG2BYz88j7aVcep3QaXO4mkjSKUPx_mYmGf7yybXEeEXXAJAAKNsQOVL-JO0kyy0eAfF2ny59e8y0OZKE3NS4zhwjiQSxazyYPS1YCXFV-w5D-1GK_0X0Ch2YDxLxMQCv3hyphenhyphenWq5qaVvZNCl-infhyE_GUNzy5C484u5Xa5k0mp6mJFMUk1lU/s1200/0_DV1z5pPc7aFbFXMn.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" data-original-height="801" data-original-width="1200" height="428" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjTY2uZj5UG2BYz88j7aVcep3QaXO4mkjSKUPx_mYmGf7yybXEeEXXAJAAKNsQOVL-JO0kyy0eAfF2ny59e8y0OZKE3NS4zhwjiQSxazyYPS1YCXFV-w5D-1GK_0X0Ch2YDxLxMQCv3hyphenhyphenWq5qaVvZNCl-infhyE_GUNzy5C484u5Xa5k0mp6mJFMUk1lU/w640-h428/0_DV1z5pPc7aFbFXMn.jpg" width="640" /></a></td></tr><tr><td class="tr-caption" style="text-align: right;"><i><span><span style="text-align: left;">A master craftsperson could create things of beauty with these tools. Can we do the same with AI? Photo by&nbsp;</span><a class="markup--anchor markup--figure-anchor" data-href="https://unsplash.com/@sweetmangostudios" href="https://unsplash.com/@sweetmangostudios" rel="photo-creator noopener noopener" style="text-align: left;" target="_blank">Ricky Kharawala</a><span style="text-align: left;">&nbsp;on&nbsp;</span><a class="markup--anchor markup--figure-anchor" data-href="https://unsplash.com" href="https://unsplash.com" rel="photo-source noopener noopener" style="text-align: left;" target="_blank">Unsplash</a></span></i></td></tr></tbody></table><br /><figcaption class="imageCaption"><br /></figcaption>
+            </figure>
+        </div>
+        </div></section><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p class="graf graf--p" name="90b5">With the right tools — Streamlit, the GPT-4 LLM and the Assistants
+                API — we can build almost any chatbot.</p>
+            <ul class="postList">
+                <li class="graf graf--li" name="1c1d"><strong class="markup--strong markup--li-strong">Streamlit
+                    </strong>combines the power of Python programming with an easily constructed chat interface to
+                    provide the ideal front end to an AI-based application;</li>
+                <li class="graf graf--li" name="0e21"><strong class="markup--strong markup--li-strong">GPT-4</strong> is
+                    the most powerful LLM from OpenAI, so far;</li>
+                <li class="graf graf--li" name="1420">and the <strong class="markup--strong markup--li-strong">Assistants API</strong> provides the link between the
+                    two, controlling the behaviour of the LLM, organising the communications between the front and back
+                    ends, as well as providing access to tools such as code interpretation and data retrieval.</li>
+            </ul>
+            <p class="graf graf--p" name="61e3">The combination of these three elements gives us an extremely powerful
+                framework for developing specialist chatbots.</p>
+          
+          
+            <p class="graf graf--p" name="e1dd">The possibilities are endless! For example:</p>
+            <ul class="postList">
+                <li class="graf graf--li" name="713e">a company could upload product its documentation and company
+                    procedures and be on the way to creating a customer service chatbot;</li>
+                <li class="graf graf--li" name="ae65">a developer could grab the complete set of Streamlit documentation
+                    to build an expert coder for data science apps (note that while the Streamlit documentation is
+                    open-sourced under the Apache 2 licence, you should always check licences and copyright to ensure
+                    that you have the appropriate rights and permissions to use data from sources other than your own);
+                </li>
+                <li class="graf graf--li" name="8627">you could upload web pages scraped from online newspapers and
+                    easily create a news aggregator/summariser (again, you must check copyright and licences/permissions
+                    if you intend to re-publish any data from external sources — for private use it’s often ok but you
+                    should always check that you are using data legally!);</li>
+                <li class="graf graf--li" name="5bf1">a bird fancier might like to upload bird-related articles from
+                    Wikipedia and create a virtual ornithologist.</li>
+            </ul>
+            <p class="graf graf--p" name="ab59">OK, that last example might seem a little niche but it is what we are
+                going to develop as a demonstrator to show how the three elements can come together to create a
+                specialist chatbot.</p>
+            <p class="graf graf--p" name="85b1">The thing is that although Streamlit is open source and lets you deploy
+                apps for free on the Streamlit Community Cloud, OpenAI charges for using its LLMs, APIs and file
+                storage. It’s not terrifically expensive to experiment with OpenAI but, so as not to break the bank, we
+                aim to present a simple example of a specialist chatbot that only uses a small amount of data and will
+                only cost a few cents to run. (If you haven’t already done so you can get a free trial of the OpenAI API
+                that will cover the cost of running this application and much more.)</p>
+            <p class="graf graf--p" name="de30">I explained the basics of Assistants API from OpenAI in the article <a class="markup--anchor markup--p-anchor" data-href="https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53?sk=c8a84186e1438d48760e34c114dc2db5" href="https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53?sk=c8a84186e1438d48760e34c114dc2db5" target="_blank"><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em">How to Use the Powerful New Assistants API for Data
+                            Analysis</em></strong></a><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em">. </em></strong>There I used a simple data file to power a
+                data-aware chatbot with the demonstration code contained in a Jupyter Notebook. In this article, we will
+                develop a web app with Streamlit that uses the Assistants API to read and analyse textual data to
+                provide an ‘expert’ view of the information provided in that data.</p>
+            <p class="graf graf--p" name="f94d">I downloaded a random article from Wikipedia as a PDF — it’s about <a class="markup--anchor markup--p-anchor" data-href="https://en.wikipedia.org/wiki/Rock_parrot" href="https://en.wikipedia.org/wiki/Rock_parrot" rel="noopener" target="_blank">Australian Rock
+                    Parrots</a> (data from Wikipedia is usable under the <a class="markup--anchor markup--p-anchor" data-href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License" rel="license noopener noopener noopener" target="_blank">Creative Commons Attribution-ShareAlike
+                    License 4.0</a>). We’ll use this as the knowledge base for our chatbot.</p>
+            <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><img alt="Screenshot of the Rock Parrot article" class="graf-image" data-height="661" data-image-id="1*VNwqPWF7VuzJJ6wG0zC9Lw.png" data-width="804" src="https://cdn-images-1.medium.com/max/800/1*VNwqPWF7VuzJJ6wG0zC9Lw.png" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: center;"><p class="graf graf--p" name="d727" style="text-align: right;"><i>Excerpt from the Rock Parrot Wikipedia entry in PDF — source <a class="markup--anchor markup--p-anchor" data-href="https://en.wikipedia.org/wiki/Rock_parrot" href="https://en.wikipedia.org/wiki/Rock_parrot" rel="noopener" target="_blank">Wikipedia</a>, <a class="markup--anchor markup--p-anchor" data-href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License" rel="license noopener noopener" target="_blank">Creative Commons Attribution-ShareAlike License 4.0</a></i></p></td></tr></tbody></table>
+            <p class="graf graf--p" name="dac7">The file is about 7 pages long so not a vast resource but it will be
+                sufficient to illustrate how we can build a chatbot using specialist text.</p>
+            <p class="graf graf--p" name="7836">The screenshot below shows what the chatbot will look like. The
+                conversation is listed in reverse chronological order, so the top of the list is the latest response and
+                the second is the latest query.</p>
+            <table cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: right;"><tbody><tr><td style="text-align: center;"><img alt="Screenshot of the chatbot in action" class="graf-image" data-height="753" data-image-id="1*lEOFb6ePcAQxY2buNHNYqQ.png" data-width="730" src="https://cdn-images-1.medium.com/max/800/1*lEOFb6ePcAQxY2buNHNYqQ.png" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: right;"><span style="text-align: left;"><i><span>Screenshot of the chatbot in&nbsp;action</span></i></span></td></tr></tbody></table><figure class="graf graf--figure" name="edd1">
+            </figure>
+            </div></div></section><div style="text-align: left;">I explored the Streamlit chat interface in the article ‘<a class="markup--anchor markup--p-anchor" data-href="https://medium.com/codefile/using-streamlits-chat-elements-the-doctor-is-in-3ea983422827" href="https://medium.com/codefile/using-streamlits-chat-elements-the-doctor-is-in-3ea983422827" target="_blank"><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em">Using Streamlit’s Chat Elements: the Doctor is
+                            in</em></strong></a><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em">’ </em></strong>which was based on Eliza, the early natural
+                language processing computer program created from 1964 to 1966 at MIT by <a class="markup--anchor markup--p-anchor" data-href="https://en.wikipedia.org/wiki/Joseph_Weizenbaum" href="https://en.wikipedia.org/wiki/Joseph_Weizenbaum" rel="noopener ugc nofollow noopener noopener" target="_blank">Joseph Weizenbaum</a>, and this app uses the same UI elements.</div><div style="text-align: left;"><br /></div><div>Notice that the chatbot remembers what we are talking about. I first
+                asked it something about the Rock Parrot and next, I simply referred to the bird as ‘it’. This memory of
+                the conversation is a built-in function of the Assistants API, so we don’t need to write code to
+                implement it as was the case with the ‘Doctor’ app (the conversation was saved to the Streamlit session
+                state, in that app — no need here).<br /><br /></div><div><h3 style="text-align: left;">The Assistants API</h3>The Assistants API comprises three main elements, <em class="markup--em markup--p-em">assistants</em>, <em class="markup--em markup--p-em">threads</em>
+                and <em class="markup--em markup--p-em">runs</em>. Additionally, it utilises <em class="markup--em markup--p-em">messages</em> and <em class="markup--em markup--p-em">tools</em>.
+                Below, is a short excerpt from the article <a class="markup--anchor markup--p-anchor" data-href="https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53?sk=c8a84186e1438d48760e34c114dc2db5" href="https://alanjonescoding.blogspot.com/2024/02/how-to-use-powerful-new-assistants-api.html" target="_blank"><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em">How to Use the Powerful New Assistants API for Data
+                            Analysis</em></strong></a><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em"> </em></strong>that gives an overview of these various parts. If
+                you are unfamiliar with the API and need more detail,<strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em"> </em></strong>please read the article or refer to the <a class="markup--anchor markup--p-anchor" data-href="https://platform.openai.com/docs/assistants/how-it-works" href="https://platform.openai.com/docs/assistants/how-it-works" rel="noopener" target="_blank">OpenAI Assistants documentation</a>.<br /><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn">
+            
+            
+            
+            <i><br /></i></div></div></section><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><i>There are three main parts to the Assistants API:</i></div></div></section></blockquote><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn">&nbsp;</div></div></section></blockquote><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><i> </i></div></div></section><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><i>Assistants: These are the starting point and they specify several aspects of the assistant: a model (e.g. gpt-4-1106-preview); instructions that inform the model about the type of behaviour we expect from it; tools such as the code interpreter and file retrieval; and files that we want to the model to use.</i></div></div></section></blockquote><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn">&nbsp;</div></div></section></blockquote><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><i> </i></div></div></section><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><i>Threads: These represent the state of a conversation and will contain the messages that are generated both by the user and the assistant. A thread is not associated with an assistant until a run is started, rather it is a separate entity that will be used alongside an assistant during a run.</i>&nbsp;</div></div></section></blockquote><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn">&nbsp;</div></div></section></blockquote><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px; text-align: left;"><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><i> </i></div></div></section><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><i>Runs: These control the execution of an assistant with a thread. The run takes the information in the thread and the assistant and manages the interaction with the LLM. Runs are asynchronous and go through a number of steps before completion so we need to poll them to determine when they are complete. When the run is complete, we can then interrogate the thread to see what response the assistant has come up with.</i>&nbsp;</div></div></section></blockquote><blockquote style="border: none; margin: 0px 0px 0px 40px; padding: 0px;"><p style="text-align: left;"><i>In addition to these objects, we also utilise messages. A message can be a request from the user or a response from the LLM. Initially, it would be normal to create a message with a user request. This is then added to a thread before the run starts. During the run, the LLM will have responded with new messages that will have also been added to the thread and, as mentioned above, the responses can then be read from the thread.</i></p></blockquote><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn">
+            <p class="graf graf--p" name="90b5"></p></div></div></section><section class="section section--body" name="408d"><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 class="graf graf--h3" name="da50">The Chatbot&nbsp;app</h3>
+            <p class="graf graf--p" name="6669">In this app, we will be creating an assistant that uses the <em class="markup--em markup--p-em">file retrieval</em> tool (that allows the assistant to read text
+                files) and arm it with the Rock Parrot PDF from Wikipedia. To create the chat interface that we see
+                above we will build a Streamlit app that uses the <code class="markup--code markup--p-code">st.chat_input</code> and <code class="markup--code markup--p-code">st.chat_message</code> methods. The input method provides the
+                user input field that we see at the bottom of the screenshot above, and the message elements use the <em class="markup--em markup--p-em">role</em> assigned to a message (either <em class="markup--em markup--p-em">user </em>or <em class="markup--em markup--p-em">assistant</em>) to
+                display the messages, with an appropriate icon, above the input element.</p>
+            <h4 class="graf graf--h4" name="151c">Saving the session&nbsp;data</h4>
+            <p class="graf graf--p" name="7645">Apart from those UI elements, the screen contains a title and an
+                expander element that displays the instructions for using the chatbot and prompts the user for a valid
+                OpenAI API key. The app will not function without a key and once entered it is stored in the app’s
+                session state.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="baf5" spellcheck="false"><span class="pre--content">st.session_state.key = st.text_input(<span class="hljs-string">"API key"</span>)</span></pre>
+            <p class="graf graf--p" name="e195">Once a key has been entered, we can initialise the app. In the code
+                below, we see that we first create an OpenAI client and then an <em class="markup--em markup--p-em">assistant</em> and a <em class="markup--em markup--p-em">thread</em>
+                as long as they do not already exist.</p>
+            <p class="graf graf--p" name="9390">(Note that this approach is used so that this app can be deployed as a
+                demonstrator using the user’s API key. If I were to be developing an app for real, I’d keep the API key
+                as a Streamlit <em class="markup--em markup--p-em">secret</em>.)</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="758e" spellcheck="false"><span class="pre--content"><span class="hljs-comment">### initialise session state</span><br />    <br /><span class="hljs-keyword">if</span> <span class="hljs-string">'key'</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> st.session_state:<br />    st.session_state.key = <span class="hljs-string">""</span><br /><br /><span class="hljs-comment"># Check if the key has been set</span><br /><span class="hljs-keyword">if</span> st.session_state.key != <span class="hljs-string">""</span>:<br />    <span class="hljs-comment"># We have a key so create a client and an assistant</span><br />    <span class="hljs-keyword">if</span> <span class="hljs-string">'client'</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> st.session_state: <br />        st.session_state.client = OpenAI(api_key = st.session_state.key)<br />    <span class="hljs-keyword">if</span> <span class="hljs-string">'assistant'</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> st.session_state: <br />        create_assistant_and_thread(st.session_state.client)</span></pre>
+            <p class="graf graf--p" name="9563">We need to utilise the session state to store the elements that the app
+                relies on and we must test for their existence before setting them to accommodate the Streamlit run
+                model.</p>
+            <p class="graf graf--p" name="eb11">When you first invoke it the entire app is executed, and each time a
+                user input is detected (e.g. entering a key) then the app is re-run from the beginning. So, the state of
+                the app — the instantiations of the client, assistant, thread, etc. — must be stored for those re-runs.
+            </p>
+            <p class="graf graf--p" name="27e5">In the code above the assistant and thread are created by calling a
+                function. Here is that function:</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="1" name="9f73" spellcheck="false"><span class="pre--content"><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_assistant_and_thread</span>(<span class="hljs-params">client</span>):<br />    <span class="hljs-comment"># Create the assistant</span><br /><br />    <span class="hljs-comment"># Upload a file</span><br />    file = client.files.create(<br />        file=<span class="hljs-built_in">open</span>(<br />            <span class="hljs-string">"Rock_parrot.pdf"</span>,<br />            <span class="hljs-string">"rb"</span>,<br />        ),<br />        purpose=<span class="hljs-string">"assistants"</span>,<br />    )<br /><br />    st.session_state.assistant = client.beta.assistants.create(<br />        name = <span class="hljs-string">"Ornithologist"</span>,<br />        instructions=<span class="hljs-string">"You are ornithologist. Use your knowledge base to best respond to queries."</span>,<br />        model=<span class="hljs-string">"gpt-4-1106-preview"</span>,<br />        tools=[{<span class="hljs-string">"type"</span>: <span class="hljs-string">"retrieval"</span>},{<span class="hljs-string">"type"</span>: <span class="hljs-string">"code_interpreter"</span>}],<br />        file_ids=[file.<span class="hljs-built_in">id</span>],<br />    )<br /><br />    st.session_state.thread = client.beta.threads.create()</span></pre>
+            <p class="graf graf--p" name="690d">As you can see the file is read and used to create a <code class="markup--code markup--p-code">file</code> object. This is then incorporated into an assistant
+                along with a name, instructions and a list of tools. I’ve specified both the <em class="markup--em markup--p-em">retrieval</em> and <em class="markup--em markup--p-em">code_interpreter</em> tools here because that gives the assistant
+                access to more file types. We have hard-coded the PDF file in this application and the <em class="markup--em markup--p-em">retrieval</em> tool can deal with this, but if we wanted to access
+                image files, CSVs or certain program files we would need the <em class="markup--em markup--p-em">code_interpreter</em> tool.</p>
+            <p class="graf graf--p" name="6eba">After creating the assistant, we create an empty thread. This will be
+                used later to hold the messages from the user and the assistant.</p>
+            <h4 class="graf graf--h4" name="8a76">The chat interface</h4>
+            <p class="graf graf--p" name="6692">The objects that we have just created are used in the chat interface as
+                we can see in the code below. The user is prompted for input and this is used to create a <em class="markup--em markup--p-em">message </em>and that message is associated with the thread that we
+                created earlier.</p>
+            <p class="graf graf--p" name="bf1f">The thread and the assistant are then run on the model and, after
+                waiting for the run to complete, the thread is interrogated for the messages that it contains. These
+                messages will include the user prompt and the response from the assistant (and after more runs the
+                thread will contain the entire history of prompts and responses).</p>
+            <p class="graf graf--p" name="5408">We then loop over those messages, extracting the role (<em class="markup--em markup--p-em">user</em> or <em class="markup--em markup--p-em">assistant</em>) and
+                the text of the message. These are then displayed with Streamlit’s <code class="markup--code markup--p-code">chat_message</code> message function.</p>
+            <pre class="graf graf--pre graf--preV2" data-code-block-lang="python" data-code-block-mode="2" name="0075" spellcheck="false"><span class="pre--content"><span class="hljs-keyword">if</span> prompt := st.chat_input():<br />    <span class="hljs-keyword">if</span> <span class="hljs-string">"thread"</span> <span class="hljs-keyword">in</span> st.session_state:<br />        message = st.session_state.client.beta.threads.messages.create(<br />            thread_id=st.session_state.thread.<span class="hljs-built_in">id</span>,<br />            role=<span class="hljs-string">"user"</span>,<br />            content=prompt<br />        )<br />        run = st.session_state.client.beta.threads.runs.create(<br />            thread_id=st.session_state.thread.<span class="hljs-built_in">id</span>,<br />            assistant_id=st.session_state.assistant.<span class="hljs-built_in">id</span>,<br />            )<br />        run = wait_on_run(run, st.session_state.thread)<br />        messages = st.session_state.client.beta.threads.messages.<span class="hljs-built_in">list</span>(thread_id=st.session_state.thread.<span class="hljs-built_in">id</span>)<br /><br />        <span class="hljs-keyword">for</span> m <span class="hljs-keyword">in</span> messages:<br />            <span class="hljs-keyword">with</span> st.chat_message(<span class="hljs-string">f"<span class="hljs-subst">{m.role}</span>"</span>):<br />                st.markdown(<span class="hljs-string">f"<span class="hljs-subst">{m.content[<span class="hljs-number">0</span>].text.value}</span>"</span>)<br /><br />    <span class="hljs-keyword">else</span>:<br />        st.info(<span class="hljs-string">"You need to provide an OpenAI API key to continue"</span>)</span></pre>
+            <p class="graf graf--p" name="d1ed">And that is all that there is to it: initialise the assistant with
+                instructions and file(s) for it to use; prompt the user for a query; run that query; and extract and
+                display the responses.</p>
+            <p class="graf graf--p" name="8c31">I have only given you the main parts of the code here but you can
+                download the complete app from my GitHub repository where you will also find the Rock Parrot PDF and
+                other related files.</p>
+            <h4 class="graf graf--h4" name="c9f1">Dealing with references</h4>
+            <p class="graf graf--p" name="995f">As we know, LLMs are prone to hallucination: they invent plausible
+                responses that are entirely fictional. Providing the model with the information it needs by adding
+                user-provided files to the assistant is one way of mitigating this problem.</p>
+            <p class="graf graf--p" name="1653">To reinforce this non-hallucinatory effect, the Assistant API includes
+                references in its results. You can see one in the screenshot below.</p>
+            <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><img class="graf-image" data-height="100" data-image-id="1*wHpYeUPtiPdrG5CIvHfu7Q.png" data-width="742" src="https://cdn-images-1.medium.com/max/800/1*wHpYeUPtiPdrG5CIvHfu7Q.png" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: right;"><span style="text-align: left;"><i><span>An assistant response with a reference</span></i></span></td></tr></tbody></table><figure class="graf graf--figure" name="602d">
+            </figure>
+            <p class="graf graf--p" name="a75a">Unfortunately, “7†source”, is not very helpful beyond letting us know
+                that the information came from a provided source and has not been made up.</p>
+            <p class="graf graf--p" name="1812">There is a sample code for interpreting these references in the OpenAI
+                documentation, however, using that code would almost double the size of this app and, to be honest,
+                looks like a bit of a kludge. So, for now, I am ignoring this feature and hoping that when the
+                Assistants API comes out of beta, there will be a better method for dealing with references.</p>
+            <p class="graf graf--p" name="079d">Whether you think that the Assistants API is a worthwhile development
+                probably depends on the type of application that you are developing. I have written two types of app
+                using the API: a Jupyter Notebook that acts as a data analyst and this one that implements a chatbot in
+                Streamlit. In both cases, the app has been fairly easy to write and has produced the sort of result that
+                we might expect.</p>
+            <p class="graf graf--p" name="16e2">One large caveat is that the files I used in these apps have been very
+                small and the apps themselves are basic. It would be interesting to know how the response times might
+                change if more, or larger, files were used.</p>
+            <p class="graf graf--p" name="d16a">All-in-all this does seem to me to be a good approach and I will be
+                interested to see how the API develops after the beta stage. Thanks for reading and I hope that this has
+                been useful.</p>
+        </div>
+    </div>
+</section>
+<section class="section section--body" name="1142">
+    <div class="section-divider">
+        <hr class="section-divider" />
+    </div>
+    <div class="section-content">
+        <div class="section-inner sectionLayout--insetColumn">
+            <p class="graf graf--p" name="9437">You can find the code for both this article and the previous one in the
+                <a class="markup--anchor markup--p-anchor" data-href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/data-assistant" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/data-assistant" rel="noopener" target="_blank"><em class="markup--em markup--p-em">data-assistant folder</em></a><em class="markup--em markup--p-em"> </em>in my GitHub repository.</p>
+            <p class="graf graf--p" name="f11f">Please visit my <a class="markup--anchor markup--p-anchor" data-href="http://alanjones2.github.io" href="http://alanjones2.github.io" rel="noopener" target="_blank">website</a> where you will find links to my other articles and links to books that
+                have found useful and subscribe to my occasional <a class="markup--anchor markup--p-anchor" data-href="http://technofile.substack.com" href="http://technofile.substack.com" rel="noopener" target="_blank">newsletter</a>.</p>
+        </div>
+    </div>
+</section>
+<section class="section section--body" name="422c">
+    <div class="section-divider">
+        <hr class="section-divider" />
+    </div>
+    <div class="section-content">
+        <div class="section-inner sectionLayout--insetColumn">
+            <p class="graf graf--p" name="055e">All images and screenshots are by me, the author, unless otherwise
+                noted.</p>
+        </div>
+    </div>
+</section></div>
+
+<!-- end of content -->
+            
+            <div class="col-sm-3 p-2">
+                <!ads etc here -->
+                        <script async
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                            crossorigin="anonymous"></script>
+                    <!-- sfs vertical -->
+                    
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        
+
+                    <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                    <script async
+                        src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div style="margin: 20px;">
+        <footer class="text-right text-secondary">
+            <i>Please note that all the software in these articles is written for educational purposes and should
+                not be
+                considered suitable for production code</i>
+            <br />
+            <i>This site may contain affliate links. If you purchase an item through such a link I may get a commision
+                but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+            <br />
+            <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
