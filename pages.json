@@ -32,9 +32,9 @@
 
     {
         "type":"ARTICLE",
-        "articleURL": "https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53",
-        "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Os4M1zBevrurAaOz",
-        "title":"How to Use the Powerful New Assistants API for Data Analyst",
+        "articleURL": "https://alanjones2.github.io/articles/asstAPI/How_to_Use_the_Powerful_New_Assistants_API_for_Data_Analysis.html",
+        "imageURL":"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGPmBh1Zjgn7VOcwD8M-xpxK77nQNy_f7F-ShOLz78B7rETPkoJf4S03Hs4S8_ZfwzB5DZ-tFsbP_duYqAQntjWzMWO4W0AwCCX7LmOikAMhfTwlgKvQNhiHpkNJa9bOHZ5a8u2T0UStZXSLIu1VH2uA98AzetRbUjPAla6l2Zp8Fwhwuos9oN0fkVMBw/w640-h426/tigran-hambardzumyan-N6vMNJ4PtjU-unsplash.jpg",
+        "title":"Mastering the Powerful New Assistants API for Data Analyst",
         "description":"OpenAI’s Assistants API lets us create AI assistants which leverage tools that can operate on user-provided data", 
         "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/data-assistant",
