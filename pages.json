@@ -71,6 +71,16 @@
         "tags":"Python PyScript Plotly DataVisualization"
     },
     {
+        "type":"Downloadable eBook",
+        "articleURL": "https://alanjones2.github.io/streamlitfromscratch/",
+        "imageURL":"",
+        "title":"Streamlitfrom Scratch",
+        "description":"<p><b>Streamlit</b> is a framework for creating Data Science apps in Python.<br /><b>Streamlit from Scratch</b> is an ebook that will teach you how to get started with Streamlit.</p>", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Python Streamlit DataVisualization"
+    },
+    {
         "type":"ARTICLE",
         "articleURL": "https://medium.com/codefile/a-new-plotly-component-for-streamlit-0884b7059e4a",
         "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/1*noZdlwnSkasUBS7GDeJrjw.png",
