@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Create an AI-Generated Streamlit Application with an OpenAI Assistant</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image"
+        content="images/Screenshot_app.png">
+    <meta name="twitter:image:src"
+        content="images/Screenshot_app.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="We use the OpenAI Playground and code completion tools to create a Streamlit app with interactive Plotly charts">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="Create an AI-Generated Streamlit Application with an OpenAI Assistant" property="og:title">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io/articles/Create an AI-Generated Streamlit Application with an OpenAI Assistant")
+            .then(data => console.log(data));
+    </script>
+    <a href="https://alanjones2.github.io" style="text-decoration:none">
+    <div class="p-2 mb-2 bg-secondary text-white" >
+        <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+            <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                Data Visualization</span>
+        </h1>
+    </div>
+    </a>
+
+    <div style="margin-top:30px" class="container">
+
+        <div class="row bg-white" style="width: 100%;">
+            <div class="col-sm-8 p-2">
+                <!-- content-->
+                <h1 class="display-4">
+                    Create an AI-Generated Streamlit Application with an OpenAI Assistant</h1>
+                <div class="row bg-white" style="width: 100%;">
+
+                    <div class="col-sm-8 p-2">
+                        <h2 class="lead p-2" style="font-size:xx-large;">
+                            We use the OpenAI Playground and code completion tools to create a Streamlit app with interactive Plotly charts</h2>
+                    </div>
+                    <div class="col-sm-4 p-2">
+                        <p><img width="100%" alt=""
+                                src="images/Screenshot_app.png">
+
+                        </p>
+                    </div>
+                </div>
+                <h1></h1>
+<p>Can we get an AI to generate a data visualization app from scratch using only the raw data and a prompt? The answer appears to be 'Yes, absolutely we can' by using OpenAI's Playground feature.</p>
+<p>OpenAI's Playground merges the conversational ease of a chat interface with access to the powerful Assistants API. You can utilize tools like 'Code Completion' and 'Knowledge Retrieval' to interpret data files uploaded directly into the Playground.</p>
+<p>And with this functionality, you can instruct the AI Assistant to read those files and construct code that leverages the data contained in them.</p>
+<p>In this article, we are going to demonstrate how easy it is to get an AI Assistant to create an interactive Streamlit app that displays interactive data visualizations from CSV data. </p>
+<h3>Let's get some data</h3>
+<p>We are going to use data that is included in the Plotly package; it comes from Gapminder and it is free to use (see the <a href="gapminder.org">Gapminder</a> website for more details). However, to make a more realistic demonstration, we are going to save the data as an external CSV file. Just run the code below and you will create a file <em>gapminder.csv</em>.</p>
+<pre><code class="language-python">import plotly.data as data
+df = data.gapminder()
+df.to_csv('gapminder.csv')
+</code></pre>
+<p>Here is a screenshot of the part of the data.</p>
+<p><img alt="" src="images/Screenshot_data.png" /></p>
+<p>It is a list of country data from 1952 to 2007 that records the country name, the continent and the year of the observation. This is followed by the observational data which represents life expectancy, population and GDP per capita. The final two columns are the ISO codes for the countries.</p>
+<p>We are going to ask the AI to create a Streamlit application that reads this data and displays interactive graphics of the population figures.</p>
+<h3>The Assistants API</h3>
+<p>The Assistants API is intended for use in writing applications that harness the power of GPT-4 along with a set of tools that allow data files to be uploaded and analysed by the LLM. To take full advantage of this new API, you need to understand the various components: Assistants, themselves, Threads and Runs. </p>
+<p>I've written about how to use the Assistants API in Python <a href="https://towardsdatascience.com/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53">elsewhere</a> but for this exercise, we don't really need to get to grips with the API in any great detail as we will be using the OpenAI Playground. </p>
+<p>If you want to get into the nitty-gritty and write Python programs that use the full power of the API, then please read the article <a href="https://towardsdatascience.com/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53"><em>Use OpenAI’s Powerful New Assistants API for Data Analysis</em></a>.</p>
+<h3>The Playground</h3>
+<p>You will need an account with OpenAI and, as we will be using Assistants and a version of GPT-4, you will get charged for usage. Although, this should not be very much (you can do quite a lot for a few 10s of cents), you should keep an eye on your usage and it's a good idea to set a limit on how much you can spend each month. Check the menu items 'Usage' and 'Billing' as shown below.</p>
+<p><img alt="" src="images/openai_menu.png" /> </p>
+<p>Once you have your finances sorted out, open the Playground (from the same menu as above) and you will see that there are three modes that you can select from a dropdown menu. As you probably guessed, you need to select 'Assistants'.</p>
+<p><img alt="" src="images/playground_options.png" /></p>
+<p>Selecting this will change the user interface as shown below.</p>
+<p><img alt="" width="100%" src="images/assistants_ui.png" /></p>
+<hr />
+<p>We need to create an assistant by clicking the green button in the left panel. You then need to fill in the form below.</p>
+<p><img alt="" src="images/assistant_panel.png" /> </p>
+<p>Fill in the fields as indicated. I've called my assistant 'Data app maker' and added instructions along the lines of 'You are a data analyst and expert in writing Streamlit apps'. In addition, you need to select the 'Code interpreter' tool and select the correct model - the default is <em>gpt-3.5.turbo-0125</em> but we need <em>gpt-4-turbo-preview</em>. </p>
+<p>To add the data file click on the <em>paperclip/Add</em> icon and upload <em>gapminder.csv</em>.</p>
+<p>Also, in the screenshot I've indicated where you delete the assistant when you have finished with it. </p>
+<h3>Create the app</h3>
+<p>We are now ready to go: the assistant has been created and we have uploaded the data. Now, we simply need to tell the assistant what to do.</p>
+<p>At the bottom of the screen you will see a box where you type in a message. This is where we enter a prompt to instruct the assistant. The response will be given in the large panel above that.</p>
+<p>This was my prompt:</p>
+<blockquote>
+<p>Using only the data in the file 'gapminder.csv' (you can assume that this is correctly formatted csv data), create a Streamlit application that creates a line chart of population change over time for a country that is selected with a dropdown menu and a choropleth that shows the population of all countries for a year selected with a dropdown menu.</p>
+<p>The app should have a title and introductory paragraph at the top including instructions for the user. Below this, there should be two columns: the line chart should be in the left column and the right column should contain the choropleth. The Streamlit app should be created in a file called 'app.py' and the final code should assume that the data file is called 'gapminder.csv' and resides in the same directory as the app.</p>
+</blockquote>
+<p>On reflection, I could have made this a bit more detailed. I could have specified where the dropdown menus should be and perhaps told it which graphing package to use. I should also have told it to use widescreen mode because the two charts don't fit terrifically well side by side in narrow mode. (This latter point is easily solved by changing the settings in the running app.)</p>
+<p>However, the <em>Data app maker</em> assistant did a pretty good job. Here is its response which includes the complete app (I've added bullet points and bold text to make it easier to read).</p>
+<h3>Data app maker:</h3>
+<blockquote>
+<p>To facilitate the creation of a Streamlit app that meets your requirements, I will guide you through the process of creating the app.py file content. Your Streamlit application will showcase a line chart of population change over time for a selected country, and a choropleth map displaying the population of all countries for a selected year.</p>
+<p><strong><em>_Here is an outline of the Streamlit code you will need:</em></strong>_</p>
+<ol>
+<li>
+<p>Import necessary modules: Import Streamlit, pandas for data manipulation, and Plotly for visualization.</p>
+</li>
+<li>
+<p>Load the Data: Load the 'gapminder.csv' file using pandas.</p>
+</li>
+<li>
+<p>Streamlit App Structure:</p>
+</li>
+<li>
+<p>Title and introductory paragraph.</p>
+</li>
+<li>
+<p>Sidebar dropdown for country selection and year selection.</p>
+</li>
+<li>
+<p>Two columns layout: left for the line chart and right for the choropleth.</p>
+</li>
+</ol>
+<p>4- Visualization:
+      Line chart for population change over time for the selected country.
+      Choropleth map for the population of all countries for the selected year.</p>
+<p>Below is the app.py file content embodying the requirements:</p>
+</blockquote>
+<pre><code>import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+# Load the data
+df = pd.read_csv('gapminder.csv')
+
+# Streamlit page setup
+st.title('Population Data Exploration')
+st.write('''
+This app allows you to explore population changes over time. Use the dropdown menus to select
+a country and see its population trend, or select a year to see the world population distribution on a map.
+''')
+
+# Sidebar for selections
+country = st.sidebar.selectbox('Select a Country:', df['country'].unique())
+year = st.sidebar.selectbox('Select a Year:', sorted(df['year'].unique()))
+
+# Splitting into two columns
+col1, col2 = st.columns(2)
+
+# Population change over time for the selected country
+with col1:
+    st.header(f'Population Trend: {country}')
+    country_df = df[df['country'] == country]
+    fig1 = px.line(country_df, x='year', y='pop', title=f'Population Change for {country}')
+    st.plotly_chart(fig1)
+
+# Choropleth for population of all countries in a selected year
+with col2:
+    st.header(f'Global Population in {year}')
+    year_df = df[df['year'] == year]
+    fig2 = px.choropleth(year_df, locations='iso_alpha',
+                        color='pop',
+                        hover_name='country',
+                        color_continuous_scale=px.colors.sequential.Plasma,
+                        title=f'World Population in {year}')
+    st.plotly_chart(fig2)
+</code></pre>
+<blockquote>
+<p><strong>Instructions for running the Streamlit app:</strong></p>
+<p>Copy the code above into a new file named app.py located in the same directory as your 'gapminder.csv' data file.</p>
+<p>Ensure you have Streamlit, pandas, and Plotly installed in your Python environment. If not, you can install them using pip:</p>
+</blockquote>
+<pre><code>pip install streamlit pandas plotly
+</code></pre>
+<blockquote>
+<p>Run the Streamlit app by opening a command-line interface, navigating to the directory containing app.py, and running the command:</p>
+</blockquote>
+<pre><code>streamlit run app.py
+</code></pre>
+<blockquote>
+<p>This will start the Streamlit server, and you should see instructions in the command-line interface on how to access the app through your web browser.</p>
+</blockquote>
+<h3>The result</h3>
+<p><img alt=""  width="100%" src="images/Screenshot_app.png" /></p>
+<p>Given that I could have been more specific with my prompt, the result is good and can be seen above. I would prefer that the dropdown menus be in the main window and that, as I mentioned earlier, it should use wide mode by default. Adding these requirements to the prompt would not be a problem and I'll know better what to expect next time.</p>
+<p>This is not a very complex app and I could have easily written it myself but the AI assistant can type much faster than I can! It took only a few seconds to create the app much quicker than doing it manually. </p>
+<p>The power of this approach, however, is that you do not need to be a competent programmer to create a pleasing data visualization from raw data. You just need enough technical knowledge to know what is possible and, of course, you need to understand your data.</p>
+<p>I'm sure that there are many areas where OpenAI's assistants could be used to analyse data: for example, finding correlations in the data. But that is for another article.</p>
+<hr />
+<p>Thanks for reading and I hope you have found the article useful. You can stay up-to-date with my writings by subscribing to my occasional, free newsletter <a href="technofile.substack.com">here</a>.</p>
+            
+            <div class="col-sm-3 p-2">
+                <!ads etc here -->
+                        <script async
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                            crossorigin="anonymous"></script>
+                    <!-- sfs vertical -->
+                    
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        
+                   <!-- sfs vertical -->
+                    
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    <!-- sfs vertical -->
+                    
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    <!-- sfs vertical -->
+                    
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    <!-- sfs vertical -->
+                    
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                            data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+ 
+                    <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                    <script async
+                        src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div style="margin: 20px;">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+     crossorigin="anonymous"></script>
+    <!-- alanjonescoding_ads_AdSense1_1x1_as -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3208991186670959"
+        data-ad-slot="2622033521"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+        <footer class="text-right text-secondary">
+            <i>Please note that all the software in these articles is written for educational purposes and should
+                not be
+                considered suitable for production code</i>
+            <br />
+            <i>This site may contain affliate links. If you purchase an item through such a link I may get a commision
+                but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+            <br />
+            <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
