@@ -114,16 +114,16 @@ df.to_csv('gapminder.csv')
 <p>We are now ready to go: the assistant has been created and we have uploaded the data. Now, we simply need to tell the assistant what to do.</p>
 <p>At the bottom of the screen you will see a box where you type in a message. This is where we enter a prompt to instruct the assistant. The response will be given in the large panel above that.</p>
 <p>This was my prompt:</p>
-<blockquote>
+<div style="font-style: italic;padding-left:2em;">
 <p>Using only the data in the file 'gapminder.csv' (you can assume that this is correctly formatted csv data), create a Streamlit application that creates a line chart of population change over time for a country that is selected with a dropdown menu and a choropleth that shows the population of all countries for a year selected with a dropdown menu.</p>
 <p>The app should have a title and introductory paragraph at the top including instructions for the user. Below this, there should be two columns: the line chart should be in the left column and the right column should contain the choropleth. The Streamlit app should be created in a file called 'app.py' and the final code should assume that the data file is called 'gapminder.csv' and resides in the same directory as the app.</p>
-</blockquote>
+</div>
 <p>On reflection, I could have made this a bit more detailed. I could have specified where the dropdown menus should be and perhaps told it which graphing package to use. I should also have told it to use widescreen mode because the two charts don't fit terrifically well side by side in narrow mode. (This latter point is easily solved by changing the settings in the running app.)</p>
 <p>However, the <em>Data app maker</em> assistant did a pretty good job. Here is its response which includes the complete app (I've added bullet points and bold text to make it easier to read).</p>
-<h3>Data app maker:</h3>
-<blockquote>
+<h3>The response from the Data App Maker assistant:</h3>
+<div style="font-style: italic;padding-left:2em;">
 <p>To facilitate the creation of a Streamlit app that meets your requirements, I will guide you through the process of creating the app.py file content. Your Streamlit application will showcase a line chart of population change over time for a selected country, and a choropleth map displaying the population of all countries for a selected year.</p>
-<p><strong><em>_Here is an outline of the Streamlit code you will need:</em></strong>_</p>
+<p><b>Here is an outline of the Streamlit code you will need:</b></p>
 <ol>
 <li>
 <p>Import necessary modules: Import Streamlit, pandas for data manipulation, and Plotly for visualization.</p>
@@ -134,6 +134,7 @@ df.to_csv('gapminder.csv')
 <li>
 <p>Streamlit App Structure:</p>
 </li>
+<ul>
 <li>
 <p>Title and introductory paragraph.</p>
 </li>
@@ -143,12 +144,13 @@ df.to_csv('gapminder.csv')
 <li>
 <p>Two columns layout: left for the line chart and right for the choropleth.</p>
 </li>
-</ol>
-<p>4- Visualization:
+</ul>
+<li>Visualization:
       Line chart for population change over time for the selected country.
-      Choropleth map for the population of all countries for the selected year.</p>
+      Choropleth map for the population of all countries for the selected year.</li>
+</ol>
 <p>Below is the app.py file content embodying the requirements:</p>
-</blockquote>
+</div>
 <pre><code>import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -188,21 +190,21 @@ with col2:
                         title=f'World Population in {year}')
     st.plotly_chart(fig2)
 </code></pre>
-<blockquote>
+<div style="font-style: italic;padding-left:2em;">
 <p><strong>Instructions for running the Streamlit app:</strong></p>
 <p>Copy the code above into a new file named app.py located in the same directory as your 'gapminder.csv' data file.</p>
 <p>Ensure you have Streamlit, pandas, and Plotly installed in your Python environment. If not, you can install them using pip:</p>
-</blockquote>
+</div>
 <pre><code>pip install streamlit pandas plotly
 </code></pre>
-<blockquote>
+<div style="font-style: italic;padding-left:2em;">
 <p>Run the Streamlit app by opening a command-line interface, navigating to the directory containing app.py, and running the command:</p>
-</blockquote>
+</div>
 <pre><code>streamlit run app.py
 </code></pre>
-<blockquote>
+<div style="font-style: italic;padding-left:2em;">
 <p>This will start the Streamlit server, and you should see instructions in the command-line interface on how to access the app through your web browser.</p>
-</blockquote>
+</div>
 <h3>The result</h3>
 <p><img alt=""  width="100%" src="images/Screenshot_app.png" /></p>
 <p>Given that I could have been more specific with my prompt, the result is good and can be seen above. I would prefer that the dropdown menus be in the main window and that, as I mentioned earlier, it should use wide mode by default. Adding these requirements to the prompt would not be a problem and I'll know better what to expect next time.</p>
@@ -210,7 +212,7 @@ with col2:
 <p>The power of this approach, however, is that you do not need to be a competent programmer to create a pleasing data visualization from raw data. You just need enough technical knowledge to know what is possible and, of course, you need to understand your data.</p>
 <p>I'm sure that there are many areas where OpenAI's assistants could be used to analyse data: for example, finding correlations in the data. But that is for another article.</p>
 <hr />
-<p>Thanks for reading and I hope you have found the article useful. You can stay up-to-date with my writings by subscribing to my occasional, free newsletter <a href="technofile.substack.com">here</a>.</p>
+<p>Thanks for reading and I hope you have found the article useful. You can stay up-to-date with my articles on data visualization and related topics by subscribing to my occasional, free newsletter <a href="technofile.substack.com">here</a>.</p>
             </div>         
             <div class="col-sm-3 p-2">
                 <!ads etc here -->
