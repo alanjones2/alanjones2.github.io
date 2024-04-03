@@ -138,7 +138,7 @@ st.write("Hello,", name or "world")
                 <p>Load this page in your browser and you will see the following.</p>
                 <p><img alt="" src="https://github.com/alanjones2/stlite-examples/blob/main/stlite-examples/Screenshot-hello.png?raw=true" /></p>
                 <p>It's the same as you would get by running the Streamlit code as a separate app. The only difference is the startup time: a <em>stlite</em> web page has to load and execute the Javascript library which is a fairly lengthy process, so you will see various messages flashed up on the screen while the app is loading. This delay occurs only once; afterwards the app has loaded it is quick to run.</p>
-                <p>This first <em>stlite</em> app can be run directly in the browser (e.g. by double-clicking it in the file explorer). However, the next programs that we will encounter will consist of more than one page and so, in order to avoid CORS errors, we need to run then in a local server. So, navigate to the folder where you store the files and run the command:</p>
+                <p>This first <em>stlite</em> app can be run directly in the browser (e.g. by double-clicking it in the file explorer). However, the next programs that we will encounter will consist of more than one page and so, in order to avoid CORS errors, we need to run them in a local server. So, navigate to the folder where you store the files and run the command:</p>
                 <pre><code class="language-bash">python -m http.server
                 </code></pre>
                 <p>Depending on your set up, you may need to use <code>python3</code> instead of <code>python</code>.</p>
@@ -157,7 +157,7 @@ stlite.mount(
     }
                 </code></pre>
                 <p>Instead of a simple string containing the code the we specify a dictionary. The first entry in the dictionary is the file which will be the starting point for the app (yes, you can have more than one file!). The second entry specifies the file names and the url of the file (these are not the same, the <code>entrypoint</code> is the name in the virtual file system that Pyodide uses; <code>url</code> refers to the path to the original file in <em>your</em> file system.)</p>
-                <p>So, in this code we are telling <em>stlite</em> to copy the file "hello.py" is your local file system into a file of the same name in the local file system. And previous to that we specified a file virtual file system as the starting point for the app.</p>
+                <p>So, in this code we are telling <em>stlite</em> to copy the file "hello.py" in your local file system into a file of the same name in the local file system. And previous to that we specified a file virtual file system as the starting point for the app.</p>
                 <p>The full code for the HTML file is shown below. As you will see it is pretty similar to the first program except for the changes detailed above.</p>
                 <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
@@ -332,7 +332,7 @@ st.pyplot(fig)
             <i>This site may contain affliate links. If you purchase an item through such a link I may get a commision
                 but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
             <br />
-            <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
+            <i>&copy; 2024, Alan Jones</i> &nbsp;
 
         </footer>
     </div>
