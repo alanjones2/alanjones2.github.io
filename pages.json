@@ -1,14 +1,15 @@
 [
     {
         "type":"ARTICLE",
-        "articleURL": "https://alanjones2.github.io/articles/app_maker/Create_an_AI-Generated_Streamlit_Application_with_an_OpenAI_Assistant.html",
-        "imageURL":"https://alanjones2.github.io/articles/app_maker/images/Screenshot_app.png",
-        "title":"Create an AI-Generated Streamlit Application with an OpenAI Assistant",
-        "description":"We use the OpenAI Playground and code completion tools to create a Streamlit app with interactive Plotly charts", 
-        "demoURL":"None",
-        "code":"None",
-        "tags":"Python AI DataVisualization DataScience Streamlit"
-    },      {
+        "articleURL": "https://alanjones2.github.io/articles/pyscript-next/PyScript_is_Growing_Up.html",
+        "imageURL":"https://alanjones2.github.io/articles/pyscript-next/images/pretty-app.png",
+        "title":"PyScript is Growing Up",
+        "description":"We build a data viz app with the new faster PyScript", 
+        "demoURL":"https://alan_jones.pyscriptapps.com/ploty-viz1/latest/",
+        "code":"https://alanjones2.github.io/articles/pyscript-next/[Alan-Jones-article-code/pyscript-next%20at%20master%20%C2%B7%20alanjones2/Alan-Jones-article-code%20%C2%B7%20GitHub](https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript-next)",
+        "tags":"Python DataVisualization DataScience PyScript"
+    },      
+    {
         "type":"ARTICLE",
         "articleURL": "https://alanjones2.github.io/articles/stlite/stlite.html",
         "imageURL":"https://github.com/alanjones2/stlite-examples/blob/main/0_4aM0SBn1NeWpOCMX.jpg?raw=true",
