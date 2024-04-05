@@ -6,10 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:image"
-        content="./images/pretty-app.png">
-    <meta name="twitter:image:src"
-        content="./images/pretty-app.png">
+    <meta property="og:image" content="./images/pretty-app.png">
+    <meta name="twitter:image:src" content="./images/pretty-app.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta property="article:author" content="https://alanjones2.github.io">
     <meta name="twitter:creator" content="@MrAlanJones">
@@ -20,8 +18,11 @@
     <meta content="https://alanjones2.github.io" property="og:url">
     <meta content="PyScript is Growing Up" property="og:title">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -44,10 +45,14 @@
         crossorigin="anonymous"></script>
 
     <style>
-    blockquote {
-        font-style: italic;
-        padding-left:2em;
-    }
+        blockquote {
+            font-style: italic;
+            padding-left: 2em;
+        }
+        img {
+            max-width: 100%
+        }
+    
     </style>
 </head>
 
@@ -56,12 +61,12 @@
             .then(data => console.log(data));
     </script>
     <a href="https://alanjones2.github.io" style="text-decoration:none">
-    <div class="p-2 mb-2 bg-secondary text-white" >
-        <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
-            <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
-                Data Visualization</span>
-        </h1>
-    </div>
+        <div class="p-2 mb-2 bg-secondary text-white">
+            <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+                <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                    Data Visualization</span>
+            </h1>
+        </div>
     </a>
 
     <div style="margin-top:30px" class="container">
@@ -78,8 +83,7 @@
                             We build a data viz app with the new faster PyScript</h2>
                     </div>
                     <div class="col-sm-4 p-2">
-                        <p><img width="100%" alt=""
-                                src="./images/pretty-app.png">
+                        <p><img width="100%" alt="" src="./images/pretty-app.png">
 
                         </p>
                     </div>
@@ -156,7 +160,7 @@
 <p>The <code>print</code>statement is standard Python and its output is to the terminal (which we've placed on the web page). So, when you load the page you will simply get a message written into a black panel on an otherwise blank webpage.</p>
 <h3>Running the app</h3>
 <p>If you are using <em>pyscript.com</em>, then simply hit the <em>run</em> button and the webpage will be rendered in a <em>preview</em> panel.</p>
-<p><img width="100%" alt="" src="images/Screenshot-pyscript-com.png" /> </p>
+<p><img alt="" src="images/Screenshot-pyscript-com.png" /> </p>
 <p>If you are working locally, then you need to start up a local web server ( just double-clicking on the web page will not load the other files due to CORS restrictions). So, open a command window, navigate to your working directory and type:</p>
 <pre><code class="language-bash">python -m http.server
 </code></pre>
@@ -164,7 +168,7 @@
 <p>You can find the app on <em>pyscript.com</em> here: <a href="https://alan_jones.pyscriptapps.com/still-king/latest/">Still King</a> - click in the bottom right of the screen to see the code. (You've probably guessed that <em>pyscript.com</em> chooses the name of the application - you can, of course, change it.)</p>
 <h3>The Data Viz App</h3>
 <p>OK, one step at a time. Before we can visualise it, we need some data. I'm going to use a dataset that tracks Global CO2 emissions over time - you can download it here: <a href="https://raw.githubusercontent.com/alanjones2/CO2/master/data/world_df.csv">CO2 Data</a> (also see <em>Notes</em>, below). Put it into the same folder as the code. You can see what it looks like in the image below.</p>
-<p><img width="100%" alt="" src="images/datatable.png" /></p>
+<p><img alt="" src="images/datatable.png" /></p>
 <p>It is a subset of a larger dataset that includes many countries and areas of the World. This file contains data for the World as a whole, so the first two columns are somewhat redundant. To find out more about the data see the Notes, below.</p>
 <p>PyScript cannot access the local file system but it maintains a virtual file system that resides in the browser (well, to be accurate it is Pyodide that does this). So, in order to have access to the data we need PyScript to copy the file into the virtual file system when it loads the page.</p>
 <p>To achieve this, we need an addition to the <em>pyscript.conf</em> file. Add the following code to that file.</p>
@@ -257,7 +261,7 @@ display(fig, target=&quot;chart1&quot;)
 </code></pre>
 <p>The result is a web page that displays the chart ans the text around it. We could, of course, change the text and the chart in the Python code to produce an entirely different webpage without having to chage the HTML at all.</p>
 <p>Why have I call two of the files 'viz1' when the HTML is called 'viz0'? Because there is also a 'viz1.html' which includes the Bootstrap user interface library and produces a rather prettier page.</p>
-<p><img width="100%" alt="" src="images/pretty-app.png" /></p>
+<p><img alt="" src="images/pretty-app.png" /></p>
 <p>You can see the resulting, prettier, web page here: <a href="https://alan_jones.pyscriptapps.com/ploty-viz1/latest/">Hidden Cherry</a>.</p>
 <p>If you look in my GitHub repo (see Notes, below), you will find both versions.</p>
 <h3>But it is still a bit slow to load</h3>
@@ -282,48 +286,75 @@ display(fig, target=&quot;chart1&quot;)
 <p><em>Disclaimer: I have no affiliation with Anaconda, PyScript.com_or PyScript.net.</em></p>
 </li>
 </ul>
-            
+            </div>
             <div class="col-sm-3 p-2">
                 <!ads etc here -->
-                        <script async
-                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
-                            crossorigin="anonymous"></script>
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                        crossorigin="anonymous"></script>
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
 
 
- 
                     <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
                     <script async
                         src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
 
             </div>
+
         </div>
 
 
-    </div>
-    <div style="margin: 20px;">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
-     crossorigin="anonymous"></script>
-    <!-- alanjonescoding_ads_AdSense1_1x1_as -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3208991186670959"
-        data-ad-slot="2622033521"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-        <footer class="text-right text-secondary">
-            <i>Please note that all the software in these articles is written for educational purposes and should
-                not be
-                considered suitable for production code</i>
-            <br />
-            <i>This site may contain affliate links. If you purchase an item through such a link I may get a commision
-                but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
-            <br />
-            <i>&copy; 2022, 2023, Alan Jones</i> &nbsp;
+        <div style="margin: 20px;">
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                crossorigin="anonymous"></script>
+            <!-- alanjonescoding_ads_AdSense1_1x1_as -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                data-ad-slot="2622033521" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <footer class="text-right text-secondary">
+                <i>Please note that all the software in these articles is written for educational purposes and should
+                    not be
+                    considered suitable for production code</i>
+                <br />
+                <i>This site may contain affliate links. If you purchase an item through such a link I may get a
+                    commision
+                    but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+                <br />
+                <i>&copy; 2024, Alan Jones</i> &nbsp;
 
-        </footer>
+            </footer>
+        </div>
     </div>
 
 </body>
