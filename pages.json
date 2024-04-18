@@ -1,12 +1,22 @@
 [
     {
         "type":"ARTICLE",
+        "articleURL": "https://alanjones2.github.io/articles/deployaltair/Your_Beautiful_Altair_Graphics_on_a_Simple_Web_Page.html",
+        "imageURL":"https://alanjones2.github.io/articles/deployaltair/images/altairwebtemplatepage.png",
+        "title":"Your Beautiful Altair Graphics on a Simple Web Page",
+        "description":"Altair has a native method to create basic web pages but with a little more effort, web templates get you a much better result", 
+        "demoURL":"",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/deployaltair",
+        "tags":"Altair Python DataVisualization DataScience"
+    },
+    {
+        "type":"ARTICLE",
         "articleURL": "https://alanjones2.github.io/articles/pyscript-next/PyScript_is_Growing_Up.html",
         "imageURL":"https://alanjones2.github.io/articles/pyscript-next/images/pretty-app.png",
         "title":"Pyscript Evolves: How The New Version Stacks Up",
         "description":"We build a data viz app with the new faster PyScript", 
         "demoURL":"https://alan_jones.pyscriptapps.com/ploty-viz1/latest/",
-        "code":"https://alanjones2.github.io/articles/pyscript-next/[Alan-Jones-article-code/pyscript-next%20at%20master%20%C2%B7%20alanjones2/Alan-Jones-article-code%20%C2%B7%20GitHub](https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript-next)",
+        "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript-next",
         "tags":"Python DataVisualization DataScience PyScript"
     },      
     {
