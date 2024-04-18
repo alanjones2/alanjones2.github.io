@@ -86,7 +86,6 @@
 <p>Easy!</p>
 <p>But wouldn't it be great if we had a nice Python function to do that for us? That's what is coming up!</p>
 <h3>Build a graph</h3>
-<p>CODE FOR CHARTS + IMAGE OF CHARTS</p>
 <p>We are going to build a scatter chart with a trend line like the one below. </p>
 <p><img alt="" src="images/cars-altair.png" />And, to keep things simple, we'll use the 'cars' dataset from the <em>vega_datasets</em> library.</p>
 <p>This for convenience and demonstration purposes but, of course, you would import your own data to create your particular web page. </p>
@@ -124,7 +123,7 @@ with open('page.html', 'w') as f:
 <p>You could embed this into an existing web page using HTML <em>iframes</em> but that is a bit messy and the alternative is as straightforward.</p>
 <p>There is a simple alternative that is better.</p>
 <h3>Write a template</h3>
-<p>Let's see how we can improve on the native function by using a simple web template and a general-purpose function to fill that template wih chart data and supporting text.</p>
+<p>Let's see how we can improve on the native function by using a simple web template and a general-purpose function to fill that template with chart data and supporting text.</p>
 <p>We aim to produce a page that looks like the image below.</p>
 <p><img alt="" src="images/altairwebtemplatepage.png" /></p>
 <p>You can see that as well as the chart there is a header and a textual description.</p>
@@ -211,10 +210,10 @@ def deploy(targetfile, templatefile, data):
 
 &lt;/html&gt;
 </code></pre>
-<p>You can see where the parameter vaules will be located: they are named as in the paramter list we saw in the Python and enclosed in curlly braces, e.g. <code>{title}</code>.  The extra keyword, <code>safe</code>, is used with the <code>spec</code>parameter as this will contain the JSON code. <code>safe</code> signals to the template engine that the value may contain special characters but that is ok and they should not be translated in any way (e.g. converting <code>&amp;gt</code>into the <code>&gt;</code>character).</p>
+<p>You can see where the parameter values will be located: they are named as in the parameter list we saw in the Python and enclosed in curly braces, e.g. <code>{title}</code>.  The extra keyword, <code>safe</code>, is used with the <code>spec</code>parameter as this will contain the JSON code. <code>safe</code> signals to the template engine that the value may contain special characters but that is ok and they should not be translated in any way (e.g. converting <code>&amp;gt</code>into the <code>&gt;</code>character).</p>
 <p>To run the code simply put all three files into a single directory and run the main Python program. The result is a new webpage (named <em>page.html</em>) that can be deployed (often for free)  to a static web site like GitHub pages.</p>
 <h3>Conclusion</h3>
-<p>Templating is a powerful tool for creating webpages. And I hope that you can see that a different web page (although structurally the same) could be created simply by giving the paramters different values. Furthermore, a completely different page could be created by using another template with different paramters - the library function would no need to be changed.</p>
+<p>Templating is a powerful tool for creating web pages. And I hope that you can see that a different web page (although structurally the same) could be created simply by giving the parameters different values. Furthermore, a completely different page could be created by using another template with different parameters - the library function would no need to be changed.</p>
 <p>I hope that this has given you food for thought and that you might use this technique in publishing your data visualisations on the web.</p>
 <p>Thanks for reading and if this type of article is interesting, please take a look at my <a href="alanjones2.github.io">webpage</a> and/or subscribe to my free, occasional <a href="technofile.substack.com">newsletter</a> where I publicise my work.</p>
 <p>You can find the code for this article <a href="[GitHub - alanjones2/Alan-Jones-article-code: Code from articles that I have written](https://github.com/alanjones2/Alan-Jones-article-code/)">here</a>.</p>
