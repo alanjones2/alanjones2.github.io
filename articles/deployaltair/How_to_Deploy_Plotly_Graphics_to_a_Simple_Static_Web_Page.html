@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>How to Deploy Plotly Graphics to a Simple Static Web Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="images/plotlywebtemplatepage.png">
+    <meta name="twitter:image:src" content="images/plotlywebtemplatepage.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="Plotly has a native method to create basic web pages but with a little more effort, web templates get you a much better result">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="How to Deploy Plotly Graphics to a Simple Static Web Page" property="og:title">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+    <style>
+        blockquote {
+            font-style: italic;
+            padding-left: 2em;
+        }
+
+        img {
+            max-width: 100%;
+            padding-bottom: 4px;
+            padding-top: 4px;
+        }
+    </style>
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io/articles/How to Deploy Plotly Graphics to a Simple Static Web Page")
+            .then(data => console.log(data));
+    </script>
+    <a href="https://alanjones2.github.io" style="text-decoration:none">
+        <div class="p-2 mb-2 bg-secondary text-white">
+            <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+                <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                    Data Visualization</span>
+            </h1>
+        </div>
+    </a>
+
+    <div style="margin-top:30px" class="container">
+
+        <div class="row bg-white" style="width: 100%;">
+
+            <div class="col-sm-8 p-2">
+                <!-- content-->
+                <h1 class="display-4 fw-bold">How to Deploy Plotly Graphics to a Simple Static Web Page</h1>
+                <h2 class="lead p-2" style="font-size:xx-large;">Plotly has a native method to create basic web pages but with a little more effort, web templates get you a much better result</h2>
+                <div><img alt="" src="images/plotlywebtemplatepage.png">
+                </div>
+
+                <p>You don't always need a complex or interactive app to convey a compelling data visualisation message. Often a simple web page will be entirely adequate.</p>
+<p>So, to that end, I'm going to describe a short Python function that will build a web page from any Python graphic and any web template.</p>
+<p>You can view the result directly in your browser or deploy it to a free static web server such as GitHub Pages.</p>
+<p>When you create a graphic in Plotly, it creates an intermediate representation of the graph. This is interpreted by a Javascript library to render the graph on a web page. So, all you need to do is create your chart in Python, export it and then load the result into a web page that uses the Plotly.js library. </p>
+<p>No big deal!</p>
+<p>But it would be better to have the whole thing automated with a simple Python library function. So, that is what we will do.</p>
+<h3>Build a graph</h3>
+<p>We are going to build a scatter chart with a trend line like the one below. This is pretty straightforward in Plotly Express using the scatter diagram function.</p>
+<p><img alt="" src="images/cars-plotly.png" /></p>
+<p>For convenience and demonstration purposes, instead of importing external data we will use the 'cars' dataset from the <em>vega_datasets</em> library. But, of course, you would import your own data to create your particular web page. </p>
+<p>The cars data is shown in the image, below.</p>
+<p><img alt="" src="images/cars_data.png" /></p>
+<p>It's basically data about a range of old cars like the one below.</p>
+<p><img alt="" src="images/1965_Chevrolet_Impala_Sport_Coupe,_front_left_(Cruisin'_the_River_Lowellville_Car_Show,_June_19th,_2023).jpg" /></p>
+<p><em>1965 Chevrolet Impala Sport Coupe photographed by # MercurySable99 <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> license.</em></p>
+<p>Two of the data records are about how powerful each car is (the 'horsepower') and the rate at which they accelerate (the number of seconds to get from one speed to a higher one - I'm not absolutely sure but I'm guessing it is the 0 to 60 mph time).</p>
+<p>You can see the code that implements this chart, below - it's not very tricky.</p>
+<pre><code class="language-python"># Display cars data
+import plotly.express as px
+from vega_datasets import data
+
+cars = data.cars()
+
+chart = px.scatter(cars, x=&quot;Acceleration&quot;, y=&quot;Horsepower&quot;, trendline=&quot;ols&quot;,
+                    height=500, width=800,
+                    title = &quot;Cars: Acceleration and Horsepower&quot;,
+                    template=&quot;plotly_white&quot;)
+</code></pre>
+<p>First, we import the libraries, then load the data into a Pandas dataframe and finally construct a scatter plot with a trend line.</p>
+<p>You can run this code into a Jupyter Notebook or a Streamlit app and easily display chart.</p>
+<p>But if you want to create a web page it's a slightly different matter.</p>
+<h3>Native functions</h3>
+<p>Plotly has a function that will create an HTML web page automatically for you. However, the result is pretty basic. If you append the following code to the chart code, above,  and you'll get a simple HTML page that looks just like the simple graph image we saw earlier. And while that is perfectly fine, it's just a graph; there is no explanation or comment. </p>
+<pre><code class="language-python"># Save as HTML with native method
+with open('page.html', 'w') as f:
+    f.write(chart.to_html())
+</code></pre>
+<p>There is a simple alternative that can give us a better result where we can include the image in a web page but also add commentary, headings and whatever else you would like. We can write a reusable HTML template and import the chart code into it.</p>
+<h3>Write a template</h3>
+<p>So, now we'll see how by using a simple web template and a general-purpose function we can fill that template with chart data and supporting text.</p>
+<p>We will produce a page that looks like the image below.</p>
+<p><img alt="" src="images/plotlywebtemplatepage.png" /></p>
+<p>You can see that as well as the chart there is a header and a textual description. This template is not terrifically sophisticated - it is up to you just how complex you want it to be,</p>
+<p>The Python code that produce the chart is listed below - it's essentially similar to the one we saw previously but it also defines the textual content of the page. That text is defined as a set parameters in a Python <code>dict</code>along with a JSON version of the chart produced by the built-in function <code>.tojson()</code>.</p>
+<pre><code class="language-python">import plotly.express as px
+from vega_datasets import data
+
+import deployplotly
+
+cars = data.cars()
+
+chart = px.scatter(cars, x=&quot;Acceleration&quot;, y=&quot;Horsepower&quot;, trendline=&quot;ols&quot;,
+                    height=600, width=1200,
+                    title = &quot;Cars: Acceleration and Horsepower&quot;,
+                    template=&quot;plotly_white&quot;)
+
+params = {'title':'Deploy Plotly Chart as a web page',
+          'subtitle':'Example of how to deploy an Plotly chart to a custom HTML template',
+          'description':&quot;&quot;&quot;
+                Below is a scatter diagram with a regression line that explores the relationship between
+                accleration an horsepower in the datasets 'cars' from vega datasets.
+            &quot;&quot;&quot;,
+          'spec':chart.to_json()
+}
+deployplotly.deploy('./page.html', './bs-simple.html', params)
+
+</code></pre>
+<p>The last line of code calls a library function that takes a pre-written web page template and creates the final HTML page by inserting into it the parameters that we set in the main code.</p>
+<p>This library function can be used with any HTML template, with an arbitrary number of parameters. It works using the <code>jinja2</code>templating library  - if you've ever used the Flask microframework, you may well be familiar with it.</p>
+<pre><code class="language-python">from jinja2 import Template
+
+def deploy(targetfile, templatefile, data):
+
+    # get the template and render with the data
+    with open(templatefile,'r') as f:
+        template = f.read()
+        j2_template = Template(template)
+        t = j2_template.render(data)
+
+    # write the final html
+    with open(targetfile, 'w') as f:
+        f.write(t)
+
+</code></pre>
+<p>We can see the HTML template below. It is a simple page that uses the Bootstrap UI library. This  could be stripped out but it would result in a much less attractive webpage and it doesn't reduce the complexity by much.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;
+    integrity=&quot;sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC&quot; crossorigin=&quot;anonymous&quot;&gt;
+
+  &lt;script src=&quot;https://cdn.plot.ly/plotly-2.30.0.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body class=&quot;container&quot;&gt;
+  &lt;header class=&quot;bg-primary text-white text-center py-8&quot;&gt;
+    &lt;h1 class=&quot;display-4&quot;&gt;{{title}}&lt;/h1&gt;
+    &lt;p class=&quot;lead&quot;&gt;{{subtitle}}&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;div&gt;{{description}}&lt;/div&gt;
+  &lt;div class=&quot;p-5&quot; style=&quot;width:80%&quot; id=&quot;vis&quot;&gt;&lt;/div&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    var graphs = {{ spec | safe}};
+    Plotly.react(&quot;vis&quot;, graphs, {});        
+  &lt;/script&gt;
+
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js&quot;
+    integrity=&quot;sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM&quot;
+    crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>The parameters are shown in the HTML file using the names we saw in the Python <code>dict</code>- they are enclosed in double curly braces, e.g. <code>{{title}}</code>.  The additional keyword, <code>safe</code>, is used with the <code>spec</code>parameter. This will contain the JSON code and  <code>safe</code> signals to the template engine that any special characters should be used as they are and not  translated in any way (e.g. converting <code>&amp;gt</code>into the <code>&gt;</code>character).</p>
+<p>All three files should reside in the same directory and if we run the main Python program the result is a new webpage (named <em>page.html</em>) that can be loaded into your local browser or deployed (often for free)  to a static web site like GitHub pages.</p>
+<h3>Conclusion</h3>
+<p>Simple HTML emplates are fairly eay to create and with the addition of Bootstrap user interface components can be used to create compelling web sites. </p>
+<p>And, as I hope that you can see, a different web page (while structurally the same) could be created simply by giving the parameters different values. If you are interested in establishing a house style, or brand, this is definitely a way to do it.</p>
+<p>Or, of course, a completely different page could be created by using another template with different parameters. The advantage of the technique that I have illustrated here is that once you have decided upon a template, the rest is automatic - the library function is suitable for pretty much any circumstance..</p>
+<p>I hope that this has given you food for thought and that you might use this technique in publishing your data visualisations on the web.</p>
+<p>Thanks for reading and if this type of article is interesting, please take a look at my <a href="alanjones2.github.io">webpage</a> and/or subscribe to my free, occasional <a href="technofile.substack.com">newsletter</a> where I publicise my work.</p>
+            </div>
+            <div class="col-sm-3 p-2">
+                <!ads etc here -->
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                        crossorigin="anonymous"></script>
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                    <!-- sfs vertical -->
+
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                        data-ad-slot="6617299104" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+
+
+                    <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                    <script async
+                        src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+
+            </div>
+        </div>
+
+
+
+
+        <div style="margin: 20px;">
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                crossorigin="anonymous"></script>
+            <!-- alanjonescoding_ads_AdSense1_1x1_as -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                data-ad-slot="2622033521" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <footer class="text-right text-secondary">
+                <i>Please note that all the software in these articles is written for educational purposes and should
+                    not be
+                    considered suitable for production code</i>
+                <br />
+                <i>This site may contain affliate links. If you purchase an item through such a link I may get a
+                    commision
+                    but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+                <br />
+                <i>&copy; 2024, Alan Jones</i> &nbsp;
+
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
