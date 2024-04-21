@@ -1,12 +1,12 @@
 [
     {
         "type":"ARTICLE",
-        "articleURL": "https://alanjones2.github.io/articles/deployaltair/C:\Users\jones\Projects\github\alanjones2.github.io\articles\deployaltair\How_to_Deploy_Plotly_Graphics_to_a_Simple_Static_Web_Page.html",
+        "articleURL": "https://alanjones2.github.io/articles/deployaltair/How_to_Deploy_Plotly_Graphics_to_a_Simple_Static_Web_Page.html",
         "imageURL":"https://alanjones2.github.io/articles/deployaltair/images/plotlywebtemplatepage.png",
         "title":"How to Deploy Plotly Graphics to a Simple Static Web Page",
         "description":"Plotly has a native method to create basic web pages but with a little more effort, web templates get you a much better result", 
         "demoURL":"",
-        "code":"",
+        "code":"None",
         "tags":"Plotly Python DataVisualization DataScience"
     },    
     {
@@ -15,7 +15,7 @@
         "imageURL":"https://alanjones2.github.io/articles/deployaltair/images/altairwebtemplatepage.png",
         "title":"How to Deploy Altair Graphics to a Simple Static Web Page",
         "description":"Altair has a native method to create basic web pages but with a little more effort, web templates get you a much better result", 
-        "demoURL":"",
+        "demoURL":"None",
         "code":"https://github.com/alanjones2/Alan-Jones-article-code/tree/master/deployaltair",
         "tags":"Altair Python DataVisualization DataScience"
     },
