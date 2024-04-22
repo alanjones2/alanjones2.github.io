@@ -86,7 +86,7 @@
 <p>So, to that end, I'm going to describe a short Python function that will build a web page from any Python graphic and any web template.</p>
 <p>You can view the result directly in your browser or deploy it to a free static web server such as GitHub Pages.</p>
 <p>When you create a graphic in Plotly, it creates an intermediate representation of the graph. This is interpreted by a Javascript library to render the graph on a web page. So, all you need to do is create your chart in Python, export it and then load the result into a web page that uses the Plotly.js library. </p>
-<p>No big deal!</p>
+<p>No big deal! And you can do a very similar thing with Altair graphics.</p>
 <p>But it would be better to have the whole thing automated with a simple Python library function. So, that is what we will do.</p>
 <h3>Build a graph</h3>
 <p>We are going to build a scatter chart with a trend line like the one below. This is pretty straightforward in Plotly Express using the scatter diagram function.</p>
@@ -147,7 +147,6 @@ params = {'title':'Deploy Plotly Chart as a web page',
           'spec':chart.to_json()
 }
 deployplotly.deploy('./page.html', './bs-simple.html', params)
-
 </code></pre>
 <p>The last line of code calls a library function that takes a pre-written web page template and creates the final HTML page by inserting into it the parameters that we set in the main code.</p>
 <p>This library function can be used with any HTML template, with an arbitrary number of parameters. It works using the <code>jinja2</code>templating library  - if you've ever used the Flask microframework, you may well be familiar with it.</p>
@@ -164,7 +163,6 @@ def deploy(targetfile, templatefile, data):
     # write the final html
     with open(targetfile, 'w') as f:
         f.write(t)
-
 </code></pre>
 <p>We can see the HTML template below. It is a simple page that uses the Bootstrap UI library. This  could be stripped out but it would result in a much less attractive webpage and it doesn't reduce the complexity by much.</p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
@@ -202,11 +200,122 @@ def deploy(targetfile, templatefile, data):
 <p>The parameters are shown in the HTML file using the names we saw in the Python <code>dict</code>- they are enclosed in double curly braces, e.g. <code>{{title}}</code>.  The additional keyword, <code>safe</code>, is used with the <code>spec</code>parameter. This will contain the JSON code and  <code>safe</code> signals to the template engine that any special characters should be used as they are and not  translated in any way (e.g. converting <code>&amp;gt</code>into the <code>&gt;</code>character).</p>
 <p>All three files should reside in the same directory and if we run the main Python program the result is a new webpage (named <em>page.html</em>) that can be loaded into your local browser or deployed (often for free)  to a static web site like GitHub pages.</p>
 <h3>Conclusion</h3>
-<p>Simple HTML emplates are fairly eay to create and with the addition of Bootstrap user interface components can be used to create compelling web sites. </p>
+<p>Simple HTML templates are fairly easy to create and with the addition of Bootstrap user interface components can be used to create compelling websites. </p>
 <p>And, as I hope that you can see, a different web page (while structurally the same) could be created simply by giving the parameters different values. If you are interested in establishing a house style, or brand, this is definitely a way to do it.</p>
-<p>Or, of course, a completely different page could be created by using another template with different parameters. The advantage of the technique that I have illustrated here is that once you have decided upon a template, the rest is automatic - the library function is suitable for pretty much any circumstance..</p>
+<p>Or, of course, a completely different page could be created by using another template with different parameters. The advantage of the technique that I have illustrated here is that once you have decided upon a template, the rest is automatic - the library function is suitable for pretty much any circumstance.</p>
+<p>I mentioned that you can do a very similar thing with Altair charts and the process is pretty much identical. Indeed, it is so similar that all you need is the slightly different program files — I’ll list them at the end of the article.</p>
 <p>I hope that this has given you food for thought and that you might use this technique in publishing your data visualisations on the web.</p>
 <p>Thanks for reading and if this type of article is interesting, please take a look at my <a href="alanjones2.github.io">webpage</a> and/or subscribe to my free, occasional <a href="technofile.substack.com">newsletter</a> where I publicise my work.</p>
+<h2>Appendix — Altair program files</h2>
+<p>Below are the equivalent files for an Altair version of this process. It is very similar to the Plotly version.</p>
+<p>First, the native function.</p>
+<pre><code class="language-python"># Display cars data
+
+import altair as alt  
+from vega_datasets import data  
+
+cars = data.cars()  
+
+scatter_plot = alt.Chart(cars).mark_point().encode(  
+    alt.X('Acceleration:Q').scale(zero=False),  
+    y='Horsepower:Q'  
+).properties(height=600, width=800, title = &quot;Cars: Acceleration and Horsepower&quot; )  
+
+trend = scatter_plot.transform_regression('Acceleration', 'Horsepower').mark_line(color='red')  
+chart  = scatter_plot + trend  
+
+# Save as HTML with native method
+
+with open('page.html', 'w') as f:  
+    f.write(chart.to_html())
+</code></pre>
+<p>Next, the Python program that uses a template:</p>
+<pre><code class="language-python">import altair as alt  
+from vega_datasets import data  
+
+import deployaltair  
+
+cars = data.cars()  
+
+scatter_plot = alt.Chart(cars).mark_point().encode(  
+    alt.X('Acceleration:Q').scale(zero=False),  
+    y='Horsepower:Q'  
+).properties(height=600, width=800, title = &quot;Cars: Acceleration and Horsepower&quot; )  
+
+trend = scatter_plot.transform_regression('Acceleration', 'Horsepower').mark_line(color='red')  
+chart  = scatter_plot + trend  
+
+params = {'title':'Deploy Altair Chart as a web page',  
+          'subtitle':'Example of how to deploy an Altair chart to a custom HTML template',  
+          'description':&quot;&quot;&quot;  
+                Below is a scatter diagram with a regression line that explores the relationship between  
+                accleration an horsepower in the datasets 'cars' from vega datasets.  
+            &quot;&quot;&quot;,  
+          'spec':chart.to_json(indent=None)  
+}  
+deployaltair.deploy('./page.html', './bs-simple.html', params)
+</code></pre>
+<p>The helper library function:</p>
+<pre><code class="language-python">import altair as alt  
+from jinja2 import Template  
+
+def deploy(targetfile, templatefile, data):  
+
+    # add default vega values to data  
+    data['vega_version'] = alt.VEGA_VERSION  
+    data['vegalite_version']=alt.VEGALITE_VERSION  
+    data['vegaembed_version']=alt.VEGAEMBED_VERSION  
+
+    # get the template and render with the data  
+    with open(templatefile,'r') as f:  
+        template = f.read()  
+        j2_template = Template(template)  
+        t = j2_template.render(data)  
+
+    # write the final html  
+    with open(targetfile, 'w') as f:  
+        f.write(t)
+</code></pre>
+<p>And, finally, the web template.</p>
+<pre><code class="language-python">&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;  
+  &lt;meta charset=&quot;UTF-8&quot;&gt;  
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;  
+  &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;  
+    integrity=&quot;sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC&quot; crossorigin=&quot;anonymous&quot;&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vega@{{vega_version}}&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vega-lite@{{vegalite_version}}&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vega-embed@{{vegaembed_version}}&quot;&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body class=&quot;container&quot;&gt;  
+  &lt;header class=&quot;bg-primary text-white text-center py-8&quot;&gt;  
+    &lt;h1 class=&quot;display-4&quot;&gt;{{title}}&lt;/h1&gt;  
+    &lt;p class=&quot;lead&quot;&gt;{{subtitle}}&lt;/p&gt;  
+  &lt;/header&gt;  
+  &lt;div&gt;{{description}}&lt;/div&gt;  
+  &lt;div class = &quot;p-5&quot; style=&quot;width:80%&quot; id=&quot;vis1&quot;&gt;&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;    vegaEmbed('#vis1', {{ spec | safe}}).catch(console.error);  &lt;/script&gt;
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js&quot;  
+    integrity=&quot;sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM&quot;  
+    crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+
+[  
+](https://medium.com/tag/python?source=post_page-----78c8d4e9fb28---------------python-----------------)
+</code></pre>
             </div>
             <div class="col-sm-3 p-2">
                 <!ads etc here -->
