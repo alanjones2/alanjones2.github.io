@@ -1,4 +1,15 @@
-[
+[    
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://alanjones2.github.io/articles/app_maker/Create_an_AI-Generated_Streamlit_Application_with_an_OpenAI_Assistant.html",
+        "imageURL":"https://alanjones2.github.io/articles/app_maker/images/Screenshot_app.png",
+        "title":"Create an AI-Generated Streamlit Application with an OpenAI Assistant",
+        "description":"We use the OpenAI Playground and code completion tools to create a Streamlit app with interactive Plotly charts", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Streamlit AI Python DataVisualization DataScience"
+    },  
+
     {
         "type":"ARTICLE",
         "articleURL": "https://alanjones2.github.io/articles/deployaltair/How_to_Deploy_Plotly_Graphics_to_a_Simple_Static_Web_Page.html",
