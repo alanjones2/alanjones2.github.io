@@ -1,5 +1,15 @@
 [    
-    {
+{
+        "type":"ARTICLE",
+        "articleURL": "https://alanjones2.github.io/streamlit-chart-varieties/",
+        "imageURL":"https://alanjones2.github.io/streamlit-chart-varieties/images/rowcharts.png",
+        "title":"Streamlit Supports 5 Important Data Visualization Libraries - Which to Choose?",
+        "description":"We code examples using Altair, Bokeh, Plotly, Pandas Plot and Matplotlib, to illustrate the pros and cons of each one", 
+        "demoURL":"None",
+        "code":"None",
+        "tags":"Streamlit Python DataVisualization"
+    },  
+{
         "type":"ARTICLE",
         "articleURL": "https://alanjones2.github.io/articles/app_maker/Create_an_AI-Generated_Streamlit_Application_with_an_OpenAI_Assistant.html",
         "imageURL":"https://alanjones2.github.io/articles/app_maker/images/Screenshot_app.png",
@@ -102,7 +112,7 @@
         "tags":"Python PyScript Plotly DataVisualization"
     },
     {
-        "type":"Downloadable eBook",
+        "type":"eBook",
         "articleURL": "https://alanjones2.github.io/streamlitfromscratch/",
         "imageURL":"",
         "title":"Streamlitfrom Scratch",
