@@ -46,14 +46,16 @@
             .then(data => console.log(data));
     </script>
     <div class="jumbotron">
-        <h1 class="display-4" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
-            <span class="text-secondary" style="font-size:50%;font-weight: lighter;"> 
-                Data Visualization, Data Science and AI</span>
+        <h1 class="display-3"">Data Visualization, Data Science and AI</span>
+            <span style="font-size:25%;font-weight:lighter">by </span> 
+            <span class="text-secondary" style="font-size:50%;font-weight: bolder;"> Alan
+                <span style="font-weight:lighter">Jones</span>
+            </span>
         </h1>
         <hr />
 
         <p class="lead">
-            Build Data Visualization apps for the web using Streamlit, Plotly, Python and Flask.
+            Data Visualization and AI apps for the web using Streamlit, Plotly, Python and Flask.
         </p>
         <p>
             See the articles/tutorials, below, and find the code for them on Github by following the links below.
@@ -104,9 +106,8 @@
             }
         </script>
 
-
-        <div class="row" style="width: 100%; padding-bottom: 10px; ">
-            <button type="button" class="btn btn-info" style="margin: 2px;">Select a topic: </button>
+        <div class="row text-dark">Select a topic: </div>
+        <div class="row" style="width: 100%; padding-bottom: 10px; ">   
             <button type="button" class="btn btn-secondary" onclick="selectTag('All')"
                 style="margin: 2px;font-size: small;">All</button>
             <button type="button" class="btn btn-secondary" onclick="selectTag('book')"

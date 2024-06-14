@@ -46,14 +46,16 @@
             .then(data => console.log(data));
     </script>
     <div class="jumbotron">
-        <h1 class="display-4" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
-            <span class="text-secondary" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
-                Data Visualization</span>
+        <h1 class="display-3"">Data Visualization, Data Science and AI</span>
+            <span style="font-size:25%;font-weight:lighter">by </span> 
+            <span class="text-secondary" style="font-size:50%;font-weight: bolder;"> Alan
+                <span style="font-weight:lighter">Jones</span>
+            </span>
         </h1>
         <hr />
 
         <p class="lead">
-            Build Data Visualization apps for the web using Streamlit, Plotly, Python and Flask.
+            Data Visualization and AI apps for the web using Streamlit, Plotly, Python and Flask.
         </p>
         <p>
             See the articles/tutorials, below, and find the code for them on Github by following the links below.
@@ -104,9 +106,8 @@
             }
         </script>
 
-
-        <div class="row" style="width: 100%; padding-bottom: 10px; ">
-            <button type="button" class="btn btn-info" style="margin: 2px;">Select a topic: </button>
+        <div class="row text-dark">Select a topic: </div>
+        <div class="row" style="width: 100%; padding-bottom: 10px; ">   
             <button type="button" class="btn btn-secondary" onclick="selectTag('All')"
                 style="margin: 2px;font-size: small;">All</button>
             <button type="button" class="btn btn-secondary" onclick="selectTag('book')"
@@ -143,6 +144,33 @@
 
         <div class="row bg-white" style="width: 100%;">
             <div class="col-sm-9 p-2">
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="OpenAI AI Python DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*BhucSzDp94gE2iZLAgrW4g.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/towards-data-science/from-data-to-visualization-with-the-openai-assistants-api-and-gpt-4o-69af0cac5118?sk=f275220dabaff7c9d8f2e2a4bf3296ff" target="_blank">
+                                    <span class="text-dark">From Data to Visualization with the OpenAI Assistants API and GPT-4o</span>
+                                </a>
+                            </h4>
+                            We explore the Code Completion tool from OpenAI’s Assistants API to create visualizations directly from data
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/assistantscharts2" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
                 <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Streamlit Python DataVisualization">
 
                     <div class="media">

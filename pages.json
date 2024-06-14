@@ -1,4 +1,14 @@
-[    
+[
+    {
+        "type":"ARTICLE",
+        "articleURL": "https://medium.com/towards-data-science/from-data-to-visualization-with-the-openai-assistants-api-and-gpt-4o-69af0cac5118?sk=f275220dabaff7c9d8f2e2a4bf3296ff",
+        "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/1*BhucSzDp94gE2iZLAgrW4g.png",
+        "title":"From Data to Visualization with the OpenAI Assistants API and GPT-4o",
+        "description":"We explore the Code Completion tool from OpenAI’s Assistants API to create visualizations directly from data", 
+        "demoURL":"None",
+        "code":"https://github.com/alanjones2/assistantscharts2",
+        "tags":"OpenAI AI Python DataVisualization"
+    },    
 {
         "type":"ARTICLE",
         "articleURL": "https://alanjones2.github.io/streamlit-chart-varieties/",
