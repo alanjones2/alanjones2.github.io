@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>From Data to Visualization with the OpenAI Assistants API and GPT-4o</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="https://cdn-images-1.medium.com/max/1200/1*BhucSzDp94gE2iZLAgrW4g.png">
+    <meta name="twitter:image:src" content="https://cdn-images-1.medium.com/max/1200/1*BhucSzDp94gE2iZLAgrW4g.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="We explore the Code Completion tool from OpenAI’s Assistants API to create visualizations directly from data">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="From Data to Visualization with the OpenAI Assistants API and GPT-4o" property="og:title">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+    <style>
+        blockquote {
+            font-style: italic;
+            padding-left: 2em;
+        }
+
+        img {
+            max-width: 90%;
+            padding-bottom: 4px;
+            padding-top: 4px;
+        }
+    </style>
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io/articles/From Data to Visualization with the OpenAI Assistants API and GPT-4o")
+            .then(data => console.log(data));
+    </script>
+    <a href="https://alanjones2.github.io" style="text-decoration:none">
+        <div class="p-2 mb-2 bg-secondary text-white">
+            <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+                <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                    Data Visualization</span>
+            </h1>
+        </div>
+    </a>
+
+    <div style="margin-top:30px" class="container">
+
+        <div class="row bg-white" style="width: 100%;">
+
+            <div class="col-sm-8 p-2">
+                <!-- content-->
+                <h1 class="display-4 fw-bold">From Data to Visualization with the OpenAI Assistants API and GPT-4o</h1>
+                <h2 class="lead p-2" style="font-size:xx-large;">We explore the Code Completion tool from OpenAI’s Assistants API to create visualizations directly from data</h2>
+                <div><img alt="" src="https://cdn-images-1.medium.com/max/1200/1*BhucSzDp94gE2iZLAgrW4g.png">
+                </div>
+
+                <p><em>Programming tools — Image constructed from photos by <a href="https://unsplash.com/@quaritsch?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Quaritsch Photography</a> and <a href="https://unsplash.com/@tonchik?utm_source=medium&amp;utm_medium=referral">Anton Savinov</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral">Unsplash</a></em></p>
+<p>As GPT-4's capabilities continue to expand, OpenAI's tools built on its technology are evolving into increasingly powerful assets for developers.</p>
+<p>In this article, we are going to explore the chart-making capabilities of the latest iteration. We'll equip an Assistant with a data file and specific instructions to see how it brings our data visualization ideas into being.</p>
+<p>We will use the built-in tools in the Assistant API to achieve this.</p>
+<p>Currently, in the OpenAI Python package (v1.30.0, at the time of writing) the Assistants API includes the tools, File Search, Code Completion and Function Calling.</p>
+<p>Function Calling lets the developer define functions that the AI can intelligently choose in order to complete a task; File Search allows the developer to upload a variety of file types which can be stored, RAG style, in a vector database; and Code Completion lets the assistant write and run Python programs in a sandboxed environment to solve programming and math problems.</p>
+<p>Code Completion can also work with uploaded files, which can be processed to create data files and images of charts. And that is the functionality that we will be using here.</p>
+<p>The code that we will explore below will load a data file (in CSV form), and by using appropriate prompts, instruct our assistant to create a graph from the data. We will then download the graph and display it.</p>
+<p>Using plain English prompts, we can easily generate charts such as the ones below from raw CSV data.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1200/1*EWQK128vsaUAwZHEMr3xfw.png" /></p>
+<h3>OpenAI Assistants</h3>
+<p>I have explained OpenAI's Assistants API, and how to get started with them previously (<a href="https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53"><em>Use OpenAI's Powerful New Assistants API for Data Analysis</em></a>). While the new versions of the API have rendered this article a little out of date, the description of Assistants and how they work is still broadly correct, as is how to get up and running with an OpenAI account.</p>
+<p>So, for a more detailed look, you can refer to that article and here I will limit myself to a brief introduction of the basics before getting into the nitty-gritty.</p>
+<h3>OpenAI</h3>
+<p>Firstly, of course, you will need an OpenAI account, and you need to be aware that you will be charged for using it. However, the fees are not high: running the code we will describe here once, should cost only a few cents. Other charges apply, such as file storage, and while they are not likely to be relevant in this context, you should check up on the latest fees.</p>
+<p>Having said that, you should regularly use the OpenAI dashboard to check your usage so as to make sure you are not racking up a large bill.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*MxXiUczWlKIq9FPqc1nJsw.png" /></p>
+<p><em>The OpenAI dashboard menu</em></p>
+<p>You should also use the dashboard to check the storage that you are using. All the output from an assistant is stored along with any files that you have uploaded. You can delete them manually from the dashboard, and you probably want to do this because while you may not be charged, over time a lot of unnecessary files can accumulate in your workspace.</p>
+<h3>Assistants, Threads, and Runs</h3>
+<p>These are the three basic objects in the Assistants API.</p>
+<ul>
+<li><code>Assistants:</code> As you might imagine, these are the fundamental part of the setup. When we create an assistant, we specify various attributes such as: a model (e.g. <code>gpt-4o</code>); instructions that inform the model about the type of behaviour we expect from it; tools such as the <em>code interpreter</em> and <em>file search</em>; and files that we want the model to use.</li>
+<li><code>Threads:</code> These store the state of a conversation and contain the <code>messages</code> that are generated both by the user and the assistant. A thread is associated with an assistant when a <code>run</code> is started (see below).</li>
+<li><code>Runs:</code> These control the execution of an <code>assistant</code> with a <code>thread</code>. The <code>run</code> takes the information in the <code>thread</code> and the <code>assistant</code> and manages the interaction with the LLM. <code>Runs</code> go through a number of steps before completion. When the <code>run</code> is complete, we can interrogate the <code>thread</code> to see what response the assistant has come up with.</li>
+</ul>
+<p>In addition to these basic objects, in a thread, we need <code>messages</code> that will contain the instructions for the model and its responses. Also, we shall use <code>files</code> which are separate objects that assistants use and which hold the details of files that are uploaded.</p>
+<h3>Coding the Assistant</h3>
+<p>We will need to go through a number of steps to create and run our assistant. The sequence of events is listed below and gives an overview of how each of the components is used.</p>
+<p>The steps are:</p>
+<ul>
+<li>Create an OpenAI client with our API key.</li>
+<li>Upload a local file and retrieve the file object for later use.</li>
+<li>Create an assistant with instructions for the model and the ID of the uploaded file.</li>
+<li>Create a thread that also includes the file ID and instructions for the model.</li>
+<li>Run the assistant and thread.</li>
+<li>Display the messages generated by both the user and the AI that are now in the thread (this should show the process the model went through to produce a result, and if anything went wrong we can, hopefully, see what it was).</li>
+<li>Retrieve the generated image and display it.</li>
+</ul>
+<p>We will code each of the bullet points above in Python and describe exactly what is happening. I've written the code in the form of a Jupyter notebook, so if you want to follow along, copy each section of code into a new notebook cell, and you'll have a copy of my notebook.</p>
+<p>The first step is to create a client.</p>
+<h4>Create a client</h4>
+<p>The client gives us access to the OpenAI API. We need to provide it with an API key and in the code below, I have included an input statement so that you need to enter the key manually.</p>
+<pre><code class="language-python">from openai import OpenAI  
+
+key = input(&quot;API key&quot;)  
+client = OpenAI(api_key=key)
+</code></pre>
+<p>You could also hard code the key (but make sure your code doesn't go public).</p>
+<pre><code class="language-python">from openai import OpenAI  
+
+client = OpenAI(api_key=&quot;Your key here&quot;)
+</code></pre>
+<p>Or, if your key is stored as an environment variable then the client will find it automatically and all you need to code is…</p>
+<pre><code class="language-python">from openai import OpenAI  
+
+client = OpenAI()
+</code></pre>
+<p>One of these is your first Jupyter Notebook cell.</p>
+<h4>Upload a file</h4>
+<p>First, you need a file! I'm using a CSV file that is derived from data on the <a href="https://ourworldindata.org/co2-and-greenhouse-gas-emissions?insight=human-greenhouse-gas-emissions-have-increased-global-average-temperatures#key-insights">Our World in Data (OWID) website.</a> OWID is a great source of information and data, and they helpfully allow all of their content to be used freely under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY license</a>.</p>
+<p>The file records worldwide CO2 emissions from 1850 to 2021 (the original data contained data for many other entries, but I have only included World data, here). You can see what it looks like in the screenshot below.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/1200/1*0WawRuVQMFfpdXqlDakt3Q.png" /></p>
+<p>I've called the file <em>world_df.csv</em> and, I also want to set a variable with the name that I'm going to give to the assistant. So, my second notebook cell contains two variables for these values.</p>
+<pre><code class="language-python">filename = &quot;world_df.csv&quot;  
+assistant_name = &quot;data-analyst-v0.1&quot;
+</code></pre>
+<p>If I want to use the code to read different files or create a new assistant, I can change the values in this cell.</p>
+<p>The next cell uploads the file. The main work of uploading a file is done by the <code>client.files.create</code> method. In the code below, this method takes two parameters, the file itself and the string 'assistants' which tells the client what the purpose of the file is.</p>
+<p>The code does a little more than just upload a file. I'm assuming that the code will be run more than once (perhaps with different instructions) and I don't want to duplicate the files. So, if the file is new, the code uploads it, but if it had been uploaded earlier, the code retrieves that existing file.</p>
+<pre><code class="language-python"># Check if file is already uploaded  
+filelist = client.files.list(purpose=&quot;assistants&quot;)  
+filenames =  [x.filename for x in filelist.data]  
+
+# Upload a file with an &quot;assistants&quot; purpose or use existing one  
+if not filename in filenames:  
+  file = client.files.create(  
+    file=open(filename, &quot;rb&quot;),  
+    purpose='assistants'  
+  )  
+else:  
+  for f in filelist:  
+    if f.filename == filename:  
+      file = client.files.retrieve(f.id)  
+      break
+</code></pre>
+<p>We can check if the file exists by downloading a list of already uploaded files and searching it to see if our file is there. The method <code>client.files.list()</code> retrieves the list from the client and we pass the parameter<code>purpose='assistants'</code> to show the type of file we are interested in.</p>
+<p>We can then scan the list to find the file name of interest. If it is not there, we upload, otherwise we fetch the file object from the client. In either case, <code>file</code>is set to the file object.</p>
+<p>In an app, this code could be usefully placed in a function that returned the file object.</p>
+<p>So, we now have the file uploaded and a record of the file object. Next, we need to create an assistant that will use that file.</p>
+<h4>Create an assistant</h4>
+<p>As with the uploaded file, we check to see if it already exists. Again, if we have run this code before, then the assistant will have already been created, and we don't want to duplicate it, and so we just retrieve the existing assistant object. Otherwise, we create a new one.</p>
+<p>The code for this functionality is pretty much the same as we used for the file upload.</p>
+<p>Creating an assistant, is done with a call to <code>client.beta.assistants.create().</code></p>
+<p>We set the parameters for the name of the assistant, some basic instructions (these will be a System Prompt), the model that we want to use (in the case GPT-4o), the tools that we require (code interpreter) and the resources. In this last parameter, we can see that we reference the file object for the uploaded file and indicate that the code interpreter will be using the file.</p>
+<pre><code class="language-python"># Check if assistant already exists  
+assistant_list = client.beta.assistants.list()  
+assistant_names =  [x.name for x in assistant_list.data]  
+
+if not assistant_name in assistant_names:  
+  # Create an assistant using the file ID  
+  assistant = client.beta.assistants.create(  
+    name = &quot;data-analyst-v0.1&quot;,  
+    instructions=&quot;You are a data analyst&quot;,  
+    model=&quot;gpt-4o&quot;,  
+    tools=[{&quot;type&quot;: &quot;code_interpreter&quot;}],  
+    tool_resources={  
+      &quot;code_interpreter&quot;: {  
+        &quot;file_ids&quot;: [file.id]  
+      }  
+    }  
+  )  
+else:  
+    for a in assistant_list:  
+      if a.name == assistant_name:  
+        assistant = client.beta.assistants.retrieve(a.id)  
+        break
+</code></pre>
+<p>Again, in an app, this could be a function that returns the assistant object.</p>
+<h4>Create a thread</h4>
+<p>To create a thread, we simply call <code>client.beta.threads.create()</code> and specify the first message that will be passed to the assistant when it runs the assistant with this thread.</p>
+<p>As you can see in the code below, in the message we set the role, the prompt, and add the file ID as an attachment.</p>
+<pre><code class="language-python">thread = client.beta.threads.create(  
+  messages=[  
+    {  
+      &quot;role&quot;: &quot;user&quot;,  
+      &quot;content&quot;: &quot;Using the csv file attached, display a graph of 'Year' against 'Annual CO2 emissions&quot;,  
+      &quot;attachments&quot;: [  
+        {  
+          &quot;file_id&quot;: file.id,  
+          &quot;tools&quot;: [{&quot;type&quot;: &quot;code_interpreter&quot;}]  
+        }  
+      ]  
+    }  
+  ]  
+)
+</code></pre>
+<p>The prompt that we are sending to the LLM is:</p>
+<p><em>"Using the csv file attached, display a graph of 'Year' against 'Annual CO2 emissions'".</em></p>
+<p>That's a fairly straightforward requirement that requires the code interpreter to analyse the data file and generate the required code.</p>
+<p>Now we are all set to run the assistant with the thread.</p>
+<h4>Create a run</h4>
+<p>A run takes the assistant and the thread and submits them to the LLM. It runs asynchronously and goes through a number of steps before it finishes.</p>
+<p>Consequently, we need to wait for a result, and we can do this in two ways: polling or streaming. Polling repeatedly checks the status of the run until it is completed. Whereas with streaming the various steps are automatically detected and functions can be mapped onto those events with an event hander.</p>
+<p>Below is the streaming code from the <a href="https://platform.openai.com/docs/assistants/overview?context=with-streaming">OpenAI documentation</a> (with a changed message) which suffices for this experiment.</p>
+<pre><code class="language-python">from typing_extensions import override  
+from openai import AssistantEventHandler  
+
+# First, we create a EventHandler class to define  
+# how we want to handle the events in the response stream.  
+
+class EventHandler(AssistantEventHandler):  
+  @override  
+  def on_text_created(self, text) -&gt; None:  
+    print(f&quot;\nassistant &gt; {text.value}&quot;, end=&quot;&quot;, flush=True)  
+
+  @override  
+  def on_text_delta(self, delta, snapshot):  
+    print(delta.value, end=&quot;&quot;, flush=True)  
+
+  def on_tool_call_created(self, tool_call):  
+    print(f&quot;\nassistant &gt; {tool_call.type}\n&quot;, flush=True)  
+
+  def on_tool_call_delta(self, delta, snapshot):  
+    if delta.type == 'code_interpreter':  
+      if delta.code_interpreter.input:  
+        print(delta.code_interpreter.input, end=&quot;&quot;, flush=True)  
+      if delta.code_interpreter.outputs:  
+        print(f&quot;\n\noutput &gt;&quot;, flush=True)  
+        for output in delta.code_interpreter.outputs:  
+          if output.type == &quot;logs&quot;:  
+            print(f&quot;\n{output.logs}&quot;, flush=True)  
+
+# Then, we use the `stream` SDK helper  
+# with the `EventHandler` class to create the Run  
+# and stream the response.  
+
+with client.beta.threads.runs.stream(  
+  thread_id=thread.id,  
+  assistant_id=assistant.id,  
+  instructions=&quot;create a downloadable file for the graph&quot;,  
+  event_handler=EventHandler(),  
+) as stream:  
+  stream.until_done()
+</code></pre>
+<p>The function which starts the run is 'client.bet.threads.run.stream()' and we pass the IDs of the thread and the assistant along with instructions for this particular run and the event handler which is defined above.</p>
+<p>We won't go into detail about the workings of the event handler, suffice it to say that it catches events when text is created or a tool outputs something and prints the result. Its functionality is fine for experimental purposes but for a real app, you would probably want to do something more sophisticated with these outputs.</p>
+<p>Note that we specified in the thread that we wanted a graph to be generated and here in the run we additionally ask it to generate a downloadable file.</p>
+<p>The output from the run is shown below and mostly comprises the Python code generated by the assistant.</p>
+<pre><code class="language-python">assistant &gt; code_interpreter  
+
+import pandas as pd  
+
+# Load the CSV file  
+file_path = '/mnt/data/file-8XwqMOlaH6hoKEEKOYXPYqTh'  
+data = pd.read_csv(file_path)  
+
+# Display the first few rows of the dataframe to understand its structure  
+data.head()import matplotlib.pyplot as plt  
+
+# Plot 'Year' vs 'Annual CO₂ emissions'  
+plt.figure(figsize=(10, 6))  
+plt.plot(data['Year'], data['Annual CO₂ emissions'], marker='o', linestyle='-')  
+plt.xlabel('Year')  
+plt.ylabel('Annual CO₂ emissions')  
+plt.title('Year vs Annual CO₂ emissions')  
+plt.grid(True)  
+plt.tight_layout()  
+
+# Save the plot to a file  
+plot_file_path = '/mnt/data/year_vs_annual_co2_emissions.png'  
+plt.savefig(plot_file_path)  
+plot_file_path  
+
+output &gt;  
+
+assistant &gt; The graph depicting 'Year' against 'Annual CO₂ emissions' has been created. You can download the plot using the link below:  
+
+[Download the graph](sandbox:/mnt/data/year_vs_annual_co2_emissions.png)None
+</code></pre>
+<p><em>To be clear the code above is NOT to be included in the Jupyter Notebook. It was generated and run by GPT.</em></p>
+<p>The output shows that the LLM has understood our instructions, has generated the code to create the correct graph, has run that code, and has created an image file that we can download.</p>
+<h4>Retrieve the generated file</h4>
+<p>All we need to do now is find the file that the assistant generated and download it.</p>
+<p>The last code cell in our notebook is shown below.</p>
+<pre><code class="language-python">filelist = client.files.list(purpose=&quot;assistants_output&quot;)  
+
+image_list = [x for x in filelist.data if &quot;png&quot; in x.filename]  
+
+id = image_list[-1].id # the last in the list is the latest  
+
+image_data = client.files.content(id)  
+image_data_bytes = image_data.read()  
+
+with open(&quot;./my-image.png&quot;, &quot;wb&quot;) as file:  
+    file.write(image_data_bytes)
+</code></pre>
+<p>Again, we assume that this (or similar) code may have been run before, so there might well be more than one image file.</p>
+<p>So, we first get a list of all the files that are labelled as "assistants_output", then we create a list of images (i.e. files with the extension '.png') and then we find the last file in that list — that will be the last one that was generated.</p>
+<p>And to display the chart we can create a markdown cell with the following content.</p>
+<pre><code class="language-bash">![](my-image.png)
+</code></pre>
+<p>The result can be seen in the image below:</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*NQxjzaIMsTw0AueTEQPXUQ.png" /></p>
+<p>An example of an AI-generated graph: CO2 emissions over time</p>
+<h3>Changing the prompt</h3>
+<p>To generate a different chart we simply run the code again but with a different prompt. For example:</p>
+<p><em>"Using the csv file attached, display a graph of 'Year' against all other columns"</em></p>
+<p>The result is the image below.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*01lkKzIVhodN9hZopnTWVA.png" /></p>
+<p>Or, if we are only interested in the data for this century:</p>
+<p><em>"Using the csv file attached, display a graph of 'Year' against all other columns. Only chart the figures for the 21st century"</em></p>
+<p>This elicits the response below.</p>
+<pre><code class="language-python">assistant &gt; code_interpreter  
+
+import pandas as pd  
+
+# Load the CSV file  
+file_path = '/mnt/data/file-8XwqMOlaH6hoKEEKOYXPYqTh'  
+data = pd.read_csv(file_path)  
+
+# Display the first few rows of the dataframe to understand its structure  
+data.head()import matplotlib.pyplot as plt  
+
+# Filter the data to include only the 21st century (from year 2000 onwards)  
+data_21st_century = data[data['Year'] &gt;= 2000]  
+
+# Define the columns to be plotted against 'Year'  
+columns_to_plot = data.columns.drop(['Entity', 'Code', 'Year'])  
+
+# Plot the data  
+plt.figure(figsize=(12, 8))  
+for column in columns_to_plot:  
+    plt.plot(data_21st_century['Year'], data_21st_century[column], label=column)  
+
+plt.title('Yearly Data in the 21st Century')  
+plt.xlabel('Year')  
+plt.ylabel('Values')  
+plt.legend(title='Metrics', bbox_to_anchor=(1.05, 1), loc='upper left')  
+plt.grid(True)  
+plt.tight_layout()  
+
+# Save the plot to a file  
+plot_file_path = '/mnt/data/my-image3.png'  
+plt.savefig(plot_file_path)  
+
+plt.show()  
+
+plot_file_path  
+
+output &gt;  
+
+assistant &gt; The graph has been created and saved successfully. You can download the file using the link below:  
+
+[Download the graph](sandbox:/mnt/data/my-image3.png)None
+</code></pre>
+<p>From this, we can see how the code interpreter has filtered the data to produce the required chart, which you can see below.</p>
+<p><img alt="" src="https://cdn-images-1.medium.com/max/800/1*7pwpLDCLSGAg08Qlpeg2zA.png" /></p>
+<h3>Conclusion and towards an app</h3>
+<p>Using OpenAI's Assistants API along with the Code Interpreter allows us to generate code that will prompt GPT to create charts directly from a data file using plain English.</p>
+<p>The code is not particularly tricky and while the Jupyter Notebook code is for demonstration purposes only, I hope that you can see how this could be easily transformed into an app that asks the user to upload a data file, enter a prompt that describes the chart required and then enables the user to download the chart as an image file.</p>
+<h4>Update: A prototype app</h4>
+<p>You will find a prototype Streamlit app based on the code in the GitHub repo (see below) in a folder called 'streamlit'. To use the app, you must supply your API key and put it in a Streamlit secrets file.</p>
+<p>The app uses the Streamlit file upload control to upload a CSV file to work with and a prompt can be entered in an input box. While the prompt is running a status string is displayed. If the LLM cannot understand your prompt or there is any other error then a simple error message is displayed.</p>
+<p>A modified version of the Jupyter Notebook above is coded as a class in a local library package and the Streamlit app calls the methods in it. There are a couple of simple data files, too. Feel free to download and modify it and run it for your own purposes <strong>but you must <em>first</em> read the README.md file in the 'streamlit' folder</strong>!</p>
+<hr />
+<p>Thanks for reading. You can find the code and data in a GitHub repo <a href="https://github.com/alanjones2/assistantscharts2">here</a>. Feel free to download, clone or fork it. To see more articles you can follow me on <a href="https://medium.com/@alan-jones/subscribe">Medium</a> or subscribe to my free, occasional, <a href="http://technofile.substack.com">newsletter</a>. Articles are also listed on my <a href="http://alanjones2.github.io">webpage</a>.</p>
+<p><em>All images and screenshots are by me, the author unless otherwise noted.</em></p>
+<p><em>All code is covered by the MIT license (see the repo) and, while not necessary, attribution is always appreciated.</em></p>
+            </div>
+            <div class="col-sm-3 p-2">
+                <!--ads etc here -->
+                <!-- streamlit from scratch-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>eBook</i>
+                        <img class="mr-3" src="" width='80%' height='auto' alt="">
+                        <h5>
+                            <a href="https://alanjones2.github.io/streamlitfromscratch/" target="_blank">
+                                <span class="text-dark">Streamlitfrom Scratch</span>
+                            </a>
+                        </h5>
+                        <p><b>Streamlit</b> is a framework for creating Data Science apps in Python.
+                            <br />
+                            <b>Streamlit from Scratch</b> is an ebook that will teach you how to get started with
+                            Streamlit.
+                        </p>
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+            
+                <!-- how charts work-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/61y5lxsc9DL._SY466_.jpg" width='80%'
+                            height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/47FKuiz" target="_blank">
+                                <span class="text-dark">How Charts Work: Understand and explain data with
+                                    confidence</span>
+                            </a>
+                        </h5>
+                        <h6>From the Back Cover</h6>
+                        <p>
+                            How Charts Work brings the secrets of effective data visualisation in a way that will
+                            help you bring data alive.
+                            Charts, graphs and tables are essential devices in business, but all too often they
+                            present information poorly.
+                            This
+                            book will help you:
+            
+                            <li>Feel confident understanding different types of charts, graphs and tables � and how
+                                to read them</li>
+                            <li>Recognise the true story behind the data presented and what the information really
+                                shows</li>
+                            <li>Know the principles and rules of how best to represent information so you can create
+                                your own
+                                information-driven (and
+                                beautiful) visuals</li>
+                            <li>Design visuals that people engage with, understand and act upon</li>
+                        </p>
+            
+                    </div>
+                </div>
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- the art of statistics-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3kVBGmo" target="_blank">
+                                <span class="text-dark">The Art of Statistics: How to Learn from Data</span>
+                            </a>
+                        </h5>
+                        Discover how data literacy is changing the world and gives you a better understanding of
+                        life's biggest problems. I have used this book in various articles and found it to be
+                        invaluable.
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+            
+                    <i>eBook</i>
+                    <h5><a href='https://alanjones.gumroad.com/l/auiws' target='_blank'>Plotting with Pandas</a>
+                    </h5>
+                    <p>
+                        <b>Plotting with Pandas: an Introduction to Data Visualization</b> is an ebook that covers basic and
+                        statistical plots using Python and Pandas, line and bar charts, scatter plots, pie charts,
+                        histograms, box plots, etc.
+                    </p>
+            
+            
+            
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- storytelling in data-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3JmzEFq" target="_blank">
+                                <span class="text-dark">Storytelling with Data: A Data Visualization Guide for
+                                    Business</span>
+                            </a>
+                        </h5>
+                        Don't simply show your data - tell a story with it! Storytelling with Data teaches you
+                        the fundamentals of data visualization and how to communicate effectively with data. I
+                        use this book in the series of articles '12 Essential Visualizations and How to
+                        Implement them.
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- How charts lie -->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3ZuQO9B" target="_blank">
+                                <span class="text-dark">How Charts Lie: Getting Smarter about Visual
+                                    Information</span>
+                            </a>
+                        </h5>
+                        A leading data visualization expert explores the negative - and positive - influences
+                        that charts have on our perception of truth. I used this book as the inspiration for
+                        'How Not to Lie with Charts'.
+            
+                    </div>
+                </div>
+            
+            
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            
+                <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                <script async
+                    src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+            
+            </div>
+        </div>
+
+
+
+
+        <div style="margin: 20px;">
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                crossorigin="anonymous"></script>
+            <!-- alanjonescoding_ads_AdSense1_1x1_as -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                data-ad-slot="2622033521" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <footer class="text-right text-secondary">
+                <i>Please note that all the software in these articles is written for educational purposes and should
+                    not be considered suitable for production code</i>
+                <br />
+                <i>This site may contain affliate links. If you purchase an item through such a link I may get a
+                    commision but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+                <br />
+                <i>&copy; 2024, Alan Jones</i> &nbsp;
+
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
