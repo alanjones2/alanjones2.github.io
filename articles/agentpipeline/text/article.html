@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AI Agents vs. AI Pipelines: a Practical Guide to Coding Your LLM Application</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="../images/image.png">
+    <meta name="twitter:image:src" content="../images/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:author" content="https://alanjones2.github.io">
+    <meta name="twitter:creator" content="@MrAlanJones">
+    <meta name="author" content="Alan Jones">
+
+
+    <meta content="We use CrewAI to create apps that demonstrate how to choose the right architecture for your LLM application">
+    <meta content="https://alanjones2.github.io" property="og:url">
+    <meta content="AI Agents vs. AI Pipelines: a Practical Guide to Coding Your LLM Application" property="og:title">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+    <style>
+        blockquote {
+            font-style: italic;
+            padding-left: 2em;
+        }
+
+        img {
+            max-width: 90%;
+            padding-bottom: 4px;
+            padding-top: 4px;
+        }
+    </style>
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io/articles/AI Agents vs. AI Pipelines: a Practical Guide to Coding Your LLM Application")
+            .then(data => console.log(data));
+    </script>
+    <a href="https://alanjones2.github.io" style="text-decoration:none">
+        <div class="p-2 mb-2 bg-secondary text-white">
+            <h1 class="display-6" style="font-weight:bolder">Alan<span style="font-weight:lighter">Jones</span>
+                <span class="text-white" style="font-size:50%;font-weight: lighter;"> Coding, Data Science and
+                    Data Visualization</span>
+            </h1>
+        </div>
+    </a>
+
+    <div style="margin-top:30px" class="container">
+
+        <div class="row bg-white" style="width: 100%;">
+
+            <div class="col-sm-8 p-2">
+                <!-- content-->
+                <h1 class="display-4 fw-bold">AI Agents vs. AI Pipelines: a Practical Guide to Coding Your LLM Application</h1>
+                <h2 class="lead p-2" style="font-size:xx-large;">We use CrewAI to create apps that demonstrate how to choose the right architecture for your LLM application</h2>
+                <div><img alt="" src="../images/image.png">
+                </div>
+
+                <h1></h1>
+<p><em>An agent and a pipeline — based on an image created with Microsoft Bing Image Creator</em></p>
+<p>We can think of an AI agent as an LLM with access to external tools; it runs in a loop, making decisions about how to behave and what tools to use at each iteration. </p>
+<p>In doing this, the agent can solve much more complex problems than a conventional LLM app. (I explored how to build such an agent from scratch in the article <a href="https://ai.gopubby.com/how-to-build-a-react-ai-agent-with-claude-3-5-and-python-95423f798640"><strong>How to Build a ReAct AI Agent with Claude 3.5 and Python</strong></a>)</p>
+<p>AI Agents are powerful and a long step beyond a conventional chat application. But they are not always the right solution.</p>
+<p>Sometimes a sequence of more conventional functions is more appropriate. We can think of this type of application as a pipeline, where a solution is developed by passing the output of one function as the input to the next.</p>
+<p>In this article, we will explore the use of AI agents and pipelines and what types of applications they are most suited to. We will use the CrewAI open-source framework to create the LLM logic and build a simple front end in Streamlit for an online app.</p>
+<h4>Apps for agents, apps for pipelines</h4>
+<p>Let’s think about a couple of different apps. </p>
+<p>A customer logs on to a manufacturer’s website to solve a problem that they are having with their washing machine. He is greeted by an AI agent that wants to help. What make and model is the machine? What are the symptoms? Are the clothes still dirty? Is there water on the floor? Is it refusing to spin?</p>
+<p>There are a whole load of questions that the agent might ask to solve whatever problem the customer has. And subsequent questions will depend on previous answers. </p>
+<p>Here, an AI agent is a great solution. It needs to run in a loop gathering information until it is in a position either to suggest a solution or, if it has run out of ideas, pass the problem on to a human operator.</p>
+<p>The operation of this type of agent is represented in the diagram below.</p>
+<p><img alt="" src="../images/reactflow.png" /></p>
+<p>Here’s another scenario.</p>
+<p>The sales director of a small company that runs coffee shops in London wants to produce a report on the performance of several branches. She regularly needs to see how the performance differs between outlets located in the financial district of the City and the more tourist- and retail-focused West End. She has spreadsheets detailing the sales for each branch. She wants to consolidate the numbers and write a report for her board of directors that includes easily understood charts that show the relative performance of each coffee shop.</p>
+<p>In this case, the director could use an LLM app to combine monthly sales figures into a single entity, write a commentary on the performance of the different outlets, produce the appropriate charts and combine these elements into a single report. It’s the same process each month and the only variable is the values in the spreadsheets. So, while the content of the report will vary, the process is the same.</p>
+<p>Unlike the agentic example, this is a simple sequential flow.</p>
+<p><img alt="" src="../images/pipelineflow.png" /></p>
+<p>An AI agent is an ideal solution for the first problem. Given that it is provided with the appropriate information on the operation of the washing machine, its potential failure modes and the symptoms of those failures, the agent can intelligently search out information and pose new questions in response to the customer’s input until it comes up with a solution. For this sort of problem, the AI agent provides a flexible and intelligent solution.</p>
+<p>A sales report is a different matter. Sales figures change and it may be that a report would find differences in performance depending on the time of year and the prevalence of tourists or office workers.</p>
+<p>So while an intelligent view of those changing figures is necessary, the processes for creating the report are the same. Consolidate the figures; analyse the sales results; create the charts; and finally, write the complete report.</p>
+<p>You could write a prompt for an agent that would direct it to go through the necessary steps but a more consistent result might come from designing a series of tasks where the output of one feeds into the input of the next.</p>
+<h3>CrewAI</h3>
+<p>We'll use CrewAI to create two example apps. CrewAI gives us a simple way of creating agents, defining tasks and connecting them. And, while it is not the only open-source framework that we could use, it serves to easily illustrate our topic.</p>
+<p>We'll start by using Jupyter Notebooks and convert them into free-standing apps later. </p>
+<p>We can use any AI chat API, I used Claude 3.5 to build the ReAct agent in my previous <a href="https://ai.gopubby.com/how-to-build-a-react-ai-agent-with-claude-3-5-and-python-95423f798640">article</a> but CrewAI uses OpenAI by default, so we'll go with that.</p>
+<p>You should bear in mind that if you want to code along with the article you will need an OpenAI API key and you may be charged for using it - a simple call to the API, such as we will use here, costs only a few cents but, of course, the more calls you make the more your bill will accumulate, so make sure that you keep an eye on your usage in the OpenAI dashboard.</p>
+<p>CrewAI comes in two flavours, Enterprise and Open Source. We will use the open-source version here, so no API keys or cost is involved in that.</p>
+<p>Installing CrewAI is what you would expect, although, as we will be using external tools, we need to add that functionality, too.</p>
+<pre><code class="language-bash">pip install crewai crewai-tools
+</code></pre>
+<p>We will create a tool for CrewAI to use based on the Wikipedia library from PyPi so we will also need to install that.</p>
+<pre><code class="language-bash">pip install wikipedia
+</code></pre>
+<p>The first app that we will develop is called Intelligent Wikipedia. It will take a query and then use the Wikipedia tool to find an answer. It will do this by reasoning about the query, working out what it needs to find out, making the appropriate searches and analysing the results before giving an answer. If that sounds complicated, don't worry,  it isn't.</p>
+<h3>Intelligent Wikipedia</h3>
+<p>As I said, initially, we'll use a Jupyter Notebook, so I'll present the code here as individual notebook cells.</p>
+<p>The first cell imports CrewAI and sets up OpenAI.</p>
+<pre><code class="language-python">from crewai import Agent, Task, Crew
+
+# Omit the next two lines if OPENAI_API_KEY is already set
+import os
+os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;your key here&quot;
+
+llm = &quot;gpt-4o&quot;
+</code></pre>
+<p>CrewAI will find the OpenAI key in the "OPENAI_API_KEY" environment variable, so we set it here. You may have already done this, if so, this code is redundant and you can omit it.</p>
+<p>You can use whichever model you wish but "gpt-4o" seems the best option at the time of writing.</p>
+<h4>Tools</h4>
+<p>Now we are going to specify the Wikipedia tool. A tool is a function that a CrewAI agent can call if required - it performs a task and returns a value. The simplest way to define a tool is with a decorator. So, the next cell is:</p>
+<pre><code class="language-python">from crewai_tools import tool
+import wikipedia
+
+@tool(&quot;wikipedia_lookup&quot;)
+def wikipedia_lookup(q: str) -&gt; str:
+    &quot;&quot;&quot;Look up a query in Wikipedia and return the result&quot;&quot;&quot;
+    return wikipedia.page(q).summary
+</code></pre>
+<p>After the imports, we have a simple function that takes a string parameter, sends it to Wikipedia and returns a summary of a Wikipedia page. Note we have included a function description and type hints for the parameter and return value. This helps CrewAI to know how to use the tool.</p>
+<p>Now we get to the main part of the application: we define the agent that will do the work for us and the task that we want it to undertake, and then we create and run the <em>crew</em>. This <em>crew</em> combines <em>agents</em> and <em>tasks</em> into something that can be executed. In our first app, that is a single agent and single task but later we will see more complex <em>crews</em>.</p>
+<h4>Agents</h4>
+<p>Let's first look at the agent. The following code creates an agent variable called <code>researcher_agent</code>. It specifies a <em>role</em>, a <em>goal</em>, a <em>backstory</em> and a list of tools the agent can use. It also specifies the LLM model to use. So the next cell is:</p>
+<pre><code class="language-python"># Define the agent
+researcher_agent = Agent(
+        role=&quot;Researcher&quot;,
+        goal=&quot;You research topics using Wikipedia and report on the results&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        tools=[wikipedia_lookup],
+        llm=llm
+    )
+</code></pre>
+<p>Many more attributes can be specified for an Agent but these are the basic ones.  The LLM and tools are fairly obvious, they are things you want to be specific about. But one might be forgiven for thinking that <em>role</em>, goal and <em>backstory</em> are more like magical incantations rather than programming requirements. However, as you might expect, these strings are used when CrewAI constructs prompts for the LLM.</p>
+<p>So that's an Agent: some stuff that tells the LLM its purpose, a list of tools and an LLM model.</p>
+<h4>Tasks</h4>
+<p>Next up is the <em>task</em>. The <em>task</em> tells us what the <em>agent</em> has to do and, for our purposes, it will involve responding to a query. When we get around to creating a proper app we will prompt the user for a query, but this is a prototype Jupyter Notebook so to make things easier we will hard code the query. </p>
+<pre><code class="language-python">query = &quot;What is the EU's largest city&quot;
+</code></pre>
+<p>That is not a question that can be answered directly from a Wikipedia page - some reasoning will be required.</p>
+<p>And here is the task specification that will incorporate this query.</p>
+<pre><code class="language-python">task1 = Task(
+    description=query,
+    expected_output='A short text based on the tool output.',
+    agent=researcher_agent,
+    tools=[wikipedia_lookup]
+)
+</code></pre>
+<p>The description of the task is the query, we explain what the expected output will be (this is another magical string that will end up in a prompt), we associate the task with an agent and we list the tools that may be used.</p>
+<p>Now we tie it all together with a <em>crew</em>.</p>
+<h4>Crews</h4>
+<p>Crews tell us which agents are required to do which tasks. Here is the <em>crew</em> for this app. </p>
+<pre><code class="language-python"># Define the crew
+crew = Crew(
+    agents=[researcher_agent],
+    tasks=[task1],
+    verbose=True
+)
+</code></pre>
+<p>It comprises a list of agents and a list of tasks. In this case, one task and one agent. When the <code>verbose</code>flag is set, CrewAI will show its working - we'll see that shortly.  </p>
+<p>Now all we need to do is run the whole thing and look at the results.</p>
+<h4>Execute the crew</h4>
+<p>If that sounds a bit harsh before we even know what the result is, let me be clear I mean we need to run the code that the crew represents (no capital punishment is involved no matter how bad the response is).</p>
+<p>In CrewAI terms, we <code>kickoff</code> the crew and then get the response in the return value. Here's the next cell.</p>
+<pre><code class="language-python">result = crew.kickoff()
+
+# Accessing the task output
+task_output = task1.output
+
+print(f&quot;Task Description: {task_output.description}&quot;)
+print(f&quot;Task Summary: {task_output.summary}&quot;)
+print(f&quot;Raw Output: {task_output.raw}&quot;)
+</code></pre>
+<p>As you can see we call the <code>kickoff</code> method and then print out the various outputs that have been generated.</p>
+<p>Now, if we run the complete notebook, the result of those print statements are:</p>
+<pre><code class="language-text">Task Description: What is the EU's largest city
+
+Task Summary: What is the EU's largest city...
+
+Raw Output: Berlin is the largest city in the European Union in terms of 
+population within city administrative boundaries.
+</code></pre>
+<p>This is a good and correct response.</p>
+<p>What is possibly more interesting is the way that the crew managed to get to the solution. Remember we set the <code>verbose</code>attribute to <code>True</code>. This means that the 'thinking' that the agent does is recorded and displayed as the notebook is run. You can see this below.</p>
+<pre><code class="language-markdown"># Agent: Researcher
+## Task: What is the EU's largest city
+
+# Agent: Researcher
+## Thought: I need to look up information about the largest city in the European Union (EU).
+## Using tool: wikipedia_lookup
+## Tool Input: 
+{
+  &quot;q&quot;: &quot;Largest city in the European Union&quot;
+}
+## Tool Output: 
+This is a list of the largest cities in the European Union according to 
+the population within their city boundary. The cities listed all have 
+populations over 300,000. The list deals exclusively with the areas 
+within city administrative boundaries as opposed to urban areas or 
+larger urban zones (metropolitan areas), which are generally larger in 
+terms of population than the main city (although they can also be 
+smaller, in some of the cases presented).
+As some cities have a very narrow boundary and others a very wide one, 
+the list may not give an accurate view of the comparative magnitude of 
+entire urban areas, and thus the figures in the list should be treated 
+with caution. For example Paris is the most populous urban area in the 
+European Union; however, the city proper of the French capital has a 
+lower population than top-ranked Berlin and a couple of other cities, 
+as shown in the table. Likewise the City of Brussels is only one of a 
+total of 19 municipalities making up the greater Brussels Capital Region, 
+and by itself does not reach the population threshold to be listed here. 
+On the other hand, the Municipality of Sintra, listed on the table as the 
+second most populous Portuguese city includes in it the cities of 
+Agualva-Cacém and Queluz, in addition to the town of Sintra and other 
+urban centers.
+
+# Agent: Researcher
+## Final Answer: 
+Berlin is the largest city in the European Union in terms of population 
+within city administrative boundaries.
+</code></pre>
+<p>You can see that CrewAI follows a very agent-like process. It reasons about its response, gathers the appropriate information and then responds with a suitable answer.</p>
+<h4>Let's make an app</h4>
+<p>Turning this into an app is easy. We can add a plain Python front end or a prettier GUI using Streamlit or Taipy. Here's the plain Python version.</p>
+<pre><code class="language-python">from crewai import Agent, Task, Crew
+
+import os
+os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;your api key&quot;
+llm = &quot;gpt-4o&quot;
+
+# Create the wikipedia tool
+from crewai_tools import tool
+import wikipedia
+
+@tool(&quot;wikipedia_lookup&quot;)
+def wikipedia_lookup(q: str) -&gt; str:
+    &quot;Look up a query in Wikipedia and return a summary&quot;
+    return wikipedia.page(q).summary
+
+# Define the agent
+intelligent_wikipedia = Agent(
+        role=&quot;Researcher&quot;,
+        goal=&quot;You research topics using Wikipedia and report on the results&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        tools=[wikipedia_lookup],
+        llm=llm
+    )
+
+# The run function sets the task and executes the crew
+# and returns the result
+def run(s: str):
+    task = Task(
+        description=s,
+        expected_output='A short text based on the tool output',
+        agent=intelligent_wikipedia,
+        tools=[wikipedia_lookup]
+    )
+
+    # Define the crew
+    crew = Crew(
+        agents=[intelligent_wikipedia],
+        tasks=[task],
+        verbose=True
+    )
+
+    result = crew.kickoff()
+    task_output = task.output
+    return task_output.raw
+
+###############################
+
+print(&quot;Intelligent Wikipedia&quot;)
+
+q = input(&quot;Enter your question: &quot;) 
+answer = run(q)
+print(answer)
+</code></pre>
+<p>All of the cells from the Notebook have been concatenated and the task, crew and kickoff functionality have been incorporated into a function run.</p>
+<p>Below the comment line, we print a title, prompt for a query,  call the run function, and print out the response.</p>
+<p>If you prefer a more sophisticated GUI using Streamlit or Taipy then replace the code below the comment line with something like one of the following:</p>
+<p>Streamlit:</p>
+<pre><code class="language-python">import streamlit as st
+
+st.header(&quot;Intelligent Wikipedia&quot;)
+
+if q := st.text_input(&quot;Enter your question&quot;):
+    answer = run(q)
+    st.markdown( answer)
+</code></pre>
+<p>Taipy:</p>
+<pre><code class="language-python">from taipy.gui import Gui
+import taipy.gui.builder as tgb
+
+user_input = &quot;&quot;
+result = &quot;&quot;
+
+def input_change(state):
+    answer = run(state.user_input)
+    state.result = answer
+
+with tgb.Page() as page:
+    tgb.text(&quot;# Intelligent Wikipedia&quot;, mode='md')
+
+    with tgb.layout(columns=&quot;1 1&quot;):
+        with tgb.part():
+            tgb.text(&quot;Enter your question in the box&quot;)
+            tgb.input(&quot;{user_input}&quot;, multiline=False, class_name=&quot;fullwidth&quot;)
+            tgb.button(&quot;Submit&quot;, on_action=input_change)
+        with tgb.part():
+            tgb.text(&quot;Intellligent Wikipedia's response will appear below:&quot;)
+            tgb.text(&quot;{result}&quot;)
+
+
+Gui(page=page).run(dark_mode=True)
+</code></pre>
+<p>Here is a screenshot of the Streamlit version</p>
+<p><img alt="" src="../images/Streamlit.png" /></p>
+<p>You don't see the reasoning in the GUI version of the app as this is sent to the console. So you should see it on the command line where you invoked the app. If you don't want this, the set <code>verbose = False</code> in the crew definition.</p>
+<h3>Wikipedia for kids - a pipeline app</h3>
+<p>To create a pipeline we define more agents and more tasks, and then create a crew that will join them in a sensible way.</p>
+<p>The new app will build on the previous one. It's called Wikipedia for Kids and again looks something up in Wikipedia but then translates it into a text suitable for young readers and shortens it to a few hundred words.</p>
+<p>Let's take a look at the code for the agents.</p>
+<pre><code class="language-python">researcher_agent = Agent(
+        role=&quot;Researcher&quot;,
+        goal=&quot;You research topics using Wikipedia and report on the results&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        tools=[wikipedia_lookup],
+        llm=llm
+    )
+writer_agent = Agent(
+        role=&quot;Writer&quot;,
+        goal=&quot;You re-write articles so that they are suitable for young readers&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        llm=llm
+    )
+editor_agent = Agent(
+        role=&quot;Editor&quot;,
+        goal=&quot;You ensure that the text you are given is grammatically correct and the correct length&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        llm=llm
+    )
+</code></pre>
+<p>You can see that we now have three agents. The second two are the <code>writer_agent</code>and the <code>editor_agent</code>.  The <code>goal</code> strings tell you their purpose and, while they also require a LLM, they don't need to use the Wikipedia tool.</p>
+<p>Having the agents is fine but we need to specify what tasks they need to perform. Here is the code cell for the tasks.</p>
+<pre><code class="language-python">task1 = Task(
+    description=query,
+    expected_output='A short text based on the tool output',
+    agent=researcher_agent,
+    tools=[wikipedia_lookup]
+)
+task2 = Task(
+    description=&quot;Rework the text to be suitable for a 10-year-old reader&quot;,
+    expected_output='A short text based on the tool output',
+    agent=writer_agent,
+)
+task3 = Task(
+    description=&quot;Edit the text to ensure that it is grammatically correct and no more than 500 words&quot;,
+    expected_output='A short text based on the tool output',
+    agent=editor_agent,
+)
+</code></pre>
+<p>The first task is as before but the second and third ones tell the agents to change the original text into something suitable for a 10-year-old reader and to make sure that it is grammatically correct and that it is not longer than 500 words. Note that the appropriate agents are specified in each task and that the Wikipedia tool is only required for the first task.</p>
+<p>Now we need to create a crew and run it. Here's the code for that.</p>
+<pre><code class="language-python"># Define the crew
+crew = Crew(
+    agents=[researcher_agent, writer_agent, editor_agent],
+    tasks=[task1, task2, task3],
+    verbose=True
+)
+
+result = crew.kickoff()
+
+print(f&quot;Raw Output: {result.raw}&quot;)
+</code></pre>
+<p>To define the crew, we simply list the agents and the tasks in the order in which they need to be executed. Note that there is a minor change in the way the result is retrieved. We don't use the output from a task but rather from the final result.</p>
+<p>The prompt, this time was simply <code>"Paris"</code> and as you can see our pipeline of agents has done a good job of telling a youngster about Paris in a few hundred words. Below is a screenshot of the Streamlit version of the app.</p>
+<p><img alt="" src="../images/Streamlit2.png" /></p>
+<p>Below is the complete code for the Streamlit app.  </p>
+<pre><code class="language-python">from crewai import Agent, Task, Crew
+
+import os
+# OpenAI
+os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;your API key&quot;
+llm = &quot;gpt-4o&quot;
+
+# Create the wikipedia tool
+from crewai_tools import tool
+import wikipedia
+
+@tool(&quot;wikipedia_lookup&quot;)
+def wikipedia_lookup(q: str) -&gt; str:
+    &quot;Look up a query in Wikipedia and return a summary&quot;
+    return wikipedia.page(q).summary
+
+# Define the agents
+researcher_agent = Agent(
+        role=&quot;Researcher&quot;,
+        goal=&quot;You research topics using Wikipedia and report on the results&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        tools=[wikipedia_lookup],
+        llm=llm
+    )
+writer_agent = Agent(
+        role=&quot;Writer&quot;,
+        goal=&quot;You re-write articles so that they are suitable for young readers&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        llm=llm
+
+    )
+editor_agent = Agent(
+        role=&quot;Editor&quot;,
+        goal=&quot;You ensure that the text you are given is grammatically correct and the correct length&quot;,
+        backstory=&quot;You are an experienced writer and editor&quot;,
+        llm=llm
+    )
+
+# The run function sets the task and executes the crew
+# and returns the result
+def run(s: str):
+    task1 = Task(
+        description=q,
+        expected_output='A short text based on the tool output',
+        agent=researcher_agent,
+        tools=[wikipedia_lookup]
+    )
+    task2 = Task(
+        description=&quot;Rework the text to be suitable for a 10-year-old reader&quot;,
+        expected_output='A short text based on the tool output',
+        agent=writer_agent,
+    )
+    task3 = Task(
+        description=&quot;Edit the text to ensure that it is grammatically correct and no more than 500 words&quot;,
+        expected_output='A short text based on the tool output',
+        agent=editor_agent,
+    )
+
+    # Define the crew
+    crew = Crew(
+        agents=[researcher_agent, writer_agent, editor_agent],
+        tasks=[task1, task2, task3],
+        verbose=True
+    )
+    result = crew.kickoff()
+    return result.raw    
+###############################
+
+import streamlit as st
+
+st.header(&quot;Wikipedia for kids&quot;)
+
+if q := st.text_input(&quot;Enter your question&quot;):
+    answer = run(q)
+    print(answer)
+    st.markdown( answer)
+</code></pre>
+<p>And there we have the two example apps. They do similar things and both use the same Wikipedia lookup tool. The second one adds a couple of extra functions to the pipeline, changing the text to be more suitable for a young reader and limiting the length of the text. </p>
+<p>What can we conclude from this exercise?</p>
+<h3>Conclusion: AI Agents vs. AI Pipelines in LLM Applications</h3>
+<p>The two approaches differ in how they handle tasks, decision-making, and interaction.</p>
+<p><strong>Agents</strong> are autonomous, can make decisions and are potentially interactive. In this approach, the LLM acts as an "agent" capable of understanding potentially complex user prompts and adapting its behaviour to achieve specific goals. Examples of use include conversational virtual assistants (as in the app we've seen) or autonomous customer service agents.</p>
+<p>Agents can handle open-ended tasks and maintain context over time, making them ideal for complex, interactive applications.</p>
+<p><strong>AI Pipelines</strong>, in contrast, follow a linear, deterministic process with predefined stages for tasks such as data processing. Pipelines are structured and good for applications that involve repetitive, well-defined tasks such as text classification, document processing or data transformation.</p>
+<p>AI pipelines are modular, scalable, and, because they typically consist of well-defined tasks, are more predictable than the more open-ended behaviour of agents.</p>
+<p>Agents could be designed to mimic pipelines by structuring their prompts as a sequence of tasks but the result may be less predictable or consistent, so where a pipeline can be used, that may be the better approach.</p>
+<hr />
+<p>I hope that you have found this an interesting topic and that the code is useful to you. If you would like to see more of my articles, please visit my <a href="alanjones2.github.io">web page</a> and/or subscribe to my occasional, free <a href="technofile.substack.com">newsletter</a>. If you are a Medium member, you can find most of my stuff <a href="https://medium.com/@alan-jones">there</a>, too.</p>
+            </div>
+            <div class="col-sm-3 p-2">
+                <!--ads etc here -->
+                <!-- streamlit from scratch-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>eBook</i>
+                        <img class="mr-3" src="" width='80%' height='auto' alt="">
+                        <h5>
+                            <a href="https://alanjones2.github.io/streamlitfromscratch/" target="_blank">
+                                <span class="text-dark">Streamlitfrom Scratch</span>
+                            </a>
+                        </h5>
+                        <p><b>Streamlit</b> is a framework for creating Data Science apps in Python.
+                            <br />
+                            <b>Streamlit from Scratch</b> is an ebook that will teach you how to get started with
+                            Streamlit.
+                        </p>
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+            
+                <!-- how charts work-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/61y5lxsc9DL._SY466_.jpg" width='80%'
+                            height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/47FKuiz" target="_blank">
+                                <span class="text-dark">How Charts Work: Understand and explain data with
+                                    confidence</span>
+                            </a>
+                        </h5>
+                        <h6>From the Back Cover</h6>
+                        <p>
+                            How Charts Work brings the secrets of effective data visualisation in a way that will
+                            help you bring data alive.
+                            Charts, graphs and tables are essential devices in business, but all too often they
+                            present information poorly.
+                            This
+                            book will help you:
+            
+                            <li>Feel confident understanding different types of charts, graphs and tables � and how
+                                to read them</li>
+                            <li>Recognise the true story behind the data presented and what the information really
+                                shows</li>
+                            <li>Know the principles and rules of how best to represent information so you can create
+                                your own
+                                information-driven (and
+                                beautiful) visuals</li>
+                            <li>Design visuals that people engage with, understand and act upon</li>
+                        </p>
+            
+                    </div>
+                </div>
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- the art of statistics-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3kVBGmo" target="_blank">
+                                <span class="text-dark">The Art of Statistics: How to Learn from Data</span>
+                            </a>
+                        </h5>
+                        Discover how data literacy is changing the world and gives you a better understanding of
+                        life's biggest problems. I have used this book in various articles and found it to be
+                        invaluable.
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+            
+                    <i>eBook</i>
+                    <h5><a href='https://alanjones.gumroad.com/l/auiws' target='_blank'>Plotting with Pandas</a>
+                    </h5>
+                    <p>
+                        <b>Plotting with Pandas: an Introduction to Data Visualization</b> is an ebook that covers basic and
+                        statistical plots using Python and Pandas, line and bar charts, scatter plots, pie charts,
+                        histograms, box plots, etc.
+                    </p>
+            
+            
+            
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- storytelling in data-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3JmzEFq" target="_blank">
+                                <span class="text-dark">Storytelling with Data: A Data Visualization Guide for
+                                    Business</span>
+                            </a>
+                        </h5>
+                        Don't simply show your data - tell a story with it! Storytelling with Data teaches you
+                        the fundamentals of data visualization and how to communicate effectively with data. I
+                        use this book in the series of articles '12 Essential Visualizations and How to
+                        Implement them.
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- How charts lie -->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3ZuQO9B" target="_blank">
+                                <span class="text-dark">How Charts Lie: Getting Smarter about Visual
+                                    Information</span>
+                            </a>
+                        </h5>
+                        A leading data visualization expert explores the negative - and positive - influences
+                        that charts have on our perception of truth. I used this book as the inspiration for
+                        'How Not to Lie with Charts'.
+            
+                    </div>
+                </div>
+            
+            
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            
+                <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                <script async
+                    src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+            
+            </div>
+        </div>
+
+
+
+
+        <div style="margin: 20px;">
+            <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                crossorigin="anonymous"></script>
+            <!-- alanjonescoding_ads_AdSense1_1x1_as -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959"
+                data-ad-slot="2622033521" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <footer class="text-right text-secondary">
+                <i>Please note that all the software in these articles is written for educational purposes and should
+                    not be considered suitable for production code</i>
+                <br />
+                <i>This site may contain affliate links. If you purchase an item through such a link I may get a
+                    commision but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+                <br />
+                <i>&copy; 2024, Alan Jones</i> &nbsp;
+
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
