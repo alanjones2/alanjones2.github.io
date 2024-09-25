@@ -1,13 +1,13 @@
 [
     {
         "type":"ARTICLE",
-        "articleURL": "https://alanjones2.github.io/articles/agentpipeline/article.html",
-        "imageURL":"https://miro.medium.com/v2/resize:fit:1100/format:webp/1*BhucSzDp94gE2iZLAgrW4g.png",
-        "title":"From Data to Visualization with the OpenAI Assistants API and GPT-4o",
-        "description":"We explore the Code Completion tool from OpenAI’s Assistants API to create visualizations directly from data", 
+        "articleURL": "https://alanjones2.github.io/articles/agentpipeline/text/article.html",
+        "imageURL":"../images/image.png",
+        "title":"AI Agents vs. AI Pipelines: a Practical Guide to Coding Your LLM Application",
+        "description":"We use CrewAI to create apps that demonstrate how to choose the right architecture for your LLM application", 
         "demoURL":"None",
-        "code":"https://github.com/alanjones2/assistantscharts2",
-        "tags":"OpenAI AI Python DataVisualization"
+        "code":"None",
+        "tags":"OpenAI AI Python Agents"
     },
     {
         "type":"ARTICLE",
