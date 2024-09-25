@@ -2,7 +2,7 @@
     {
         "type":"ARTICLE",
         "articleURL": "https://alanjones2.github.io/articles/agentpipeline/text/article.html",
-        "imageURL":"../images/image.png",
+        "imageURL":"https://github.com/alanjones2/alanjones2.github.io/blob/main/articles/agentpipeline/images/image.png?raw=true",
         "title":"AI Agents vs. AI Pipelines: a Practical Guide to Coding Your LLM Application",
         "description":"We use CrewAI to create apps that demonstrate how to choose the right architecture for your LLM application", 
         "demoURL":"None",
