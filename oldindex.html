@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- redirect to new web site -->
+    <meta http-equiv="refresh" content="0; url=http://datavizandai.github.io" />
+
+
+    <title>Alan Jones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="author" content="Alan Jones">
+    <meta content="Coding, data science and data visualization - Articles and Tutorials" name="description">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .dNone {
+            display: none;
+        }
+
+        .dBlock {
+            display: block;
+        }
+    </style>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYY6RYRK1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VDYY6RYRK1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class=" bg-white">
+    <script>fetch("https://alanjones.pythonanywhere.com/lg?url=alanjones2.github.io")
+            .then(data => console.log(data));
+    </script>
+    <div class="jumbotron">
+        <h1 class="display-3"">Data Visualization, Data Science and AI</span>
+            <span style="font-size:25%;font-weight:lighter">by </span> 
+            <span class="text-secondary" style="font-size:50%;font-weight: bolder;"> Alan
+                <span style="font-weight:lighter">Jones</span>
+            </span>
+        </h1>
+        <hr />
+
+        <p class="lead">
+            Data Visualization and AI apps for the web using Streamlit, Plotly, Python and Flask.
+        </p>
+        <p>
+            See the articles/tutorials, below, and find the code for them on Github by following the links below.
+            <br />
+            You can find me on:
+            <a href="https://alan-jones.medium.com/" target="_blank">Medium</a>,
+            <a href="https://twitter.com/MrAlanJones" target="_blank">Twitter as @MrAlanJones</a>
+            and
+            <a href="https://www.linkedin.com/in/alan-jones-032699100/" target="_blank">LinkedIn</a>.
+        </p>
+        <p>Subscribe to my occasional, free <a href="technofile.substack.com" target="_blank">newsletter</a>. 
+        Buy my book! <a href="https://alanjones2.github.io/streamlitfromscratch/" target="_blank">Streamlit from Scratch</a></p>
+
+    </div>
+
+
+    <div style="margin-top:30px" class="container">
+        <script>
+            function selectTag(tag) {
+                // get all the article blocks
+                s = document.getElementsByClassName("article");
+
+                for (t = 0; t < s.length; t++) {
+                    // if tag selected is 'all' set all blocks to visible
+                    if (tag == 'All') {
+                        atts = (s[t].getAttribute('class'));
+                        newatts = atts.replace('dNone', 'dBlock')
+                        s[t].setAttribute('class', newatts)
+                    } else {
+                        // otherwise set all to invisible 'dNone' and 
+                        // then set the selected ones to visible 'dBlock'
+                        atts = (s[t].getAttribute('class'));
+                        newatts = atts.replace('dBlock', 'dNone')
+                        s[t].setAttribute('class', newatts)
+
+                        if (s[t].hasAttribute('tags')) {
+
+                            tags = s[t].getAttribute('tags');
+                            if (tags.includes(tag)) {
+                                atts = (s[t].getAttribute('class'));
+                                //alert(s[t].getAttribute('class'));
+                                newatts = atts.replace('dNone', 'dBlock')
+                                s[t].setAttribute('class', newatts);
+                                //alert(s[t].getAttribute('class'));
+                            }
+                        }
+                    }
+                }
+
+            }
+        </script>
+
+        <div class="row text-dark">Select a topic: </div>
+        <div class="row" style="width: 100%; padding-bottom: 10px; ">   
+            <button type="button" class="btn btn-secondary" onclick="selectTag('All')"
+                style="margin: 2px;font-size: small;">All</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('book')"
+                style="margin: 2px;font-size: small;">Books</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Python')"
+                style="margin: 2px;font-size: small;">Python</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Jupyter')"
+                style="margin: 2px;font-size: small;">Jupyter</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Pandas')"
+                style="margin: 2px;font-size: small;">Pandas</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Plotly')"
+                style="margin: 2px;font-size: small;">Plotly</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Streamlit')"
+                style="margin: 2px;font-size: small;">Streamlit</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('VSCode')"
+                style="margin: 2px;font-size: small;">VSCode</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Julia')"
+                style="margin: 2px;font-size: small;">Julia</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('DataVisualization')"
+                style="margin: 2px;font-size: small;">Data Visualization</button>
+            <!--<button type="button" class="btn btn-secondary" onclick="selectTag('DataScience')" style="margin: 2px;">Data Science</button>-->
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Statistics')"
+                style="margin: 2px;font-size: small;">Statistics</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('Code-Hints')"
+                style="margin: 2px;font-size: small;">Code
+                Hints</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('PyScript')"
+                style="margin: 2px;font-size: small;">PyScript</button>
+            <button type="button" class="btn btn-secondary" onclick="selectTag('ChatGPT')"
+                style="margin: 2px;font-size: small;">ChatGPT</button>
+
+
+        </div>
+
+        <div class="row bg-white" style="width: 100%;">
+            <div class="col-sm-9 p-2">
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="OpenAI AI Python Agents">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/alanjones2.github.io/blob/main/articles/agentpipeline/images/image.png?raw=true" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/articles/agentpipeline/text/article.html" target="_blank">
+                                    <span class="text-dark">AI Agents vs. AI Pipelines: a Practical Guide to Coding Your LLM Application</span>
+                                </a>
+                            </h4>
+                            We use CrewAI to create apps that demonstrate how to choose the right architecture for your LLM application
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="OpenAI AI Python DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*BhucSzDp94gE2iZLAgrW4g.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/articles/asstAPIdataviz/From_Data_to_Visualization_with_the_OpenAI_Assistants_API_and%25C3%2582%25C2%25A0GPT-4o.html" target="_blank">
+                                    <span class="text-dark">From Data to Visualization with the OpenAI Assistants API and GPT-4o</span>
+                                </a>
+                            </h4>
+                            We explore the Code Completion tool from OpenAI’s Assistants API to create visualizations directly from data
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/assistantscharts2" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Streamlit Python DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://alanjones2.github.io/streamlit-chart-varieties/images/rowcharts.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/streamlit-chart-varieties/" target="_blank">
+                                    <span class="text-dark">Streamlit Supports 5 Important Data Visualization Libraries - Which to Choose?</span>
+                                </a>
+                            </h4>
+                            We code examples using Altair, Bokeh, Plotly, Pandas Plot and Matplotlib, to illustrate the pros and cons of each one
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Streamlit AI Python DataVisualization DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://alanjones2.github.io/articles/app_maker/images/Screenshot_app.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/articles/app_maker/Create_an_AI-Generated_Streamlit_Application_with_an_OpenAI_Assistant.html" target="_blank">
+                                    <span class="text-dark">Create an AI-Generated Streamlit Application with an OpenAI Assistant</span>
+                                </a>
+                            </h4>
+                            We use the OpenAI Playground and code completion tools to create a Streamlit app with interactive Plotly charts
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Plotly Python DataVisualization DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://alanjones2.github.io/articles/deployaltair/images/plotlywebtemplatepage.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/articles/deployaltair/How_to_Deploy_Plotly_Graphics_to_a_Simple_Static_Web_Page.html" target="_blank">
+                                    <span class="text-dark">How to Deploy Plotly Graphics to a Simple Static Web Page</span>
+                                </a>
+                            </h4>
+                            Plotly has a native method to create basic web pages but with a little more effort, web templates get you a much better result
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataVisualization DataScience PyScript">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://alanjones2.github.io/articles/pyscript-next/images/pretty-app.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/articles/pyscript-next/PyScript_is_Growing_Up.html" target="_blank">
+                                    <span class="text-dark">Pyscript Evolves: How The New Version Stacks Up</span>
+                                </a>
+                            </h4>
+                            We build a data viz app with the new faster PyScript
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://alan_jones.pyscriptapps.com/ploty-viz1/latest/" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript-next" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataVisualization DataScience Streamlit">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/stlite-examples/blob/main/0_4aM0SBn1NeWpOCMX.jpg?raw=true" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/articles/stlite/stlite.html" target="_blank">
+                                    <span class="text-dark">stlite:  How to Run Your Streamlit Apps in the Browser</span>
+                                </a>
+                            </h4>
+                            stlite is a browser-based implementation of Streamlit that can run apps on a web page without having to deploy to a Streamlit server
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataVisualization DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/Alan-Jones-article-code/blob/master/assets/images/altair-grouped-bar-ordered.png?raw=true" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/articles/ggaltair/article.html" target="_blank">
+                                    <span class="text-dark">Altair: Using the Powerful Vega-Lite 'Grammar of Graphics</span>
+                                </a>
+                            </h4>
+                            Using the Altair library for Python we can develop compelling data visualizations based on a grammar of graphics and implement them in Streamlit
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://colab.research.google.com/drive/1NyIyugfcbILP1d2Gwb-gumfJJaGplfdF" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python AI ChatGPT DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    NEWSLETTER
+                                    
+                                </div>
+                                <a href="https://technofile.substack.com" target="_blank">
+                                    <span class="text-dark">Data Visualization, Data Science and Python</span>
+                                </a>
+                            </h4>
+                            Subscribe to my newsletter on Substack
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python AI ChatGPT DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Os4M1zBevrurAaOz" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/towards-data-science/how-to-use-the-powerful-new-assistants-api-for-data-analysis-c9ea1cab0b53" target="_blank">
+                                    <span class="text-dark">Mastering the Powerful New Assistants API for Data Analyst</span>
+                                </a>
+                            </h4>
+                            OpenAI’s Assistants API lets us create AI assistants which leverage tools that can operate on user-provided data
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/data-assistant" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit Plotly DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:2000/format:webp/0*zRQkZNToDskUZPfS" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/how-to-create-a-simple-gis-map-with-plotly-and-stream" target="_blank">
+                                    <span class="text-dark">How to Create a Simple GIS Map with Plotly and Streamlit</span>
+                                </a>
+                            </h4>
+                            Plotly map functions combined with Streamlit user interface components provide a way of creating GIS-style dashboards
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://co2-dashboard.streamlit.app/CO2_Emissions_Dashboard" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/st-choropleth" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Flask Plotly DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*lKqU-0mXv9mBV7CS" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/towards-data-science/flapjax-data-visualization-on-the-web-with-plotly-and-flask-465090fa3fba" target="_blank">
+                                    <span class="text-dark">Flapjax: Data Visualization on the Web with Plotly and Flask</span>
+                                </a>
+                            </h4>
+                            Build a data visualisation web page with Plotly and Flask, and make it interactive with some UI components
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/flapjax_public" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python PyScript Plotly DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*tiFiCQhfOCR-MUPceF1uQQ.jpeg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/data-visualization-on-the-web-with-plotly-and-pyscript-a30392f1257a" target="_blank">
+                                    <span class="text-dark">Data Visualization on the Web with Plotly and PyScript</span>
+                                </a>
+                            </h4>
+                            Put your data visualisations on the web with HTML templates — no server-side code required
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/pyscriptcode/tree/main/pyscript_templates" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    eBook
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/streamlitfromscratch/" target="_blank">
+                                    <span class="text-dark">Streamlitfrom Scratch</span>
+                                </a>
+                            </h4>
+                            <p><b>Streamlit</b> is a framework for creating Data Science apps in Python.<br /><b>Streamlit from Scratch</b> is an ebook that will teach you how to get started with Streamlit.</p>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Streamlit Python Plotly DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*noZdlwnSkasUBS7GDeJrjw.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/a-new-plotly-component-for-streamlit-0884b7059e4a" target="_blank">
+                                    <span class="text-dark">A New Plotly Component for Streamlit</span>
+                                </a>
+                            </h4>
+                            Streamlit only supports two Plotly themes: the Streamlit theme, or the default Plotly theme. We present a Streamlit component that will you to display Plotly charts more flexibly.
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stplotlycomponent" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Plotly DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://cdn-images-1.medium.com/max/1320/0*2_uqMaDswQ0GjwnR" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/p/d92d500a8f01" target="_blank">
+                                    <span class="text-dark">2023 was the Hottest Summer Ever</span>
+                                </a>
+                            </h4>
+                            We look at how to visualize the hottest-ever recorded temperatures over the period of June through August 2023
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/GISS" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit Plotly DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://cdn-images-1.medium.com/max/1320/1*FMEt0O63nBV6Dyw6soOHfw.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/p/a8354543c42e" target="_blank">
+                                    <span class="text-dark">How to Build Waterfall Charts with Plotly Graph Objects</span>
+                                </a>
+                            </h4>
+                            Plotly Express doesn't implement waterfall charts but we can create a helper function that utilises Plotly Graph Objects instead
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/waterfall" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://cdn-images-1.medium.com/max/1320/0*Pl1Ogq-zx-aNYnuA" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/p/c28663313ade" target="_blank">
+                                    <span class="text-dark">Streamlit and MongoDB: Storing Your Data in the Cloud</span>
+                                </a>
+                            </h4>
+                            Deploying your Streamlit app to the Cloud means that any data that you create with that app disappears when the app terminates - unless you use third-party storage like the NoSQL database MongoDB
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/st_surveyM" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataVisualization Streamlit AI">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*8vyoxsUDsQjL-hdGP1E0zQ.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/using-streamlits-chat-elements-the-doctor-is-in-3ea983422827" target="_blank">
+                                    <span class="text-dark">Using Streamlit’s Chat Elements: the Doctor is in</span>
+                                </a>
+                            </h4>
+                            We use Streamlit’s chat elements to reproduce the famous 1960s Rogerian-psychologist-bot ELIZA
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://stelizabot-y0wvkkghea8.streamlit.app/" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/stelizabot" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataVisualization Streamlit">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:720/0*uw3Y8aguIdhj3Efl" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/simple-surveys-with-streamlit-and-databutton-d027586f1c71" target="_blank">
+                                    <span class="text-dark">Simple Surveys with Streamlit</span>
+                                </a>
+                            </h4>
+                            Streamlit’s user interface components made constructing simple surveys easy. We create a simple survey with Streamlit, present it and show the results.
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/st_survey" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataVisualization Streamlit">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:1100/0*EvgL0hiY-UDtHS6P" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/technofile/visualizing-brexit-regret-data-ba36dff765a8" target="_blank">
+                                    <span class="text-dark">Visualizing 'Brexit Regret' Data</span>
+                                </a>
+                            </h4>
+                            A recent poll shows that more Britons favour rejoining the EU than those who still support Brexit. Let’s draw some graphs.
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://alanjones2-alan-jones-article-code-pollapp1-vgotws.streamlit.app/" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/poll" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataScience Python DataVisualization Jupyter">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://cdn-images-1.medium.com/max/880/0*yj43oK1X0_Ydu2_e" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/towards-data-science/build-a-web-app-with-jupyter-and-mercury-9d59661441b7" target="_blank">
+                                    <span class="text-dark">Build a Web App with Jupyter and Mercury</span>
+                                </a>
+                            </h4>
+                            Mercury provides a simple way to transform Jupyter Notebooks into interactive web apps.
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://alanjones.runmercury.com/app/m3c" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury2" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataScience Python DataVisualization Jupyter">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*M4U6-U65kbRxp1L9YTjNOA.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/how-to-publish-your-jupyter-notebook-apps-with-mercury-cloud-7de0fcb63e65" target="_blank">
+                                    <span class="text-dark">How to Publish Your Jupyter Notebook Apps with Mercury Cloud</span>
+                                </a>
+                            </h4>
+                            Convert your Notebooks to web apps then publish them in the cloud.
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://alanjones.runmercury.com/app/m3c" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="AI ChatGPT Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*0YOew4uEABFAEIp87uyw-Q.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/chatgpt-prompting-for-coders-a-prototyping-approach-b6bda1b9fd28" target="_blank">
+                                    <span class="text-dark">ChatGPT Prompting for Coders: a Prototyping Approach</span>
+                                </a>
+                            </h4>
+                            A suitable prompting technique can make the development of usable code with ChatGPT quite painless. Here we prototype a Streamlit app for tracking cryptocurrency.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="AI ChatGPT Economy">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/0*YW235_4rjMkp8LLn" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/technofile/generative-ai-could-replace-the-equivalent-of-300m-workers-ee9f46a385fe" target="_blank">
+                                    <span class="text-dark">ChatGPT-like AI Could Replace the Equivalent of 300m Workers</span>
+                                </a>
+                            </h4>
+                            A new Goldman Sachs report will be scary reading for some.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataScience DataVisualization AI ChatGPT">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*N-tvhuOpPD_PDNechh5Dpg.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/how-i-used-chatgpt-to-build-a-streamlit-dashboard-app-4486234e7d0a" target="_blank">
+                                    <span class="text-dark">How I used ChatGPT to Build a Streamlit Dashboard App</span>
+                                </a>
+                            </h4>
+                            Using CO² emission data I created a dashboard app in Streamlit with ChatGPT and no coding
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Law Open Source AI ChatGPT">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:720/0*3Kjr60hCuBAj-TB_" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/technofile/will-chatgpt-kill-open-source-and-is-it-even-legal-7772fe40d3a9" target="_blank">
+                                    <span class="text-dark">Will ChatGPT Kill Open Source and Is It Even Legal?</span>
+                                </a>
+                            </h4>
+                            Time and a lawsuit will tell but there is a large question mark over generative AI and its use of copyrighted material
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python PyScript">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*ujQm47L2k5_rtXD5_kcZ3A.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/whats-new-in-pyscript-dfdf25538281?sk=4871333d742784467e64cd3ffd25b19f" target="_blank">
+                                    <span class="text-dark">What’s new in PyScript in 2023</span>
+                                </a>
+                            </h4>
+                            Since I last wrote about PyScrypt there have been two updates — versions 2022.09.1 and 2022.12.1 — and we no longer seem to be in alpha territory.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="book Statistics">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    BOOK - sponsored content
+                                    
+                                </div>
+                                <a href="https://amzn.to/3kVBGmo" target="_blank">
+                                    <span class="text-dark">The Art of Statistics: How to Learn from Data</span>
+                                </a>
+                            </h4>
+                            In this 'important and comprehensive' guide to statistical thinking (New Yorker), discover how data literacy is changing the world and gives you a better understanding of life’s biggest problems. - I have used this book in various articles and found it to be invaluable.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataScience DataVisualization AI ChatGPT">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*tcj1jpmX4obm_m_E1ZvMuA.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/data-analysis-with-chatgpt-and-jupyter-notebooks-fa2b03753396" target="_blank">
+                                    <span class="text-dark">Data Analysis with ChatGPT and Jupyter Notebooks</span>
+                                </a>
+                            </h4>
+                            The conversational way of generating code with ChatGPT works well with the cell structure of Jupyter Notebooks. There is a natural workflow when using ChatGPT with Jupyter Notebooks which makes generating a code for a Jupyter Notebook using ChatGPT surprisingly easy and satisfying.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataScience DataVisualization Statistics">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://cdn-images-1.medium.com/max/800/0*atx1R4w9hLP9L03_" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/organize-your-data-science-projects-with-ppdac-a-case-study-26badfb28fbf" target="_blank">
+                                    <span class="text-dark">Organize Your Data Science Projects with PPDAC - a Case Study</span>
+                                </a>
+                            </h4>
+                            Define your problem, develop a plan, find the data, analyze the data and then communicate your conclusions - that's PPDAC
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/PPDAC#readme" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/Alan-Jones-article-code/raw/master/infographic/images/ISS_earth.en.jpg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/co2-emissions-infographics-in-python-369dd968eb84?sk=b127cb26b5c707efc5c581ec64e0b6ea" target="_blank">
+                                    <span class="text-dark">CO2 Emissions Infographics in Python</span>
+                                </a>
+                            </h4>
+                            How To Build a Data Infographics with Python and Matplotlib
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/infographic" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="book DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    BOOK - sponsored content
+                                    
+                                </div>
+                                <a href="https://amzn.to/3JmzEFq" target="_blank">
+                                    <span class="text-dark">Storytelling with Data: A Data Visualization Guide for Business</span>
+                                </a>
+                            </h4>
+                            Don't simply show your data—tell a story with it!  Storytelling with Data teaches you the fundamentals of data visualization and how to communicate effectively with data. I use this excellent book in the series of articles '12 Essential Visualizations and How to Implement them.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/12Visuals/raw/main/images/6viz.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/12-essential-visualizations-and-how-to-implement-them-part-1-41e40400a740" target="_blank">
+                                    <span class="text-dark">12 Essential Visualizations and How to Implement Them - part 1</span>
+                                </a>
+                            </h4>
+                            We look at how to create the 12 most useful graphs and charts with Python, Matplotlib and Streamlit.
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/12Visuals" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/12Visuals/raw/main/images/2nd6.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/12-essential-visualizations-and-how-to-implement-them-part-2-e47c1d4b9784" target="_blank">
+                                    <span class="text-dark">12 Essential Visualizations and How to Implement Them - part 2</span>
+                                </a>
+                            </h4>
+                            We look at how to create the 12 most useful graphs and charts with Python, Matplotlib and Streamlit.
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/12Visuals" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/stAPOD/raw/main/images/HorseheadIr_HubbleNachman_2691.jpg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/technofile/nasa-open-apis-the-astronomy-picture-of-the-day-in-streamlit-73d02ea5607e" target="_blank">
+                                    <span class="text-dark">NASA Open APIs: The Astronomy Picture of the Day in Streamlit</span>
+                                </a>
+                            </h4>
+                            Streamlit is not just for Data Science, you can create excellent general-purpose web sites, too. Here we use the NASA Open API and show how to keep your API key a secret.
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://alanjones2-stapod-apod1-10ei33.streamlitapp.com/" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/stAPOD" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/Alan-Jones-article-code/raw/master/stgrid/images/1_23w13JLGqofbNLlDajur5A.jpeg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/how-to-create-a-grid-layout-in-streamlit-7aff16b94508" target="_blank">
+                                    <span class="text-dark">How to Create a Grid Layout in Streamlit</span>
+                                </a>
+                            </h4>
+                            We present a method to programmatically create a grid layout in Streamlit with a World population data demonstration app
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stgrid" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataVisualization Pandas PyScript Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/Alan-Jones-article-code/raw/master/pyscript-flask/splash.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/pyscript-v-flask-how-to-create-a-python-app-in-the-browser-or-on-a-server-2cfe4dd0df9d" target="_blank">
+                                    <span class="text-dark">PyScript v. Flask: How to Create a Python App in the Browser or on a Server</span>
+                                </a>
+                            </h4>
+                            PyScript lets you create web apps in Python without the need for a server. Flask is a Python web app framework for making server-based apps. We write the same simple app using both
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript-flask" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataVisualization Pandas Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://alanjones2.github.io/ajbooks/images/plottingwithpandas.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    DOWNLOADABLE BOOK
+                                    
+                                </div>
+                                <a href="https://alanjones.gumroad.com/l/auiws" target="_blank">
+                                    <span class="text-dark">Plotting with Pandas: An Introduction to Data Visualization</span>
+                                </a>
+                            </h4>
+                            If you are a budding Data Scientist or Data Journalist, being able to visualize your data gives you the ability to better understand it
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Pandas DataVisualization Streamlit">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://github.com/alanjones2/Alan-Jones-article-code/raw/master/stmultipage/stmultipage2/image/Screenshot%202022-06-02%20130001.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/3-ways-to-create-a-multi-page-streamlit-app-1825b5b07c0f" target="_blank">
+                                    <span class="text-dark">4 Ways to Create a Multi-Page Streamlit App</span>
+                                </a>
+                            </h4>
+                            Streamlit may not have been designed for full blown web sites but it is fairly straightforward to create multiple pages in a single appt
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stmultipage/stmultipage2" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Pandas  DataVisualization PyScript">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://raw.githubusercontent.com/alanjones2/Alan-Jones-article-code/master/pyscript/images/Screenshot2.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/technofile/how-to-use-ploty-with-pyscript-578d3b287293" target="_blank">
+                                    <span class="text-dark">How to use Ploty with PyScript</span>
+                                </a>
+                            </h4>
+                            PyScript doesn’t support Plotly directly but there is a simple way around it
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://alanjones2.github.io/pyscript/weather2.html" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Pandas  DataVisualization PyScript">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://raw.githubusercontent.com/alanjones2/Alan-Jones-article-code/master/pyscript/images/Screenshot2.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/create-an-interactive-web-app-with-pyscript-and-pandas-3918ad2dada1" target="_blank">
+                                    <span class="text-dark">Create an Interactive Web App with PyScript and Pandas</span>
+                                </a>
+                            </h4>
+                            PyScript allows us to create a serverless web application with HTML and Python as the scripting language.
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://alanjones2.github.io/pyscript/weather1.html" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/pyscript" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Pandas  DataVisualization  DataScience Health">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/0*uwsoNWdkO1siXYIJ" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/visualizing-health-risk-2a082417f3f2" target="_blank">
+                                    <span class="text-dark">Visualizing Health Risk</span>
+                                </a>
+                            </h4>
+                            The press can very easily get it wrong when dealing with health risk data. Data visualizations can help.
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/riskviz" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Pandas  DataVisualization  DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/0*mN2K5jyYDeRPo4ZK" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/how-to-use-wikipedia-as-a-data-source-3dfea29e6539" target="_blank">
+                                    <span class="text-dark">How to Use Wikipedia as a Data Source</span>
+                                </a>
+                            </h4>
+                            How to load information from Wikipedia into Pandas by finding the best team in the English Premier League
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/Wikitable" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Streamlit Code-Hints">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/788/0*yEPAqmhNAjh6HmsI.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    CODE HINT
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/customizing-streamlit-columns-4bfd58fcb7c9" target="_blank">
+                                    <span class="text-dark">Customizing Streamlit Columns</span>
+                                </a>
+                            </h4>
+                            Streamlit has a limited layout model and this is normally an advantage as it allows the simple construction of sophisticated apps. But sometimes you want to modify the layout.
+                        </div>
+                    </div>
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://share.streamlit.io/alanjones2/alan-jones-article-code/codehintstreamlitcols/stcols.py" target="_blank">
+                            Click here for a Demo</a>
+                    </p>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/codehintstreamlitcols" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Dash Plotly Streamlit DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*XcKexqL2GS69ygA48oQXeg.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/plotly-with-streamlit-dash-or-flask-4d78fa025ea2" target="_blank">
+                                    <span class="text-dark">Plotly with Streamlit, Dash or Flask</span>
+                                </a>
+                            </h4>
+                            Which is the best framework for your data science apps
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/streamlitdashflask" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Statistics DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*QOvbHdL8nBbVrseBauYrtA.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/mean-median-and-mode-what-are-they-and-when-should-you-use-them-edc3949aa142" target="_blank">
+                                    <span class="text-dark">Mean, Median and Mode: What Are They and When Should You Use Them?</span>
+                                </a>
+                            </h4>
+                            You probably remember Mean, Median, and Mode from high school stats classes but they are often misused. We look at how you should use them — with Python and Pandas examples.
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/meanmedianmode" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Jupyter Mercury Voila">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/1400/1*SkoorhcspULJ2uOssBhjqw.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/how-to-share-your-jupyter-notebook-with-mercury-or-voil%C3%A0-2177110d2f6e" target="_blank">
+                                    <span class="text-dark">How to Share your Jupyter Notebook with Mercury or Voilà</span>
+                                </a>
+                            </h4>
+                            Putting your Jupyter notebook on the web is reasonably easy with either Mercury or Voilà but which is easier - here's a brief comparison of the two technologies
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Streamlit Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*ALw0MOKd6xDTPjUkgrWoiQ.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/publish-your-streamlit-apps-in-the-cloud-3ac5a5fe3d51" target="_blank">
+                                    <span class="text-dark">Publish Your Streamlit Apps in the Cloud</span>
+                                </a>
+                            </h4>
+                            Share your Streamlit apps with these free tools: Streamlit Cloud, Github and VSCode
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python DataScience">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/0*ZQY7byDdODfCReoi.jpg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/sql-pandas-or-both-analysing-the-uk-electoral-system-24fa01d33d05" target="_blank">
+                                    <span class="text-dark">SQL, Pandas or Both - Analysing the UK Electoral System</span>
+                                </a>
+                            </h4>
+                            Pandas is great for analysing and plotting data but should you store your data in a database and select it with SQL. Let's take a look at some common operations using Pandas and SQL and see how they compare
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/sqlpandas" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Writing Jupyter">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*fWVTihxi5i-vkFJGDO9fAQ.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/codefile/data-scientists-write-your-medium-articles-in-jupyter-371481ac6089" target="_blank">
+                                    <span class="text-dark">Data Scientists: Write your Medium Articles in Jupyter</span>
+                                </a>
+                            </h4>
+                            Don’t waste time cutting and pasting and making screen shots of data tables, write everything as a Jupyter Notebook and upload to Medium
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Jupyter Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*tmvAaSYidSQ4JfUWMzKWvw.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/create-a-web-app-from-your-jupyter-notebook-with-mercury-21239b7abb37" target="_blank">
+                                    <span class="text-dark">Create a Web App from Your Jupyter Notebook with Mercury</span>
+                                </a>
+                            </h4>
+                            You can published you Notebook as an interactive web app with or without the code
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/mercury" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*smDDMYVyFFoBCC0AwxeVpQ.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/how-not-to-lie-with-charts-3516b38a680b?sk=c780a27d2ae7d0245f906844d5e353b5" target="_blank">
+                                    <span class="text-dark">How Not to Lie with Charts</span>
+                                </a>
+                            </h4>
+                            You can use data visualization to inform, or misinform. We look at the things to avoid if you want to do the former and not the latter.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="book DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    BOOK - sponsored content
+                                    
+                                </div>
+                                <a href="https://amzn.to/3ZuQO9B" target="_blank">
+                                    <span class="text-dark">How Charts Lie: Getting Smarter about Visual Information</span>
+                                </a>
+                            </h4>
+                            A leading data visualization expert explores the negative―and positive―influences that charts have on our perception of truth. I used this book as the inspiration for 'How Not to Lie with Charts'
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataVisualization Julia">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/750/0*9D8vdNMpXS2qBiyV.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/interactive-data-visualization-with-julia-and-pluto-notebooks-6fad6f3eca2" target="_blank">
+                                    <span class="text-dark">Interactive Data Visualization with Julia and Pluto Notebooks</span>
+                                </a>
+                            </h4>
+                            Pluto is an important development that allows you to easily interact with your data. We take a quick look at it using the Julia plotting package to easily create impressive graphs.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Streamlit Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*m8Otx-BXwFE5jF3RbOsyLQ.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/how-to-build-a-gallery-of-streamlit-apps-as-a-single-web-app-466682190629" target="_blank">
+                                    <span class="text-dark">How to Build a Gallery of Streamlit Apps as a Single Web App</span>
+                                </a>
+                            </h4>
+                            Download a free template, pop in multiple Streamlit apps and you’ve got a multiple Streamlit apps on a single web page
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Streamlit Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*dVSDol9pouoO9IX_E_-35Q.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/a-multi-page-interactive-dashboard-with-streamlit-and-plotly-c3182443871a" target="_blank">
+                                    <span class="text-dark">A Multi-page Interactive Dashboard with Streamlit and Plotly</span>
+                                </a>
+                            </h4>
+                            https://towardsdatascience.com/a-multi-page-interactive-dashboard-with-streamlit-and-plotly-c3182443871a
+                        </div>
+                    </div>
+                    
+                    
+                    <p>
+                        <a <a class="btn btn-secondary btn-sm" href="https://github.com/alanjones2/Alan-Jones-article-code/tree/master/stmultipage" target="_blank">
+                            Find the code here</a>
+                    </p>
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="Python Plotly Flask">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*lrkc5plidfgwhZlAeQ3dmw.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/an-interactive-web-dashboard-with-plotly-and-flask-c365cdec5e3f" target="_blank">
+                                    <span class="text-dark">An Interactive Web Dashboard with Plotly and Flask</span>
+                                </a>
+                            </h4>
+                            To create a truly interactive app with Dash you need to use callbacks. You can achieve the same thing with Plotly and Flask.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="VSCode Jupyter Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/1400/1*iiqWqXlfATbSvvWss4p3yw.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/why-im-using-vscode-for-jupyter-notebooks-abd2a6a157b9" target="_blank">
+                                    <span class="text-dark">Why I’m Using VSCode for Jupyter Notebooks</span>
+                                </a>
+                            </h4>
+                            VSCode is a great Python editor and, as I accidentally discovered, good for Jupyter Notebooks, too
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataVisualization">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/2000/1*trCrwCgYq0yLnQaDGCJ4UA.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://medium.com/towards-data-science/topical-plots-global-warming-6b5fb80a0371" target="_blank">
+                                    <span class="text-dark"><br/>Topical Plots: Global Warming Heatmaps</span>
+                                </a>
+                            </h4>
+                            Which chart will get the message across best
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataVisualization Python">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://1.bp.blogspot.com/-UKSQGbIzOdw/Xy-1TVDBaSI/AAAAAAAABTM/NUooor8px8AsHSY6IsThObdrSqsJ5BD1gCLcBGAsYHQ/s640/Untitled.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://projectcodeed.blogspot.com/2020/07/ggplot-grammar-of-graphics-in-python.html" target="_blank">
+                                    <span class="text-dark">ggplot: Grammar of Graphics in Python with Plotnine</span>
+                                </a>
+                            </h4>
+                            Do you wish that Python could emulate the superb visualizations that ggplot gives you in the R language? Well it can.<br /> Plotnine is a powerful graphics library for great visualizations and based on <i>ggplot</i>
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="DataVisualization Julia VSCode">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/1400/1*6shSHoswMHM4v9IzILOs4g.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://towardsdatascience.com/data-visualization-with-julia-and-vscode-168a69f7ddf8" target="_blank">
+                                    <span class="text-dark">Data Visualization with Julia and VSCode</span>
+                                </a>
+                            </h4>
+                            With Julia and the free VSCode IDE, you can make impressive data visualizations with little programming knowledge.
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                <div class="p-2 mb-2 bg-white border-bottom article dBlock" tags="">
+
+                    <div class="media">
+                        <img class="mr-3" src="https://miro.medium.com/max/875/1*QOvbHdL8nBbVrseBauYrtA.png" width='150px' height='auto' alt="">
+                        <div class="media-body">
+                            <h4 class="mt-0">
+                                <div class="font-weight-light small">
+                                    
+                                    ARTICLE
+                                    
+                                </div>
+                                <a href="https://alanjones2.github.io/Alan-Jones-article-code/" target="_blank">
+                                    <span class="text-dark">Earlier articles that have not yet made it to this web page yet can be found here</span>
+                                </a>
+                            </h4>
+                            This page will be continually updated with both new and older articles
+                        </div>
+                    </div>
+                    
+                    
+
+                </div>
+                
+            </div>
+            <div class="col-sm-3 p-2">
+                <!--ads etc here -->
+                <!-- streamlit from scratch-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>eBook</i>
+                        <img class="mr-3" src="" width='80%' height='auto' alt="">
+                        <h5>
+                            <a href="https://alanjones2.github.io/streamlitfromscratch/" target="_blank">
+                                <span class="text-dark">Streamlitfrom Scratch</span>
+                            </a>
+                        </h5>
+                        <p><b>Streamlit</b> is a framework for creating Data Science apps in Python.
+                            <br />
+                            <b>Streamlit from Scratch</b> is an ebook that will teach you how to get started with
+                            Streamlit.
+                        </p>
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+            
+                <!-- how charts work-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/61y5lxsc9DL._SY466_.jpg" width='80%'
+                            height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/47FKuiz" target="_blank">
+                                <span class="text-dark">How Charts Work: Understand and explain data with
+                                    confidence</span>
+                            </a>
+                        </h5>
+                        <h6>From the Back Cover</h6>
+                        <p>
+                            How Charts Work brings the secrets of effective data visualisation in a way that will
+                            help you bring data alive.
+                            Charts, graphs and tables are essential devices in business, but all too often they
+                            present information poorly.
+                            This
+                            book will help you:
+            
+                            <li>Feel confident understanding different types of charts, graphs and tables � and how
+                                to read them</li>
+                            <li>Recognise the true story behind the data presented and what the information really
+                                shows</li>
+                            <li>Know the principles and rules of how best to represent information so you can create
+                                your own
+                                information-driven (and
+                                beautiful) visuals</li>
+                            <li>Design visuals that people engage with, understand and act upon</li>
+                        </p>
+            
+                    </div>
+                </div>
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- the art of statistics-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/61eFjiH7sIL._SY264_BO1,204,203,200_QL40_ML2_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3kVBGmo" target="_blank">
+                                <span class="text-dark">The Art of Statistics: How to Learn from Data</span>
+                            </a>
+                        </h5>
+                        Discover how data literacy is changing the world and gives you a better understanding of
+                        life's biggest problems. I have used this book in various articles and found it to be
+                        invaluable.
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+            
+                    <i>eBook</i>
+                    <h5><a href='https://alanjones.gumroad.com/l/auiws' target='_blank'>Plotting with Pandas</a>
+                    </h5>
+                    <p>
+                        <b>Plotting with Pandas: an Introduction to Data Visualization</b> is an ebook that covers basic and
+                        statistical plots using Python and Pandas, line and bar charts, scatter plots, pie charts,
+                        histograms, box plots, etc.
+                    </p>
+            
+            
+            
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- storytelling in data-->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41OonY0kRWL._SX399_BO1,204,203,200_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3JmzEFq" target="_blank">
+                                <span class="text-dark">Storytelling with Data: A Data Visualization Guide for
+                                    Business</span>
+                            </a>
+                        </h5>
+                        Don't simply show your data - tell a story with it! Storytelling with Data teaches you
+                        the fundamentals of data visualization and how to communicate effectively with data. I
+                        use this book in the series of articles '12 Essential Visualizations and How to
+                        Implement them.
+            
+                    </div>
+                </div>
+            
+                <!-- google add start-->
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                <!-- google add end-->
+            
+                <!-- How charts lie -->
+                <div class="p-4 shadow-sm mb-4 rounded border border-secondary bg-light">
+                    <div>
+                        <i>Sponsored content</i>
+                        <img class="mr-3" src="https://m.media-amazon.com/images/I/41N21MzfCRL._SX329_BO1,204,203,200_.jpg"
+                            width='80%' height='auto' alt="">
+                        <h5 class="mt-0">
+                            <a href="https://amzn.to/3ZuQO9B" target="_blank">
+                                <span class="text-dark">How Charts Lie: Getting Smarter about Visual
+                                    Information</span>
+                            </a>
+                        </h5>
+                        A leading data visualization expert explores the negative - and positive - influences
+                        that charts have on our perception of truth. I used this book as the inspiration for
+                        'How Not to Lie with Charts'.
+            
+                    </div>
+                </div>
+            
+            
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                    crossorigin="anonymous"></script>
+                <!-- sfs vertical -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                    data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            
+                <div id="amzn-assoc-ad-d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></div>
+                <script async
+                    src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=d5bf4dcd-55c6-4038-a3d8-ff8bfa49de8a"></script>
+            
+            </div>
+        </div>
+
+
+    </div>
+    <div style="margin: 20px;">
+        <footer class="text-right text-secondary">
+            <i>Please note that all the software in these articles is written for educational purposes and should
+                not be
+                considered suitable for production code</i>
+            <br />
+            <i>This site contains affliate links. If you purchase an item through such a link I may get a commision
+                but at no cost to you. As an Amazon Associate, I earn from qualifying purchases.</i>
+            <br />
+            <i>&copy; 2024, Alan Jones</i> &nbsp;
+
+        </footer>
+    </div>
+
+</body>
+
+</html>
