@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        }
+
+        .demo-layout-content {
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .demo-card.mdl-card {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .mdl-card__supporting-text {
+            width: auto;
+            padding: 16px;
+        }
+
+        .mdl-textfield {
+            width: 100%;
+        }
+
+        .mdl-switch {
+            margin-top: 20px;
+            width: auto;
+        }
+
+        #result {
+            font-size: 1.5em;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        #explanation {
+            margin-top: 16px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .ads-placeholder {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">BMI Calculator</span>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="demo-layout-content mdl-grid">
+
+                <!-- Input Column -->
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <div class="demo-card mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Your Details</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <p>Enter your height and weight below. You can switch between metric and imperial units.</p>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="height">
+                                <label class="mdl-textfield__label" for="height" id="height-label">Height (cm)</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="weight">
+                                <label class="mdl-textfield__label" for="weight" id="weight-label">Weight (kg)</label>
+                            </div>
+                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="unit-switch">
+                                <input type="checkbox" id="unit-switch" class="mdl-switch__input">
+                                <span class="mdl-switch__label">Use Imperial Units</span>
+                            </label>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="calculate-btn">
+                                Calculate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Column -->
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+                    <div id="result-card" class="demo-card mdl-card mdl-shadow--2dp" style="display: none;">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Your Result</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div id="result"></div>
+                            <div id="explanation"></div>
+                        </div>
+                    </div>
+                    <div class="ads-placeholder">
+                        <!-- google add start-->
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3208991186670959"
+                            crossorigin="anonymous"></script>
+                        <!-- sfs vertical -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3208991186670959" data-ad-slot="6617299104"
+                            data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        <!-- google add end-->
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script>
+        const heightInput = document.getElementById('height');
+        const weightInput = document.getElementById('weight');
+        const heightLabel = document.getElementById('height-label');
+        const weightLabel = document.getElementById('weight-label');
+        const unitSwitch = document.getElementById('unit-switch');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const resultCard = document.getElementById('result-card');
+        const resultDiv = document.getElementById('result');
+        const explanationDiv = document.getElementById('explanation');
+
+        unitSwitch.addEventListener('change', () => {
+            if (unitSwitch.checked) {
+                heightLabel.textContent = 'Height (in)';
+                weightLabel.textContent = 'Weight (lbs)';
+            } else {
+                heightLabel.textContent = 'Height (cm)';
+                weightLabel.textContent = 'Weight (kg)';
+            }
+            // Clear inputs and results when switching units
+            heightInput.value = '';
+            weightInput.value = '';
+            resultCard.style.display = 'none';
+        });
+
+        calculateBtn.addEventListener('click', () => {
+            const height = parseFloat(heightInput.value);
+            const weight = parseFloat(weightInput.value);
+
+            resultCard.style.display = 'block';
+
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                resultDiv.textContent = 'Please enter valid height and weight.';
+                explanationDiv.innerHTML = '';
+                return;
+            }
+
+            let bmi;
+            if (unitSwitch.checked) { // Imperial
+                bmi = (weight / (height * height)) * 703;
+            } else { // Metric
+                const heightInMeters = height / 100;
+                bmi = weight / (heightInMeters * heightInMeters);
+            }
+
+            resultDiv.textContent = `Your BMI is ${bmi.toFixed(1)}`;
+
+            let explanation = '';
+            if (bmi < 18.5) {
+                explanation = 'Your BMI falls within the underweight range.';
+            } else if (bmi >= 18.5 && bmi < 25) {
+                explanation = 'Your BMI falls within the normal or healthy weight range.';
+            } else if (bmi >= 25 && bmi < 30) {
+                explanation = 'Your BMI falls within the overweight range.';
+            } else {
+                explanation = 'Your BMI falls within the obese range.';
+            }
+
+            explanation += '<br><br><strong>BMI Ranges:</strong><br>' +
+                'Underweight: less than 18.5<br>' +
+                'Normal: 18.5 – 24.9<br>' +
+                'Overweight: 25 – 29.9<br>' +
+                'Obese: 30 or greater';
+
+            explanationDiv.innerHTML = explanation;
+        });
+    </script>
+</body>
+
+</html>
