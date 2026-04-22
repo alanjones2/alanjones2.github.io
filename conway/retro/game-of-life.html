@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life - Retro Terminal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: #00ff41;
+            font-family: 'VT323', monospace;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* CRT scanline effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15) 0px,
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Screen glow effect */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(
+                ellipse at center,
+                transparent 0%,
+                rgba(0, 0, 0, 0.4) 100%
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+            52% { opacity: 0.7; }
+            54% { opacity: 0.95; }
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #00cc33;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .terminal-border {
+            border: 3px solid #00ff41;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow:
+                0 0 20px rgba(0, 255, 65, 0.3),
+                inset 0 0 20px rgba(0, 255, 65, 0.1);
+            background: rgba(0, 20, 0, 0.8);
+            margin-bottom: 20px;
+        }
+
+        #grid {
+            display: grid;
+            gap: 1px;
+            background: #001100;
+            padding: 5px;
+            border: 2px solid #003300;
+        }
+
+        .cell {
+            width: 12px;
+            height: 12px;
+            background: #001100;
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+
+        .cell:hover {
+            background: #003300;
+        }
+
+        .cell.alive {
+            background: #00ff41;
+            box-shadow: 0 0 6px #00ff41;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            padding: 10px 25px;
+            background: transparent;
+            color: #00ff41;
+            border: 2px solid #00ff41;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover {
+            background: #00ff41;
+            color: #000;
+            box-shadow: 0 0 15px #00ff41;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button.active {
+            background: #00ff41;
+            color: #000;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 5px #00ff41; }
+            50% { box-shadow: 0 0 20px #00ff41; }
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stat-label {
+            color: #00cc33;
+        }
+
+        .stat-value {
+            color: #00ff41;
+            text-shadow: 0 0 5px #00ff41;
+            min-width: 60px;
+        }
+
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 150px;
+            height: 8px;
+            background: #003300;
+            border: 1px solid #00ff41;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #00ff41;
+            cursor: pointer;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #00ff41;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 0 10px #00ff41;
+        }
+
+        .patterns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .pattern-btn {
+            font-size: 1rem;
+            padding: 8px 15px;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2rem;
+            background: #00ff41;
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #00cc33;
+            text-align: center;
+        }
+
+        .footer a {
+            color: #00ff41;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>*** CONWAY'S GAME OF LIFE ***</h1>
+    <div class="subtitle">[ TERMINAL v1.0 ] <span class="cursor"></span></div>
+
+    <div class="stats">
+        <div class="stat">
+            <span class="stat-label">GENERATION:</span>
+            <span class="stat-value" id="generation">0</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">POPULATION:</span>
+            <span class="stat-value" id="population">0</span>
+        </div>
+    </div>
+
+    <div class="terminal-border">
+        <div id="grid"></div>
+    </div>
+
+    <div class="controls">
+        <button id="playPause">Start</button>
+        <button id="clear">Clear</button>
+        <button id="random">Random</button>
+        <button id="step">Step</button>
+    </div>
+
+    <div class="speed-control">
+        <span>SPEED:</span>
+        <input type="range" id="speed" min="1" max="60" value="10">
+        <span id="speedValue">10 fps</span>
+    </div>
+
+    <div class="patterns">
+        <span style="align-self: center;">PATTERNS:</span>
+        <button class="pattern-btn" data-pattern="glider">Glider</button>
+        <button class="pattern-btn" data-pattern="blinker">Blinker</button>
+        <button class="pattern-btn" data-pattern="toad">Toad</button>
+        <button class="pattern-btn" data-pattern="beacon">Beacon</button>
+        <button class="pattern-btn" data-pattern="pulsar">Pulsar</button>
+        <button class="pattern-btn" data-pattern="gosper">Gosper Gun</button>
+    </div>
+
+    <div class="footer">
+        <p>Click cells to toggle. Press [SPACE] to play/pause.</p>
+        <p>Rules: Live cell with 2-3 neighbors survives. Dead cell with 3 neighbors becomes alive.</p>
+    </div>
+
+    <script>
+        const GRID_WIDTH = 60;
+        const GRID_HEIGHT = 40;
+        const gridElement = document.getElementById('grid');
+        const generationElement = document.getElementById('generation');
+        const populationElement = document.getElementById('population');
+        const playPauseBtn = document.getElementById('playPause');
+        const clearBtn = document.getElementById('clear');
+        const randomBtn = document.getElementById('random');
+        const stepBtn = document.getElementById('step');
+        const speedInput = document.getElementById('speed');
+        const speedValue = document.getElementById('speedValue');
+
+        let grid = [];
+        let isRunning = false;
+        let animationId = null;
+        let generation = 0;
+        let speed = 10;
+
+        // Initialize grid
+        function initGrid() {
+            gridElement.style.gridTemplateColumns = `repeat(${GRID_WIDTH}, 12px)`;
+            grid = [];
+            gridElement.innerHTML = '';
+
+            for (let y = 0; y < GRID_HEIGHT; y++) {
+                grid[y] = [];
+                for (let x = 0; x < GRID_WIDTH; x++) {
+                    grid[y][x] = false;
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.dataset.x = x;
+                    cell.dataset.y = y;
+                    cell.addEventListener('click', () => toggleCell(x, y));
+                    gridElement.appendChild(cell);
+                }
+            }
+        }
+
+        // Toggle cell state
+        function toggleCell(x, y) {
+            if (isRunning) return;
+            grid[y][x] = !grid[y][x];
+            updateDisplay();
+        }
+
+        // Update display
+        function updateDisplay() {
+            const cells = gridElement.querySelectorAll('.cell');
+            let population = 0;
+
+            for (let y = 0; y < GRID_HEIGHT; y++) {
+                for (let x = 0; x < GRID_WIDTH; x++) {
+                    const index = y * GRID_WIDTH + x;
+                    const cell = cells[index];
+                    if (grid[y][x]) {
+                        cell.classList.add('alive');
+                        population++;
+                    } else {
+                        cell.classList.remove('alive');
+                    }
+                }
+            }
+
+            generationElement.textContent = generation;
+            populationElement.textContent = population;
+        }
+
+        // Count neighbors
+        function countNeighbors(x, y) {
+            let count = 0;
+            for (let dy = -1; dy <= 1; dy++) {
+                for (let dx = -1; dx <= 1; dx++) {
+                    if (dx === 0 && dy === 0) continue;
+                    const nx = (x + dx + GRID_WIDTH) % GRID_WIDTH;
+                    const ny = (y + dy + GRID_HEIGHT) % GRID_HEIGHT;
+                    if (grid[ny][nx]) count++;
+                }
+            }
+            return count;
+        }
+
+        // Next generation
+        function nextGeneration() {
+            const newGrid = [];
+
+            for (let y = 0; y < GRID_HEIGHT; y++) {
+                newGrid[y] = [];
+                for (let x = 0; x < GRID_WIDTH; x++) {
+                    const neighbors = countNeighbors(x, y);
+                    const alive = grid[y][x];
+
+                    if (alive && (neighbors === 2 || neighbors === 3)) {
+                        newGrid[y][x] = true;
+                    } else if (!alive && neighbors === 3) {
+                        newGrid[y][x] = true;
+                    } else {
+                        newGrid[y][x] = false;
+                    }
+                }
+            }
+
+            grid = newGrid;
+            generation++;
+            updateDisplay();
+        }
+
+        // Game loop
+        function gameLoop() {
+            if (!isRunning) return;
+            nextGeneration();
+            animationId = setTimeout(() => {
+                requestAnimationFrame(gameLoop);
+            }, 1000 / speed);
+        }
+
+        // Start/Pause
+        function togglePlay() {
+            isRunning = !isRunning;
+            if (isRunning) {
+                playPauseBtn.textContent = 'Pause';
+                playPauseBtn.classList.add('active');
+                gameLoop();
+            } else {
+                playPauseBtn.textContent = 'Start';
+                playPauseBtn.classList.remove('active');
+                clearTimeout(animationId);
+            }
+        }
+
+        // Clear grid
+        function clearGrid() {
+            isRunning = false;
+            playPauseBtn.textContent = 'Start';
+            playPauseBtn.classList.remove('active');
+            clearTimeout(animationId);
+            generation = 0;
+
+            for (let y = 0; y < GRID_HEIGHT; y++) {
+                for (let x = 0; x < GRID_WIDTH; x++) {
+                    grid[y][x] = false;
+                }
+            }
+            updateDisplay();
+        }
+
+        // Random fill
+        function randomFill() {
+            if (isRunning) return;
+            generation = 0;
+            for (let y = 0; y < GRID_HEIGHT; y++) {
+                for (let x = 0; x < GRID_WIDTH; x++) {
+                    grid[y][x] = Math.random() > 0.7;
+                }
+            }
+            updateDisplay();
+        }
+
+        // Pattern presets
+        const patterns = {
+            glider: [
+                [0, 1, 0],
+                [0, 0, 1],
+                [1, 1, 1]
+            ],
+            blinker: [
+                [1, 1, 1]
+            ],
+            toad: [
+                [0, 1, 1, 1],
+                [1, 1, 1, 0]
+            ],
+            beacon: [
+                [1, 1, 0, 0],
+                [1, 0, 0, 0],
+                [0, 0, 0, 1],
+                [0, 0, 1, 1]
+            ],
+            pulsar: [
+                [0,0,1,1,1,0,0,0,1,1,1,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [1,0,0,0,0,1,0,1,0,0,0,0,1],
+                [1,0,0,0,0,1,0,1,0,0,0,0,1],
+                [1,0,0,0,0,1,0,1,0,0,0,0,1],
+                [0,0,1,1,1,0,0,0,1,1,1,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,1,1,1,0,0,0,1,1,1,0,0],
+                [1,0,0,0,0,1,0,1,0,0,0,0,1],
+                [1,0,0,0,0,1,0,1,0,0,0,0,1],
+                [1,0,0,0,0,1,0,1,0,0,0,0,1],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,1,1,1,0,0,0,1,1,1,0,0]
+            ],
+            gosper: [
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1],
+                [1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [1,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,1,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            ]
+        };
+
+        function loadPattern(name) {
+            if (isRunning) return;
+            clearGrid();
+            const pattern = patterns[name];
+            const offsetX = Math.floor((GRID_WIDTH - pattern[0].length) / 2);
+            const offsetY = Math.floor((GRID_HEIGHT - pattern.length) / 2);
+
+            for (let y = 0; y < pattern.length; y++) {
+                for (let x = 0; x < pattern[y].length; x++) {
+                    if (pattern[y][x]) {
+                        grid[offsetY + y][offsetX + x] = true;
+                    }
+                }
+            }
+            updateDisplay();
+        }
+
+        // Event listeners
+        playPauseBtn.addEventListener('click', togglePlay);
+        clearBtn.addEventListener('click', clearGrid);
+        randomBtn.addEventListener('click', randomFill);
+        stepBtn.addEventListener('click', () => {
+            if (!isRunning) nextGeneration();
+        });
+
+        speedInput.addEventListener('input', (e) => {
+            speed = parseInt(e.target.value);
+            speedValue.textContent = speed + ' fps';
+        });
+
+        document.querySelectorAll('.pattern-btn').forEach(btn => {
+            btn.addEventListener('click', () => loadPattern(btn.dataset.pattern));
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                togglePlay();
+            } else if (e.code === 'KeyC') {
+                clearGrid();
+            } else if (e.code === 'KeyR') {
+                randomFill();
+            } else if (e.code === 'ArrowRight' && !isRunning) {
+                nextGeneration();
+            }
+        });
+
+        // Initialize
+        initGrid();
+        randomFill();
+    </script>
+</body>
+</html>
