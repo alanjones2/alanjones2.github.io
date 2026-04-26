@@ -1,5 +1,4 @@
 Date(s) conducted,Pollster,Client,Area,Sample size,Labour,Conservative,Reform,Liberal Democrats,Green,SNP,Plaid Cymru,Others,Lead,Date
-22–24 Apr,Opinium,The Observer,GB,2050.0,19,17,28,12,15,2,1,5,9,2026-04-24
 22–23 Apr,Find Out Now,,GB,2656.0,15,16,25,11,21,3,2,7,4,2026-04-23
 19–20 Apr,YouGov,The Times/Sky News,GB,2472.0,16,17,27,14,17,3,1,5 RB 3 YP 0 Other 2,10,2026-04-20
 17–20 Apr,More in Common,,GB,2235.0,20,22,27,11,12,3,1,5,5,2026-04-20
@@ -168,7 +167,7 @@ Date(s) conducted,Pollster,Client,Area,Sample size,Labour,Conservative,Reform,Li
 14–15 Sep,YouGov,The Times/Sky News,GB,2384.0,20,17,29,15,10,3,1,4,9,2025-09-15
 12–15 Sep,More in Common,,GB,2037.0,22,18,31,14,8,3,1,4,9,2025-09-15
 11–15 Sep,Lord Ashcroft Polls,,GB,5082.0,22,20,27,10,13,2,1,6,5,2025-09-15
-8 Aug – 15 Sep,More in Common,The Times[173],GB,19520.0,21,19,31,15,8,2,1,4,10,2025-09-15
+8 Aug – 15 Sep,More in Common,The Times[172],GB,19520.0,21,19,31,15,8,2,1,4,10,2025-09-15
 1 Aug – 11 Sep,Focaldata,Dale Vince/Hope Not Hate,TBA,45335.0,23,18,29,12,9,TBA,TBA,TBA,6,2025-09-11
 10 Sep,Find Out Now,,GB,2717.0,19,15,34,12,12,2,1,6,15,2025-09-10
 7–8 Sep,YouGov,The Times/Sky News,GB,2500.0,22,17,27,15,12,3,1,3,5,2025-09-08
@@ -179,7 +178,7 @@ Date(s) conducted,Pollster,Client,Area,Sample size,Labour,Conservative,Reform,Li
 28 Aug – 2 Sep,Survation,,UK,1818.0,24,19,30,11,8,3,0,3,6,2025-09-02
 31 Aug – 1 Sep,YouGov,The Times/Sky News,GB,2523.0,20,17,29,15,10,3,1,5,9,2025-09-01
 29 Aug – 1 Sep,More in Common,,GB,2042.0,21,18,31,13,8,3,1,6,10,2025-09-01
-21 Aug – 1 Sep,Survation,38 Degrees[185],UK,8546.0,25,19,29,12,7,3,1,4 SF 0 DUP 1 APNI 0  UUP 1  SDLP 0  TUV 0 PBP 0 Other 2,4,2025-09-01
+21 Aug – 1 Sep,Survation,38 Degrees[184],UK,8546.0,25,19,29,12,7,3,1,4 SF 0 DUP 1 APNI 0  UUP 1  SDLP 0  TUV 0 PBP 0 Other 2,4,2025-09-01
 29–31 Aug,Freshwater Strategy,City AM,GB,1251.0,20,17,33,15,7,3,—,4,13,2025-08-31
 19–31 Aug,JL Partners,The Sun,GB,2118.0,22,18,32,12,7,2,1,6,10,2025-08-31
 26–28 Aug,BMG Research,The i Paper,GB,1504.0,20,17,35,13,7,2,1,4,15,2025-08-28
@@ -282,3 +281,95 @@ Date(s) conducted,Pollster,Client,Area,Sample size,Labour,Conservative,Reform,Li
 25–27 Apr,More in Common,,GB,2009.0,24,23,24,15,8,2,1,4,Tie,2025-04-27
 23–25 Apr,Opinium,The Observer,GB,2050.0,26,21,26,11,9,3,1,2,Tie,2025-04-25
 23–24 Apr,Techne,,UK,1642.0,25,21,25,14,8,2,—,5,Tie,2025-04-24
+23 Apr,Find Out Now,,GB,2139.0,20,20,28,14,13,3,0,2,8,2025-04-23
+21–22 Apr,YouGov,The Times/Sky News,GB,2012.0,23,20,25,16,10,3,1,2,2,2025-04-22
+17–21 Apr,More in Common,,GB,2004.0,23,23,25,14,8,3,1,4,2,2025-04-21
+16 Apr,Find Out Now,,GB,2288.0,22,20,28,14,10,3,1,3,6,2025-04-16
+13–14 Apr,YouGov,The Times/Sky News,GB,2399.0,24,21,23,14,11,3,1,2,1,2025-04-14
+11–14 Apr,More in Common,,GB,2277.0,24,23,24,14,8,3,1,4,Tie,2025-04-14
+11–14 Apr,Focaldata,,GB,1585.0,24,24,23,13,9,2,1,4,Tie,2025-04-14
+10–14 Apr,Lord Ashcroft Polls,,GB,5263.0,27,24,21,10,11,3,1,3,3,2025-04-14
+8–14 Apr,Verian,,GB,1285.0,25,19,24,16,9,3,2,3,1,2025-04-14
+9–11 Apr,Opinium,The Observer,GB,2050.0,27,22,26,12,7,3,1,3,1,2025-04-11
+9–10 Apr,Techne,,UK,1644.0,24,22,24,15,8,2,—,5,Tie,2025-04-10
+9 Apr,Find Out Now,,GB,2546.0,22,21,26,14,11,3,1,3,4,2025-04-09
+6–7 Apr,YouGov,The Times/Sky News,GB,2402.0,24,22,23,17,9,3,1,2,1,2025-04-07
+4–7 Apr,More in Common,,GB,2058.0,24,23,24,17,7,2,0,1,Tie,2025-04-07
+4–6 Apr,Freshwater Strategy,City AM,GB,1250.0,22,27,28,14,5,2,—,3,1,2025-04-06
+2–3 Apr,Techne,,UK,1631.0,24,23,24,13,8,3,—,5,Tie,2025-04-03
+2 Apr,Find Out Now,,GB,2768.0,22,20,28,13,11,3,1,3,6,2025-04-02
+14 Mar – 1 Apr,More in Common,,GB,16176.0,24,24,24,13,8,2,1,4,Tie,2025-04-01
+30–31 Mar,YouGov,The Times/Sky News,GB,2392.0,24,21,23,14,11,3,1,3,1,2025-03-31
+28–31 Mar,More in Common,,GB,2081.0,21,26,25,13,7,2,1,4,1,2025-03-31
+26–28 Mar,Opinium,The Observer,GB,2050.0,26,22,26,12,8,3,1,2,Tie,2025-03-28
+21–28 Mar,Find Out Now/ Electoral Calculus,PLMR[311],GB,5180.0,24,22,27,12,10,3,1,3,3,2025-03-28
+26–27 Mar,BMG Research,The i Paper[313],GB,1544.0,26,24,23,14,8,3,1,1,2,2025-03-27
+26–27 Mar,Techne,,UK,1642.0,25,23,24,14,8,2,—,4,1,2025-03-27
+26 Mar,Find Out Now,,GB,2745.0,23,22,26,12,11,3,1,2,3,2025-03-26
+23–24 Mar,YouGov,The Times/Sky News,GB,2333.0,23,22,22,16,10,3,1,3,1,2025-03-24
+22–24 Mar,More in Common,,GB,2432.0,24,25,24,12,10,3,1,3,1,2025-03-24
+19–21 Mar,Opinium,The Observer,GB,2078.0,26,21,26,13,8,3,1,3,Tie,2025-03-21
+19–20 Mar,Techne,,UK,1644.0,27,23,23,14,7,2,—,4,4,2025-03-20
+19 Mar,Find Out Now,,GB,2770.0,22,21,27,14,11,3,1,2,5,2025-03-19
+16–17 Mar,YouGov,The Times/Sky News,GB,2315.0,26,22,24,14,9,3,1,2,2,2025-03-17
+14–17 Mar,Deltapoll,,GB,1974.0,25,25,23,11,9,3,1,2,Tie,2025-03-17
+14–17 Mar,More in Common,,GB,2432.0,25,24,25,12,7,2,1,4,Tie,2025-03-17
+13–17 Mar,Lord Ashcroft Polls,,GB,5111.0,30,24,19,9,11,2,1,4,6,2025-03-17
+12–13 Mar,Techne,,UK,1638.0,27,22,24,14,7,2,—,4,3,2025-03-13
+12 Mar,Find Out Now,,GB,2686.0,24,21,27,11,10,3,1,2,3,2025-03-12
+9–10 Mar,YouGov,The Times/Sky News,GB,2291.0,24,22,23,15,9,3,1,3,1,2025-03-10
+7–10 Mar,More in Common,,GB,2041.0,25,23,25,14,8,2,1,2,Tie,2025-03-10
+6–9 Mar,JL Partners,The Sun,GB,2012.0,26,24,23,14,7,3,1,3,2,2025-03-09
+5–7 Mar,Opinium,The Observer,GB,1498.0,28,20,27,12,8,3,1,2,1,2025-03-07
+5–6 Mar,Techne,,UK,1632.0,28,21,25,13,7,2,—,4,3,2025-03-06
+5 Mar,Find Out Now,,GB,2670.0,25,21,26,12,10,3,1,2,1,2025-03-05
+2–3 Mar,YouGov,The Times,GB,2222.0,26,21,25,14,9,3,1,2,1,2025-03-03
+1–2 Mar,Freshwater Strategy,City AM,GB,1215.0,24,23,27,15,7,3,—,2,3,2025-03-02
+28 Feb – 2 Mar,More in Common,,GB,2010.0,26,24,24,13,7,2,1,2,2,2025-03-02
+26–28 Feb,Focaldata,,GB,1008.0,24,22,21,14,8,3,1,5,2,2025-02-28
+26–27 Feb,Techne,,UK,1643.0,26,22,25,13,8,2,—,4,1,2025-02-27
+26 Feb,Find Out Now,,GB,3363.0,23,21,28,13,10,3,1,1,5,2025-02-26
+25–26 Feb,BMG Research,The i Paper,GB,1586.0,26,22,27,12,8,3,1,1,1,2025-02-26
+23–24 Feb,YouGov,Sky News / The Times,GB,2415.0,24,22,25,16,8,3,1,2,1,2025-02-24
+21–24 Feb,More in Common,,GB,2013.0,23,25,24,16,8,2,0,2,1,2025-02-24
+19–21 Feb,Opinium,The Observer,GB,2050.0,28,21,26,12,8,3,0,2,2,2025-02-21
+19–20 Feb,Techne,,UK,1639.0,25,22,26,12,7,3,—,5,1,2025-02-20
+19 Feb,Find Out Now,,GB,2393.0,24,20,28,12,10,2,1,2,4,2025-02-19
+14–18 Feb,More in Common,,GB,4101.0,25,23,26,12,7,2,1,3,1,2025-02-18
+16–17 Feb,YouGov,,GB,2436.0,25,21,27,14,9,3,1,1,2,2025-02-17
+13–17 Feb,Lord Ashcroft Polls,,GB,5099.0,27,23,23,9,11,2,1,3,4,2025-02-17
+12–13 Feb,Techne,,UK,1637.0,26,22,25,12,8,2,—,5,1,2025-02-13
+12 Feb,Find Out Now,,GB,3421.0,23,21,29,12,9,3,1,2,6,2025-02-12
+9–10 Feb,YouGov,,GB,2419.0,25,21,26,14,9,3,1,1,1,2025-02-10
+7–10 Feb,More in Common,,GB,2005.0,25,23,25,12,8,2,1,3,Tie,2025-02-10
+5–7 Feb,Opinium,The Observer,GB,1493.0,27,22,26,11,8,3,1,2,1,2025-02-07
+5–6 Feb,Techne,,UK,1645.0,25,23,25,13,7,2,—,5,Tie,2025-02-06
+5 Feb,Find Out Now,,GB,2487.0,25,18,29,13,10,3,1,2,4,2025-02-05
+2–3 Feb,YouGov,Sky News[356],GB,2465.0,24,21,25,14,9,3,1,2,1,2025-02-03
+31 Jan – 3 Feb,More in Common,,GB,2044.0,24,26,24,13,6,3,1,3,2,2025-02-03
+31 Jan – 2 Feb,Freshwater Strategy,City AM,GB,1200.0,29,28,22,9,7,3,—,2,1,2025-02-02
+29–30 Jan,Techne,,UK,1633.0,26,23,24,12,7,3,—,5,2,2025-01-30
+29 Jan,Find Out Now,,GB,2487.0,23,21,27,11,10,3,1,3,4,2025-01-29
+28–29 Jan,BMG Research,The i Paper,GB,1514.0,25,25,24,14,8,3,1,1,Tie,2025-01-29
+28–29 Jan,Survation,,UK,1670.0,27,22,24,13,8,3,1,4,3,2025-01-29
+26–27 Jan,YouGov,The Times,GB,2523.0,27,22,23,14,9,3,1,2,4,2025-01-27
+24–27 Jan,More in Common,,GB,2009.0,25,24,25,13,7,2,1,3,Tie,2025-01-27
+22–29 Jan,Find Out Now/ Electoral Calculus,PLMR,GB,5743.0,23,23,24,11,8,3,1,6,1,2025-01-29
+22–24 Jan,Opinium,The Observer,GB,2050.0,28,21,27,11,8,3,1,2,1,2025-01-24
+22–23 Jan,Whitestone Insight,Daily Express,GB,2012.0,25,20,24,12,13,3,1,2,1,2025-01-23
+22–23 Jan,Techne,,UK,1643.0,25,24,24,13,7,2,—,5,1,2025-01-23
+22 Jan,Find Out Now,,GB,2380.0,22,23,26,12,10,3,1,3,3,2025-01-22
+19–20 Jan,YouGov,The Times,GB,2466.0,26,22,24,14,9,3,1,2,2,2025-01-20
+17–20 Jan,More in Common,,GB,2016.0,24,25,25,12,7,3,1,3,Tie,2025-01-20
+17–20 Jan,Deltapoll,Institute for Government,GB,1500.0,29,25,22,11,8,3,—,2,4,2025-01-20
+16–20 Jan,Lord Ashcroft Polls,,GB,5251.0,28,25,20,11,9,3,0,3,3,2025-01-20
+15–16 Jan,Techne,,UK,1624.0,26,25,23,12,7,2,—,5,1,2025-01-16
+15 Jan,Find Out Now,,GB,2386.0,24,25,25,12,10,3,1,2,Tie,2025-01-15
+10–14 Jan,JL Partners,The Sunday Times,GB,2007.0,26,25,22,13,9,2,1,3,1,2025-01-14
+12–13 Jan,YouGov,The Times,GB,2279.0,26,22,25,14,8,3,1,2,1,2025-01-13
+10–13 Jan,More in Common,,GB,1587.0,24,25,24,12,8,3,1,3,1,2025-01-13
+8–10 Jan,Opinium,The Observer,GB,2050.0,29,23,24,10,9,2,1,2,5,2025-01-10
+8 Jan,Find Out Now,,GB,2076.0,25,20,25,11,11,3,1,2,Tie,2025-01-08
+6–8 Jan,More in Common,,GB,2011.0,26,26,22,12,7,3,1,2,Tie,2025-01-08
+4–6 Jan,Freshwater Strategy,City AM,GB,1207.0,28,29,23,12,5,3,—,1,1,2025-01-06
+30 Dec – 3 Jan,Deltapoll,Mail on Sunday,GB,1532.0,30,23,22,12,9,3,1,1,7,2025-01-03
