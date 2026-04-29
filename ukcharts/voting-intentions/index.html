@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Intentions - UK Charts Gallery</title>
+    <link rel="stylesheet" href="../css/shared.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+    <style>
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .controls-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+        .control-section {
+            flex: 1;
+            min-width: 200px;
+        }
+        .control-section h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        .parties-section {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .radio-group, .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .party-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-right: 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .party-checkbox input {
+            cursor: pointer;
+        }
+        .charts-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (min-width: 1200px) {
+            .charts-wrapper {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 45%;
+            min-width: 400px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+        #scatter-chart, #bar-chart {
+            width: 100%;
+            overflow: visible;
+        }
+        .party-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button class="about-btn" onclick="document.getElementById('aboutDialog').showModal()">About</button>
+    
+    <div class="breadcrumb">
+        <a href="../">UK Charts Gallery</a> → Voting Intentions
+    </div>
+    
+    <h1>Voting Intentions <span id="latest-date"></span></h1>
+
+    <div class="controls">
+        <div class="controls-row">
+            <div class="control-section">
+                <h3>Scatter Chart Period</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="period" value="1m" checked> 1 Month</label>
+                    <label><input type="radio" name="period" value="3m"> 3 Months</label>
+                    <label><input type="radio" name="period" value="6m"> 6 Months</label>
+                    <label><input type="radio" name="period" value="1y"> 1 Year</label>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Trend Window</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="trendWindow" value="3"> 3</label>
+                    <label><input type="radio" name="trendWindow" value="5" checked> 5</label>
+                    <label><input type="radio" name="trendWindow" value="7"> 7</label>
+                    <label><input type="radio" name="trendWindow" value="10"> 10</label>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Bar Chart Period</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="barPeriod" value="1"> 1 Week</label>
+                    <label><input type="radio" name="barPeriod" value="2"> 2 Weeks</label>
+                    <label><input type="radio" name="barPeriod" value="3"> 3 Weeks</label>
+                    <label><input type="radio" name="barPeriod" value="4" checked> 4 Weeks</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-section parties-section">
+            <h3>Political Parties</h3>
+            <div class="button-group" id="party-controls"></div>
+        </div>
+    </div>
+
+    <div class="charts-wrapper">
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title">Voting Intentions Over Time</div>
+                <button class="download-btn" onclick="downloadChart('scatter-chart', 'voting-intentions.svg')">Download SVG</button>
+            </div>
+            <div id="scatter-chart"></div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title">Average Support (Last <span id="bar-period-label">4</span> Weeks)</div>
+                <button class="download-btn" onclick="downloadChart('bar-chart', 'average-support.svg')">Download SVG</button>
+            </div>
+            <div id="bar-chart"></div>
+        </div>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script>
+        let pollingData = [];
+        let selectedParties = new Set();
+        let scatterPeriod = '1m';
+        let barPeriod = 4;
+        let trendWindow = 5;
+
+        function getDaysAgo(days) {
+            const referenceDate = getMostRecentDate(pollingData);
+            const date = new Date(referenceDate);
+            date.setDate(date.getDate() - days);
+            return date;
+        }
+
+        function getCutoffDate() {
+            const periods = {
+                '1m': 30,
+                '3m': 90,
+                '6m': 180,
+                '1y': 365
+            };
+            return getDaysAgo(periods[scatterPeriod]);
+        }
+
+        function filterData() {
+            const cutoff = getCutoffDate();
+            return pollingData.filter(d => {
+                const date = parseDate(d.date);
+                return date >= cutoff && selectedParties.has(d.party);
+            });
+        }
+
+        function calculateBarAverages() {
+            const cutoff = getDaysAgo(barPeriod * 7);
+            const totals = {};
+            const counts = {};
+
+            pollingData.forEach(d => {
+                if (selectedParties.has(d.party)) {
+                    const date = parseDate(d.date);
+                    if (date >= cutoff) {
+                        if (!totals[d.party]) {
+                            totals[d.party] = 0;
+                            counts[d.party] = 0;
+                        }
+                        totals[d.party] += d.support;
+                        counts[d.party]++;
+                    }
+                }
+            });
+
+            return Object.keys(totals).map(party => ({
+                party: party,
+                average: totals[party] / counts[party]
+            }));
+        }
+
+        function renderScatterChart() {
+            const data = filterData();
+
+            const chart = Plot.plot({
+                width: 900,
+                height: 400,
+                x: {
+                    label: 'Date',
+                    type: 'time'
+                },
+                y: {
+                    label: 'Support (%)',
+                    domain: [0, 40]
+                },
+                color: {
+                    type: 'categorical',
+                    domain: Object.keys(partyColors),
+                    range: Object.values(partyColors),
+                    legend: true
+                },
+                marks: [
+                    Plot.dot(data, {
+                        x: 'date',
+                        y: 'support',
+                        stroke: 'party',
+                        fill: 'party',
+                        tip: true
+                    }),
+                    Plot.lineY(data, Plot.windowY(trendWindow, {
+                        x: 'date',
+                        y: 'support',
+                        stroke: 'party',
+                        sort: 'date'
+                    }))
+                ]
+            });
+
+            document.getElementById('scatter-chart').innerHTML = '';
+            document.getElementById('scatter-chart').appendChild(chart);
+        }
+
+        function renderBarChart() {
+            const averages = calculateBarAverages();
+
+            const chart = Plot.plot({
+                width: 900,
+                height: 400,
+                x: {
+                    label: 'Party',
+                    type: 'band'
+                },
+                y: {
+                    label: 'Average Support (%)',
+                    domain: [0, 40]
+                },
+                color: {
+                    domain: Object.keys(partyColors),
+                    range: Object.values(partyColors),
+                    legend: null
+                },
+                marks: [
+                    Plot.barY(averages, {
+                        x: 'party',
+                        y: 'average',
+                        fill: 'party',
+                        tip: true
+                    })
+                ]
+            });
+
+            document.getElementById('bar-chart').innerHTML = '';
+            document.getElementById('bar-chart').appendChild(chart);
+        }
+
+        function renderPartyControls() {
+            const container = document.getElementById('party-controls');
+            container.innerHTML = '';
+
+            Object.keys(partyColors).forEach(party => {
+                const label = document.createElement('label');
+                label.className = 'party-checkbox';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = true;
+                checkbox.onchange = () => {
+                    if (checkbox.checked) {
+                        selectedParties.add(party);
+                    } else {
+                        selectedParties.delete(party);
+                    }
+                    renderScatterChart();
+                    renderBarChart();
+                };
+
+                const colorBox = document.createElement('span');
+                colorBox.className = 'party-color';
+                colorBox.style.backgroundColor = partyColors[party];
+
+                label.appendChild(checkbox);
+                label.appendChild(colorBox);
+                label.appendChild(document.createTextNode(party));
+                container.appendChild(label);
+            });
+        }
+
+        function init() {
+            fetch('../data.json')
+                .then(r => r.json())
+                .then(data => {
+                    pollingData = data.polling_data.map(d => ({
+                        ...d,
+                        date: d.date,
+                        support: d.support,
+                        party: d.party
+                    }));
+
+                    selectedParties = new Set(Object.keys(partyColors));
+
+                    const latestDate = getMostRecentDate(pollingData);
+                    document.getElementById('latest-date').textContent = `(latest: ${formatLatestDate(latestDate)})`;
+                    
+                    renderPartyControls();
+                    renderScatterChart();
+                    renderBarChart();
+                });
+
+            document.querySelectorAll('input[name="period"]').forEach(radio => {
+                radio.onchange = (e) => {
+                    scatterPeriod = e.target.value;
+                    renderScatterChart();
+                };
+            });
+
+            document.querySelectorAll('input[name="barPeriod"]').forEach(radio => {
+                radio.onchange = (e) => {
+                    barPeriod = parseInt(e.target.value);
+                    document.getElementById('bar-period-label').textContent = barPeriod;
+                    renderBarChart();
+                };
+            });
+
+            document.querySelectorAll('input[name="trendWindow"]').forEach(radio => {
+                radio.onchange = (e) => {
+                    trendWindow = parseInt(e.target.value);
+                    renderScatterChart();
+                };
+            });
+        }
+
+        init();
+    </script>
+
+    <dialog id="aboutDialog">
+        <h2>About this Dashboard</h2>
+        <p>This Voting Intentions dashboard displays the latest opinion polling data for the next United Kingdom general election. 
+        </p>
+            Missing data? Please request an update by leaving a comment on the  <a href="https://ukcharts.substack.com/" target="_blank" rel="noopener">UKCharts Substack</a></p>
+        <p><strong>Features:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 12px;">
+            <li>View polling trends over 1, 3, 6, or 12 months</li>
+            <li>Filter by party affiliation</li>
+            <li>Visualize average support over different time windows</li>
+            <li>Download charts as SVG files</li>
+        </ul>
+        <p><strong>Data Source:</strong> <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_United_Kingdom_general_election" target="_blank" rel="noopener">Wikipedia - Opinion polling for the next United Kingdom general election</a></p>
+        <p><strong>Created by:</strong> Alan Jones | Licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener">CC BY-ND 4.0</a></p>
+        <button class="dialog-close" onclick="document.getElementById('aboutDialog').close()">Close</button>
+    </dialog>
+
+    <footer>
+        <p>Data source: <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_next_United_Kingdom_general_election" target="_blank" rel="noopener">Wikipedia - Opinion polling for the next United Kingdom general election</a></p>
+        <p>&copy; Alan Jones. Licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener">CC BY-ND 4.0</a></p>
+    </footer>
+</body>
+</html>
