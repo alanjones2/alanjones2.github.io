@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaders Popularity - UK Polling Dashboard</title>
+    <link rel="stylesheet" href="../css/shared.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+    <style>
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .controls-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+        .control-section {
+            flex: 1;
+            min-width: 200px;
+        }
+        .control-section h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        .leaders-section {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .radio-group, .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .leader-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-right: 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .leader-checkbox input {
+            cursor: pointer;
+        }
+        .charts-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (min-width: 1200px) {
+            .charts-wrapper {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1 1 45%;
+            min-width: 400px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+        #scatter-chart, #bar-chart {
+            width: 100%;
+            overflow: visible;
+        }
+        .leader-color {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button class="about-btn" onclick="document.getElementById('aboutDialog').showModal()">About</button>
+    
+    <div class="breadcrumb">
+        <a href="../">UK Charts Gallery</a> → Leaders Popularity
+    </div>
+    
+    <h1>Leaders Popularity <span id="latest-date"></span></h1>
+
+    <div class="controls">
+        <div class="controls-row">
+            <div class="control-section">
+                <h3>Scatter Chart Period</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="period" value="1m"> 1 Month</label>
+                    <label><input type="radio" name="period" value="3m"> 3 Months</label>
+                    <label><input type="radio" name="period" value="6m" checked> 6 Months</label>
+                    <label><input type="radio" name="period" value="1y"> 1 Year</label>
+                    <label><input type="radio" name="period" value="all"> All</label>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Metric</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="metric" value="Net" checked> Net Approval</label>
+                    <label><input type="radio" name="metric" value="Pos"> Positive %</label>
+                    <label><input type="radio" name="metric" value="Neg"> Negative %</label>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Trend Window</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="trendWindow" value="3"> 3</label>
+                    <label><input type="radio" name="trendWindow" value="5" checked> 5</label>
+                    <label><input type="radio" name="trendWindow" value="7"> 7</label>
+                    <label><input type="radio" name="trendWindow" value="10"> 10</label>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <h3>Bar Chart Period</h3>
+                <div class="radio-group">
+                    <label><input type="radio" name="barPeriod" value="1"> 1 Week</label>
+                    <label><input type="radio" name="barPeriod" value="2"> 2 Weeks</label>
+                    <label><input type="radio" name="barPeriod" value="3"> 3 Weeks</label>
+                    <label><input type="radio" name="barPeriod" value="4" checked> 4 Weeks</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-section leaders-section">
+            <h3>Political Leaders</h3>
+            <div class="button-group" id="leader-controls"></div>
+        </div>
+    </div>
+
+    <div class="charts-wrapper">
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title">Leader Approval Trends (<span id="metric-label">Net Approval</span>)</div>
+                <button class="download-btn" onclick="downloadChart('scatter-chart', 'leaders-popularity.svg')">Download SVG</button>
+            </div>
+            <div id="scatter-chart"></div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-header">
+                <div class="chart-title">Average Approval (Last <span id="bar-period-label">4</span> Weeks)</div>
+                <button class="download-btn" onclick="downloadChart('bar-chart', 'average-approval.svg')">Download SVG</button>
+            </div>
+            <div id="bar-chart"></div>
+        </div>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script>
+        const leaderColors = {
+            'Keir Starmer': '#DC241f', // Labour
+            'Kemi Badenoch': '#0087DC', // Conservative
+            'Nigel Farage': '#12E5C7', // Reform
+            'Ed Davey': '#FAA91E', // Lib Dem
+            'Zack Polanski': '#6AB023', // Green
+            'Rupert Lowe': '#00B140', // Reform/Green
+            'Restore Britain': '#999'
+        };
+
+        let pollingData = [];
+        let selectedLeaders = new Set();
+        let scatterPeriod = '6m';
+        let selectedMetric = 'Net';
+        let trendWindow = 5;
+        let barPeriod = 4;
+
+        function getDaysAgo(days) {
+            if (days === 'all') return new Date(0);
+            const referenceDate = getMostRecentDate(pollingData);
+            const date = new Date(referenceDate);
+            date.setDate(date.getDate() - days);
+            return date;
+        }
+
+        function getCutoffDate() {
+            const periods = {
+                '1m': 30,
+                '3m': 90,
+                '6m': 180,
+                '1y': 365,
+                'all': 'all'
+            };
+            return getDaysAgo(periods[scatterPeriod]);
+        }
+
+        function filterData() {
+            const cutoff = getCutoffDate();
+            return pollingData.filter(d => {
+                const date = d.date; // Use the already parsed date object
+                const val = d[selectedMetric];
+                return date >= cutoff && 
+                       selectedLeaders.has(d.Leader) && 
+                       val !== null && 
+                       !isNaN(val);
+            });
+        }
+
+        function calculateBarAverages() {
+            const cutoff = getDaysAgo(barPeriod * 7);
+            const totals = {};
+            const counts = {};
+
+            pollingData.forEach(d => {
+                if (selectedLeaders.has(d.Leader)) {
+                    const date = d.date;
+                    const val = d[selectedMetric];
+                    if (date >= cutoff && val !== null && !isNaN(val)) {
+                        if (!totals[d.Leader]) {
+                            totals[d.Leader] = 0;
+                            counts[d.Leader] = 0;
+                        }
+                        totals[d.Leader] += val;
+                        counts[d.Leader]++;
+                    }
+                }
+            });
+
+            return Object.keys(totals).map(leader => ({
+                Leader: leader,
+                average: totals[leader] / counts[leader]
+            }));
+        }
+
+        function renderScatterChart() {
+            const data = filterData();
+            
+            const metricLabels = {
+                'Net': 'Net Approval',
+                'Pos': 'Positive (%)',
+                'Neg': 'Negative (%)'
+            };
+            
+            document.getElementById('metric-label').textContent = metricLabels[selectedMetric];
+
+            const chart = Plot.plot({
+                width: 900,
+                height: 450,
+                marginLeft: 50,
+                x: {
+                    label: 'Date',
+                    type: 'time'
+                },
+                y: {
+                    label: metricLabels[selectedMetric],
+                    grid: true
+                },
+                color: {
+                    domain: Object.keys(leaderColors),
+                    range: Object.values(leaderColors),
+                    legend: true
+                },
+                marks: [
+                    Plot.ruleY([0], {stroke: "#ccc"}),
+                    Plot.dot(data, {
+                        x: 'date',
+                        y: selectedMetric,
+                        stroke: 'Leader',
+                        fill: 'Leader',
+                        fillOpacity: 0.4,
+                        tip: true
+                    }),
+                    Plot.lineY(data, Plot.windowY(trendWindow, {
+                        x: 'date',
+                        y: selectedMetric,
+                        stroke: 'Leader',
+                        sort: 'date'
+                    }))
+                ]
+            });
+
+            document.getElementById('scatter-chart').innerHTML = '';
+            document.getElementById('scatter-chart').appendChild(chart);
+        }
+
+        function renderBarChart() {
+            const averages = calculateBarAverages();
+            
+            const metricLabels = {
+                'Net': 'Net Approval',
+                'Pos': 'Positive (%)',
+                'Neg': 'Negative (%)'
+            };
+
+            const chart = Plot.plot({
+                width: 900,
+                height: 450,
+                marginLeft: 50,
+                x: {
+                    label: 'Leader',
+                    type: 'band',
+                    domain: averages.sort((a, b) => b.average - a.average).map(d => d.Leader)
+                },
+                y: {
+                    label: `Avg ${metricLabels[selectedMetric]}`,
+                    grid: true
+                },
+                color: {
+                    domain: Object.keys(leaderColors),
+                    range: Object.values(leaderColors),
+                    legend: null
+                },
+                marks: [
+                    Plot.ruleY([0], {stroke: "#ccc"}),
+                    Plot.barY(averages, {
+                        x: 'Leader',
+                        y: 'average',
+                        fill: 'Leader',
+                        tip: true
+                    })
+                ]
+            });
+
+            document.getElementById('bar-chart').innerHTML = '';
+            document.getElementById('bar-chart').appendChild(chart);
+        }
+
+        function renderLeaderControls() {
+            const container = document.getElementById('leader-controls');
+            container.innerHTML = '';
+
+            const uniqueLeaders = [...new Set(pollingData.map(d => d.Leader))];
+            
+            uniqueLeaders.forEach(leader => {
+                const label = document.createElement('label');
+                label.className = 'leader-checkbox';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = true;
+                selectedLeaders.add(leader);
+                
+                checkbox.onchange = () => {
+                    if (checkbox.checked) {
+                        selectedLeaders.add(leader);
+                    } else {
+                        selectedLeaders.delete(leader);
+                    }
+                    renderScatterChart();
+                    renderBarChart();
+                };
+
+                const colorBox = document.createElement('span');
+                colorBox.className = 'leader-color';
+                colorBox.style.backgroundColor = leaderColors[leader] || '#999';
+
+                label.appendChild(checkbox);
+                label.appendChild(colorBox);
+                label.appendChild(document.createTextNode(leader));
+                container.appendChild(label);
+            });
+        }
+
+        function init() {
+            d3.csv("leaders_cleaned.csv").then(data => {
+                pollingData = data.map(d => ({
+                    ...d,
+                    date: new Date(d.date),
+                    Pos: +d.Pos,
+                    Neg: +d.Neg,
+                    Net: +d.Net
+                }));
+
+                const latestDate = getMostRecentDate(pollingData);
+                document.getElementById('latest-date').textContent = `(latest: ${formatLatestDate(latestDate)})`;
+                
+                renderLeaderControls();
+                renderScatterChart();
+                renderBarChart();
+            });
+
+            document.querySelectorAll('input[name="period"]').forEach(radio => {
+                radio.onchange = (e) => {
+                    scatterPeriod = e.target.value;
+                    renderScatterChart();
+                };
+            });
+
+            document.querySelectorAll('input[name="metric"]').forEach(radio => {
+                radio.onchange = (e) => {
+                    selectedMetric = e.target.value;
+                    renderScatterChart();
+                    renderBarChart();
+                };
+            });
+
+            document.querySelectorAll('input[name="trendWindow"]').forEach(radio => {
+                radio.onchange = (e) => {
+                    trendWindow = parseInt(e.target.value);
+                    renderScatterChart();
+                };
+            });
+
+            document.querySelectorAll('input[name="barPeriod"]').forEach(radio => {
+                radio.onchange = (e) => {
+                    barPeriod = parseInt(e.target.value);
+                    document.getElementById('bar-period-label').textContent = barPeriod;
+                    renderBarChart();
+                };
+            });
+        }
+
+        init();
+    </script>
+
+    <dialog id="aboutDialog">
+        <h2>About this Dashboard</h2>
+        <p>This Leaders Popularity dashboard displays approval ratings for UK political party leaders.
+        </p>
+        <p><strong>Features:</strong></p>
+        <ul style="margin-left: 20px; margin-bottom: 12px;">
+            <li>View trends for Net Approval, Positive, or Negative ratings</li>
+            <li>Adjust rolling average window (Trend Window)</li>
+            <li>Filter by leader</li>
+            <li>Download charts as SVG files</li>
+        </ul>
+        <p><strong>Data Source:</strong> <a href="https://en.wikipedia.org/wiki/Leadership_approval_opinion_polling_for_the_next_United_Kingdom_general_election" target="_blank" rel="noopener">Wikipedia - Leadership approval opinion polling</a></p>
+        <p><strong>Created by:</strong> Alan Jones | Licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener">CC BY-ND 4.0</a></p>
+        <button class="dialog-close" onclick="document.getElementById('aboutDialog').close()">Close</button>
+    </dialog>
+
+    <footer>
+        <p>Data source: <a href="https://en.wikipedia.org/wiki/Leadership_approval_opinion_polling_for_the_next_United_Kingdom_general_election" target="_blank" rel="noopener">Wikipedia</a></p>
+        <p>&copy; Alan Jones. Licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/" target="_blank" rel="noopener">CC BY-ND 4.0</a></p>
+    </footer>
+</body>
+</html>
