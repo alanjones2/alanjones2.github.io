@@ -1,6 +1,270 @@
 {
   "polling_data": [
     {
+      "date": "2026-05-01",
+      "party": "Labour",
+      "support": 19.0,
+      "pollster": "Opinium"
+    },
+    {
+      "date": "2026-05-01",
+      "party": "Conservative",
+      "support": 18.0,
+      "pollster": "Opinium"
+    },
+    {
+      "date": "2026-05-01",
+      "party": "Reform",
+      "support": 27.0,
+      "pollster": "Opinium"
+    },
+    {
+      "date": "2026-05-01",
+      "party": "Liberal Democrats",
+      "support": 12.0,
+      "pollster": "Opinium"
+    },
+    {
+      "date": "2026-05-01",
+      "party": "Green",
+      "support": 15.0,
+      "pollster": "Opinium"
+    },
+    {
+      "date": "2026-04-30",
+      "party": "Labour",
+      "support": 19.0,
+      "pollster": "BMG Research"
+    },
+    {
+      "date": "2026-04-30",
+      "party": "Conservative",
+      "support": 17.0,
+      "pollster": "BMG Research"
+    },
+    {
+      "date": "2026-04-30",
+      "party": "Reform",
+      "support": 28.0,
+      "pollster": "BMG Research"
+    },
+    {
+      "date": "2026-04-30",
+      "party": "Liberal Democrats",
+      "support": 12.0,
+      "pollster": "BMG Research"
+    },
+    {
+      "date": "2026-04-30",
+      "party": "Green",
+      "support": 16.0,
+      "pollster": "BMG Research"
+    },
+    {
+      "date": "2026-04-29",
+      "party": "Labour",
+      "support": 17.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-04-29",
+      "party": "Conservative",
+      "support": 18.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-04-29",
+      "party": "Reform",
+      "support": 24.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-04-29",
+      "party": "Liberal Democrats",
+      "support": 11.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-04-29",
+      "party": "Green",
+      "support": 20.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-04-29",
+      "party": "SNP",
+      "support": 3.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-04-29",
+      "party": "Plaid Cymru",
+      "support": 1.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Labour",
+      "support": 18.0,
+      "pollster": "YouGov"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Conservative",
+      "support": 19.0,
+      "pollster": "YouGov"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Reform",
+      "support": 26.0,
+      "pollster": "YouGov"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Liberal Democrats",
+      "support": 13.0,
+      "pollster": "YouGov"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Green",
+      "support": 15.0,
+      "pollster": "YouGov"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "SNP",
+      "support": 2.0,
+      "pollster": "YouGov"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Plaid Cymru",
+      "support": 1.0,
+      "pollster": "YouGov"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Labour",
+      "support": 20.0,
+      "pollster": "More in Common"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Conservative",
+      "support": 21.0,
+      "pollster": "More in Common"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Reform",
+      "support": 27.0,
+      "pollster": "More in Common"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Liberal Democrats",
+      "support": 11.0,
+      "pollster": "More in Common"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Green",
+      "support": 13.0,
+      "pollster": "More in Common"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "SNP",
+      "support": 3.0,
+      "pollster": "More in Common"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Plaid Cymru",
+      "support": 1.0,
+      "pollster": "More in Common"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Labour",
+      "support": 18.0,
+      "pollster": "Lord Ashcroft Polls"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Conservative",
+      "support": 20.0,
+      "pollster": "Lord Ashcroft Polls"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Reform",
+      "support": 21.0,
+      "pollster": "Lord Ashcroft Polls"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Liberal Democrats",
+      "support": 11.0,
+      "pollster": "Lord Ashcroft Polls"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Green",
+      "support": 20.0,
+      "pollster": "Lord Ashcroft Polls"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "SNP",
+      "support": 3.0,
+      "pollster": "Lord Ashcroft Polls"
+    },
+    {
+      "date": "2026-04-27",
+      "party": "Plaid Cymru",
+      "support": 1.0,
+      "pollster": "Lord Ashcroft Polls"
+    },
+    {
+      "date": "2026-04-24",
+      "party": "Labour",
+      "support": 17.0,
+      "pollster": "Techne"
+    },
+    {
+      "date": "2026-04-24",
+      "party": "Conservative",
+      "support": 18.0,
+      "pollster": "Techne"
+    },
+    {
+      "date": "2026-04-24",
+      "party": "Reform",
+      "support": 26.0,
+      "pollster": "Techne"
+    },
+    {
+      "date": "2026-04-24",
+      "party": "Liberal Democrats",
+      "support": 13.0,
+      "pollster": "Techne"
+    },
+    {
+      "date": "2026-04-24",
+      "party": "Green",
+      "support": 16.0,
+      "pollster": "Techne"
+    },
+    {
+      "date": "2026-04-24",
+      "party": "SNP",
+      "support": 3.0,
+      "pollster": "Techne"
+    },
+    {
       "date": "2026-04-24",
       "party": "Labour",
       "support": 19.0,
@@ -11513,210 +11777,6 @@
       "party": "Plaid Cymru",
       "support": 0.0,
       "pollster": "Survation"
-    },
-    {
-      "date": "2025-04-30",
-      "party": "Labour",
-      "support": 21.0,
-      "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-04-30",
-      "party": "Conservative",
-      "support": 19.0,
-      "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-04-30",
-      "party": "Reform",
-      "support": 29.0,
-      "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-04-30",
-      "party": "Liberal Democrats",
-      "support": 13.0,
-      "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-04-30",
-      "party": "Green",
-      "support": 11.0,
-      "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-04-30",
-      "party": "SNP",
-      "support": 3.0,
-      "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-04-30",
-      "party": "Plaid Cymru",
-      "support": 1.0,
-      "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-04-28",
-      "party": "Labour",
-      "support": 23.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-04-28",
-      "party": "Conservative",
-      "support": 20.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-04-28",
-      "party": "Reform",
-      "support": 26.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-04-28",
-      "party": "Liberal Democrats",
-      "support": 15.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-04-28",
-      "party": "Green",
-      "support": 9.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-04-28",
-      "party": "SNP",
-      "support": 3.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-04-28",
-      "party": "Plaid Cymru",
-      "support": 1.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-04-27",
-      "party": "Labour",
-      "support": 24.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-04-27",
-      "party": "Conservative",
-      "support": 23.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-04-27",
-      "party": "Reform",
-      "support": 24.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-04-27",
-      "party": "Liberal Democrats",
-      "support": 15.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-04-27",
-      "party": "Green",
-      "support": 8.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-04-27",
-      "party": "SNP",
-      "support": 2.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-04-27",
-      "party": "Plaid Cymru",
-      "support": 1.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-04-25",
-      "party": "Labour",
-      "support": 26.0,
-      "pollster": "Opinium"
-    },
-    {
-      "date": "2025-04-25",
-      "party": "Conservative",
-      "support": 21.0,
-      "pollster": "Opinium"
-    },
-    {
-      "date": "2025-04-25",
-      "party": "Reform",
-      "support": 26.0,
-      "pollster": "Opinium"
-    },
-    {
-      "date": "2025-04-25",
-      "party": "Liberal Democrats",
-      "support": 11.0,
-      "pollster": "Opinium"
-    },
-    {
-      "date": "2025-04-25",
-      "party": "Green",
-      "support": 9.0,
-      "pollster": "Opinium"
-    },
-    {
-      "date": "2025-04-25",
-      "party": "SNP",
-      "support": 3.0,
-      "pollster": "Opinium"
-    },
-    {
-      "date": "2025-04-25",
-      "party": "Plaid Cymru",
-      "support": 1.0,
-      "pollster": "Opinium"
-    },
-    {
-      "date": "2025-04-24",
-      "party": "Labour",
-      "support": 25.0,
-      "pollster": "Techne"
-    },
-    {
-      "date": "2025-04-24",
-      "party": "Conservative",
-      "support": 21.0,
-      "pollster": "Techne"
-    },
-    {
-      "date": "2025-04-24",
-      "party": "Reform",
-      "support": 25.0,
-      "pollster": "Techne"
-    },
-    {
-      "date": "2025-04-24",
-      "party": "Liberal Democrats",
-      "support": 14.0,
-      "pollster": "Techne"
-    },
-    {
-      "date": "2025-04-24",
-      "party": "Green",
-      "support": 8.0,
-      "pollster": "Techne"
-    },
-    {
-      "date": "2025-04-24",
-      "party": "SNP",
-      "support": 2.0,
-      "pollster": "Techne"
     }
   ],
   "averages_4w": [
@@ -11726,7 +11786,7 @@
     },
     {
       "party": "Conservative",
-      "average": 18.9
+      "average": 18.6
     },
     {
       "party": "Reform",
@@ -11734,7 +11794,7 @@
     },
     {
       "party": "Liberal Democrats",
-      "average": 11.7
+      "average": 11.9
     },
     {
       "party": "Green",
@@ -11742,12 +11802,12 @@
     },
     {
       "party": "SNP",
-      "average": 2.6
+      "average": 2.7
     },
     {
       "party": "Plaid Cymru",
-      "average": 1.0
+      "average": 1.1
     }
   ],
-  "generated": "2026-04-26T09:24:01.707570"
+  "generated": "2026-05-03T16:59:19.318088"
 }
