@@ -25,8 +25,8 @@ tables = pd.read_html(html_content, flavor='lxml')
 if not tables:
     print("No tables were found on the page.")
 else:
-    # Use table 18 as per original logic
-    df = tables[18]
+    # Use table 20 as per original logic
+    df = tables[20]
     
     # Save the raw data
     df.to_csv('leaderstemp.csv', index=False)
