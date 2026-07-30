@@ -26,7 +26,8 @@ if not tables:
     print("No tables were found on the page.")
 else:
     # Use table 20 as per original logic
-    df = tables[20]
+    df = tables[2]
+
     
     # Save the raw data
     df.to_csv('leaderstemp.csv', index=False)
