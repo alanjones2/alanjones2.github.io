@@ -1,26 +1,185 @@
 date,pollster,sample_size,Pos,Neg,Net,Leader
-1-07-20,Deltapoll,2027.0,45.0,39.0,6.0,Kemi Badenoch
-1-07-20,Deltapoll,2027.0,40.0,52.0,-12.0,Nigel Farage
-1-07-20,Deltapoll,2027.0,38.0,29.0,9.0,Andy Burnham
-1-07-22,YouGov,2063.0,26.0,34.0,-8.0,Ed Davey
-1-07-22,More in Common,3118.0,21.0,26.0,-5.0,Ed Davey
-1-07-22,YouGov,2063.0,22.0,68.0,-46.0,Nigel Farage
-1-07-22,More in Common,3118.0,26.0,48.0,-22.0,Nigel Farage
-1-07-22,More in Common,3118.0,17.0,39.0,-22.0,Zack Polanski
-1-07-22,YouGov,2063.0,33.0,44.0,-11.0,Kemi Badenoch
-1-07-22,More in Common,3118.0,31.0,28.0,3.0,Kemi Badenoch
-1-07-22,YouGov,2063.0,20.0,46.0,-26.0,Zack Polanski
-1-07-22,YouGov,2063.0,38.0,35.0,3.0,Andy Burnham
-1-07-22,More in Common,3118.0,29.0,16.0,13.0,Andy Burnham
-1-07-23,Ipsos,1050.0,28.0,21.0,7.0,Andy Burnham
-1-07-24,Survation,1021.0,40.0,28.0,12.0,Kemi Badenoch
-1-07-24,Survation,1021.0,37.0,42.0,-5.0,Nigel Farage
-1-07-24,Survation,1021.0,34.0,43.0,-9.0,Nigel Farage
-1-07-24,Survation,1021.0,27.0,27.0,-1.0,Ed Davey
-1-07-24,Survation,1021.0,39.0,25.0,14.0,Andy Burnham
-1-07-24,Survation,1021.0,39.0,22.0,17.0,Andy Burnham
-1-07-24,Survation,1021.0,21.0,38.0,-17.0,Zack Polanski
-1-07-24,Survation,1021.0,33.0,30.0,3.0,Kemi Badenoch
-1-07-27,Deltapoll,2021.0,44.0,37.0,7.0,Kemi Badenoch
-1-07-27,Deltapoll,2021.0,37.0,54.0,-17.0,Nigel Farage
-1-07-27,Deltapoll,2021.0,42.0,24.0,18.0,Andy Burnham
+1-01-05,More in Common,2021,22.0,35.0,-13.0,Kemi Badenoch
+1-01-05,YouGov,2102,18.0,74.0,-56.0,Keir Starmer
+1-01-05,More in Common,2016,18.0,61.0,-43.0,Keir Starmer
+1-01-05,More in Common,2021,17.0,64.0,-47.0,Keir Starmer
+1-01-05,More in Common,2021,18.0,28.0,-10.0,Ed Davey
+1-01-05,More in Common,2021,31.0,41.0,-10.0,Nigel Farage
+1-01-09,Opinium,2050,17.0,63.0,-46.0,Keir Starmer
+1-01-09,Opinium,2050,21.0,23.0,-2.0,Ed Davey
+1-01-09,Opinium,2050,30.0,45.0,-15.0,Nigel Farage
+1-01-09,Opinium,2050,25.0,36.0,-11.0,Kemi Badenoch
+1-01-09,Opinium,2050,21.0,24.0,-3.0,Zack Polanski
+1-01-11,Freshwater Strategy,1250,29.0,35.0,-6.0,Kemi Badenoch
+1-01-11,Freshwater Strategy,1250,17.0,25.0,-8.0,Zack Polanski
+1-01-11,Freshwater Strategy,1250,23.0,25.0,-2.0,Ed Davey
+1-01-11,Freshwater Strategy,1250,37.0,47.0,-10.0,Nigel Farage
+1-01-11,Freshwater Strategy,1250,21.0,65.0,-44.0,Keir Starmer
+1-01-13,More in Common,2036,31.0,42.0,-11.0,Nigel Farage
+1-01-13,More in Common,2036,18.0,61.0,-43.0,Keir Starmer
+1-01-13,More in Common,2036,17.0,64.0,-47.0,Keir Starmer
+1-01-13,More in Common,2036,16.0,30.0,-14.0,Zack Polanski
+1-01-13,More in Common,2036,19.0,31.0,-12.0,Ed Davey
+1-01-13,More in Common,2036,23.0,37.0,-14.0,Kemi Badenoch
+1-01-14,Survation,2006,44.0,33.0,11.0,Nigel Farage
+1-01-14,Survation,2006,21.0,62.0,-41.0,Keir Starmer
+1-01-14,Survation,2006,31.0,25.0,6.0,Zack Polanski
+1-01-14,Survation,2006,37.0,32.0,5.0,Kemi Badenoch
+1-01-16,YouGov,2046,18.0,75.0,-57.0,Keir Starmer
+1-01-16,YouGov,2046,20.0,27.0,-7.0,Zack Polanski
+1-01-16,YouGov,2046,26.0,35.0,-9.0,Ed Davey
+1-01-16,YouGov,2046,25.0,51.0,-26.0,Kemi Badenoch
+1-01-16,YouGov,2046,28.0,65.0,-37.0,Nigel Farage
+1-01-18,Opinium,2047,21.0,25.0,-4.0,Ed Davey
+1-01-18,Opinium,2047,18.0,61.0,-43.0,Keir Starmer
+1-01-18,Opinium,2047,30.0,42.0,-12.0,Nigel Farage
+1-01-18,Opinium,2047,25.0,34.0,-9.0,Kemi Badenoch
+1-01-19,Focaldata,1585,16.0,27.0,-11.0,Ed Davey
+1-01-19,Ipsos,1138,22.0,35.0,-13.0,Ed Davey
+1-01-19,Ipsos,1138,21.0,48.0,-27.0,Kemi Badenoch
+1-01-19,More in Common,2007,23.0,35.0,-12.0,Kemi Badenoch
+1-01-19,Focaldata,1585,18.0,34.0,-16.0,Kemi Badenoch
+1-01-19,More in Common,2007,18.0,28.0,-10.0,Ed Davey
+1-01-19,Focaldata,1585,17.0,63.0,-46.0,Keir Starmer
+1-01-19,More in Common,2007,17.0,62.0,-45.0,Keir Starmer
+1-01-19,Focaldata,1585,13.0,21.0,-8.0,Zack Polanski
+1-01-19,Ipsos,1138,20.0,35.0,-15.0,Zack Polanski
+1-01-19,More in Common,2007,29.0,42.0,-13.0,Nigel Farage
+1-01-19,Ipsos,1138,26.0,52.0,-26.0,Nigel Farage
+1-01-19,Focaldata,1585,29.0,49.0,-20.0,Nigel Farage
+1-01-19,Ipsos,1138,17.0,59.0,-42.0,Keir Starmer
+1-01-23,Opinium,2050,25.0,37.0,-12.0,Kemi Badenoch
+1-01-23,Opinium,2050,30.0,44.0,-14.0,Nigel Farage
+1-01-23,Opinium,2050,22.0,25.0,-3.0,Ed Davey
+1-01-23,Opinium,2050,19.0,60.0,-41.0,Keir Starmer
+1-01-23,Opinium,2050,19.0,26.0,-7.0,Zack Polanski
+1-01-25,More in Common,2016,23.0,37.0,-14.0,Kemi Badenoch
+1-01-25,More in Common,2016,30.0,44.0,-14.0,Nigel Farage
+1-01-25,More in Common,2016,20.0,61.0,-41.0,Keir Starmer
+1-01-25,More in Common,2016,18.0,30.0,-12.0,Ed Davey
+1-01-26,YouGov,1755,29.0,30.0,-1.0,Ed Davey
+1-01-26,YouGov,1755,20.0,71.0,-51.0,Keir Starmer
+1-01-26,YouGov,1755,29.0,47.0,-18.0,Kemi Badenoch
+1-01-26,YouGov,2183,20.0,71.0,-51.0,Keir Starmer
+1-01-27,Ipsos,1104,15.0,77.0,-62.0,Keir Starmer
+1-01-27,Ipsos,1104,21.0,40.0,-19.0,Ed Davey
+1-01-27,Ipsos,1104,28.0,55.0,-27.0,Nigel Farage
+1-01-27,Ipsos,1104,22.0,33.0,-11.0,Zack Polanski
+1-01-27,Ipsos,1104,22.0,53.0,-31.0,Kemi Badenoch
+1-01-29,BMG Research,1513,19.0,25.0,-6.0,Ed Davey
+1-01-29,BMG Research,1513,30.0,44.0,-14.0,Nigel Farage
+1-01-29,BMG Research,1513,22.0,35.0,-13.0,Kemi Badenoch
+1-01-29,BMG Research,1513,22.0,24.0,-2.0,Zack Polanski
+1-01-29,BMG Research,1513,15.0,64.0,-49.0,Keir Starmer
+1-02-01,Freshwater Strategy,1250,24.0,38.0,-14.0,Kemi Badenoch
+1-02-01,Freshwater Strategy,1250,23.0,28.0,-5.0,Ed Davey
+1-02-01,Freshwater Strategy,1250,18.0,29.0,-11.0,Zack Polanski
+1-02-01,Freshwater Strategy,1250,20.0,62.0,-42.0,Keir Starmer
+1-02-01,Freshwater Strategy,1250,33.0,49.0,-16.0,Nigel Farage
+1-02-02,More in Common,2005,18.0,29.0,-11.0,Ed Davey
+1-02-02,More in Common,2005,19.0,64.0,-45.0,Keir Starmer
+1-02-02,More in Common,2005,33.0,43.0,-10.0,Nigel Farage
+1-02-02,More in Common,2005,24.0,35.0,-11.0,Kemi Badenoch
+1-02-04,YouGov,2012,21.0,71.0,-50.0,Keir Starmer
+1-02-06,Opinium,2054,22.0,25.0,-3.0,Ed Davey
+1-02-06,Opinium,2054,26.0,35.0,-9.0,Kemi Badenoch
+1-02-06,Opinium,2054,21.0,24.0,-3.0,Zack Polanski
+1-02-06,Opinium,2054,17.0,61.0,-44.0,Keir Starmer
+1-02-06,Opinium,2054,32.0,43.0,-11.0,Nigel Farage
+1-02-10,More in Common,2035,19.0,29.0,-10.0,Ed Davey
+1-02-10,More in Common,2035,25.0,35.0,-10.0,Kemi Badenoch
+1-02-10,Ipsos,1119,24.0,42.0,-18.0,Kemi Badenoch
+1-02-10,Ipsos,1119,17.0,61.0,-44.0,Keir Starmer
+1-02-10,More in Common,2035,16.0,67.0,-51.0,Keir Starmer
+1-02-10,More in Common,2035,30.0,43.0,-13.0,Nigel Farage
+1-02-10,Ipsos,1119,31.0,48.0,-17.0,Nigel Farage
+1-02-10,Ipsos,1119,21.0,31.0,-10.0,Ed Davey
+1-02-10,Ipsos,1119,24.0,32.0,-8.0,Zack Polanski
+1-02-11,YouGov,2088,27.0,37.0,-10.0,Ed Davey
+1-02-11,YouGov,2088,27.0,50.0,-23.0,Kemi Badenoch
+1-02-11,YouGov,2088,22.0,69.0,-47.0,Keir Starmer
+1-02-11,YouGov,2088,22.0,30.0,-8.0,Zack Polanski
+1-02-11,YouGov,2088,27.0,64.0,-37.0,Nigel Farage
+1-02-17,More in Common,2108,25.0,37.0,-12.0,Kemi Badenoch
+1-02-17,More in Common,2108,20.0,63.0,-43.0,Keir Starmer
+1-02-17,More in Common,2108,29.0,47.0,-18.0,Nigel Farage
+1-02-17,More in Common,2108,19.0,30.0,-11.0,Ed Davey
+1-02-23,More in Common,2015,28.0,44.0,-16.0,Nigel Farage
+1-02-23,More in Common,2015,21.0,37.0,-16.0,Kemi Badenoch
+1-02-23,Lord Ashcroft Polls,5576,21.0,43.0,-22.0,Kemi Badenoch
+1-02-23,More in Common,2015,18.0,27.0,-9.0,Ed Davey
+1-02-23,YouGov,1771,32.0,43.0,-11.0,Kemi Badenoch
+1-02-23,More in Common,2015,18.0,64.0,-46.0,Keir Starmer
+1-02-23,YouGov,1771,30.0,29.0,1.0,Ed Davey
+1-02-23,YouGov,1771,18.0,73.0,-55.0,Keir Starmer
+1-02-24,Ipsos,2518,26.0,42.0,-16.0,Ed Davey
+1-02-24,Ipsos,2518,22.0,61.0,-39.0,Keir Starmer
+1-02-24,Ipsos,2518,26.0,49.0,-23.0,Kemi Badenoch
+1-02-24,Ipsos,2518,29.0,56.0,-27.0,Nigel Farage
+1-02-24,Ipsos,2518,24.0,42.0,-18.0,Zack Polanski
+1-02-27,Opinium,2050,22.0,29.0,-7.0,Zack Polanski
+1-02-27,Opinium,2050,15.0,64.0,-49.0,Keir Starmer
+1-02-27,Opinium,2050,31.0,44.0,-13.0,Nigel Farage
+1-02-27,Opinium,2050,21.0,26.0,-5.0,Ed Davey
+1-02-27,Opinium,2050,27.0,35.0,-8.0,Kemi Badenoch
+1-03-01,Freshwater Strategy,1221,29.0,33.0,-4.0,Kemi Badenoch
+1-03-01,Freshwater Strategy,1221,25.0,23.0,2.0,Ed Davey
+1-03-01,Freshwater Strategy,1221,22.0,27.0,-5.0,Zack Polanski
+1-03-01,Freshwater Strategy,1221,32.0,51.0,-19.0,Nigel Farage
+1-03-01,Freshwater Strategy,1221,21.0,63.0,-42.0,Keir Starmer
+1-03-02,More in Common,2010,23.0,31.0,-8.0,Ed Davey
+1-03-02,More in Common,2010,27.0,33.0,-6.0,Zack Polanski
+1-03-02,More in Common,2010,20.0,68.0,-48.0,Keir Starmer
+1-03-02,More in Common,2010,29.0,39.0,-10.0,Kemi Badenoch
+1-03-02,More in Common,2010,36.0,47.0,-11.0,Nigel Farage
+1-03-04,BMG Research,1503,25.0,32.0,-7.0,Kemi Badenoch
+1-03-04,BMG Research,1503,19.0,27.0,-8.0,Ed Davey
+1-03-04,BMG Research,1503,21.0,31.0,-10.0,Zack Polanski
+1-03-04,BMG Research,1503,17.0,60.0,-43.0,Keir Starmer
+1-03-04,BMG Research,1503,28.0,42.0,-14.0,Nigel Farage
+1-03-05,Survation,1045,39.0,28.0,11.0,Zack Polanski
+1-03-05,Survation,1045,44.0,36.0,8.0,Nigel Farage
+1-03-05,Survation,1045,38.0,30.0,8.0,Ed Davey
+1-03-05,Survation,1045,34.0,32.0,2.0,Kemi Badenoch
+1-03-05,Survation,1045,40.0,29.0,11.0,Kemi Badenoch
+1-03-05,Survation,1045,36.0,42.0,-6.0,Nigel Farage
+1-03-05,Survation,1045,27.0,52.0,-25.0,Keir Starmer
+1-03-05,Survation,1045,22.0,61.0,-39.0,Keir Starmer
+1-03-05,Survation,1045,28.0,26.0,2.0,Ed Davey
+1-03-06,Opinium,2050,24.0,35.0,-11.0,Kemi Badenoch
+1-03-06,Opinium,2050,22.0,32.0,-10.0,Zack Polanski
+1-03-06,Opinium,2050,22.0,26.0,-4.0,Ed Davey
+1-03-06,Opinium,2050,18.0,60.0,-42.0,Keir Starmer
+1-03-06,Opinium,2050,28.0,46.0,-18.0,Nigel Farage
+1-03-09,More in Common,2112,21.0,62.0,-41.0,Keir Starmer
+1-03-09,More in Common,2112,19.0,31.0,-12.0,Zack Polanski
+1-03-09,More in Common,2112,32.0,45.0,-13.0,Nigel Farage
+1-03-09,More in Common,2112,28.0,34.0,-6.0,Kemi Badenoch
+1-03-09,More in Common,2112,18.0,29.0,-11.0,Ed Davey
+1-03-10,Focaldata,1086,15.0,63.0,-48.0,Keir Starmer
+1-03-10,Focaldata,1086,22.0,36.0,-14.0,Kemi Badenoch
+1-03-10,Focaldata,1086,14.0,32.0,-18.0,Zack Polanski
+1-03-10,Focaldata,1086,16.0,28.0,-12.0,Ed Davey
+1-03-10,Focaldata,1086,28.0,45.0,-17.0,Nigel Farage
+1-03-11,Ipsos,1062,30.0,37.0,-7.0,Zack Polanski
+1-03-11,Ipsos,1062,21.0,43.0,-22.0,Ed Davey
+1-03-11,Ipsos,1062,19.0,72.0,-53.0,Keir Starmer
+1-03-11,Ipsos,1062,21.0,56.0,-35.0,Kemi Badenoch
+1-03-11,Ipsos,1062,29.0,58.0,-29.0,Nigel Farage
+1-03-13,YouGov,2102,20.0,73.0,-53.0,Keir Starmer
+1-03-16,JL Partners,1527,17.0,57.0,-40.0,Keir Starmer
+1-03-16,More in Common,2402,18.0,31.0,-13.0,Zack Polanski
+1-03-16,More in Common,2402,19.0,64.0,-45.0,Keir Starmer
+1-03-16,More in Common,2402,19.0,29.0,-10.0,Ed Davey
+1-03-16,More in Common,2402,30.0,46.0,-16.0,Nigel Farage
+1-03-16,More in Common,2402,27.0,35.0,-8.0,Kemi Badenoch
+1-03-19,YouGov,2134,27.0,66.0,-39.0,Nigel Farage
+1-03-19,YouGov,2134,27.0,52.0,-25.0,Kemi Badenoch
+1-03-19,YouGov,2134,24.0,38.0,-14.0,Ed Davey
+1-03-19,YouGov,2134,22.0,70.0,-48.0,Keir Starmer
+1-03-19,YouGov,2134,22.0,36.0,-14.0,Zack Polanski
+1-03-20,Opinium,2050,27.0,36.0,-9.0,Kemi Badenoch
+1-03-20,Opinium,2050,28.0,44.0,-16.0,Nigel Farage
+1-03-20,Opinium,2050,23.0,32.0,-9.0,Zack Polanski
+1-03-20,Opinium,2050,22.0,27.0,-5.0,Ed Davey
+1-03-20,Opinium,2050,20.0,58.0,-38.0,Keir Starmer

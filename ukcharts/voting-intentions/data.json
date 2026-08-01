@@ -1,6 +1,48 @@
 {
   "polling_data": [
     {
+      "date": "2026-07-29",
+      "party": "Labour",
+      "support": 23.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-07-29",
+      "party": "Conservative",
+      "support": 19.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-07-29",
+      "party": "Reform",
+      "support": 23.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-07-29",
+      "party": "Liberal Democrats",
+      "support": 11.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-07-29",
+      "party": "Green",
+      "support": 14.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-07-29",
+      "party": "SNP",
+      "support": 3.0,
+      "pollster": "Find Out Now"
+    },
+    {
+      "date": "2026-07-29",
+      "party": "Plaid Cymru",
+      "support": 1.0,
+      "pollster": "Find Out Now"
+    },
+    {
       "date": "2026-07-27",
       "party": "Labour",
       "support": 22.0,
@@ -12071,96 +12113,12 @@
       "party": "Plaid Cymru",
       "support": 1.0,
       "pollster": "Find Out Now"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Labour",
-      "support": 22.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Conservative",
-      "support": 17.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Reform",
-      "support": 29.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Liberal Democrats",
-      "support": 14.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Green",
-      "support": 11.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "SNP",
-      "support": 3.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Plaid Cymru",
-      "support": 1.0,
-      "pollster": "YouGov"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Labour",
-      "support": 23.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Conservative",
-      "support": 20.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Reform",
-      "support": 29.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Liberal Democrats",
-      "support": 13.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Green",
-      "support": 7.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "SNP",
-      "support": 3.0,
-      "pollster": "More in Common"
-    },
-    {
-      "date": "2025-07-28",
-      "party": "Plaid Cymru",
-      "support": 1.0,
-      "pollster": "More in Common"
     }
   ],
   "averages_4w": [
     {
       "party": "Labour",
-      "average": 22.3
+      "average": 22.5
     },
     {
       "party": "Conservative",
@@ -12168,7 +12126,7 @@
     },
     {
       "party": "Reform",
-      "average": 24.7
+      "average": 24.6
     },
     {
       "party": "Liberal Democrats",
@@ -12187,5 +12145,5 @@
       "average": 1.4
     }
   ],
-  "generated": "2026-07-30T08:37:44.094251"
+  "generated": "2026-08-01T15:53:12.200880"
 }

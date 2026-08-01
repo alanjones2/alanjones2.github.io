@@ -26,7 +26,7 @@ if not tables:
     print("No tables were found on the page.")
 else:
     # Use table 20 as per original logic
-    df = tables[2]
+    df = tables[4]
 
     
     # Save the raw data
