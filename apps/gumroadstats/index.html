@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gumroad Sales Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script>
+    // JS helper: trigger a CSV download (called from Python, avoids Blob FFI pitfalls).
+    window.downloadCSV = function (text, filename) {
+      const blob = new Blob([text], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename || "gumroad_filtered.csv";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1000);
+    };
+  </script>
+  <style>
+    #loader { position: fixed; inset: 0; background: rgba(248,249,250,.94); z-index: 2000;
+              display: flex; align-items: center; justify-content: center; }
+    .plotly-div { min-height: 380px; }
+    select[multiple] { min-height: 110px; }
+  </style>
+</head>
+<body class="bg-light">
+
+<div id="loader">
+  <div class="text-center">
+    <div class="spinner-border" role="status"></div>
+    <p class="mt-2 mb-1 fw-bold">Loading Python runtime</p>
+    <p id="loadStatus" class="text-muted small">First visit takes a few seconds to load.</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand">Gumroad Sales Dashboard</span>
+    <span class="navbar-text">Source: <code id="navSource" class="text-light">…</code></span>
+  </div>
+</nav>
+
+<div class="container-fluid py-3">
+  <div id="alertBox"></div>
+
+  <!-- Data source -->
+  <div class="card mb-3">
+    <!--<div class="card-header fw-bold">Data source (100% in-browser — nothing is uploaded to a server)</div>-->
+    <div class="card-body d-flex flex-wrap align-items-center gap-3">
+      <span id="sourceBadge" class="badge bg-success">…</span>
+      <span id="sourceMeta" class="text-muted small">loading…</span>
+      <input id="csvFile" class="form-control form-control-sm" style="max-width:260px" type="file" accept=".csv">
+      <button id="uploadBtn" py-click="on_upload" class="btn btn-sm btn-primary" type="button">Load CSV</button>
+      <button id="defaultBtn" py-click="on_default" class="btn btn-sm btn-outline-secondary" type="button">Use default sales.csv</button>
+      <span><a href="https://alanjones.gumroad.com/coffee" target="_blank">If you find this dashboard useful, why not buy me a coffee!</a></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Filters -->
+    <div class="col-lg-3 mb-3">
+      <div class="card sticky-top" style="top: 1rem;">
+        <div class="card-header fw-bold">Filters</div>
+        <div class="card-body">
+          <div class="accordion" id="filterAcc">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-date">Date range</button>
+              </h2>
+              <div id="facc-date" class="accordion-collapse collapse show" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2">
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <label class="form-label form-label-sm">From</label>
+                      <input id="f-start" class="form-control form-control-sm" type="date">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label form-label-sm">To</label>
+                      <input id="f-end" class="form-control form-control-sm" type="date">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-items">Ebook</button>
+              </h2>
+              <div id="facc-items" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2"><select id="f-items" class="form-select form-select-sm" multiple size="5"></select></div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-countries">Country</button>
+              </h2>
+              <div id="facc-countries" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2"><select id="f-countries" class="form-select form-select-sm" multiple size="5"></select></div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-referrers">Referrer</button>
+              </h2>
+              <div id="facc-referrers" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2"><select id="f-referrers" class="form-select form-select-sm" multiple size="5"></select></div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-payments">Payment type</button>
+              </h2>
+              <div id="facc-payments" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2"><select id="f-payments" class="form-select form-select-sm" multiple size="5"></select></div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-trend">Trend options</button>
+              </h2>
+              <div id="facc-trend" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2">
+                  <div class="row g-2">
+                    <div class="col-6">
+                      <label class="form-label form-label-sm">Grain</label>
+                      <select id="f-grain" class="form-select form-select-sm">
+                        <option>Daily</option><option>Monthly</option>
+                      </select>
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label form-label-sm">Metric</label>
+                      <select id="f-metric" class="form-select form-select-sm">
+                        <option>Net Total ($)</option><option>Sale Price ($)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-check mt-2">
+                    <input id="f-stacked" class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label" for="f-stacked">Stack trend by ebook</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-sales">Sales options</button>
+              </h2>
+              <div id="facc-sales" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2">
+                  <div class="form-check">
+                    <input id="f-discover" class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="f-discover">Only Discover sales</label>
+                  </div>
+                  <div class="form-check">
+                    <input id="f-exref" class="form-check-input" type="checkbox" checked>
+                    <label class="form-check-label" for="f-exref">Exclude refunded / disputed</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-search">Search</button>
+              </h2>
+              <div id="facc-search" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
+                <div class="accordion-body py-2">
+                  <input id="f-q" class="form-control form-control-sm" type="text" placeholder="ID, email, item, country">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-2 mt-3">
+            <button id="applyBtn" py-click="on_apply" class="btn btn-primary btn-sm" type="button">Apply</button>
+            <button id="resetBtn" py-click="on_reset" class="btn btn-outline-secondary btn-sm" type="button">Reset</button>
+          </div>
+          <p class="text-muted small mt-2 mb-0">Tip: Ctrl/Cmd-click to multi-select.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="col-lg-9">
+      <div id="emptyWarn" class="alert alert-warning" style="display:none">No sales match the current filters.</div>
+      <div class="row g-2 mb-3">
+        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Net revenue</div><div id="kpi-net" class="fs-6 fw-bold">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Gross</div><div id="kpi-gross" class="fs-6 fw-bold">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Units sold</div><div id="kpi-units" class="fs-6 fw-bold">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Avg order (net)</div><div id="kpi-aov" class="fs-6 fw-bold">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Unique buyers</div><div id="kpi-buyers" class="fs-6 fw-bold">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Fees / Taxes</div><div id="kpi-fees" class="fs-6 fw-bold">–</div></div></div></div>
+      </div>
+
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-trend" type="button">Trend</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-products" type="button">Products</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-geo" type="button">Geography</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-acq" type="button">Acquisition</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-pay" type="button">Payments</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-time" type="button">Timing</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-data" type="button">Transactions</button></li>
+      </ul>
+      <div class="tab-content border border-top-0 bg-white p-3 mb-3">
+        <div class="tab-pane fade show active" id="tab-trend">
+          <h5>Revenue over time</h5>
+          <div id="chart-trend" class="plotly-div"></div>
+          <div id="tbl-trend" class="table-responsive mt-2" style="max-height:300px;overflow:auto;"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-products">
+          <h5>Performance by ebook</h5>
+          <div class="row">
+            <div class="col-md-6"><div id="chart-prod-units" class="plotly-div"></div></div>
+            <div class="col-md-6"><div id="chart-prod-net" class="plotly-div"></div></div>
+          </div>
+          <div id="tbl-products" class="table-responsive mt-2"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-geo">
+          <h5>Where buyers come from</h5>
+          <div class="row">
+            <div class="col-md-6"><div id="chart-geo-units" class="plotly-div"></div></div>
+            <div class="col-md-6"><div id="chart-geo-net" class="plotly-div"></div></div>
+          </div>
+          <div id="chart-geo-map" class="plotly-div"></div>
+          <div id="tbl-geo" class="table-responsive mt-2"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-acq">
+          <h5>Acquisition: referrers &amp; Discover</h5>
+          <div class="row">
+            <div class="col-md-6"><div id="chart-ref-bar" class="plotly-div"></div></div>
+            <div class="col-md-6"><div id="chart-ref-pie" class="plotly-div"></div></div>
+          </div>
+          <div id="tbl-referrers" class="table-responsive mt-2"></div>
+          <div id="discoverWrap" style="display:none">
+            <h6 class="mt-3">Discover vs other channels</h6>
+            <div id="chart-discover" class="plotly-div"></div>
+            <div id="tbl-discover" class="table-responsive mt-2"></div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="tab-pay">
+          <h5>Payments, fees &amp; taxes</h5>
+          <p id="paySummary" class="text-muted"></p>
+          <div class="row">
+            <div class="col-md-6"><div id="chart-pay-pie" class="plotly-div"></div></div>
+            <div class="col-md-6"><div id="chart-pay-bar" class="plotly-div"></div></div>
+          </div>
+          <div id="chart-tax" class="plotly-div"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-time">
+          <h5>When purchases happen (UTC)</h5>
+          <div id="chart-heat" class="plotly-div"></div>
+          <div id="chart-weekday" class="plotly-div"></div>
+        </div>
+        <div class="tab-pane fade" id="tab-data">
+          <h5>Filtered transactions (<span id="txCount">0</span>)</h5>
+          <button id="downloadBtn" py-click="on_download" class="btn btn-sm btn-outline-primary mb-2" type="button">Download filtered CSV</button>
+          <div id="tbl-transactions" class="table-responsive" style="max-height:500px;overflow:auto;"></div>
+        </div>
+      </div>
+
+      <div id="extrasBox"></div>
+      <p class="text-muted small">Note: Rating, Review, Discount Code, Affiliate, UTM, Tip and Refund fields are empty in the default sales.csv — related sections appear automatically when a loaded file contains them.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="py" src="./main.py?v=3" config="./pyscript.toml"></script>
+</body>
+</html>

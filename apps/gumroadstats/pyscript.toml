@@ -1,0 +1,4 @@
+packages = ["pandas", "plotly"]
+
+[[fetch]]
+files = ["./sales.csv"]
