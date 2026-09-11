@@ -152,7 +152,7 @@ def show_fig(fig, div_id: str):
         js.Plotly.purge(node)
         node.innerHTML = ""
         return
-    fig.update_layout(margin=dict(l=10, r=10, t=40, b=10), height=380)
+    fig.update_layout(template="plotly_white", margin=dict(l=10, r=10, t=40, b=10), height=380)
     obj = js.JSON.parse(pio.to_json(fig))
     js.Plotly.react(node, obj.data, obj.layout)
 

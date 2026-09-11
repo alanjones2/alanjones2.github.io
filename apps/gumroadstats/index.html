@@ -1,12 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gumroad Sales Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
-  <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.11.1/core.js"></script>-->
+
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.3.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2026.3.1/core.js"></script>
+ 
+
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <script>
     // JS helper: trigger a CSV download (called from Python, avoids Blob FFI pitfalls).
@@ -22,66 +31,268 @@
     };
   </script>
   <style>
-    #loader { position: fixed; inset: 0; background: rgba(248,249,250,.94); z-index: 2000;
-              display: flex; align-items: center; justify-content: center; }
-    .plotly-div { min-height: 380px; }
+    :root {
+      --bs-font-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --app-bg: #f6f7fb;
+      --app-card-radius: 1rem;
+      --app-shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 24px -12px rgba(16,24,40,.18);
+      --app-ring: 0 0 0 4px rgba(13,110,253,.12);
+    }
+    body {
+      font-family: var(--bs-font-sans-serif);
+      background: var(--app-bg) !important;
+      color: #1a1d21;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+    .app-shell { max-width: 1440px; }
+
+    /* Glass navbar */
+    .navbar-glass {
+      background: rgba(255,255,255,.82) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(16,24,40,.08);
+    }
+    .brand-mark {
+      width: 38px; height: 38px; border-radius: 12px;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.2rem; flex: 0 0 auto;
+      background: linear-gradient(135deg, #0d6efd, #6f42c1);
+      box-shadow: 0 6px 16px -6px rgba(13,110,253,.6);
+    }
+    .brand-sub { font-size: .78rem; line-height: 1.2; }
+
+    /* Cards */
+    .card {
+      border: 0;
+      border-radius: var(--app-card-radius);
+      box-shadow: var(--app-shadow);
+    }
+    .card-header {
+      background: transparent;
+      border-bottom: 1px solid rgba(16,24,40,.08);
+    }
+    .toolbar-card .form-control { border-radius: .8rem; }
+
+    /* Buttons + inputs */
+    .btn { border-radius: .8rem; font-weight: 600; }
+    .btn-primary {
+      box-shadow: 0 6px 16px -8px rgba(13,110,253,.7);
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); }
+    .form-control, .form-select { border-radius: .75rem; }
+    .form-control:focus, .form-select:focus {
+      border-color: #86b7fe;
+      box-shadow: var(--app-ring);
+    }
     select[multiple] { min-height: 110px; }
+    select[multiple] option { padding: .35rem .6rem; border-radius: .5rem; }
+    select[multiple] option:checked {
+      background: #0d6efd linear-gradient(0deg, #0d6efd 0%, #0d6efd 100%);
+      color: #fff;
+    }
+
+    /* Filter accordion */
+    #filterAcc .accordion-item {
+      border: 1px solid rgba(16,24,40,.08);
+      border-radius: .8rem !important;
+      overflow: hidden;
+      margin-bottom: .5rem;
+    }
+    #filterAcc .accordion-button {
+      font-weight: 600; font-size: .88rem;
+      padding: .7rem .9rem;
+      background: #f8f9fc;
+    }
+    #filterAcc .accordion-button:not(.collapsed) {
+      background: #eef4ff;
+      color: #0d6efd;
+      box-shadow: none;
+    }
+    #filterAcc .accordion-button:focus { box-shadow: var(--app-ring); }
+    #filterAcc .accordion-body { background: #fff; }
+
+    /* KPI cards */
+    .kpi-label {
+      font-size: .7rem; text-transform: uppercase;
+      letter-spacing: .07em; color: #6b7280; font-weight: 700;
+    }
+    .kpi-value {
+      font-size: 1.35rem; font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
+    .kpi-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
+    }
+    .kpi-card { transition: transform .15s ease, box-shadow .15s ease; }
+    .kpi-card:hover { transform: translateY(-2px); }
+
+    /* Pills tabs (segmented control) */
+    .nav-pills-modern {
+      background: #fff;
+      border-radius: 1rem;
+      padding: .4rem;
+      box-shadow: var(--app-shadow);
+      gap: .25rem;
+    }
+    .nav-pills-modern .nav-link {
+      border-radius: .75rem;
+      color: #495057;
+      font-weight: 600;
+      font-size: .88rem;
+      padding: .55rem .9rem;
+      white-space: nowrap;
+    }
+    .nav-pills-modern .nav-link:hover { background: #f1f3f9; color: #212529; }
+    .nav-pills-modern .nav-link.active {
+      background: #111827;
+      color: #fff;
+      box-shadow: 0 6px 14px -8px rgba(17,24,39,.7);
+    }
+    .tab-content-card { overflow: hidden; }
+    .pane-title { font-weight: 800; letter-spacing: -0.02em; }
+    .pane-sub { font-size: .85rem; }
+
+    /* Charts + tables */
+    .plotly-div {
+      min-height: 380px;
+      border-radius: .75rem;
+    }
+    /* main.py renders tables with .table-striped — soften them via CSS */
+    .table { --bs-table-bg: transparent; font-size: .88rem; }
+    .table thead th {
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
+      color: #6b7280; font-weight: 700;
+      background: #f8f9fc !important;
+      border-bottom: 1px solid rgba(16,24,40,.1);
+      position: sticky; top: 0; z-index: 1;
+    }
+    .table-striped > tbody > tr:nth-of-type(odd) > * { --bs-table-accent-bg: #f8f9fc; }
+    .table-hover > tbody > tr:hover > * { --bs-table-accent-bg: #eef4ff; }
+
+    /* Loader */
+    #loader {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(246,247,251,.88);
+      backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .loader-card {
+      background: #fff; border-radius: 1.25rem;
+      box-shadow: var(--app-shadow);
+      padding: 2rem 2.5rem; text-align: center;
+      max-width: 360px; width: calc(100% - 2rem);
+    }
+
+    code { border-radius: .4rem; }
+
+    /* Dark mode tweaks (Bootstrap handles most via data-bs-theme) */
+    [data-bs-theme="dark"] body, [data-bs-theme="dark"] {
+      --app-bg: #0f1115;
+    }
+    [data-bs-theme="dark"] body { background: #0f1115 !important; color: #e5e7eb; }
+    [data-bs-theme="dark"] .navbar-glass {
+      background: rgba(17,19,24,.82) !important;
+      border-bottom-color: rgba(255,255,255,.1);
+    }
+    [data-bs-theme="dark"] #filterAcc .accordion-button { background: #1a1d23; }
+    [data-bs-theme="dark"] #filterAcc .accordion-button:not(.collapsed) {
+      background: #1e2a45; color: #8ab4ff;
+    }
+    [data-bs-theme="dark"] #filterAcc .accordion-body { background: #14171c; }
+    [data-bs-theme="dark"] .nav-pills-modern { background: #171a20; }
+    [data-bs-theme="dark"] .nav-pills-modern .nav-link { color: #cbd5e1; }
+    [data-bs-theme="dark"] .nav-pills-modern .nav-link:hover { background: #22262e; color: #fff; }
+    [data-bs-theme="dark"] .nav-pills-modern .nav-link.active { background: #e5e7eb; color: #111827; }
+    [data-bs-theme="dark"] .table thead th { background: #1a1d23 !important; color: #9ca3af; }
+    [data-bs-theme="dark"] .table-striped > tbody > tr:nth-of-type(odd) > * { --bs-table-accent-bg: rgba(255,255,255,.03); }
+    [data-bs-theme="dark"] .kpi-label { color: #9ca3af; }
   </style>
 </head>
-<body class="bg-light">
+<body>
 
 <div id="loader">
-  <div class="text-center">
-    <div class="spinner-border" role="status"></div>
+  <div class="loader-card">
+    <div class="brand-mark mx-auto mb-3"><i class="bi bi-graph-up-arrow"></i></div>
+    <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
     <p class="mt-2 mb-1 fw-bold">Loading Python runtime</p>
-    <p id="loadStatus" class="text-muted small">Takes a few seconds to load.</p>
+    <p id="loadStatus" class="text-muted small mb-0">Takes a few seconds to load.</p>
   </div>
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <span class="navbar-brand">Gumroad Sales Dashboard v0.2</span>
-    <span class="navbar-brand"><a href="https://alanjones2.github.io" target="_blank" style="text-decoration: none;"><b class="text-light">Alan Jones Software</b></a></span>
-    <span class="navbar-text">Source: <code id="navSource" class="text-light">…</code></span>
+<nav class="navbar sticky-top navbar-glass shadow-sm">
+  <div class="container-xxl d-flex align-items-center gap-3 py-1">
+    <span class="brand-mark"><i class="bi bi-graph-up-arrow"></i></span>
+    <div class="me-auto">
+      <div class="fw-bold lh-1">Gumroad Sales Dashboard <span class="badge rounded-pill text-bg-light border ms-1">v0.2</span></div>
+      <div class="text-muted brand-sub mt-1">
+        <a href="https://alanjones2.github.io" target="_blank" class="text-decoration-none">Alan Jones Software</a>
+        <span class="mx-1">·</span>100% in-browser, nothing uploaded
+      </div>
+    </div>
+    <span class="d-none d-md-inline text-muted small">Source: <code id="navSource">…</code></span>
+    <a href="https://alanjones.gumroad.com/coffee" target="_blank" class="btn btn-sm btn-outline-secondary rounded-pill d-none d-lg-inline-flex align-items-center gap-1">
+      <i class="bi bi-cup-hot"></i>Coffee
+    </a>
+    <button id="themeToggle" class="btn btn-sm btn-outline-secondary rounded-pill" type="button" title="Toggle dark mode">
+      <i class="bi bi-moon-stars"></i>
+    </button>
   </div>
 </nav>
 
-<div class="container-fluid py-3">
+<div class="container-xxl app-shell py-4">
   <div id="alertBox"></div>
 
-  <!-- Data source -->
-  <div class="card mb-3">
-    <!--<div class="card-header fw-bold">Data source (100% in-browser — nothing is uploaded to a server)</div>-->
-    <div class="card-body d-flex flex-wrap align-items-center gap-3">
-      <span id="sourceBadge" class="badge bg-success">…</span>
-      <span id="sourceMeta" class="text-muted small">loading…</span>
-      <input id="csvFile" class="form-control form-control-sm" style="max-width:260px" type="file" accept=".csv">
-      <button id="uploadBtn" py-click="on_upload" class="btn btn-sm btn-primary" type="button">Load CSV</button>
-      <button id="defaultBtn" py-click="on_default" class="btn btn-sm btn-outline-secondary" type="button">Use default sales.csv</button>
-      <span><a href="https://alanjones.gumroad.com/coffee" target="_blank">If you find this dashboard useful, why not buy me a coffee!</a></span>
+  <!-- Page header -->
+  <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-3">
+    <div>
+      <h1 class="h4 fw-bold mb-1" style="letter-spacing:-0.02em">Sales overview</h1>
+      <p class="text-muted small mb-0">Filter, explore trends, geography, acquisition and transactions.</p>
+    </div>
+    <p class="text-muted small mb-0 d-md-none">Source: <code>…</code></p>
+  </div>
+
+  <!-- Data source toolbar -->
+  <div class="card toolbar-card mb-4">
+    <div class="card-body d-flex flex-wrap align-items-center gap-2">
+      <span id="sourceBadge" class="badge rounded-pill text-bg-success">…</span>
+      <span id="sourceMeta" class="text-muted small me-1">loading…</span>
+      <div class="vr d-none d-md-block mx-1"></div>
+      <input id="csvFile" class="form-control form-control-sm" style="max-width:240px" type="file" accept=".csv">
+      <button id="uploadBtn" py-click="on_upload" class="btn btn-sm btn-primary rounded-pill px-3" type="button"><i class="bi bi-upload me-1"></i>Load CSV</button>
+      <button id="defaultBtn" py-click="on_default" class="btn btn-sm btn-outline-secondary rounded-pill px-3" type="button">Use default sales.csv</button>
+      <span class="ms-auto small d-none d-xl-inline"><a href="https://alanjones.gumroad.com/coffee" target="_blank" class="text-decoration-none"><i class="bi bi-cup-hot me-1"></i>If you find this useful, why not buy me a coffee!</a></span>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row g-3">
     <!-- Filters -->
     <div class="col-lg-3 mb-3">
-      <div class="card sticky-top" style="top: 1rem;">
-        <div class="card-header fw-bold">Filters</div>
-        <div class="card-body">
+      <div class="card sticky-top overflow-hidden" style="top: 5rem;">
+        <div class="card-header d-flex align-items-center justify-content-between py-3">
+          <span class="fw-bold"><i class="bi bi-funnel me-2 text-primary"></i>Filters</span>
+          <span class="badge rounded-pill text-bg-light border">live</span>
+        </div>
+        <div class="card-body pt-3">
           <div class="accordion" id="filterAcc">
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-date">Date range</button>
+                <button class="accordion-button py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-date"><i class="bi bi-calendar3 me-2"></i>Date range</button>
               </h2>
               <div id="facc-date" class="accordion-collapse collapse show" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2">
                   <div class="row g-2">
                     <div class="col-6">
-                      <label class="form-label form-label-sm">From</label>
+                      <label class="form-label small text-muted mb-1">From</label>
                       <input id="f-start" class="form-control form-control-sm" type="date">
                     </div>
                     <div class="col-6">
-                      <label class="form-label form-label-sm">To</label>
+                      <label class="form-label small text-muted mb-1">To</label>
                       <input id="f-end" class="form-control form-control-sm" type="date">
                     </div>
                   </div>
@@ -90,7 +301,7 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-items">Ebook</button>
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-items"><i class="bi bi-box me-2"></i>Ebook</button>
               </h2>
               <div id="facc-items" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2"><select id="f-items" class="form-select form-select-sm" multiple size="5"></select></div>
@@ -98,7 +309,7 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-countries">Country</button>
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-countries"><i class="bi bi-geo-alt me-2"></i>Country</button>
               </h2>
               <div id="facc-countries" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2"><select id="f-countries" class="form-select form-select-sm" multiple size="5"></select></div>
@@ -106,7 +317,7 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-referrers">Referrer</button>
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-referrers"><i class="bi bi-megaphone me-2"></i>Referrer</button>
               </h2>
               <div id="facc-referrers" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2"><select id="f-referrers" class="form-select form-select-sm" multiple size="5"></select></div>
@@ -114,7 +325,7 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-payments">Payment type</button>
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-payments"><i class="bi bi-credit-card me-2"></i>Payment type</button>
               </h2>
               <div id="facc-payments" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2"><select id="f-payments" class="form-select form-select-sm" multiple size="5"></select></div>
@@ -122,19 +333,19 @@
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-trend">Trend options</button>
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-trend"><i class="bi bi-sliders me-2"></i>Trend options</button>
               </h2>
               <div id="facc-trend" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2">
                   <div class="row g-2">
                     <div class="col-6">
-                      <label class="form-label form-label-sm">Grain</label>
+                      <label class="form-label small text-muted mb-1">Grain</label>
                       <select id="f-grain" class="form-select form-select-sm">
                         <option>Daily</option><option>Monthly</option>
                       </select>
                     </div>
                     <div class="col-6">
-                      <label class="form-label form-label-sm">Metric</label>
+                      <label class="form-label small text-muted mb-1">Metric</label>
                       <select id="f-metric" class="form-select form-select-sm">
                         <option>Net Total ($)</option><option>Sale Price ($)</option>
                       </select>
@@ -142,31 +353,31 @@
                   </div>
                   <div class="form-check mt-2">
                     <input id="f-stacked" class="form-check-input" type="checkbox" checked>
-                    <label class="form-check-label" for="f-stacked">Stack trend by ebook</label>
+                    <label class="form-check-label small" for="f-stacked">Stack trend by ebook</label>
                   </div>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-sales">Sales options</button>
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-sales"><i class="bi bi-tag me-2"></i>Sales options</button>
               </h2>
               <div id="facc-sales" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2">
                   <div class="form-check">
                     <input id="f-discover" class="form-check-input" type="checkbox">
-                    <label class="form-check-label" for="f-discover">Only Discover sales</label>
+                    <label class="form-check-label small" for="f-discover">Only Discover sales</label>
                   </div>
                   <div class="form-check">
                     <input id="f-exref" class="form-check-input" type="checkbox" checked>
-                    <label class="form-check-label" for="f-exref">Exclude refunded / disputed</label>
+                    <label class="form-check-label small" for="f-exref">Exclude refunded / disputed</label>
                   </div>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-search">Search</button>
+                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#facc-search"><i class="bi bi-search me-2"></i>Search</button>
               </h2>
               <div id="facc-search" class="accordion-collapse collapse" data-bs-parent="#filterAcc">
                 <div class="accordion-body py-2">
@@ -176,8 +387,8 @@
             </div>
           </div>
           <div class="d-flex gap-2 mt-3">
-            <button id="applyBtn" py-click="on_apply" class="btn btn-primary btn-sm" type="button">Apply</button>
-            <button id="resetBtn" py-click="on_reset" class="btn btn-outline-secondary btn-sm" type="button">Reset</button>
+            <button id="applyBtn" py-click="on_apply" class="btn btn-primary btn-sm flex-fill" type="button"><i class="bi bi-check-lg me-1"></i>Apply</button>
+            <button id="resetBtn" py-click="on_reset" class="btn btn-outline-secondary btn-sm flex-fill" type="button">Reset</button>
           </div>
           <p class="text-muted small mt-2 mb-0">Tip: Ctrl/Cmd-click to multi-select.</p>
         </div>
@@ -186,64 +397,68 @@
 
     <!-- Main -->
     <div class="col-lg-9">
-      <div id="emptyWarn" class="alert alert-warning" style="display:none">No sales match the current filters.</div>
-      <div class="row g-2 mb-3">
-        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Net revenue</div><div id="kpi-net" class="fs-6 fw-bold">–</div></div></div></div>
-        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Gross</div><div id="kpi-gross" class="fs-6 fw-bold">–</div></div></div></div>
-        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Units sold</div><div id="kpi-units" class="fs-6 fw-bold">–</div></div></div></div>
-        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Avg order (net)</div><div id="kpi-aov" class="fs-6 fw-bold">–</div></div></div></div>
-        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Unique buyers</div><div id="kpi-buyers" class="fs-6 fw-bold">–</div></div></div></div>
-        <div class="col-6 col-md-4 col-xl-2"><div class="card text-center h-100"><div class="card-body py-2"><div class="text-muted small">Fees / Taxes</div><div id="kpi-fees" class="fs-6 fw-bold">–</div></div></div></div>
+      <div id="emptyWarn" class="alert alert-warning border-0 shadow-sm rounded-4" style="display:none"><i class="bi bi-exclamation-triangle me-2"></i>No sales match the current filters.</div>
+      <div class="row g-2 g-md-3 mb-3">
+        <div class="col-6 col-md-4 col-xl-2"><div class="card kpi-card text-start h-100"><div class="card-body py-3"><span class="kpi-icon text-bg-success-subtle text-success mb-2"><i class="bi bi-cash-stack"></i></span><div class="kpi-label">Net revenue</div><div id="kpi-net" class="kpi-value">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card kpi-card text-start h-100"><div class="card-body py-3"><span class="kpi-icon text-bg-primary-subtle text-primary mb-2"><i class="bi bi-receipt"></i></span><div class="kpi-label">Gross</div><div id="kpi-gross" class="kpi-value">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card kpi-card text-start h-100"><div class="card-body py-3"><span class="kpi-icon text-bg-warning-subtle text-warning-emphasis mb-2"><i class="bi bi-bag-check"></i></span><div class="kpi-label">Units sold</div><div id="kpi-units" class="kpi-value">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card kpi-card text-start h-100"><div class="card-body py-3"><span class="kpi-icon text-bg-info-subtle text-info-emphasis mb-2"><i class="bi bi-calculator"></i></span><div class="kpi-label">Avg order (net)</div><div id="kpi-aov" class="kpi-value">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card kpi-card text-start h-100"><div class="card-body py-3"><span class="kpi-icon text-bg-secondary-subtle text-secondary-emphasis mb-2"><i class="bi bi-people"></i></span><div class="kpi-label">Unique buyers</div><div id="kpi-buyers" class="kpi-value">–</div></div></div></div>
+        <div class="col-6 col-md-4 col-xl-2"><div class="card kpi-card text-start h-100"><div class="card-body py-3"><span class="kpi-icon text-bg-danger-subtle text-danger-emphasis mb-2"><i class="bi bi-percent"></i></span><div class="kpi-label">Fees / Taxes</div><div id="kpi-fees" class="kpi-value" style="font-size:1rem">–</div></div></div></div>
       </div>
 
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-trend" type="button">Trend</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-products" type="button">Products</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-geo" type="button">Geography</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-acq" type="button">Acquisition</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-pay" type="button">Payments</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-time" type="button">Timing</button></li>
-        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-data" type="button">Transactions</button></li>
+      <ul class="nav nav-pills nav-pills-modern mb-3 flex-nowrap overflow-auto" role="tablist">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-trend" type="button"><i class="bi bi-graph-up me-1"></i>Trend</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-products" type="button"><i class="bi bi-box me-1"></i>Products</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-geo" type="button"><i class="bi bi-geo-alt me-1"></i>Geography</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-acq" type="button"><i class="bi bi-megaphone me-1"></i>Acquisition</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-pay" type="button"><i class="bi bi-credit-card me-1"></i>Payments</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-time" type="button"><i class="bi bi-clock me-1"></i>Timing</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-data" type="button"><i class="bi bi-table me-1"></i>Transactions</button></li>
       </ul>
-      <div class="tab-content border border-top-0 bg-white p-3 mb-3">
+      <div class="tab-content tab-content-card card p-3 p-md-4 mb-3">
         <div class="tab-pane fade show active" id="tab-trend">
-          <h5>Revenue over time</h5>
+          <h5 class="pane-title">Revenue over time</h5>
+          <p class="text-muted pane-sub">Daily or monthly net/gross, optionally stacked by ebook.</p>
           <div id="chart-trend" class="plotly-div"></div>
-          <div id="tbl-trend" class="table-responsive mt-2" style="max-height:300px;overflow:auto;"></div>
+          <div id="tbl-trend" class="table-responsive mt-3" style="max-height:300px;overflow:auto;"></div>
         </div>
         <div class="tab-pane fade" id="tab-products">
-          <h5>Performance by ebook</h5>
+          <h5 class="pane-title">Performance by ebook</h5>
+          <p class="text-muted pane-sub">Units and net revenue per title.</p>
           <div class="row">
             <div class="col-md-6"><div id="chart-prod-units" class="plotly-div"></div></div>
             <div class="col-md-6"><div id="chart-prod-net" class="plotly-div"></div></div>
           </div>
-          <div id="tbl-products" class="table-responsive mt-2"></div>
+          <div id="tbl-products" class="table-responsive mt-3"></div>
         </div>
         <div class="tab-pane fade" id="tab-geo">
-          <h5>Where buyers come from</h5>
+          <h5 class="pane-title">Where buyers come from</h5>
+          <p class="text-muted pane-sub">Top countries by units and revenue.</p>
           <div class="row">
             <div class="col-md-6"><div id="chart-geo-units" class="plotly-div"></div></div>
             <div class="col-md-6"><div id="chart-geo-net" class="plotly-div"></div></div>
           </div>
           <div id="chart-geo-map" class="plotly-div"></div>
-          <div id="tbl-geo" class="table-responsive mt-2"></div>
+          <div id="tbl-geo" class="table-responsive mt-3"></div>
         </div>
         <div class="tab-pane fade" id="tab-acq">
-          <h5>Acquisition: referrers &amp; Discover</h5>
+          <h5 class="pane-title">Acquisition: referrers &amp; Discover</h5>
+          <p class="text-muted pane-sub">Which channels drive sales.</p>
           <div class="row">
             <div class="col-md-6"><div id="chart-ref-bar" class="plotly-div"></div></div>
             <div class="col-md-6"><div id="chart-ref-pie" class="plotly-div"></div></div>
           </div>
-          <div id="tbl-referrers" class="table-responsive mt-2"></div>
+          <div id="tbl-referrers" class="table-responsive mt-3"></div>
           <div id="discoverWrap" style="display:none">
-            <h6 class="mt-3">Discover vs other channels</h6>
+            <h6 class="mt-3 fw-bold">Discover vs other channels</h6>
             <div id="chart-discover" class="plotly-div"></div>
-            <div id="tbl-discover" class="table-responsive mt-2"></div>
+            <div id="tbl-discover" class="table-responsive mt-3"></div>
           </div>
         </div>
         <div class="tab-pane fade" id="tab-pay">
-          <h5>Payments, fees &amp; taxes</h5>
-          <p id="paySummary" class="text-muted"></p>
+          <h5 class="pane-title">Payments, fees &amp; taxes</h5>
+          <p id="paySummary" class="text-muted pane-sub"></p>
           <div class="row">
             <div class="col-md-6"><div id="chart-pay-pie" class="plotly-div"></div></div>
             <div class="col-md-6"><div id="chart-pay-bar" class="plotly-div"></div></div>
@@ -251,13 +466,19 @@
           <div id="chart-tax" class="plotly-div"></div>
         </div>
         <div class="tab-pane fade" id="tab-time">
-          <h5>When purchases happen (UTC)</h5>
+          <h5 class="pane-title">When purchases happen (UTC)</h5>
+          <p class="text-muted pane-sub">Weekday × hour heatmap and weekday totals.</p>
           <div id="chart-heat" class="plotly-div"></div>
           <div id="chart-weekday" class="plotly-div"></div>
         </div>
         <div class="tab-pane fade" id="tab-data">
-          <h5>Filtered transactions (<span id="txCount">0</span>)</h5>
-          <button id="downloadBtn" py-click="on_download" class="btn btn-sm btn-outline-primary mb-2" type="button">Download filtered CSV</button>
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+            <div>
+              <h5 class="pane-title mb-0">Filtered transactions (<span id="txCount">0</span>)</h5>
+              <p class="text-muted pane-sub mb-0">Search applies here. Download what you see.</p>
+            </div>
+            <button id="downloadBtn" py-click="on_download" class="btn btn-sm btn-primary rounded-pill ms-auto" type="button"><i class="bi bi-download me-1"></i>Download filtered CSV</button>
+          </div>
           <div id="tbl-transactions" class="table-responsive" style="max-height:500px;overflow:auto;"></div>
         </div>
       </div>
@@ -268,6 +489,24 @@
   </div>
 </div>
 
+<script>
+  // Dark-mode toggle (Bootstrap 5.3 data-bs-theme). No dependency on main.py.
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const apply = (t) => {
+      root.setAttribute('data-bs-theme', t);
+      if (btn) btn.innerHTML = t === 'dark' ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon-stars"></i>';
+      try { localStorage.setItem('dash-theme', t); } catch (e) {}
+    };
+    let saved = 'light';
+    try { saved = localStorage.getItem('dash-theme') || 'light'; } catch (e) {}
+    apply(saved);
+    if (btn) btn.addEventListener('click', () => {
+      apply(root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="py" src="./main.py?v=3" config="./pyscript.toml"></script>
 </body>
