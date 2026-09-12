@@ -1,114 +1,308 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alan Jones| Data Visualization, Data Science and AI</title>
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">-->
-    <link href="./css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">-->
+    <title>Alan Jones | Data Visualisation, Data Science and AI</title>
+    <meta name="description" content="Alan Jones - Data Visualisation, Data Science, AI and Python">
+    <style>
+        :root {
+            --bg: #f6f7f9;
+            --card: #ffffff;
+            --ink: #0f172a;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --accent: #4f46e5;
+            --radius: 18px;
+            --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+            --shadow-hover: 0 18px 45px rgba(15, 23, 42, .14);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-system, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: #0f172a;
+            color: #fff;
+        }
+
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .38;
+        }
+
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(15,23,42,.35) 0%, rgba(15,23,42,.78) 100%),
+                linear-gradient(90deg, rgba(79,70,229,.55) 0%, rgba(6,182,212,.35) 100%);
+        }
+
+        .hero__inner {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 88px 24px 56px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            line-height: .95;
+            letter-spacing: -0.04em;
+            font-weight: 800;
+        }
+
+        h1 span {
+            font-weight: 300;
+            color: #c7d2fe;
+        }
+
+        .tagline {
+            margin: 14px 0 0;
+            font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+            font-weight: 300;
+            color: #e2e8f0;
+            max-width: 640px;
+        }
+
+        .lead {
+            margin: 22px 0 0;
+            font-size: 1.08rem;
+            color: #cbd5e1;
+            max-width: 620px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 36px 24px 64px;
+        }
+
+        .section { margin-bottom: 36px; }
+        .section:last-child { margin-bottom: 0; }
+
+        .section h2 {
+            margin: 0 0 4px;
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-sub {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .topics {
+            list-style: none;
+            margin: 0 0 20px;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 620px) {
+            .topics { grid-template-columns: 1fr; }
+        }
+
+        .topics li {
+            margin: 0;
+            padding: 0;
+            font-size: .93rem;
+            color: var(--muted);
+        }
+
+        .topics strong {
+            display: block;
+            color: var(--ink);
+            font-size: .95rem;
+            margin-bottom: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .actions .btn {
+            flex: 1;
+            min-width: 220px;
+            width: auto;
+            margin-top: 0;
+        }
+
+        @media (max-width: 620px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero__inner { padding: 64px 20px 44px; }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            font-size: 1.15rem;
+            letter-spacing: -0.02em;
+        }
+
+        .card div.desc {
+            margin: 0;
+            color: var(--muted);
+            font-size: .96rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: #eef2ff;
+            border: 1px solid #e0e7ff;
+            padding: 4px 9px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .spacer { flex: 1; min-height: 16px; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 14px;
+            width: 100%;
+            text-decoration: none;
+            font-weight: 650;
+            font-size: .95rem;
+            color: #fff;
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            padding: 11px 14px;
+            border-radius: 12px;
+            border: 0;
+            transition: filter .15s ease, transform .15s ease;
+        }
+
+        .btn:hover { filter: brightness(1.07); transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
+
+        .contact {
+            margin-top: 8px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .contact a {
+            color: var(--ink);
+            font-weight: 650;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="mt-4">
-            <div class="display-3 p-4 bg-primary text-white">
-                <img class="mb-4" src="./images/b1b92511-34db-46c0-bfed-ad4e6ad27b5e_1024x1024.png" width="100%"
-                    height="100" style="object-fit: cover;"></img>
-                <class="text-secondary" style="font-size:100%;font-weight: bolder;"> Alan
-                    <span style="font-weight:lighter">Jones</span>
-                    </span>
-
-                    <div class="" style="font-size:50%;font-weight: lighter;">Data Visualization, Data Science, AI and
-                        Python</div>
-
-            </div>
-                <p class="lead text-white m-4">
-                    I’m a technology writer with a background in software development and university teaching.
-                </p>
-
-                <h6 class="text-white">Programming and Writing</h6>
-                <div class="row" style="width: 100%;">
-                    <div class="col m-3 p-2 border rounded border-success">
-
-                        <h6 class="text-light">Data Analysis & Visualization</h6>
-                        <div class="text-secondary">
-                            Exploring, understanding, and communicating data effectively.
-                        </div>
-                        <h6 class="text-light">AI</h6>
-                        <div class="text-secondary">
-                            Clear explanations and applied examples of modern AI frameworks and
-                            applications.
-                        </div>
-                        <h6 class="text-light">Python</h6>
-                        <div class="text-secondary">
-                            Tools, libraries, and workflows for real-world Python development.
-
-                        </div>
-                    </div>
-                    <div class="col m-3 p-2 border rounded border-success">
-                        <h5 class="text-light">Gumroad Sales Data Analysis</h5>
-                        <div class="text-secondary">Upload your Gumroad sales data and analyse in in a <b>free</b> interactive dashboard.
-                        <a href="./apps/gumroadstats/" target="_blank" class="btn btn-primary mt-2"
-                            style="width: 100%;">Free Gumroad Sales Dashboard</a>
-     
-                        </div>
-                    </div>
-                    <div class="col m-3 p-2 border rounded border-success">
-                        <h5 class="text-light">Pollbase Interactive</h5>
-                        <div class="text-secondary">
-                            Explore this UK Voting Intentions Dashboard. <br/>
-                            Based on Dr Mark Pack's Pollbase data, you can customise the charts and download them to use in your own publication.<br/> 
-                            <a href="https://alanjones.pythonanywhere.com/Pollbase" target="_blank" class="btn btn-primary mt-2"
-                            style="width: 100%;">Pollbase Interactive</a>
- 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--<h6 class="text-white">Platforms and Books</h6>-->
-            <div class="row" style="width: 100%;">
-                    <div class="col m-3 p-2 border rounded border-success">
-                        <a href="https://medium.com/@alan-jones" target="_blank" class="btn btn-primary"
-                            style="width: 100%;">Find me on Medium</a>
-                        <a href="https://technofile.substack.com" target="_blank" class="btn btn-primary"
-                            style="width: 100%;">Find me on Substack</a>
-                        <a href="https://www.linkedin.com/in/alan-jones-032699100/" target="_blank"
-                            class="btn btn-primary" style="width: 100%;">Contact me on LinkedIn</a>
-                    </div>
-
-                <div class="col m-3 p-2 border rounded border-success">
-
-                    <a href="https://alanjones2.github.io/streamlitfromscratch/" target="_blank" class="btn btn-primary"
-                        style="width: 100%;">Streamlit from Scratch</a>
-                    <div class="text-secondary">
-                        A downloadable eBook that shows how to build Streamlit apps, from simple web sites to data
-                        dashboards
-                    </div>
-                </div>
-                <div class="col m-3 p-2 border rounded border-success" style="text-align: center;">
-                    <b class="text-light">Great books from Bookshop.org (sponsored links) </b>
-                    <div>
-                        <a href="https://bookshop.org/shop/alanjones" target="_blank" class="btn btn-primary"
-                            style="width: 45%;">🇺🇸 US</a>
-                        <a href="https://uk.bookshop.org/shop/alanjones" target="_blank" class="btn btn-primary"
-                            style="width: 45%;">🇬🇧 UK</a>
-                    </div>
-                    <div class="text-secondary">
-                        Some of the most useful books I've read and can recommend.
-                        <br />
-                        <b>Support your local bookshop, not billionaires</b>
-                    </div>
-                </div>
-            </div>
+    <header class="hero">
+        <img class="hero__bg" src="./images/b1b92511-34db-46c0-bfed-ad4e6ad27b5e_1024x1024.png" alt="Abstract data visualisation banner">
+        <div class="hero__overlay"></div>
+        <div class="hero__inner">
+            <h1>Alan <span>Jones</span></h1>
+            <p class="tagline">Data Visualisation, Data Science, AI and Python</p>
+            <p class="lead">I’m a technology writer with a background in software development and teaching.</p>
         </div>
-    </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    </header>
+
+    <main>
+        <section class="section">
+            <h2>Writing</h2>
+            <p class="section-sub">I write articles and tutorials on Medium and Substack about:</p>
+            <ul class="topics">
+                <li><strong>Data Analysis &amp; Visualisation</strong> Exploring, understanding, and communicating data effectively.</li>
+                <li><strong>AI</strong> Clear explanations and applied examples of modern AI frameworks and applications.</li>
+                <li><strong>Python</strong> Tools, libraries, and workflows for real-world Python development.</li>
+            </ul>
+            <div class="actions">
+                <a href="https://medium.com/@alan-jones" target="_blank" rel="noopener" class="btn">Find me on Medium</a>
+                <a href="https://technofile.substack.com" target="_blank" rel="noopener" class="btn">Find me on Substack</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Free resources</h2>
+            <p class="section-sub">Free resources that stem from my writing.</p>
+            <div class="grid">
+                <article class="card">
+                    <span class="badge">Sales Analytics</span>
+                    <h3>Gumroad Sales Data Analysis</h3>
+                    <div class="desc">Upload your Gumroad sales data and analyse in a <b>free</b> interactive dashboard.</div>
+                    <div class="spacer"></div>
+                    <a href="./apps/gumroadstats/" target="_blank" rel="noopener" class="btn">Launch free dashboard</a>
+                </article>
+
+                <article class="card">
+                    <span class="badge">UK Politics</span>
+                    <h3>Pollbase Interactive</h3>
+                    <div class="desc">Explore this UK Voting Intentions Dashboard.<br>Based on Dr Mark Pack's Pollbase data, you can customise the charts and download them to use in your own publication.</div>
+                    <div class="spacer"></div>
+                    <a href="https://alanjones.pythonanywhere.com/Pollbase" target="_blank" rel="noopener" class="btn">Launch interactive dashboard</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Future book link placeholder: add new book card here when available -->
+
+        <footer class="contact">
+            <span>Want to get in touch?</span>
+            <a href="https://www.linkedin.com/in/alan-jones-032699100/" target="_blank" rel="noopener">Contact me on LinkedIn</a>
+        </footer>
+    </main>
 </body>
 
 </html>
