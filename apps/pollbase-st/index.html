@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stlite Plotly App</title>
+    
+    <!-- Stlite CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@stlite/browser@0.82.0/build/stlite.css"
+    />
+  </head>
+  <body>
+    <!-- The container where Streamlit will mount -->
+    <div id="root"></div>
+
+    <!-- Stlite JS loaded as an ES Module -->
+    <script type="module">
+      import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@0.82.0/build/stlite.js";
+
+      mount(
+        {
+          requirements: ["pandas", "plotly", "statsmodels"], // Pip packages to install in Pyodide
+          entrypoint: "main.py",             // Your separate Python file
+          files: {
+            "main.py": {
+              url: "./main.py",
+            },
+            "filtered_pollbase.csv": {
+              url: "./filtered_pollbase.csv",
+            },
+            "about.md": {
+              url: "./about.md",
+            },
+            "UKCharts.png": {
+              url: "./UKCharts.png",
+            },
+          },
+        },
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
