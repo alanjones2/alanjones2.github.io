@@ -28,7 +28,7 @@ Changes to the sidebar controls update every tab immediately.
 
 ![](camera.png)
 
-Mouse over the chart and, top right, you should see a camera icon (among others) loke the image above; click on that to download the current version of the chart.
+Mouse over the chart and, top right, you should see a camera icon (among others) like the image above; click on that to download the current version of the chart.
 
 
 
