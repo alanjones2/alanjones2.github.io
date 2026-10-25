@@ -19,8 +19,6 @@ The results are shown across four tabs:
 
 - **Snapshot** gives the standings of the parties for a specific date. The date is the latest in the filtered data, i.e. if you selcet one of the Time period' selections it will be the latest date. If you select a range of date it will be the latest of those dates.
 - **Trend** shows each party's vote share over time as a scatter plot, with  LOWESS trendline for each party.
-- **Slope + KPIs** shows the latest support for each party, the change in
-  percentage points over the selected period, and a slope chart comparing  start and end values.
 - **Raw Data** shows the underlying filtered polls as a table.
 - **About** shows this description.
 
