@@ -26,7 +26,11 @@ Changes to the sidebar controls update every tab immediately.
 
 ## Download charts or data
 
-Mouse over the chart and, top right, you should see a camera icon (among others); click on that to download the current version of the chart.
+![](camera.png)
+
+Mouse over the chart and, top right, you should see a camera icon (among others) loke the image above; click on that to download the current version of the chart.
+
+
 
 
 To download the data as a CSV file, mouse over the raw data view and click on the download icon on the top right of the data table.
