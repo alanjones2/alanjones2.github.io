@@ -1,9 +1,10 @@
 # About UK Voting Intentions
 
-This app is an interactive dashboard for exploring UK voting intentions over time. There are two versions:
+This app is an interactive dashboard for exploring UK voting intentions over time. There are three versions:
 
  - **Pollbase Version**: The data is derived from Dr Mark Pack's [Pollbase](https://www.markpack.org.uk/opinion-polls/) and contains polling results by date, polling company, publisher, and party vote share. Pollbase is updated every three months.
  - **Wikipedia Version**: As above but using data from Wikipedia. This contains pretty much the same data but for a shorter period, and it is updated more regularly.
+ - **Pollbase Plus** This is probably what you are seeing: As before but where Pollbase leaves off, Wikipedia begins. I.e. the gap between the end of the Pollbase data, and now, is filled in with Wikipedia data. See `Source` in the raw data tab.
 
 You can filter the data by date, Party, and Polling Company and download the resulting charts and data.
 

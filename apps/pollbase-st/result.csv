@@ -1,0 +1,625 @@
+Date,Polling Company,Publisher,Con,Lab,LD,Green,Reform,Restore Britain,Your Party,Source
+11/07/24,WeThink,,20.0,39.0,11.0,9.0,16.0,,,Pollbase
+25/07/24,WeThink,,22.0,36.0,11.0,7.0,17.0,,,Pollbase
+30/07/24,Stonehaven,Compass,21.0,32.0,11.0,9.0,16.0,,,Pollbase
+02/08/24,Stonehaven,,21.5,33.6,11.9,8.9,16.5,,,Pollbase
+05/08/24,BMG,The i,24.0,33.0,12.0,8.0,18.0,,,Pollbase
+07/08/24,WeThink,,20.0,33.0,11.0,8.0,21.0,,,Pollbase
+29/08/24,BMG,The i,26.0,30.0,11.0,7.0,19.0,,,Pollbase
+29/08/24,Survation,,25.0,39.0,12.0,5.0,13.0,,,Pollbase
+30/08/24,Survation,Lodestone,26.0,37.0,12.0,4.0,14.0,,,Pollbase
+10/09/24,More in Common,Politico,25.0,29.0,14.0,8.0,18.0,,,Pollbase
+18/09/24,Techne,Ind,21.0,33.0,13.0,7.0,18.0,,,Pollbase
+18/09/24,Verian,,26.0,31.0,13.0,7.0,17.0,,,Pollbase
+24/09/24,More in Common,,26.0,30.0,13.0,8.0,18.0,,,Pollbase
+25/09/24,Techne,Ind,22.0,32.0,13.0,7.0,18.0,,,Pollbase
+01/10/24,Survation,,26.0,35.0,12.0,4.0,15.0,,,Pollbase
+02/10/24,Techne,Ind,23.0,31.0,13.0,7.0,18.0,,,Pollbase
+02/10/24,BMG,The i,25.0,30.0,13.0,7.0,20.0,,,Pollbase
+02/10/24,Opinium,Ob,24.0,31.0,11.0,8.0,20.0,,,Pollbase
+04/10/24,Deltapoll,,25.0,29.0,14.0,8.0,18.0,,,Pollbase
+05/10/24,More in Common,Politico,28.0,29.0,11.0,7.0,19.0,,,Pollbase
+07/10/24,Stonehaven,,24.0,29.0,12.0,9.0,19.0,,,Pollbase
+09/10/24,Survation,GMB,26.0,32.0,13.0,5.0,18.0,,,Pollbase
+09/10/24,Techne,Ind,24.0,29.0,12.0,7.0,19.0,,,Pollbase
+09/10/24,More in Common,ST,27.0,27.0,13.0,7.0,21.0,,,Pollbase
+11/10/24,JL Partners,DT / Politico,25.0,29.0,14.0,7.0,19.0,,,Pollbase
+16/10/24,Techne,Ind,25.0,28.0,13.0,7.0,19.0,,,Pollbase
+16/10/24,Opinium,Ob,24.0,31.0,12.0,8.0,20.0,,,Pollbase
+23/10/24,Techne,Ind,24.0,29.0,13.0,7.0,19.0,,,Pollbase
+30/10/24,BMG,The i,29.0,28.0,13.0,8.0,17.0,,,Pollbase
+30/10/24,Techne,Ind,24.0,30.0,14.0,7.0,18.0,,,Pollbase
+30/10/24,Opinium,Ob,24.0,31.0,10.0,10.0,20.0,,,Pollbase
+30/10/24,More in Common,ST,26.0,28.0,14.0,8.0,18.0,,,Pollbase
+31/10/24,More in Common,,26.0,25.0,14.0,8.0,21.0,,,Pollbase
+06/11/24,Techne,Ind,25.0,29.0,13.0,7.0,18.0,,,Pollbase
+08/11/24,More in Common,,29.0,27.0,11.0,8.0,19.0,,,Pollbase
+11/11/24,Opinium,Ob,24.0,30.0,12.0,8.0,21.0,,,Pollbase
+13/11/24,Techne,Ind,27.0,28.0,13.0,7.0,17.0,,,Pollbase
+13/11/24,JL Partners,Sun / Politico,26.0,27.0,12.0,9.0,20.0,,,Pollbase
+14/11/24,Deltapoll,,27.0,29.0,12.0,8.0,18.0,,,Pollbase
+19/11/24,More in Common,,28.0,25.0,13.0,8.0,19.0,,,Pollbase
+20/11/24,Techne,Ind,27.0,29.0,12.0,7.0,17.0,,,Pollbase
+26/11/24,More in Common,,30.0,27.0,12.0,8.0,18.0,,,Pollbase
+26/11/24,BMG,The i,27.0,29.0,12.0,7.0,20.0,,,Pollbase
+27/11/24,Find Out Now,,27.0,25.0,12.0,9.0,22.0,,,Pollbase
+27/11/24,Techne,Ind,27.0,28.0,13.0,6.0,18.0,,,Pollbase
+27/11/24,Opinium,Ob,25.0,29.0,10.0,9.0,21.0,,,Pollbase
+29/11/24,More in Common,,28.0,26.0,13.0,7.0,21.0,,,Pollbase
+30/11/24,Focaldata,HNH,24.0,28.0,13.0,8.0,21.0,,,Pollbase
+04/12/24,Find Out Now,,26.0,23.0,11.0,9.0,24.0,,,Pollbase
+05/12/24,Techne,Ind,25.0,27.0,12.0,7.0,21.0,,,Pollbase
+06/12/24,Stonehaven,,24.0,28.0,13.0,8.0,21.0,,,Pollbase
+06/12/24,Stonehaven,The i,23.3,27.81,12.8,9.2,19.0,,,Pollbase
+06/12/24,More in Common,,26.0,26.0,13.0,8.0,19.0,,,Pollbase
+11/12/24,Find Out Now,,23.0,26.0,11.0,9.0,25.0,,,Pollbase
+11/12/24,Techne,Ind,25.0,27.0,11.0,7.0,22.0,,,Pollbase
+12/12/24,Survation,,25.0,30.0,11.0,7.0,20.0,,,Pollbase
+18/12/24,Techne,Ind,26.0,27.0,12.0,7.0,21.0,,,Pollbase
+18/12/24,Opinium,Ob,23.0,29.0,11.0,10.0,22.0,,,Pollbase
+19/12/24,Deltapoll,Mirror,25.0,29.0,12.0,8.0,21.0,,,Pollbase
+30/12/24,Deltapoll,MoS,23.0,30.0,12.0,9.0,22.0,,,Pollbase
+04/01/25,Freshwater,City AM,29.0,28.0,12.0,5.0,23.0,,,Pollbase
+06/01/25,More in Common,,26.0,26.0,12.0,7.0,22.0,,,Pollbase
+08/01/25,Find Out Now,,20.0,25.0,11.0,11.0,25.0,,,Pollbase
+08/01/25,Opinium,Ob,23.0,29.0,10.0,9.0,24.0,,,Pollbase
+10/01/25,More in Common,,25.0,24.0,12.0,8.0,24.0,,,Pollbase
+10/01/25,JL Partners,ST,25.0,26.0,13.0,9.0,22.0,,,Pollbase
+12/01/25,YouGov,Sky/TT,22.0,26.0,14.0,8.0,25.0,,,Pollbase
+15/01/25,Find Out Now,,25.0,24.0,12.0,10.0,25.0,,,Pollbase
+15/01/25,Techne,Ind,25.0,26.0,12.0,7.0,23.0,,,Pollbase
+16/01/25,Lord Ashcroft,MoS,25.0,28.0,11.0,9.0,20.0,,,Pollbase
+17/01/25,Deltapoll,IfG,25.0,29.0,11.0,8.0,22.0,,,Pollbase
+17/01/25,More in Common,,25.0,24.0,12.0,7.0,25.0,,,Pollbase
+19/01/25,YouGov,Sky/TT,22.0,26.0,14.0,9.0,24.0,,,Pollbase
+22/01/25,Find Out Now,,23.0,22.0,12.0,10.0,26.0,,,Pollbase
+22/01/25,Techne,Ind,24.0,25.0,13.0,7.0,24.0,,,Pollbase
+22/01/25,Whitestone,DE,20.0,25.0,12.0,13.0,24.0,,,Pollbase
+22/01/25,Opinium,Ob,21.0,28.0,11.0,8.0,27.0,,,Pollbase
+22/01/25,Find Out Now / Electoral Calculus,PLMR,23.0,23.0,11.0,8.0,24.0,,,Pollbase
+24/01/25,More in Common,,24.0,25.0,13.0,7.0,25.0,,,Pollbase
+26/01/25,YouGov,Sky/TT,22.0,27.0,14.0,9.0,23.0,,,Pollbase
+28/01/25,Survation,,22.0,27.0,13.0,8.0,24.0,,,Pollbase
+29/01/25,Find Out Now,,21.0,23.0,11.0,10.0,27.0,,,Pollbase
+28/01/25,BMG,The i,25.0,25.0,14.0,8.0,24.0,,,Pollbase
+29/01/25,Techne,Ind,23.0,26.0,12.0,7.0,24.0,,,Pollbase
+31/01/25,Freshwater,City AM,28.0,29.0,9.0,7.0,22.0,,,Pollbase
+31/01/25,More in Common,,26.0,24.0,13.0,6.0,24.0,,,Pollbase
+02/02/25,YouGov,Sky/TT,21.0,24.0,14.0,9.0,25.0,,,Pollbase
+05/02/25,Find Out Now,,18.0,25.0,13.0,10.0,29.0,,,Pollbase
+05/02/25,Techne,Ind,23.0,25.0,13.0,7.0,25.0,,,Pollbase
+05/02/25,Opinium,Ob,22.0,27.0,11.0,8.0,26.0,,,Pollbase
+07/02/25,More in Common,,23.0,25.0,12.0,8.0,25.0,,,Pollbase
+07/02/25,Stack Data Strategy,,22.0,26.0,13.0,8.0,26.0,,,Pollbase
+09/02/25,YouGov,Sky/TT,21.0,25.0,14.0,9.0,26.0,,,Pollbase
+12/02/25,Find Out Now,,21.0,23.0,12.0,9.0,29.0,,,Pollbase
+12/02/25,Techne,Ind,22.0,26.0,12.0,8.0,25.0,,,Pollbase
+13/02/25,Lord Ashcroft,MoS,23.0,28.0,9.0,11.0,23.0,,,Pollbase
+14/02/25,More in Common,,23.0,25.0,12.0,7.0,26.0,,,Pollbase
+16/02/25,YouGov,Sky/TT,21.0,25.0,14.0,9.0,27.0,,,Pollbase
+19/02/25,Find Out Now,,20.0,24.0,12.0,10.0,28.0,,,Pollbase
+19/02/25,Techne,Ind,22.0,25.0,12.0,7.0,26.0,,,Pollbase
+19/02/25,Opinium,Ob,21.0,28.0,12.0,8.0,26.0,,,Pollbase
+21/02/25,More in Common,,25.0,23.0,16.0,8.0,24.0,,,Pollbase
+23/02/25,YouGov,Sky/TT,22.0,24.0,16.0,8.0,25.0,,,Pollbase
+25/02/25,BMG,The i,22.0,26.0,12.0,8.0,27.0,,,Pollbase
+26/02/25,Find Out Now,,21.0,23.0,13.0,10.0,28.0,,,Pollbase
+26/02/25,Techne,Ind,22.0,26.0,13.0,8.0,25.0,,,Pollbase
+26/02/25,Stonehaven,,23.0,27.4,12.7,9.3,19.1,,,Pollbase
+26/02/25,Focaldata,,22.0,24.0,14.0,8.0,21.0,,,Pollbase
+28/02/25,More in Common,,24.0,26.0,13.0,7.0,24.0,,,Pollbase
+01/03/25,Freshwater,City AM,23.0,24.0,15.0,7.0,27.0,,,Pollbase
+02/03/25,YouGov,Sky/TT,21.0,26.0,14.0,9.0,25.0,,,Pollbase
+05/03/25,Find Out Now,,21.0,25.0,12.0,10.0,26.0,,,Pollbase
+05/03/25,Techne,Ind,21.0,28.0,13.0,7.0,25.0,,,Pollbase
+05/03/25,Opinium,Ob,20.0,28.0,12.0,8.0,27.0,,,Pollbase
+06/03/25,JL Partners,Sun,24.0,26.0,14.0,7.0,23.0,,,Pollbase
+07/03/25,More in Common,,23.0,25.0,14.0,8.0,25.0,,,Pollbase
+09/03/25,YouGov,Sky/TT,22.0,24.0,15.0,9.0,23.0,,,Pollbase
+12/03/25,Find Out Now,,21.0,24.0,11.0,10.0,27.0,,,Pollbase
+12/03/25,Techne,Ind,22.0,27.0,14.0,7.0,24.0,,,Pollbase
+13/03/25,Lord Ashcroft,MoS,24.0,30.0,10.0,11.0,19.0,,,Pollbase
+14/03/25,Deltapoll,,25.0,25.0,11.0,9.0,23.0,,,Pollbase
+14/03/25,More in Common,,24.0,25.0,12.0,7.0,25.0,,,Pollbase
+14/03/25,More in Common,ST,24.0,24.0,13.0,8.0,24.0,,,Pollbase
+16/03/25,YouGov,Sky/TT,22.0,26.0,14.0,9.0,24.0,,,Pollbase
+19/03/25,Find Out Now,,21.0,22.0,14.0,11.0,27.0,,,Pollbase
+19/03/25,Techne,Ind,23.0,27.0,14.0,7.0,23.0,,,Pollbase
+19/03/25,Opinium,Ob,21.0,26.0,13.0,8.0,26.0,,,Pollbase
+21/03/25,Find Out Now / Electoral Calculus,PLMR,23.0,23.0,12.0,9.0,25.0,,,Pollbase
+22/03/25,More in Common,,25.0,24.0,12.0,10.0,24.0,,,Pollbase
+23/03/25,YouGov,Sky/TT,22.0,23.0,16.0,10.0,22.0,,,Pollbase
+26/03/25,Find Out Now,,22.0,23.0,12.0,11.0,26.0,,,Pollbase
+26/03/25,Techne,Ind,23.0,25.0,14.0,8.0,24.0,,,Pollbase
+26/03/25,BMG,The i,24.0,26.0,14.0,8.0,23.0,,,Pollbase
+26/03/25,Stonehaven,,22.3,23.8,13.6,8.5,23.1,,,Pollbase
+26/03/25,Opinium,Ob,22.0,26.0,12.0,8.0,26.0,,,Pollbase
+28/03/25,More in Common,,26.0,21.0,13.0,7.0,25.0,,,Pollbase
+30/03/25,YouGov,Sky/TT,21.0,24.0,14.0,11.0,23.0,,,Pollbase
+02/04/25,Find Out Now,,20.0,22.0,13.0,11.0,28.0,,,Pollbase
+02/04/25,Techne,Ind,23.0,24.0,13.0,8.0,24.0,,,Pollbase
+04/04/25,Freshwater,City AM,27.0,22.0,14.0,5.0,28.0,,,Pollbase
+04/04/25,More in Common,,23.0,24.0,17.0,7.0,24.0,,,Pollbase
+06/04/25,YouGov,Sky/TT,22.0,24.0,17.0,9.0,23.0,,,Pollbase
+08/04/25,Verian,,19.0,25.0,16.0,9.0,24.0,,,Pollbase
+09/04/25,Find Out Now,,21.0,22.0,14.0,11.0,26.0,,,Pollbase
+09/04/25,Techne,Ind,22.0,24.0,15.0,8.0,24.0,,,Pollbase
+09/04/25,Opinium,Ob,22.0,27.0,12.0,7.0,26.0,,,Pollbase
+10/04/25,Lord Ashcroft,MoS,24.0,27.0,11.0,11.0,21.0,,,Pollbase
+11/04/25,Focaldata,,24.0,24.0,13.0,9.0,23.0,,,Pollbase
+11/04/25,More in Common,,23.0,24.0,14.0,8.0,24.0,,,Pollbase
+13/04/25,YouGov,Sky/TT,21.0,24.0,14.0,11.0,23.0,,,Pollbase
+16/04/25,Find Out Now,,20.0,22.0,14.0,10.0,28.0,,,Pollbase
+17/04/25,More in Common,,23.0,23.0,14.0,8.0,25.0,,,Pollbase
+21/04/25,YouGov,Sky/TT,20.0,23.0,16.0,10.0,25.0,,,Pollbase
+23/04/25,Find Out Now,,20.0,20.0,14.0,13.0,28.0,,,Pollbase
+23/04/25,Techne,Ind,21.0,25.0,14.0,8.0,25.0,,,Pollbase
+23/04/25,Opinium,Ob,21.0,26.0,11.0,9.0,26.0,,,Pollbase
+25/04/25,More in Common,,23.0,24.0,15.0,8.0,24.0,,,Pollbase
+27/04/25,YouGov,Sky/TT,20.0,23.0,15.0,9.0,26.0,,,Pollbase
+30/04/25,Find Out Now,,19.0,21.0,13.0,11.0,29.0,,,Pollbase
+30/04/25,Survation,,22.0,26.0,12.0,7.0,26.0,,,Pollbase
+30/04/25,Opinium,Ob,19.0,26.0,13.0,9.0,27.0,,,Pollbase
+02/05/25,Survation,,18.0,25.0,13.0,7.0,30.0,,,Pollbase
+03/05/25,More in Common,,21.0,23.0,15.0,8.0,27.0,,,Pollbase
+05/05/25,YouGov,Sky/TT,17.0,22.0,16.0,10.0,29.0,,,Pollbase
+06/05/25,BMG,The i,19.0,22.0,13.0,9.0,32.0,,,Pollbase
+07/05/25,Find Out Now,,16.0,20.0,15.0,11.0,33.0,,,Pollbase
+07/05/25,Techne,Ind,19.0,23.0,14.0,8.0,28.0,,,Pollbase
+09/05/25,Freshwater,City AM,19.0,22.0,15.0,8.0,32.0,,,Pollbase
+10/05/25,More in Common,,20.0,25.0,14.0,8.0,28.0,,,Pollbase
+11/05/25,YouGov,Sky/TT,18.0,23.0,16.0,9.0,28.0,,,Pollbase
+14/05/25,Find Out Now,,16.0,21.0,14.0,11.0,33.0,,,Pollbase
+14/05/25,Techne,Ind,18.0,22.0,15.0,9.0,29.0,,,Pollbase
+14/05/25,Opinium,Ob,18.0,25.0,13.0,10.0,29.0,,,Pollbase
+16/05/25,More in Common,,21.0,22.0,14.0,8.0,30.0,,,Pollbase
+18/05/25,YouGov,Sky/TT,16.0,22.0,17.0,10.0,29.0,,,Pollbase
+21/05/25,Find Out Now,,16.0,21.0,14.0,11.0,32.0,,,Pollbase
+21/05/25,Techne,Ind,17.0,22.0,16.0,9.0,30.0,,,Pollbase
+23/05/25,More in Common,,19.0,22.0,14.0,8.0,31.0,,,Pollbase
+26/05/25,YouGov,Sky/TT,19.0,21.0,15.0,11.0,29.0,,,Pollbase
+28/05/25,Find Out Now,,16.0,22.0,13.0,11.0,32.0,,,Pollbase
+28/05/25,Techne,Ind,16.0,22.0,16.0,9.0,31.0,,,Pollbase
+28/05/25,BMG,The i,18.0,24.0,13.0,9.0,31.0,,,Pollbase
+28/05/25,Opinium,Ob,17.0,25.0,11.0,10.0,31.0,,,Pollbase
+29/05/25,Lord Ashcroft,MoS,19.0,22.0,13.0,13.0,27.0,,,Pollbase
+29/05/25,YouGov,,18.0,23.0,15.0,11.0,26.0,,,Pollbase
+30/06/25,More in Common,,21.0,23.0,14.0,8.0,28.0,,,Pollbase
+30/06/25,Survation,,20.0,24.0,13.0,8.0,27.0,,,Pollbase
+30/05/25,Ipsos,DT,15.0,25.0,11.0,9.0,34.0,,,Pollbase
+01/06/25,YouGov,Sky/TT,18.0,22.0,17.0,9.0,28.0,,,Pollbase
+04/06/25,Find Out Now,,16.0,22.0,15.0,11.0,31.0,,,Pollbase
+04/06/25,Techne,Ind,17.0,23.0,15.0,8.0,31.0,,,Pollbase
+06/06/25,Freshwater,City AM,21.0,21.0,14.0,8.0,32.0,,,Pollbase
+06/06/25,More in Common,,20.0,24.0,14.0,7.0,28.0,,,Pollbase
+08/06/25,YouGov,Sky/TT,17.0,23.0,15.0,10.0,29.0,,,Pollbase
+10/06/25,Survation,C4,21.0,25.0,12.0,7.0,27.0,,,Pollbase
+10/06/25,Find Out Now / Electoral Calculus,PLMR,19.0,22.0,13.0,9.0,31.0,,,Pollbase
+11/06/25,Find Out Now,,16.0,24.0,13.0,11.0,30.0,,,Pollbase
+11/06/25,Opinium,Ob,18.0,24.0,12.0,9.0,30.0,,,Pollbase
+13/06/25,More in Common,,22.0,21.0,13.0,9.0,29.0,,,Pollbase
+13/06/25,More in Common,ST,21.0,22.0,15.0,8.0,28.0,,,Pollbase
+15/06/25,YouGov,Sky/TT,17.0,24.0,15.0,10.0,27.0,,,Pollbase
+18/06/25,Find Out Now,,16.0,23.0,12.0,11.0,31.0,,,Pollbase
+20/06/25,More in Common,,20.0,23.0,14.0,9.0,27.0,,,Pollbase
+22/06/25,YouGov,Sky/TT,17.0,23.0,16.0,10.0,27.0,,,Pollbase
+22/06/25,Stonehaven,,18.7,21.6,13.7,8.4,28.0,,,Pollbase
+24/06/25,BMG,The i,19.0,27.0,12.0,7.0,30.0,,,Pollbase
+25/06/25,Find Out Now,,18.0,22.0,13.0,11.0,30.0,,,Pollbase
+25/06/25,Techne,Ind,18.0,23.0,16.0,8.0,28.0,,,Pollbase
+25/06/25,Opinium,Ob,17.0,25.0,12.0,9.0,30.0,,,Pollbase
+25/06/25,Survation,,19.0,26.0,12.0,8.0,27.0,,,Pollbase
+26/06/25,Lord Ashcroft,MoS,21.0,22.0,11.0,13.0,27.0,,,Pollbase
+27/06/25,More in Common,,19.0,24.0,12.0,9.0,29.0,,,Pollbase
+29/06/25,YouGov,Sky/TT,17.0,24.0,16.0,10.0,26.0,,,Pollbase
+02/07/25,Find Out Now,,16.0,22.0,15.0,11.0,30.0,,,Pollbase
+04/07/25,Freshwater,City AM,19.0,23.0,16.0,6.0,31.0,,,Pollbase
+04/07/25,More in Common,,19.0,24.0,14.0,7.0,29.0,,,Pollbase
+06/07/25,YouGov,Sky/TT,16.0,24.0,15.0,11.0,26.0,,,Pollbase
+09/07/25,Find Out Now,,19.0,22.0,13.0,9.0,31.0,,,Pollbase
+09/07/25,Techne,Ind,18.0,22.0,16.0,9.0,29.0,,,Pollbase
+09/07/25,Opinium,Ob,18.0,24.0,13.0,9.0,29.0,,,Pollbase
+11/07/25,More in Common,,20.0,24.0,13.0,9.0,27.0,,,Pollbase
+13/07/25,YouGov,Sky/TT,17.0,22.0,16.0,12.0,28.0,,,Pollbase
+14/07/25,Focaldata,,19.4,23.0,14.0,8.9,26.7,,,Pollbase
+16/07/25,Find Out Now,,17.0,20.0,13.0,12.0,30.0,,,Pollbase
+16/07/25,Stack Data Strategy,DT,16.0,25.0,12.0,9.0,31.0,,,Pollbase
+17/07/25,JL Partners,,17.0,23.0,14.0,9.0,29.0,,,Pollbase
+18/07/25,More in Common,,21.0,22.0,15.0,8.0,29.0,,,Pollbase
+20/07/25,YouGov,Sky/TT,17.0,23.0,15.0,11.0,27.0,,,Pollbase
+23/07/25,Find Out Now,,16.0,20.0,14.0,10.0,34.0,,,Pollbase
+23/07/25,Opinium,Ob,17.0,25.0,13.0,8.0,32.0,,,Pollbase
+26/07/25,More in Common,,20.0,23.0,13.0,7.0,29.0,,,Pollbase
+27/07/25,YouGov,Sky/TT,17.0,22.0,14.0,11.0,29.0,,,Pollbase
+29/07/25,BMG,The i,18.0,23.0,13.0,8.0,32.0,,,Pollbase
+30/07/25,Find Out Now,,17.0,20.0,13.0,10.0,30.0,,,Pollbase
+01/08/25,Freshwater,City AM,18.0,22.0,14.0,6.0,33.0,,,Pollbase
+01/08/25,More in Common,,18.0,22.0,14.0,7.0,31.0,,,Pollbase
+03/05/25,YouGov,Sky/TT,17.0,21.0,15.0,11.0,27.0,,,Pollbase
+06/08/25,Find Out Now,,16.0,20.0,12.0,9.0,32.0,,,Pollbase
+06/08/25,Opinium,Ob,17.0,22.0,13.0,9.0,31.0,,,Pollbase
+08/08/25,More in Common,,22.0,22.0,13.0,6.0,30.0,,,Pollbase
+08/08/25,More in Common,ST,19.0,21.0,15.0,8.0,31.0,,,Pollbase
+10/08/25,YouGov,Sky/TT,17.0,21.0,16.0,10.0,28.0,,,Pollbase
+13/08/25,Find Out Now,,19.0,19.0,12.0,10.0,31.0,,,Pollbase
+14/08/25,Lord Ashcroft,MoS,20.0,23.0,11.0,11.0,27.0,,,Pollbase
+15/08/25,More in Common,,20.0,21.0,13.0,8.0,30.0,,,Pollbase
+15/08/25,Focaldata,,18.0,24.0,14.0,8.0,29.0,,,Pollbase
+17/08/25,YouGov,Sky/TT,18.0,21.0,15.0,10.0,28.0,,,Pollbase
+19/08/25,JL Partners,Sun,18.0,22.0,12.0,7.0,32.0,,,Pollbase
+20/08/25,Find Out Now,,17.0,18.0,12.0,10.0,33.0,,,Pollbase
+20/08/25,Opinium,Ob,17.0,23.0,14.0,9.0,29.0,,,Pollbase
+21/08/25,Survation,38 Degrees,19.3,25.3,12.4,7.4,29.2,,,Pollbase
+22/08/25,More in Common,,18.0,22.0,14.0,7.0,30.0,,,Pollbase
+25/08/25,YouGov,Sky/TT,17.0,20.0,16.0,11.0,28.0,,,Pollbase
+26/08/25,BMG,The i,17.0,20.0,13.0,7.0,35.0,,,Pollbase
+27/08/25,Find Out Now,,15.0,18.0,13.0,10.0,34.0,,,Pollbase
+28/08/25,Survation,,19.0,24.0,11.0,8.0,30.0,,,Pollbase
+29/08/25,Freshwater,City AM,17.0,20.0,15.0,7.0,33.0,,,Pollbase
+29/08/25,More in Common,,18.0,21.0,13.0,8.0,31.0,,,Pollbase
+31/08/25,YouGov,Sky/TT,17.0,20.0,15.0,10.0,29.0,,,Pollbase
+31/08/25,YouGov,,17.0,21.0,15.0,11.0,27.0,,,Pollbase
+01/09/25,Techne,Ind,18.0,21.0,14.0,10.0,31.0,,,Pollbase
+01/09/25,Find Out Now / Electoral Calculus,,16.0,20.0,12.0,7.0,34.0,,6.0,Pollbase
+03/09/25,Find Out Now,,17.0,19.0,13.0,11.0,32.0,,,Pollbase
+03/09/25,Opinium,Ob,18.0,23.0,12.0,10.0,30.0,,,Pollbase
+05/09/25,More in Common,,18.0,21.0,13.0,8.0,32.0,,,Pollbase
+07/09/25,YouGov,Sky/TT,17.0,22.0,15.0,12.0,27.0,,,Pollbase
+10/09/25,Find Out Now,,15.0,19.0,12.0,12.0,34.0,,,Pollbase
+10/09/25,Find Out Now / Electoral Calculus,PLMR,15.0,21.0,10.0,7.0,36.0,,4.0,Pollbase
+11/09/25,Lord Ashcroft,MoS,20.0,22.0,10.0,13.0,27.0,,,Pollbase
+11/09/25,Ipsos,,14.0,22.0,12.0,12.0,34.0,,,Pollbase
+12/09/25,More in Common,,18.0,22.0,14.0,8.0,31.0,,,Pollbase
+14/09/25,YouGov,Sky/TT,17.0,20.0,15.0,10.0,29.0,,,Pollbase
+17/09/25,Find Out Now,,16.0,16.0,13.0,12.0,34.0,,,Pollbase
+17/09/25,Techne,Ind,19.0,20.0,15.0,9.0,30.0,,,Pollbase
+17/09/25,Opinium,Ob,17.0,22.0,12.0,10.0,31.0,,,Pollbase
+19/09/25,More in Common,,20.0,25.0,13.0,8.0,28.0,,,Pollbase
+19/09/25,Focaldata,,20.0,21.0,14.0,10.0,29.0,,,Pollbase
+14/09/25,YouGov,Sky/TT,16.0,21.0,14.0,12.0,29.0,,,Pollbase
+24/09/25,Find Out Now,,14.0,17.0,16.0,12.0,33.0,,,Pollbase
+24/09/25,Survation,DM,17.0,22.0,11.0,8.0,34.0,,,Pollbase
+24/09/25,Opinium,Ob,17.0,22.0,14.0,7.0,32.0,,,Pollbase
+26/09/25,More in Common,,20.0,20.0,14.0,8.0,30.0,,,Pollbase
+26/09/25,JL Partners,,19.0,21.0,13.0,9.0,31.0,,,Pollbase
+28/09/25,YouGov,Sky/TT,16.0,22.0,15.0,11.0,29.0,,,Pollbase
+01/10/25,Find Out Now,,14.0,19.0,12.0,11.0,35.0,,,Pollbase
+01/10/25,Opinium,Ob,16.0,21.0,12.0,10.0,34.0,,,Pollbase
+03/10/25,Freshwater,City AM,18.0,20.0,14.0,8.0,35.0,,,Pollbase
+03/10/25,More in Common,,19.0,20.0,14.0,8.0,33.0,,,Pollbase
+05/10/25,YouGov,Sky/TT,17.0,20.0,17.0,12.0,27.0,,,Pollbase
+08/10/25,Find Out Now,,17.0,17.0,12.0,15.0,32.0,,,Pollbase
+08/10/25,Opinium,Ob,18.0,22.0,11.0,10.0,32.0,,,Pollbase
+08/10/25,Focaldata,,19.0,21.0,13.0,9.0,30.0,,,Pollbase
+10/10/25,More in Common,,20.0,22.0,15.0,9.0,30.0,,,Pollbase
+12/10/25,YouGov,Sky/TT,17.0,20.0,16.0,13.0,27.0,,,Pollbase
+15/10/25,Find Out Now,,17.0,15.0,12.0,15.0,32.0,,,Pollbase
+16/10/25,Lord Ashcroft,MoS,19.0,19.0,11.0,17.0,29.0,,,Pollbase
+17/03/25,More in Common,,19.0,22.0,13.0,10.0,31.0,,,Pollbase
+19/10/25,YouGov,Sky/TT,17.0,20.0,15.0,15.0,26.0,,,Pollbase
+22/10/25,Techne,Ind,18.0,19.0,16.0,12.0,29.0,,,Pollbase
+22/10/25,Find Out Now,,17.0,16.0,12.0,15.0,32.0,,,Pollbase
+22/10/25,Opinium,Ob,18.0,20.0,12.0,12.0,30.0,,,Pollbase
+24/10/25,More in Common,,18.0,21.0,12.0,11.0,33.0,,,Pollbase
+26/10/25,YouGov,Sky/TT,17.0,17.0,15.0,16.0,27.0,,,Pollbase
+26/10/25,Stonehaven,,18.1,19.1,14.0,9.9,28.5,,,Pollbase
+29/10/25,Find Out Now,,16.0,16.0,12.0,17.0,32.0,,,Pollbase
+30/10/25,Ipsos,,16.0,18.0,12.0,15.0,33.0,,,Pollbase
+31/10/25,JL Partners,The Sun,17.0,23.0,12.0,10.0,30.0,,,Pollbase
+31/10/25,More in Common,,19.0,18.0,13.0,12.0,31.0,,,Pollbase
+02/11/25,YouGov,Sky/TT,16.0,20.0,15.0,16.0,27.0,,,Pollbase
+05/11/25,Find Out Now,,16.0,15.0,11.0,18.0,33.0,,,Pollbase
+05/11/25,Opinium,Ob,17.0,20.0,12.0,11.0,33.0,,,Pollbase
+07/11/25,Freshwater,City AM,19.0,17.0,13.0,13.0,32.0,,,Pollbase
+07/11/25,More in Common,,19.0,20.0,14.0,12.0,31.0,,,Pollbase
+09/11/25,YouGov,Sky/TT,18.0,19.0,14.0,15.0,26.0,,,Pollbase
+12/11/25,Find Out Now,,16.0,15.0,11.0,17.0,33.0,,,Pollbase
+13/11/25,Lord Ashcroft,MoS,20.0,18.0,11.0,18.0,26.0,,,Pollbase
+14/11/25,More in Common,,20.0,20.0,14.0,11.0,30.0,,,Pollbase
+16/11/25,YouGov,Sky/TT,17.0,19.0,13.0,17.0,27.0,,,Pollbase
+16/11/25,Survation,,18.0,22.0,12.0,11.0,29.0,,,Pollbase
+18/11/25,Focaldata,,20.0,20.0,13.0,10.0,28.0,,,Pollbase
+19/11/25,Find Out Now,,17.0,16.0,11.0,18.0,32.0,,,Pollbase
+19/11/25,Opinium,Ob,17.0,19.0,13.0,12.0,32.0,,,Pollbase
+22/11/25,More in Common,,19.0,21.0,14.0,10.0,30.0,,,Pollbase
+23/11/25,YouGov,Sky/TT,18.0,19.0,15.0,16.0,25.0,,,Pollbase
+26/11/25,Find Out Now,,18.0,15.0,12.0,17.0,31.0,,,Pollbase
+26/11/25,BMG,The i,20.0,22.0,12.0,12.0,30.0,,,Pollbase
+26/11/25,Opinium,Ob,17.0,21.0,11.0,13.0,31.0,,,Pollbase
+26/11/25,Focaldata,,18.0,20.0,13.0,12.0,29.0,,,Pollbase
+27/11/25,More in Common,,21.0,20.0,11.0,12.0,31.0,,,Pollbase
+28/11/25,Freshwater,City AM,20.0,19.0,15.0,12.0,31.0,,,Pollbase
+28/11/25,More in Common,,21.0,21.0,13.0,11.0,30.0,,,Pollbase
+29/11/25,JL Partners,The Sun,20.0,22.0,11.0,9.0,29.0,,,Pollbase
+30/11/25,YouGov,Sky/TT,19.0,19.0,14.0,16.0,26.0,,,Pollbase
+01/12/25,Find Out Now / Electoral Calculus,PLMR,17.0,16.0,11.0,17.0,32.0,,2.0,Pollbase
+03/12/25,Find Out Now,,20.0,14.0,11.0,18.0,31.0,,,Pollbase
+04/12/25,More in Common,,21.0,20.0,14.0,10.0,30.0,,,Pollbase
+06/12/25,YouGov,Sky/TT,18.0,19.0,14.0,15.0,27.0,,,Pollbase
+10/12/25,Find Out Now,,18.0,14.0,12.0,18.0,30.0,,,Pollbase
+10/12/25,Opinium,Ob,18.0,20.0,13.0,12.0,31.0,,,Pollbase
+11/12/25,Lord Ashcroft,MoS,22.0,18.0,10.0,19.0,25.0,,,Pollbase
+12/12/25,Verian,,21.0,18.0,15.0,13.0,27.0,,,Pollbase
+12/12/25,More in Common,,20.0,21.0,12.0,11.0,29.0,,,Pollbase
+13/12/25,YouGov,Sky/TT,17.0,18.0,14.0,17.0,28.0,,,Pollbase
+14/12/25,YouGov,,19.0,18.0,14.0,15.0,26.0,,,Pollbase
+16/12/25,Deltapoll,Mirror,19.0,20.0,14.0,10.0,30.0,,,Pollbase
+17/12/25,Find Out Now,,18.0,14.0,11.0,17.0,33.0,,,Pollbase
+19/12/25,More in Common,,22.0,21.0,13.0,9.0,28.0,,,Pollbase
+21/12/25,YouGov,Sky/TT,19.0,20.0,15.0,15.0,25.0,,,Pollbase
+24/12/25,Find Out Now,,18.0,14.0,12.0,17.0,30.0,,,Pollbase
+31/12/25,Find Out Now,,17.0,15.0,12.0,17.0,31.0,,,Pollbase
+02/01/26,More in Common,,23.0,19.0,12.0,10.0,31.0,,,Pollbase
+04/01/26,YouGov,Sky/TT,19.0,17.0,16.0,15.0,26.0,,,Pollbase
+07/01/26,Find Out Now,,18.0,15.0,12.0,17.0,32.0,,,Pollbase
+07/01/26,Stonehaven,,18.0,18.6,12.8,11.7,27.3,,,Pollbase
+07/01/26,Opinium,Ob,18.0,20.0,12.0,13.0,31.0,,,Pollbase
+09/01/26,Freshwater,City AM,19.0,19.0,11.0,12.0,33.0,,,Pollbase
+10/01/26,More in Common,,21.0,19.0,12.0,12.0,31.0,,,Pollbase
+10/01/26,Survation,,19.0,21.0,11.0,11.0,29.0,,,Pollbase
+11/01/26,YouGov,Sky/TT,20.0,19.0,16.0,14.0,24.0,,,Pollbase
+14/01/26,Find Out Now,,19.0,15.0,12.0,18.0,28.0,,,Pollbase
+14/01/26,Techne,,20.0,19.0,15.0,13.0,28.0,,,Pollbase
+15/01/26,Lord Ashcroft,MoS,20.0,19.0,11.0,17.0,25.0,,,Pollbase
+16/01/26,More in Common,,21.0,20.0,13.0,11.0,31.0,,,Pollbase
+16/01/26,Focaldata,,20.0,21.0,14.0,10.0,26.0,,,Pollbase
+18/01/26,YouGov,Sky/TT,18.0,19.0,14.0,17.0,24.0,,,Pollbase
+21/01/26,Find Out Now,,18.0,14.0,11.0,17.0,32.0,,,Pollbase
+21/01/26,Opinium,Ob,17.0,22.0,13.0,11.0,31.0,,,Pollbase
+22/01/26,Ipsos,,19.0,22.0,12.0,12.0,30.0,,,Pollbase
+23/01/26,More in Common,,20.0,22.0,13.0,10.0,29.0,,,Pollbase
+25/01/26,YouGov,Sky/TT,17.0,21.0,14.0,16.0,25.0,,,Pollbase
+28/01/26,Find Out Now,,17.0,17.0,11.0,19.0,29.0,,,Pollbase
+28/01/26,Survation,,20.0,18.0,12.0,12.0,31.0,,,Pollbase
+28/01/26,BMG,The i,17.0,20.0,11.0,13.0,32.0,,,Pollbase
+30/01/26,Freshwater,City AM,22.0,17.0,14.0,14.0,30.0,,,Pollbase
+31/01/26,More in Common,,20.0,21.0,14.0,10.0,30.0,,,Pollbase
+01/02/26,YouGov,Sky/TT,18.0,19.0,14.0,17.0,26.0,,,Pollbase
+01/02/26,Stonehaven,,17.9,18.4,12.7,11.7,27.7,,,Pollbase
+04/02/26,Find Out Now,,18.0,16.0,11.0,18.0,31.0,,,Pollbase
+04/02/26,Opinium,Ob,16.0,23.0,10.0,13.0,31.0,,,Pollbase
+04/02/26,JL Partners,The Sun,19.0,23.0,12.0,9.0,31.0,,,Pollbase
+04/02/26,Trajectory,,19.0,23.0,10.0,9.0,31.0,,0.0,Pollbase
+06/02/26,More in Common,,21.0,23.0,12.0,10.0,30.0,,,Pollbase
+08/02/26,YouGov,Sky/TT,18.0,19.0,14.0,16.0,27.0,,,Pollbase
+11/02/26,Find Out Now,,19.0,16.0,11.0,18.0,29.0,,,Pollbase
+11/02/26,Techne,,19.0,17.0,14.0,15.0,30.0,,,Pollbase
+13/02/26,GGF,,20.0,21.0,12.0,12.0,28.0,,,Pollbase
+13/02/26,More in Common,,21.0,22.0,11.0,12.0,28.0,,,Pollbase
+15/02/26,YouGov,Sky/TT,18.0,19.0,13.0,17.0,24.0,,,Pollbase
+18/02/26,Find Out Now,,16.0,16.0,10.0,18.0,28.0,,,Pollbase
+19/02/26,Lord Ashcroft,MoS,20.0,17.0,11.0,20.0,23.0,,,Pollbase
+20/02/26,Find Out Now,Restore Britain,16.0,16.0,11.0,18.0,25.0,7.0,1.0,Pollbase
+20/02/26,More in Common,,20.0,22.0,14.0,11.0,28.0,,,Pollbase
+22/01/26,YouGov,Sky/TT,18.0,18.0,14.0,17.0,24.0,,,Pollbase
+25/02/26,Find Out Now,,18.0,15.0,12.0,18.0,26.0,,,Pollbase
+25/02/26,Opinium,Ob,18.0,18.0,12.0,13.0,30.0,,,Pollbase
+27/02/26,Freshwater,City AM,18.0,18.0,13.0,15.0,30.0,,,Pollbase
+27/02/26,Convergent,,17.0,20.0,12.0,14.0,25.0,,,Pollbase
+27/02/26,More in Common,,19.0,18.0,14.0,14.0,29.0,,,Pollbase
+01/03/26,YouGov,Sky/TT,16.0,16.0,14.0,21.0,23.0,,,Pollbase
+01/03/26,More in Common,ST,21.0,20.0,13.0,12.0,28.0,,,Pollbase
+02/03/26,JL Partners,,20.0,20.0,12.0,14.0,27.0,,,Pollbase
+03/03/26,Find Out Now,Restore Britain,17.0,16.0,10.0,20.0,24.0,7.0,1.0,Pollbase
+03/03/26,Trajectory,,19.0,27.0,10.0,12.0,24.0,,0.0,Pollbase
+04/03/26,BMG,The i,18.0,20.0,12.0,14.0,27.0,,,Pollbase
+04/03/26,Find Out Now,,17.0,15.0,10.0,21.0,27.0,,,Pollbase
+04/03/26,Opinium,Ob,16.0,21.0,10.0,14.0,29.0,,,Pollbase
+05/03/26,Survation,,18.0,21.0,10.0,12.0,29.0,,,Pollbase
+05/03/26,Convergent,,19.0,19.0,13.0,15.0,24.0,,,Pollbase
+05/03/26,Ipsos,,17.0,21.0,9.0,17.0,28.0,,,Pollbase
+06/03/26,More in Common,,19.0,22.0,13.0,11.0,30.0,,,Pollbase
+06/03/26,Focaldata,,18.0,20.0,14.0,13.0,27.0,2.0,0.0,Pollbase
+09/03/26,YouGov,Sky/TT,19.0,17.0,14.0,19.0,23.0,,,Pollbase
+10/03/26,Techne,,18.0,17.0,14.0,17.0,27.0,,,Pollbase
+11/03/26,Find Out Now,,17.0,15.0,11.0,21.0,26.0,,,Pollbase
+13/03/26,More in Common,,21.0,20.0,12.0,13.0,28.0,,,Pollbase
+15/03/26,YouGov,Sky/TT,17.0,17.0,14.0,19.0,25.0,,,Pollbase
+18/03/26,Find Out Now,,17.0,16.0,11.0,19.0,25.0,,,Pollbase
+18/03/26,Opinium,Ob,17.0,21.0,12.0,15.0,27.0,,,Pollbase
+20/03/26,More in Common,,20.0,19.0,14.0,12.0,27.0,,,Pollbase
+20/03/26,Verian,,18.0,15.0,14.0,20.0,25.0,,,Pollbase
+22/03/26,YouGov,Sky/TT,17.0,19.0,13.0,18.0,23.0,,,Pollbase
+25/03/26,Find Out Now,Restore Britain,16.0,16.0,10.0,19.0,25.0,8.0,1.0,Pollbase
+25/03/26,BMG,The i,18.0,19.0,12.0,16.0,28.0,,,Pollbase
+26/03/26,Find Out Now,,18.0,16.0,12.0,20.0,24.0,,,Pollbase
+26/03/26,Lord Ashcroft,MoS,21.0,17.0,9.0,21.0,21.0,,,Pollbase
+26/03/26,Stonehaven,,20.1,19.7,12.5,13.5,29.3,,,Pollbase
+27/03/26,GGF,,19.0,20.0,12.0,15.0,27.0,,,Pollbase
+27/03/26,Find Out Now / Electoral Calculus,PLMR,16.0,17.0,10.0,20.0,27.0,,,Pollbase
+28/03/26,More in Common,,21.0,19.0,11.0,12.0,30.0,,,Pollbase
+29/03/26,YouGov,Sky/TT,19.0,18.0,12.0,19.0,23.0,,,Pollbase
+01/04/26,Find Out Now,,18.0,15.0,10.0,20.0,26.0,,,Pollbase
+02/04/26,More in Common,,19.0,20.0,12.0,12.0,30.0,,,Pollbase
+05/04/26,JL Partners,Spectator,18.0,21.0,11.0,14.0,28.0,,,Pollbase
+06/04/26,YouGov,Sky/TT,19.0,16.0,13.0,16.0,24.0,4.0,1.0,Pollbase
+07/04/26,Trajectory,,17.0,25.0,11.0,12.0,26.0,,1.0,Pollbase
+08/04/26,Find Out Now,,17.0,16.0,11.0,20.0,25.0,,,Pollbase
+09/04/26,Ipsos,,19.0,19.0,14.0,17.0,25.0,,,Pollbase
+10/04/26,Freshwater,City AM,19.0,22.0,13.0,15.0,26.0,,,Pollbase
+10/04/26,More in Common,,22.0,21.0,12.0,13.0,25.0,,,Pollbase
+12/04/26,YouGov,Sky/TT,19.0,17.0,13.0,18.0,24.0,4.0,0.0,Pollbase
+15/04/26,Find Out Now,,17.0,16.0,11.0,20.0,26.0,,,Pollbase
+15/04/26,Find Out Now,Restore Britain,18.0,17.0,11.0,18.0,21.0,9.0,1.0,Pollbase
+15/04/26,Opinium,Ob,17.0,22.0,11.0,15.0,26.0,,,Pollbase
+17/04/26,More in Common,,22.0,20.0,11.0,12.0,27.0,,,Pollbase
+19/04/26,YouGov,Sky/TT,17.0,16.0,14.0,17.0,27.0,3.0,0.0,Pollbase
+22/04/26,Find Out Now,,16.0,15.0,11.0,21.0,25.0,,,Pollbase
+22/04/26,Opinium,Ob,17.0,19.0,12.0,15.0,28.0,,,Pollbase
+22/04/26,Techne,,18.0,17.0,13.0,16.0,26.0,3.0,,Pollbase
+23/04/26,Lord Ashcroft,MoS,20.0,18.0,11.0,20.0,21.0,,,Pollbase
+24/04/26,More in Common,,21.0,20.0,11.0,13.0,27.0,,,Pollbase
+26/04/26,YouGov,Sky/TT,19.0,18.0,13.0,15.0,26.0,3.0,1.0,Pollbase
+29/04/26,Find Out Now,,18.0,16.0,11.0,20.0,24.0,,,Pollbase
+29/04/26,BMG,The i,17.0,19.0,12.0,16.0,28.0,,,Pollbase
+29/04/26,JL Partners,,20.0,20.0,13.0,15.0,26.0,,,Pollbase
+29/04/26,Opinium,Ob,18.0,19.0,12.0,15.0,27.0,,,Pollbase
+29/04/26,Deltapoll,Mirror,19.0,21.0,9.0,12.0,29.0,,,Pollbase
+01/05/26,More in Common,,20.0,21.0,12.0,12.0,28.0,,,Pollbase
+01/05/26,Stonehaven,,20.4,19.8,13.8,13.1,25.8,,,Pollbase
+04/05/26,YouGov,Sky/TT,17.0,18.0,14.0,15.0,25.0,4.0,0.0,Pollbase
+05/05/26,Trajectory,,18.0,26.0,11.0,10.0,27.0,,0.0,Pollbase
+06/05/26,Find Out Now,,20.0,16.0,11.0,20.0,25.0,,,Pollbase
+06/05/26,Opinium,Ob,18.0,19.0,11.0,16.0,28.0,,,Pollbase
+09/05/26,Freshwater,City AM,20.0,18.0,14.0,12.0,29.0,,,Pollbase
+09/05/26,More in Common,,19.0,21.0,14.0,11.0,30.0,,,Pollbase
+10/05/26,YouGov,Sky/TT,17.0,16.0,13.0,16.0,28.0,3.0,0.0,Pollbase
+13/05/26,Find Out Now,,19.0,15.0,13.0,18.0,25.0,,,Pollbase
+13/05/26,Techne,,17.0,17.0,12.0,16.0,29.0,3.0,,Pollbase
+14/05/26,Ipsos,,18.0,20.0,12.0,14.0,27.0,,,Pollbase
+14/05/26,JL Partners,The Sun,19.0,21.0,12.0,12.0,29.0,,,Pollbase
+15/05/26,Deltapoll,,17.0,20.0,11.0,13.0,28.0,,,Pollbase
+15/05/26,More in Common,,18.0,23.0,13.0,10.0,29.0,,,Pollbase
+17/05/26,YouGov,Sky/TT,18.0,17.0,14.0,15.0,25.0,4.0,0.0,Pollbase
+20/05/26,Find Out Now,,17.0,17.0,13.0,17.0,26.0,,,Pollbase
+20/05/26,Opinium,Ob,18.0,20.0,12.0,15.0,27.0,,,Pollbase
+21/05/26,Lord Ashcroft,MoS,21.0,19.0,11.0,18.0,21.0,,,Pollbase
+22/05/26,More in Common,,19.0,20.0,12.0,13.0,30.0,,,Pollbase
+25/05/26,YouGov,Sky/TT,19.0,17.0,14.0,16.0,24.0,3.0,0.0,Pollbase
+26/05/26,BMG,The i,17.0,21.0,12.0,12.0,29.0,,,Pollbase
+27/05/26,Find Out Now,,18.0,16.0,12.0,19.0,25.0,,,Pollbase
+27/05/26,YouGov,,20.0,18.0,14.0,15.0,26.0,,,Pollbase
+29/05/26,Freshwater,City AM,19.0,19.0,14.0,12.0,28.0,,,Pollbase
+29/05/26,More in Common,,21.0,22.0,12.0,10.0,29.0,,,Pollbase
+31/05/26,YouGov,Sky/TT,18.0,18.0,13.0,15.0,27.0,3.0,0.0,Pollbase
+31/05/26,GGF,,19.0,20.0,12.0,13.0,27.0,,,Pollbase
+03/06/26,Find Out Now,,17.0,15.0,11.0,17.0,27.0,,,Pollbase
+03/06/26,Opinium,Ob,17.0,20.0,11.0,14.0,29.0,,,Pollbase
+03/06/26,Stonehaven,,20.0,18.6,14.2,12.3,26.9,,,Pollbase
+05/06/26,More in Common,,20.0,20.0,12.0,11.0,30.0,,,Pollbase
+05/06/26,More in Common,ST,21.0,21.0,12.0,10.0,27.0,,,Pollbase
+07/06/26,YouGov,Sky/TT,19.0,19.0,12.0,14.0,25.0,3.0,1.0,Pollbase
+09/04/26,Convergent,,19.8,19.4,14.8,11.3,27.4,,,Pollbase
+10/06/26,Find Out Now,,18.0,16.0,13.0,17.0,25.0,,,Pollbase
+11/06/26,Survation,,20.0,19.0,12.0,11.0,27.0,2.0,,Pollbase
+12/06/26,Deltapoll,,17.0,20.0,12.0,13.0,28.0,,,Pollbase
+12/06/26,More in Common,,21.0,22.0,13.0,9.0,29.0,,,Pollbase
+14/06/26,YouGov,Sky/TT,19.0,19.0,13.0,15.0,24.0,4.0,0.0,Pollbase
+16/06/26,JL Partners,,21.0,21.0,12.0,11.0,27.0,,,Pollbase
+17/06/26,Find Out Now,,18.0,15.0,12.0,17.0,27.0,,,Pollbase
+17/06/26,Opinium,Ob,18.0,20.0,12.0,14.0,27.0,,,Pollbase
+19/06/26,More in Common,,22.0,21.0,12.0,10.0,28.0,,,Pollbase
+21/06/26,YouGov,Sky/TT,20.0,18.0,14.0,15.0,25.0,3.0,0.0,Pollbase
+23/06/26,BMG,The i,20.0,23.0,11.0,13.0,27.0,,,Pollbase
+23/06/26,Find Out Now / Electoral Calculus,PLMR,18.0,20.0,11.0,15.0,23.0,7.0,,Pollbase
+24/06/26,Find Out Now,,18.0,21.0,12.0,15.0,24.0,,,Pollbase
+24/06/26,Opinium,Ob,17.0,21.0,12.0,12.0,26.0,6.0,,Pollbase
+25/06/26,Lord Ashcroft,MoS,21.0,21.0,9.0,17.0,21.0,,,Pollbase
+25/06/26,Ipsos,,18.0,24.0,11.0,13.0,26.0,,,Pollbase
+26/06/26,Find Out Now,MoS,17.0,19.0,13.0,14.0,26.0,,,Pollbase
+26/06/26,More in Common,,20.0,24.0,12.0,10.0,28.0,,,Pollbase
+28/06/26,YouGov,Sky/TT,20.0,20.0,13.0,13.0,24.0,3.0,1.0,Pollbase
+01/07/26,Find Out Now,,19.0,21.0,10.0,16.0,25.0,,,Pollbase
+01/07/26,Opinium,Ob,19.0,20.0,11.0,14.0,26.0,,,Pollbase
+03/07/26,Freshwater,City AM,21.0,20.0,12.0,12.0,29.0,,,Pollbase
+03/07/26,More in Common,,22.0,21.0,11.0,10.0,27.0,,,Pollbase
+05/07/26,YouGov,Sky/TT,21.0,20.0,12.0,13.0,25.0,3.0,0.0,Pollbase
+07/07/26,Opinium,Ob,18.0,19.0,12.0,16.0,24.0,,,Pollbase
+07/07/26,Trajectory,,20.0,24.0,13.0,11.0,22.0,,0.0,Pollbase
+08/07/26,Find Out Now,,20.0,18.0,13.0,16.0,23.0,,,Pollbase
+08/07/26,Stonehaven,,19.9,19.5,13.6,11.6,24.2,,,Pollbase
+10/07/26,More in Common,,22.0,22.0,12.0,12.0,26.0,,,Pollbase
+10/07/26,Survation,,21.0,24.0,11.0,11.0,24.0,2.0,,Pollbase
+12/07/26,YouGov,Sky/TT,19.0,19.0,13.0,15.0,24.0,3.0,0.0,Pollbase
+15/07/26,Find Out Now,,20.0,19.0,11.0,15.0,24.0,,,Pollbase
+15/07/26,Opinium,Ob,20.0,22.0,11.0,14.0,23.0,,,Pollbase
+17/07/26,Deltapoll,,18.0,28.0,10.0,10.0,28.0,,,Pollbase
+19/07/26,YouGov,Sky/TT,21.0,20.0,12.0,14.0,23.0,3.0,0.0,Pollbase
+27/07/26,More in Common,,22.0,24.0,11.0,11.0,26.0,,,Pollbase
+22/07/26,Find Out Now,,19.0,22.0,10.0,14.0,24.0,,,Pollbase
+22/07/26,YouGov,Sky/TT,20.0,21.0,14.0,13.0,23.0,4.0,0.0,Pollbase
+22/07/26,Survation,,19.0,25.0,10.0,8.0,26.0,1.0,,Pollbase
+22/07/26,Survation,HNH,19.8,25.9,11.3,10.3,26.3,,,Pollbase
+24/07/26,More in Common,,22.0,28.0,12.0,8.0,24.0,,,Pollbase
+24/07/26,Deltapoll,,19.0,27.0,8.0,10.0,27.0,,,Pollbase
+25/07/26,Survation,,21.0,26.0,10.0,10.0,24.0,2.0,,Pollbase
+25/07/26,Convergent,,20.7,26.1,11.3,10.0,23.2,,,Pollbase
+26/07/26,YouGov,Sky/TT,21.0,22.0,11.0,13.0,22.0,4.0,1.0,Pollbase
+28/07/26,BMG,The i,20.0,28.0,10.0,10.0,23.0,,,Pollbase
+29/07/26,Find Out Now,,19.0,23.0,11.0,14.0,23.0,,,Pollbase
+29/07/26,Opinium,Ob,17.0,27.0,12.0,12.0,23.0,,,Pollbase
+30/07/26,Lord Ashcroft,MoS,23.0,27.0,8.0,15.0,18.0,,,Pollbase
+30/07/26,Ipsos,,18.0,28.0,9.0,12.0,25.0,,,Pollbase
+31/07/26,More in Common,,22.0,27.0,10.0,9.0,24.0,,,Pollbase
+01/08/26,JL Partners,Bloomberg,20.0,27.0,12.0,10.0,25.0,,,Pollbase
+02/08/26,YouGov,Sky/TT,19.0,22.0,12.0,13.0,23.0,4.0,0.0,Pollbase
+04/08/26,Trajectory,,20.0,28.0,11.0,9.0,22.0,,0.0,Pollbase
+05/08/26,Find Out Now,,18.0,24.0,11.0,14.0,24.0,,,Pollbase
+05/08/26,Opinium,Ob,19.0,27.0,10.0,12.0,25.0,,,Pollbase
+07/08/26,Freshwater,City AM,23.0,23.0,9.0,10.0,26.0,,,Pollbase
+07/08/26,More in Common,,21.0,27.0,12.0,9.0,25.0,,,Pollbase
+09/08/26,JL Partners,,21.0,28.0,10.0,9.0,25.0,,,Pollbase
+09/08/26,YouGov,Sky/TT,21.0,24.0,11.0,12.0,22.0,4.0,0.0,Pollbase
+10/08/26,Survation,,19.0,25.0,11.0,9.0,26.0,2.0,,Pollbase
+12/08/26,Find Out Now,,20.0,22.0,11.0,14.0,24.0,,,Pollbase
+12/08/26,Opinium,Ob,18.0,27.0,10.0,11.0,25.0,,,Pollbase
+12/08/26,Stonehaven,,19.8,22.2,13.2,11.3,21.9,,,Pollbase
+14/08/26,More in Common,,22.0,27.0,11.0,9.0,25.0,,,Pollbase
+14/08/26,Deltapoll,,21.0,29.0,8.0,8.0,27.0,,,Pollbase
+16/08/26,YouGov,Sky/TT,19.0,22.0,12.0,13.0,24.0,4.0,0.0,Pollbase
+18/08/26,Survation,,18.0,26.0,10.0,10.0,26.0,2.0,,Pollbase
+19/08/26,Find Out Now,,18.0,23.0,11.0,14.0,23.0,,,Pollbase
+20/08/26,Survation,38 Degrees,19.7,28.0,10.7,9.9,24.2,,,Pollbase
+21/08/26,More in Common,,22.0,27.0,10.0,9.0,23.0,4.0,,Pollbase
+21/08/26,Deltapoll,,20.0,30.0,8.0,8.0,27.0,,,Pollbase
+21/08/26,More in Common,ST,22.0,26.0,11.0,8.0,24.0,3.0,,Pollbase
+23/08/26,YouGov,Sky/TT,20.0,22.0,13.0,13.0,23.0,3.0,0.0,Pollbase
+23/08/26,YouGov,Best for Britain,21.0,24.0,12.0,12.0,22.0,3.0,,Pollbase
+25/08/26,BMG,The i,18.0,27.0,10.0,11.0,23.0,5.0,,Pollbase
+26/08/26,Survation,,19.0,27.0,9.0,10.0,24.0,3.0,,Pollbase
+26/08/26,Find Out Now,,20.0,22.0,11.0,13.0,25.0,,,Pollbase
+26/08/26,Opinium,Ob,19.0,27.0,10.0,12.0,25.0,,,Pollbase
+27/08/26,Lord Ashcroft,MoS,21.0,28.0,8.0,14.0,20.0,,,Pollbase
+28/08/26,More in Common,,23.0,26.0,11.0,9.0,22.0,4.0,,Pollbase
+30/08/26,YouGov,Sky/TT,20.0,23.0,12.0,13.0,23.0,3.0,0.0,Pollbase
+02/09/26,Find Out Now,,20.0,26.0,10.0,14.0,21.0,,,Pollbase
+02/09/26,Opinium,Ob,18.0,28.0,11.0,11.0,24.0,,,Pollbase
+04/09/26,Freshwater,City AM,20.0,26.0,11.0,11.0,25.0,,,Pollbase
+04/09/26,More in Common,,22.0,24.0,12.0,9.0,23.0,6.0,,Pollbase
+04/09/26,Find Out Now / Electoral Calculus,Restore Britain,20.0,25.0,10.0,9.0,22.0,7.0,,Pollbase
+04/09/26,Norstat,Peter Kellner,22.0,25.0,10.0,11.0,22.0,6.0,0.0,Pollbase
+06/08/26,YouGov,Sky/TT,20.0,23.0,11.0,12.0,23.0,4.0,0.0,Pollbase
+06/08/26,Stonehaven,,19.3,24.3,12.3,11.0,21.3,,,Pollbase
+07/09/26,Trajectory,,21.0,30.0,10.0,9.0,22.0,3.0,0.0,Pollbase
+09/09/26,Find Out Now,,18.0,26.0,12.0,12.0,23.0,,,Pollbase
+09/09/26,Survation,,21.0,28.0,10.0,8.0,23.0,2.0,,Pollbase
+09/09/26,Opinium,Ob,19.0,27.0,10.0,11.0,25.0,,,Pollbase
+10/09/26,Ipsos,,21.0,27.0,8.0,13.0,23.0,,,Pollbase
+11/09/26,Deltapoll,,19.0,29.0,8.0,9.0,25.0,,,Pollbase
+11/09/26,More in Common,,22.0,25.0,10.0,9.0,23.0,6.0,,Pollbase
+13/09/26,YouGov,Sky/TT,20.0,23.0,13.0,11.0,23.0,3.0,0.0,Pollbase
+18/09/26,Find Out Now,,18.0,25.0,11.0,12.0,23.0,,,Pollbase
+16/09/26,Opinium,Ob,18.0,27.0,10.0,11.0,24.0,,,Pollbase
+18/09/26,More in Common,,23.0,26.0,11.0,8.0,22.0,6.0,,Pollbase
+10/09/26,YouGov,Sky/TT,21.0,23.0,12.0,14.0,21.0,4.0,0.0,Pollbase
+22/09/26,Survation,,21.0,27.0,11.0,7.0,24.0,2.0,,Pollbase
+23/09/26,Find Out Now,,19.0,24.0,12.0,13.0,23.0,,,Pollbase
+23/09/26,BMG,The i,20.0,28.0,8.0,9.0,23.0,7.0,,Pollbase
+23/09/26,Opinium,Ob,17.0,28.0,10.0,10.0,24.0,,,Pollbase
+24/09/26,Lord Ashcroft,MoS,22.0,28.0,8.0,14.0,19.0,,,Pollbase
+25/09/26,More in Common,,22.0,27.0,11.0,9.0,21.0,6.0,,Pollbase
+26/09/26,Stonehaven,,21.5,26.5,11.1,8.5,24.6,,,Pollbase
+27/09/26,YouGov,Sky/TT,19.0,24.0,12.0,11.0,25.0,3.0,0.0,Pollbase
+29/09/26,Survation,,19.0,29.0,9.0,9.0,23.0,2.0,,Pollbase
+30/09/26,Find Out Now,,17.0,27.0,9.0,12.0,23.0,,,Pollbase
+30/09/26,Opinium,Ob,17.0,30.0,9.0,11.0,25.0,,,Pollbase
+02/10/26,Survation,,19.0,30.0,9.0,8.0,24.0,2.0,,Pollbase
+03/10/26,More in Common,,21.0,29.0,10.0,7.0,24.0,4.0,,Pollbase
+04/09/26,YouGov,Sky/TT,20.0,27.0,11.0,11.0,22.0,3.0,0.0,Pollbase
+07/10/26,Find Out Now,,20.0,25.0,9.0,11.0,23.0,,,Pollbase
+07/10/26,Opinium,Ob,20.0,29.0,9.0,9.0,23.0,,,Pollbase
+26/10/26,YouGov,The Times/Sky News,22,27,11,10,20,4,,Wikipedia
+26/10/26,More in Common,,24,28,11,7,23,5,,Wikipedia
+23/10/26,Opinium,The Observer,20,30,9,10,22,,,Wikipedia
+22/10/26,Find Out Now,,21,26,9,13,20,,,Wikipedia
+22/10/26,Ipsos,,24,32,9,8,20,3,,Wikipedia
+19/10/26,YouGov,The Times/Sky News,23,27,11,10,22,3,,Wikipedia
+19/10/26,Deltapoll,,22,30,7,8,24,,,Wikipedia
+19/10/26,More in Common,,23,28,10,8,22,5,,Wikipedia
+14/10/26,Find Out Now,,22,25,10,11,22,,,Wikipedia
+14/10/26,Trajectory Partnership,,21,30,10,8,22,6,,Wikipedia
+12/10/26,YouGov,The Times/Sky News,23,24,12,11,21,2,,Wikipedia
+12/10/26,More in Common,,24,28,11,7,21,5,,Wikipedia
+12/10/26,Find Out Now/Electoral Calculus,,19,25,11,9,22,8,,Wikipedia
+11/10/26,Freshwater Strategy,City AM,22,29,10,9,23,,,Wikipedia
+09/10/26,Opinium,The Observer,20,29,9,9,23,,,Wikipedia

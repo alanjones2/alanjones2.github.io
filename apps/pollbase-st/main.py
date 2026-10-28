@@ -24,7 +24,7 @@ PARTY_COLORS = {
 }
 
 # Paths to data and assets bundled with the app.
-DATA_PATH = Path(__file__).with_name("filtered_pollbase.csv")
+DATA_PATH = Path(__file__).with_name("result.csv")
 ABOUT_PATH = Path(__file__).with_name("about.md")
 LOGO_PATH = Path(__file__).with_name("UKCharts.png")
 CC_BY_LOGO_URL = (
@@ -181,7 +181,7 @@ st.html(
         margin: 0; color: #1F2937; line-height: 1.1; font-weight: 700;
         color: darkblue; font-size: clamp(1.6rem, 4vw, 2.4rem);
       ">
-        Pollbase Interactive:
+        Pollbase Interactive Plus:
         <span style="font-size: smaller; font-weight: normal; color: darkblue">
           UK Voting Intentions
         </span>
@@ -244,7 +244,7 @@ with snapshot_tab:
                 showlegend=False,
                 yaxis_range=[0, snapshot_df["Share"].max() * 1.15],
             )
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig,  width='stretch',)
 
 with raw_data_tab:
     mask = (
@@ -253,10 +253,10 @@ with raw_data_tab:
     )
     raw_df = df.loc[
         mask,
-        ["Date", "Polling Company", "Publisher", *parties],
+        ["Date", "Polling Company", "Publisher", "Source", *parties],
     ].copy()
     raw_df["Date"] = raw_df["Date"].dt.date
-    st.dataframe(raw_df, use_container_width=True, hide_index=True)
+    st.dataframe(raw_df, hide_index=True)
 
 with trend_tab:
     mask = (
@@ -284,7 +284,7 @@ with trend_tab:
         selector=dict(mode="markers"),
     )
     fig.update_layout(hovermode="x unified", legend_title_text="Party")
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch',)
 
 with about_tab:
     st.markdown(ABOUT_PATH.read_text(encoding="utf-8"))
