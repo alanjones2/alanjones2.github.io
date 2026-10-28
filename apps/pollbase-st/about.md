@@ -1,8 +1,9 @@
-# About Pollbase Interactive
+# About UK Voting Intentions
 
-Pollbase Interactive is an interactive dashboard for exploring UK voting intentions over time.
+This app is an interactive dashboard for exploring UK voting intentions over time. There are two versions:
 
-The data is derived from Dr Mark Pack's [Pollbase](https://www.markpack.org.uk/opinion-polls/) and contains polling results by date, polling company, publisher, and party vote share.
+ - **Pollbase Version**: The data is derived from Dr Mark Pack's [Pollbase](https://www.markpack.org.uk/opinion-polls/) and contains polling results by date, polling company, publisher, and party vote share. Pollbase is updated every three months.
+ - **Wikipedia Version**: As above but using data from Wikipedia. This contains pretty much the same data but for a shorter period, and it is updated more regularly.
 
 You can filter the data by date, Party, and Polling Company and download the resulting charts and data.
 
