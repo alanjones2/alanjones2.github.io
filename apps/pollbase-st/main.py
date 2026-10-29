@@ -30,7 +30,7 @@ LOGO_PATH = Path(__file__).with_name("UKCharts.png")
 CC_BY_LOGO_URL = (
     "https://mirrors.creativecommons.org/presskit/buttons/"
     "88x31/svg/by.svg"
-)
+    )
 
 # Party columns to expose in charts and tables.
 PARTY_COLUMNS = [
@@ -190,10 +190,10 @@ st.html(
     """
 )
 
-snapshot_tab, trend_tab, raw_data_tab, about_tab = st.tabs(
+trend_tab, snapshot_tab, raw_data_tab, about_tab = st.tabs(
     [
-        "**Snapshot**",
         "**Trend**",
+        "**Snapshot**",
         "**Raw Data**",
         "**About**",
     ]
